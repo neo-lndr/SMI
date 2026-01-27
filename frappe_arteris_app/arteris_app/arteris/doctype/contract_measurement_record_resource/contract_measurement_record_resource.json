@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-15 13:11:34.277000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "is_payfactor",
+  "item",
+  "quantidademedida",
+  "valortotal",
+  "valorunitario",
+  "valorcalculado",
+  "tipo",
+  "peso",
+  "column_break_nweo",
+  "percent_payfactor",
+  "payfactor_discount",
+  "equipe",
+  "fresagem"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "is_payfactor",
+   "fieldtype": "Check",
+   "label": "\u00c9 payfactor"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item"
+  },
+  {
+   "fieldname": "quantidademedida",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantidade medida",
+   "precision": "9"
+  },
+  {
+   "fieldname": "valortotal",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "tipo",
+   "fieldtype": "Data",
+   "label": "Tipo",
+   "length": 30
+  },
+  {
+   "fieldname": "peso",
+   "fieldtype": "Float",
+   "label": "Peso",
+   "precision": "3"
+  },
+  {
+   "fieldname": "valorcalculado",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor calculado",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_nweo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "percent_payfactor",
+   "fieldtype": "Float",
+   "label": "Porcentagem payfactor",
+   "precision": "3"
+  },
+  {
+   "fieldname": "payfactor_discount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Desconto de Payfactor"
+  },
+  {
+   "fieldname": "equipe",
+   "fieldtype": "Data",
+   "label": "Prod. compensat\u00f3ria - Equipe",
+   "length": 30
+  },
+  {
+   "fieldname": "fresagem",
+   "fieldtype": "Float",
+   "label": "Prod. compensat\u00f3ria - Qtd. Fresagem",
+   "precision": "3"
+  },
+  {
+   "fieldname": "valorunitario",
+   "fieldtype": "Currency",
+   "label": "Valor unit\u00e1rio",
+   "precision": "2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-18 14:05:22.173745",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Record Resource",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

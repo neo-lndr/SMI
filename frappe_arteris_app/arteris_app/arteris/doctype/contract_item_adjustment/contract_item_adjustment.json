@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-25 16:50:46.552220",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reajustecodigo",
+  "titulo",
+  "data"
+ ],
+ "fields": [
+  {
+   "fetch_from": "reajustecodigo.titulo",
+   "fieldname": "titulo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "T\u00edtulo",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reajustecodigo.datareajuste",
+   "fieldname": "data",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data do reajuste",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reajustecodigo",
+   "fieldtype": "Link",
+   "label": "Reajuste",
+   "options": "Contract Adjustment"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-25 21:30:26.517066",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Item Adjustment",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

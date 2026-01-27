@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-05-05 11:17:17.841260",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nome",
+  "departamento",
+  "column_break_qsrn",
+  "email",
+  "telefone",
+  "section_break_tazx",
+  "fluxomedicao",
+  "column_break_cuah"
+ ],
+ "fields": [
+  {
+   "fieldname": "nome",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Nome",
+   "length": 120,
+   "reqd": 1
+  },
+  {
+   "fieldname": "departamento",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Departamento",
+   "length": 60
+  },
+  {
+   "fieldname": "column_break_qsrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Email",
+   "length": 120
+  },
+  {
+   "fieldname": "telefone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Telefone/Celular",
+   "length": 15
+  },
+  {
+   "fieldname": "section_break_tazx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "fluxomedicao",
+   "fieldtype": "Check",
+   "label": "Participa de fluxos de assinatura de medi\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "column_break_cuah",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:35.957024",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Person",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nome",
+ "track_changes": 1
+}

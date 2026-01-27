@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-30 17:34:11.636587",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nkpv",
+  "item",
+  "municipio",
+  "rodovia",
+  "kminicial",
+  "participacao",
+  "valor"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rodovia",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rodovia",
+   "length": 50
+  },
+  {
+   "fieldname": "kminicial",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Km inicial",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "municipio",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Munic\u00edpio",
+   "options": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "participacao",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "% Participa\u00e7\u00e3o",
+   "non_negative": 1,
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_nkpv",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-18 19:07:51.999112",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement City Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,471 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-04-25 20:38:39.262402",
+ "default_view": "Tree",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_udxk",
+  "is_group",
+  "aplicar_performance",
+  "produtividadecompensatoria",
+  "contrato",
+  "lft",
+  "rgt",
+  "old_parent",
+  "parent_contract_item",
+  "templateitem",
+  "codigo",
+  "descricao",
+  "quantidadep0",
+  "valorunitariop0",
+  "valortotalvigentep0",
+  "quantidade",
+  "valorunitario",
+  "valortotalvigente",
+  "valormedido",
+  "valormedidocarregado",
+  "saldocarregado",
+  "saldo",
+  "unidade",
+  "tipodoitem",
+  "fatorpagamento",
+  "codigopep",
+  "cidade",
+  "listapedidossap",
+  "tablepedidossap",
+  "m\u00e3o_de_obra_section",
+  "tablemaodeobra",
+  "section_break_suxo",
+  "column_break_wcyc",
+  "percentualhe",
+  "horas_equipe",
+  "dom_hora",
+  "column_break_ough",
+  "seg_hora",
+  "column_break_sxju",
+  "ter_hora",
+  "column_break_ibmc",
+  "qua_hora",
+  "column_break_vbxf",
+  "qui_hora",
+  "column_break_ypqg",
+  "sex_hora",
+  "column_break_butq",
+  "sab_hora",
+  "maquinas_equipamentos_e_ve\u00edculos_section",
+  "tableassets",
+  "rodovias_section",
+  "rodovias",
+  "configura\u00e7\u00f5es_tab",
+  "kartado_section",
+  "tabconfigkartado",
+  "reajustes_tab",
+  "tabreajustes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_udxk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "\u00c9 grupo"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Contract Item"
+  },
+  {
+   "fieldname": "parent_contract_item",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "label": "Parent Contract Item",
+   "options": "Contract Item"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "C\u00f3digo",
+   "length": 30,
+   "reqd": 1,
+   "sticky": 1
+  },
+  {
+   "fieldname": "descricao",
+   "fieldtype": "Data",
+   "label": "Descri\u00e7\u00e3o",
+   "length": 800,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidade",
+   "fieldtype": "Float",
+   "label": "Quantidade",
+   "non_negative": 1,
+   "precision": "6"
+  },
+  {
+   "description": "Caso o valor de m\u00e3o de obra ou ativos seja igual a 0 (Zero), este valore ser\u00e1 utilizado como base para o calculo.",
+   "fieldname": "valorunitario",
+   "fieldtype": "Currency",
+   "label": "Valor unit\u00e1rio",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "label": "N\u00ba do contrato",
+   "options": "Contract",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "listapedidossap",
+   "fieldtype": "Section Break",
+   "label": "Pedidos SAP"
+  },
+  {
+   "fieldname": "tablepedidossap",
+   "fieldtype": "Table",
+   "label": "Lista",
+   "options": "Contract Item Order"
+  },
+  {
+   "fieldname": "m\u00e3o_de_obra_section",
+   "fieldtype": "Section Break",
+   "label": "M\u00e3o de obra"
+  },
+  {
+   "fieldname": "tablemaodeobra",
+   "fieldtype": "Table",
+   "options": "Contract Item Work Role"
+  },
+  {
+   "fieldname": "maquinas_equipamentos_e_ve\u00edculos_section",
+   "fieldtype": "Section Break",
+   "label": "Maquinas, equipamentos e ve\u00edculos"
+  },
+  {
+   "fieldname": "tableassets",
+   "fieldtype": "Table",
+   "options": "Contract Item Asset"
+  },
+  {
+   "fieldname": "unidade",
+   "fieldtype": "Link",
+   "label": "Unidade",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "rodovias_section",
+   "fieldtype": "Section Break",
+   "label": "Rodovias (Delimita\u00e7\u00e3o do servi\u00e7o)"
+  },
+  {
+   "fieldname": "rodovias",
+   "fieldtype": "Table",
+   "options": "Contract Item Highway"
+  },
+  {
+   "fieldname": "tipodoitem",
+   "fieldtype": "Link",
+   "label": "Tipo",
+   "options": "Contract Item Type"
+  },
+  {
+   "fieldname": "configura\u00e7\u00f5es_tab",
+   "fieldtype": "Tab Break",
+   "label": "Configura\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "kartado_section",
+   "fieldtype": "Section Break",
+   "label": "Kartado"
+  },
+  {
+   "fieldname": "tabconfigkartado",
+   "fieldtype": "Table",
+   "label": "Verifique a codifica\u00e7\u00e3o do Kartado, ela pode estar com um n\u00edvel a mais, ex: 1.1.1 -> Kartado -> 1.1.1.1",
+   "options": "Contract Item Config Kartado"
+  },
+  {
+   "fieldname": "valortotalvigente",
+   "fieldtype": "Currency",
+   "label": "Valor total vigente",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "description": "Percentual para c\u00e1lculo do primeiro pagamento do recurso, utilizado em GRAMA, porem pode ser aplicado a outras situa\u00e7\u00f5es",
+   "fieldname": "fatorpagamento",
+   "fieldtype": "Float",
+   "label": "% Fator pagamento",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "codigopep",
+   "fieldtype": "Data",
+   "label": "C\u00f3digo PEP",
+   "length": 30
+  },
+  {
+   "description": "Aten\u00e7\u00e3o!<br>Ao preencher a cidade para o item, esta se sobrep\u00f5e a cidade informada para o contrato, ou seja a cidade informada para o item ser\u00e1 a referencia para os crit\u00e9rios de calculo de m\u00e3o de obra, como feriados.",
+   "fieldname": "cidade",
+   "fieldtype": "Link",
+   "label": "Cidade base",
+   "options": "City"
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "label": "Saldo atual",
+   "precision": "2"
+  },
+  {
+   "fieldname": "horas_equipe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dom_hora",
+   "fieldtype": "Int",
+   "label": "Dom Hora"
+  },
+  {
+   "fieldname": "column_break_ough",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "seg_hora",
+   "fieldtype": "Int",
+   "label": "Seg Hora"
+  },
+  {
+   "fieldname": "column_break_sxju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ter_hora",
+   "fieldtype": "Int",
+   "label": "Ter Hora"
+  },
+  {
+   "fieldname": "column_break_ibmc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qua_hora",
+   "fieldtype": "Int",
+   "label": "Qua Hora"
+  },
+  {
+   "fieldname": "column_break_vbxf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qui_hora",
+   "fieldtype": "Int",
+   "label": "Qui Hora"
+  },
+  {
+   "fieldname": "column_break_ypqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sex_hora",
+   "fieldtype": "Int",
+   "label": "Sex Hora"
+  },
+  {
+   "fieldname": "column_break_butq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sab_hora",
+   "fieldtype": "Int",
+   "label": "Sab Hora"
+  },
+  {
+   "fieldname": "percentualhe",
+   "fieldtype": "Float",
+   "label": "Percentual padr\u00e3o para hora extra",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "section_break_suxo",
+   "fieldtype": "Section Break",
+   "label": "M\u00e3o de obra - Cfg. de horas e percentual de hora extra"
+  },
+  {
+   "fieldname": "column_break_wcyc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "aplicar_performance",
+   "fieldtype": "Check",
+   "label": "Aplicar performance"
+  },
+  {
+   "default": "0",
+   "fieldname": "produtividadecompensatoria",
+   "fieldtype": "Check",
+   "label": "Produtividade compensat\u00f3ria "
+  },
+  {
+   "fieldname": "templateitem",
+   "fieldtype": "Link",
+   "label": "Template do Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "valormedido",
+   "fieldtype": "Currency",
+   "label": "Valor total medido",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldocarregado",
+   "fieldtype": "Currency",
+   "label": "Saldo carregado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valormedidocarregado",
+   "fieldtype": "Currency",
+   "label": "Total medido carregado",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reajustes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Reajustes"
+  },
+  {
+   "fieldname": "tabreajustes",
+   "fieldtype": "Table",
+   "options": "Contract Item Adjustment"
+  },
+  {
+   "fieldname": "valorunitariop0",
+   "fieldtype": "Currency",
+   "label": "Valor unit\u00e1rio - P0",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valortotalvigentep0",
+   "fieldtype": "Currency",
+   "label": "Valor total - P0",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantidadep0",
+   "fieldtype": "Float",
+   "label": "Quantidade - P0",
+   "precision": "6",
+   "read_only": 1
+  }
+ ],
+ "force_re_route_to_default_view": 1,
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2025-10-05 14:35:22.840754",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Item",
+ "naming_rule": "Expression (old style)",
+ "nsm_parent_field": "parent_contract_item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "descricao",
+ "track_changes": 1
+}

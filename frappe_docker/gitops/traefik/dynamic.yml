@@ -1,0 +1,11 @@
+tls:
+  certificates:
+    - certFile: /etc/ssl/certs/arteris_com_br.crt
+      keyFile: /etc/ssl/certs/arteris_com_br.key
+      stores:
+        - default
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/ssl/certs/arteris_com_br.crt
+        keyFile: /etc/ssl/certs/arteris_com_br.key

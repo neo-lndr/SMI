@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "engine-processor-api-collection",
+		"name": "Engine Processor API",
+		"description": "API REST para executar calculate_measurements de forma assíncrona. Permite iniciar processamento e consultar status via UUID.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "engine-processor"
+	},
+	"item": [
+		{
+			"name": "Root - Info da API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Retorna informações sobre a API e seus endpoints disponíveis"
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar Processamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"measurement\": null,\n  \"use_cached_data\": true,\n  \"debug\": false\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/calculate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "Inicia o processamento de calculate_measurements de forma assíncrona.\n\n**Parâmetros:**\n- `measurement` (opcional): ID da medição específica\n- `use_cached_data` (padrão: true): Usar dados em cache\n- `debug` (padrão: false): Habilitar modo debug\n\n**Retorna:**\n- UUID da tarefa para rastreamento do processamento"
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar Processamento - Com Medição Específica",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"measurement\": \"measurement-id-123\",\n  \"use_cached_data\": false,\n  \"debug\": true\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/calculate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"calculate"
+					]
+				},
+				"description": "Exemplo de chamada com uma medição específica, sem usar cache e com debug ativado."
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Status da Tarefa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/status/{{task_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"status",
+						"{{task_id}}"
+					]
+				},
+				"description": "Consulta o status de uma tarefa pelo UUID.\n\n**Parâmetros:**\n- `task_id`: UUID da tarefa (path parameter)\n\n**Retorna:**\n- TaskInfo com status atual da tarefa\n\n**Status possíveis:**\n- `pending`: Aguardando processamento\n- `running`: Em execução\n- `completed`: Concluído com sucesso\n- `error`: Erro durante o processamento"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Todas as Tarefas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks"
+					]
+				},
+				"description": "Lista todas as tarefas registradas no sistema.\n\n**Retorna:**\n- Dicionário com task_id como chave e TaskInfo como valor"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Logs da Tarefa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/logs/{{task_id}}?offset=0&limit=100",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logs",
+						"{{task_id}}"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "Número de linhas para pular (padrão: 0)"
+						},
+						{
+							"key": "limit",
+							"value": "100",
+							"description": "Máximo de linhas para retornar (padrão: 100, máx: 10000)"
+						}
+					]
+				},
+				"description": "Consulta os logs gerados por uma tarefa específica.\n\n**Parâmetros:**\n- `task_id`: UUID da tarefa (path parameter)\n- `offset`: Número de linhas para pular (query parameter)\n- `limit`: Máximo de linhas para retornar (query parameter)\n\n**Retorna:**\n- LogResponse com logs da tarefa"
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Tarefa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tasks/{{task_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"{{task_id}}"
+					]
+				},
+				"description": "Remove uma tarefa do registro.\n\n**Parâmetros:**\n- `task_id`: UUID da tarefa (path parameter)\n\n**Retorna:**\n- Mensagem de confirmação"
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Logs da Tarefa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/logs/{{task_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logs",
+						"{{task_id}}"
+					]
+				},
+				"description": "Remove os logs de uma tarefa específica.\n\n**Parâmetros:**\n- `task_id`: UUID da tarefa (path parameter)\n\n**Retorna:**\n- Mensagem de confirmação"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8084",
+			"type": "string"
+		},
+		{
+			"key": "task_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

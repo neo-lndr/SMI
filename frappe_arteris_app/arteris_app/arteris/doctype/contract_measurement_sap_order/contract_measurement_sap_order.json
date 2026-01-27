@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-04-28 10:01:00.479342",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_wecq",
+  "pedido_sap",
+  "linhapedido",
+  "valortotalvigente",
+  "medicaoatualpercentual",
+  "valormedido",
+  "column_break_xfem",
+  "medicaoacumantpercentual",
+  "medicaoacumuladaatualpercentual",
+  "saldoanterior",
+  "saldo",
+  "acumuladoanterior",
+  "acumuladoatual",
+  "section_break_ihih",
+  "reidi",
+  "valor_medicao_reidi",
+  "column_break_blpq",
+  "capexopex",
+  "pep",
+  "centrodecusto"
+ ],
+ "fields": [
+  {
+   "fieldname": "pedido_sap",
+   "fieldtype": "Link",
+   "label": "Pedido SAP",
+   "options": "SAP Order",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valormedido",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Medi\u00e7\u00e3o atual",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "acumuladoanterior",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o acum. anterior",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "acumuladoatual",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o acum. atual",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valortotalvigente",
+   "fieldtype": "Currency",
+   "label": "Valor total vigente",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoacumantpercentual",
+   "fieldtype": "Float",
+   "label": "Medi\u00e7\u00e3o acum. ant. (%)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoatualpercentual",
+   "fieldtype": "Float",
+   "label": "Medi\u00e7\u00e3o atual (%)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoacumuladaatualpercentual",
+   "fieldtype": "Float",
+   "label": "Medi\u00e7\u00e3o acum. atual (%)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linhapedido",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linha pedido",
+   "options": "SAP Order Period",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xfem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reidi",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "REIDI %",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valor_medicao_reidi",
+   "fieldtype": "Currency",
+   "label": "Valor REIDI",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldoanterior",
+   "fieldtype": "Currency",
+   "label": "Saldo anterior",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Saldo atual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ihih",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_blpq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capexopex",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Inv./Oper.",
+   "length": 5,
+   "read_only": 1
+  },
+  {
+   "fieldname": "pep",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PEP",
+   "length": 30,
+   "read_only": 1
+  },
+  {
+   "fieldname": "centrodecusto",
+   "fieldtype": "Data",
+   "label": "C.C.",
+   "length": 30,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wecq",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-12 18:10:48.873011",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement SAP Order",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

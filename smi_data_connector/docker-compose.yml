@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+
+  # Serviço principal da API de Importação de Dados
+  smi-data-connector-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: smi-data-connector:latest
+    container_name: smi-data-connector-api
+    restart: unless-stopped
+    environment:
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - LOG_TO_CONSOLE=${LOG_TO_CONSOLE:-true}
+      - LOG_TO_FILE=${LOG_TO_FILE:-true}
+      - LOG_DIR=/app/logs
+      - LOG_FILE=connector.log
+
+      # API Externa Arteris
+      - ARTERIS_API_TOKEN=${ARTERIS_API_TOKEN}
+      - ARTERIS_API_BASE_URL=${ARTERIS_API_BASE_URL}
+      - DISABLE_SSL_VERIFY=${DISABLE_SSL_VERIFY:-false}
+
+      # AWS/Athena
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - S3_OUTPUT_LOCATION=${S3_OUTPUT_LOCATION}
+
+      # Osiris
+      - OSIRIS_LOGIN=${OSIRIS_LOGIN}
+      - OSIRIS_PASSWORD=${OSIRIS_PASSWORD}
+
+      # Cron - Execução diária às 21:00
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-0 21 * * *}
+      - ENABLE_CRON=${ENABLE_CRON:-true}
+
+      # Configurações da aplicação
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Persistência de logs
+      - ./logs:/app/logs
+      # Persistência de dados/cache
+      - ./data:/app/data
+      # Persistência de certificados SSL
+      - ./ssl-certs:/app/ssl-certs
+      # Montagem de arquivo .env (opcional)
+      - ./.env:/app/.env:ro
+      # Bind mount do código para desenvolvimento (hot reload)
+      - ./src:/app
+      # Acesso ao diretório FTP (se necessário)
+      # - ${FTP_PATH:-/ftp/arteris}:/ftp/arteris:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://127.0.0.1:8085/', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - smi_default
+
+networks:
+  smi_default:
+    external: true

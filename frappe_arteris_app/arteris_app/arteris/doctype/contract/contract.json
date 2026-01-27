@@ -1,0 +1,445 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-04-25 14:49:07.193437",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cabe\u00e7alho_section",
+  "contrato",
+  "contratada",
+  "datainicial",
+  "datafinal",
+  "subsidiaria",
+  "responsavel",
+  "cidade",
+  "column_break_ripf",
+  "obra",
+  "descricao",
+  "valortotalp0",
+  "valortotal",
+  "vertical",
+  "categoria",
+  "datas_section",
+  "inicioservicosprevisto",
+  "inicioservicos",
+  "column_break_gnpt",
+  "terminoservicosprevisto",
+  "terminoservicos",
+  "periodo_medicao",
+  "column_break_rcsn",
+  "medicaopormes",
+  "column_break_xsin",
+  "medicaodiainicial",
+  "medicaodiafinal",
+  "column_break_hhkt",
+  "column_break_xiur",
+  "diainicialtrabalho",
+  "diafinaltrabalho",
+  "cau\u00e7\u00e3o_section",
+  "percentualcalcao",
+  "tetopercentualcalcao",
+  "column_break_jwpm",
+  "regracaucao",
+  "dados_de_encerramento_do_contrato_section",
+  "datainiciomedicao",
+  "column_break_kkyj",
+  "contratoencerrado",
+  "integrations_tab",
+  "grupo_de_f\u00f3rmulas_section",
+  "grupoformulas",
+  "kartado",
+  "uuidkartado",
+  "column_break_ufbt",
+  "uuidosiris",
+  "tabela_de_pre\u00e7os_tab",
+  "tabprecos",
+  "tabela_de_performance_tab",
+  "tabperformance"
+ ],
+ "fields": [
+  {
+   "fieldname": "cabe\u00e7alho_section",
+   "fieldtype": "Section Break",
+   "label": "Cabe\u00e7alho"
+  },
+  {
+   "columns": 1,
+   "fieldname": "contrato",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "N\u00ba do Contrato",
+   "length": 30,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "columns": 4,
+   "fieldname": "contratada",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Contratada",
+   "options": "Contracted Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "datainicial",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Data inicial do contrato",
+   "reqd": 1
+  },
+  {
+   "fieldname": "datafinal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Data final do contrato",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ripf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "obra",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Obra",
+   "reqd": 1
+  },
+  {
+   "fieldname": "descricao",
+   "fieldtype": "Small Text",
+   "label": "Objeto"
+  },
+  {
+   "fieldname": "valortotal",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Valor total do contrato",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "datas_section",
+   "fieldtype": "Section Break",
+   "label": "Datas"
+  },
+  {
+   "fieldname": "inicioservicosprevisto",
+   "fieldtype": "Date",
+   "label": "In\u00edcio dos servi\u00e7os conf. contrato"
+  },
+  {
+   "fieldname": "inicioservicos",
+   "fieldtype": "Date",
+   "label": "In\u00edcio real dos servi\u00e7os"
+  },
+  {
+   "fieldname": "column_break_gnpt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "terminoservicosprevisto",
+   "fieldtype": "Date",
+   "label": "T\u00e9rmino servi\u00e7os conf. contrato"
+  },
+  {
+   "fieldname": "terminoservicos",
+   "fieldtype": "Date",
+   "label": "T\u00e9rmino previsto dos servi\u00e7os"
+  },
+  {
+   "fieldname": "column_break_rcsn",
+   "fieldtype": "Column Break",
+   "label": "Per\u00edodo de Medi\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "subsidiaria",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subsidiaria",
+   "options": "Subsidiary",
+   "reqd": 1
+  },
+  {
+   "fieldname": "responsavel",
+   "fieldtype": "Link",
+   "label": "Respons\u00e1vel",
+   "options": "Person"
+  },
+  {
+   "fieldname": "vertical",
+   "fieldtype": "Link",
+   "label": "Vertical",
+   "options": "Vertical"
+  },
+  {
+   "fieldname": "categoria",
+   "fieldtype": "Link",
+   "label": "Categoria",
+   "options": "Category"
+  },
+  {
+   "default": "0",
+   "description": "<br>\nEm caso de medi\u00e7\u00e3o de m\u00eas cheio, o sistema ir\u00e1 considerar do primeiro dia do m\u00eas ao ultimo dia do m\u00eas, caso contrario preencher dia inicial e dia final, onde dia inicial ser\u00e1 o dia do m\u00eas em que se inicia a medi\u00e7\u00e3o e dia final o dia do pr\u00f3ximo m\u00eas em que ser\u00e1 encerrada a medi\u00e7\u00e3o.",
+   "fieldname": "medicaopormes",
+   "fieldtype": "Check",
+   "label": "Medi\u00e7\u00e3o m\u00eas cheio"
+  },
+  {
+   "fieldname": "integrations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Configura\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "kartado",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "uuidkartado",
+   "fieldtype": "Data",
+   "label": "Chave Kartado",
+   "length": 36,
+   "read_only": 1
+  },
+  {
+   "fieldname": "grupo_de_f\u00f3rmulas_section",
+   "fieldtype": "Section Break",
+   "label": "Grupo de f\u00f3rmulas"
+  },
+  {
+   "fieldname": "grupoformulas",
+   "fieldtype": "Link",
+   "label": "Grupo",
+   "options": "Formula Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cau\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Cau\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "percentualcalcao",
+   "fieldtype": "Float",
+   "label": "Percentual cau\u00e7\u00e3o",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_jwpm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "regracaucao",
+   "fieldtype": "Data",
+   "label": "Descri\u00e7\u00e3o da regra do cau\u00e7\u00e3o",
+   "length": 120
+  },
+  {
+   "fieldname": "medicaodiainicial",
+   "fieldtype": "Int",
+   "label": "Dia inicial",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "medicaodiafinal",
+   "fieldtype": "Int",
+   "label": "Dia final",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "dados_de_encerramento_do_contrato_section",
+   "fieldtype": "Section Break",
+   "label": "Dados de inicio e encerramento do contrato"
+  },
+  {
+   "fieldname": "contratoencerrado",
+   "fieldtype": "Datetime",
+   "label": "Contrato encerrado em"
+  },
+  {
+   "fieldname": "column_break_kkyj",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "tabela_de_pre\u00e7os_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tabela de pre\u00e7os"
+  },
+  {
+   "fieldname": "tetopercentualcalcao",
+   "fieldtype": "Float",
+   "label": "Teto percentual cau\u00e7\u00e3o",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "tabprecos",
+   "fieldtype": "Table",
+   "options": "Contract Price"
+  },
+  {
+   "fieldname": "column_break_ufbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uuidosiris",
+   "fieldtype": "Data",
+   "label": "Chave Osiris",
+   "length": 36,
+   "read_only": 1
+  },
+  {
+   "fieldname": "periodo_medicao",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xsin",
+   "fieldtype": "Column Break",
+   "label": "Per\u00edodo de Medi\u00e7\u00e3o - Dias"
+  },
+  {
+   "fieldname": "datainiciomedicao",
+   "fieldtype": "Date",
+   "label": "Data de inicio de medi\u00e7\u00e3o pelo MSI"
+  },
+  {
+   "fieldname": "tabela_de_performance_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tabela de performance"
+  },
+  {
+   "description": "Caso informe 0 no campo fator, o sistema ir\u00e1 considerar a m\u00e9dia das notas como fator, para zerar o pagamento informe -1 no fator\n",
+   "fieldname": "tabperformance",
+   "fieldtype": "Table",
+   "options": "Contract Performance"
+  },
+  {
+   "description": "Aten\u00e7\u00e3o!<br>A cidade informada ser\u00e1 padr\u00e3o para os crit\u00e9rios de c\u00e1lculo de m\u00e3o de obra, exceto para as cidades informadas diretamente nos itens de contrato.",
+   "fieldname": "cidade",
+   "fieldtype": "Link",
+   "label": "Cidade base (P/ c\u00e1lculo de m\u00e3o de obra)",
+   "options": "City",
+   "reqd": 1
+  },
+  {
+   "description": "Ao informar o per\u00edodo de aprova\u00e7\u00e3o, este ser\u00e1 considerado como crit\u00e9rio de intervalo de data de aprova\u00e7\u00e3o para a carga dos apontamentos, caso n\u00e3o seja informado ser\u00e1 utilizado o intervalo de datas do per\u00edodo de medi\u00e7\u00e3o. N\u00e3o se aplica quando marcada a op\u00e7\u00e3o \"Medi\u00e7\u00e3o m\u00eas cheio\".",
+   "fieldname": "column_break_hhkt",
+   "fieldtype": "Column Break",
+   "label": "Per\u00edodo de aprova\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "column_break_xiur",
+   "fieldtype": "Column Break",
+   "label": "Per\u00edodo de Aprova\u00e7\u00e3o - Dias"
+  },
+  {
+   "default": "0",
+   "fieldname": "diainicialtrabalho",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Dia inicial"
+  },
+  {
+   "fieldname": "diafinaltrabalho",
+   "fieldtype": "Int",
+   "label": "Dia final"
+  },
+  {
+   "fieldname": "valortotalp0",
+   "fieldtype": "Currency",
+   "label": "Valor total do contrato - P0",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Contract Measurement",
+   "link_fieldname": "contrato"
+  },
+  {
+   "link_doctype": "Integration Record",
+   "link_fieldname": "contrato"
+  }
+ ],
+ "modified": "2025-10-05 18:02:24.407974",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "contrato",
+ "track_changes": 1
+}

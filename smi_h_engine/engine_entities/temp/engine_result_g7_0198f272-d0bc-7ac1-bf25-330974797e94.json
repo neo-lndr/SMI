@@ -1,0 +1,272 @@
+[
+    {
+        "id": "0199c998-fbfc-7312-9342-988fee7e3f7b",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -300725.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 300725.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-989e21493034",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -26964.29
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 26964.29
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98ac5cb55cc0",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -6071.43
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 6071.43
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98bd7dc79ebf",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -8839.29
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 8839.29
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98c9d7b6b104",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -636.9
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 636.9
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aac64b51fd19",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -19047.62
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 19047.62
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aad6ccae03cb",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -12142.86
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 12142.86
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aaea46d06687",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -2380.95
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 2380.95
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aaf39768be26",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -4840560.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 4840560.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab05dfc39279",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -8067600.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 8067600.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab13099923e8",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -7260840.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 7260840.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab2a176c87a5",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab3d807c0319",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab43f4690c08",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab54a73e93e6",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab647cc4f56f",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -63012.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 63012.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab7dfbf5edaf",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": -4788.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 4788.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab8e3a953695",
+        "results": [
+            {
+                "path": "e00048v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00050v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    }
+]

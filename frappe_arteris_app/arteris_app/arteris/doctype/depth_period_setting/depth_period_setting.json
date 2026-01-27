@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-05-06 14:36:14.854863",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "descricao",
+  "mensal",
+  "column_break_nvhz",
+  "diainicial",
+  "diafinal"
+ ],
+ "fields": [
+  {
+   "fieldname": "descricao",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Descri\u00e7\u00e3o",
+   "length": 60
+  },
+  {
+   "default": "0",
+   "fieldname": "mensal",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Fechamento mensal"
+  },
+  {
+   "fieldname": "column_break_nvhz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diainicial",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Dia inicial",
+   "read_only_depends_on": "eval:mensal.value!=0"
+  },
+  {
+   "fieldname": "diafinal",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Dia final",
+   "read_only_depends_on": "eval:mensal.value!=0"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:29.602092",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Depth Period Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "descricao",
+ "track_changes": 1
+}

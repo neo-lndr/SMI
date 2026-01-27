@@ -1,0 +1,5164 @@
+ to your browser
+"Company History"
+"Parent" signifies the parent table in which this row must be added
+"Team Members" or "Management"
+"amended_from" field must be present to do an amendment.
+"{0}" is not a valid Google Sheets URL
+#{0}
+${values.doctype_name} has been added to queue for optimization
+&copy; Frappe Technologies Pvt. Ltd. and contributors
+&lt;head&gt; HTML
+'In Global Search' is not allowed for field {0} of type {1}
+'In Global Search' not allowed for type {0} in row {1}
+'In List View' is not allowed for field {0} of type {1}
+'In List View' not allowed for type {0} in row {1}
+'Recipients' not specified
+'{0}' is not a valid URL
+'{0}' not allowed for type {1} in row {2}
+(Mandatory)
+** Failed: {0} to {1}: {2}
++ Add / Remove Fields
+0 - Draft; 1 - Submitted; 2 - Cancelled
+0 is highest
+1 = True & 0 = False
+1 Currency = [?] Fraction|||For e.g. 1 USD = 100 Cent
+1 Day
+1 Google Calendar Event synced.
+1 Report
+1 comment
+1 day ago
+1 hour
+1 hour ago
+1 minute ago
+1 month ago
+1 of 2
+1 record will be exported
+1 second ago
+1 week ago
+1 year ago
+2 hours ago
+2 months ago
+2 weeks ago
+2 years ago
+3 minutes ago
+30 minutes
+4 hours
+5 Records
+5 days ago
+; not allowed in condition
+<b>{0}</b> is not a valid URL
+<br>|||Em caso de medição de mês cheio, o sistema irá considerar do primeiro dia do mês ao ultimo dia do mês, caso contrario preencher dia inicial e dia final, onde dia inicial será o dia do mês em que se inicia a medição e dia final o dia do próximo mês em que será encerrada a medição.
+<div class="alert">Please don't update it as it can mess up your form. Use the Customize Form View and Custom Fields to set properties!</div>
+<div class="well">|||    Edit list of Series in the box. Rules:|||    <ul>|||        <li>Each Series Prefix on a new line.</li>|||        <li>Allowed special characters are "/" and "-"</li>|||        <li>|||            Optionally, set the number of digits in the series using dot (.)|||            followed by hashes (#). For example, ".####" means that the series|||            will have four digits. Default is five digits.|||        </li>|||        <li>|||            You can also use variables in the series name by putting them|||            between (.) dots|||            <br>|||            Supported Variables:|||            <ul>|||                <li><code>.YYYY.</code> - Year in 4 digits</li>|||                <li><code>.YY.</code> - Year in 2 digits</li>|||                <li><code>.MM.</code> - Month</li>|||                <li><code>.DD.</code> - Day of month</li>|||                <li><code>.WW.</code> - Week of the year</li>|||                <li>|||                    <code>.{fieldname}.</code> - fieldname on the document e.g.|||                    <code>branch</code>|||                </li>|||                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>|||                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>|||            </ul>|||        </li>|||    </ul>|||    Examples:|||    <ul>|||        <li>INV-</li>|||        <li>INV-10-</li>|||        <li>INVK-</li>|||        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>|||    </ul>|||</div>|||<br>|||
+<h3>Custom CSS Help</h3>||||||<p>Notes:</p>||||||<ol>|||<li>All field groups (label + value) are set attributes <code>data-fieldtype</code> and <code>data-fieldname</code></li>|||<li>All values are given class <code>value</code></li>|||<li>All Section Breaks are given class <code>section-break</code></li>|||<li>All Column Breaks are given class <code>column-break</code></li>|||</ol>||||||<h4>Examples</h4>||||||<p>1. Left align integers</p>||||||<pre><code>[data-fieldtype="Int"] .value { text-align: left; }</code></pre>||||||<p>1. Add border to sections except the last section</p>||||||<pre><code>.section-break { padding: 30px 0px; border-bottom: 1px solid #eee; }|||.section-break:last-child { padding-bottom: 0px; border-bottom: 0px;  }</code></pre>|||
+<h3>Print Format Help</h3>|||<hr>|||<h4>Introduction</h4>|||<p>Print Formats are rendered on the server side using the Jinja Templating Language. All forms have access to the <code>doc</code> object which contains information about the document that is being formatted. You can also access common utilities via the <code>frappe</code> module.</p>|||<p>For styling, the Boostrap CSS framework is provided and you can enjoy the full range of classes.</p>|||<hr>|||<h4>References</h4>|||<ol>|||	<li><a href="http://jinja.pocoo.org/docs/templates/" target="_blank">Jinja Templating Language</a></li>|||	<li><a href="http://getbootstrap.com" target="_blank">Bootstrap CSS Framework</a></li>|||</ol>|||<hr>|||<h4>Example</h4>|||<pre><code>&lt;h3&gt;{{ doc.select_print_heading or "Invoice" }}&lt;/h3&gt;|||&lt;div class="row"&gt;|||	&lt;div class="col-md-3 text-right"&gt;Customer Name&lt;/div&gt;|||	&lt;div class="col-md-9"&gt;{{ doc.customer_name }}&lt;/div&gt;|||&lt;/div&gt;|||&lt;div class="row"&gt;|||	&lt;div class="col-md-3 text-right"&gt;Date&lt;/div&gt;|||	&lt;div class="col-md-9"&gt;{{ doc.get_formatted("invoice_date") }}&lt;/div&gt;|||&lt;/div&gt;|||&lt;table class="table table-bordered"&gt;|||	&lt;tbody&gt;|||		&lt;tr&gt;|||			&lt;th&gt;Sr&lt;/th&gt;|||			&lt;th&gt;Item Name&lt;/th&gt;|||			&lt;th&gt;Description&lt;/th&gt;|||			&lt;th class="text-right"&gt;Qty&lt;/th&gt;|||			&lt;th class="text-right"&gt;Rate&lt;/th&gt;|||			&lt;th class="text-right"&gt;Amount&lt;/th&gt;|||		&lt;/tr&gt;|||		{%- for row in doc.items -%}|||		&lt;tr&gt;|||			&lt;td style="width: 3%;"&gt;{{ row.idx }}&lt;/td&gt;|||			&lt;td style="width: 20%;"&gt;|||				{{ row.item_name }}|||				{% if row.item_code != row.item_name -%}|||				&lt;br&gt;Item Code: {{ row.item_code}}|||				{%- endif %}|||			&lt;/td&gt;|||			&lt;td style="width: 37%;"&gt;|||				&lt;div style="border: 0px;"&gt;{{ row.description }}&lt;/div&gt;&lt;/td&gt;|||			&lt;td style="width: 10%; text-align: right;"&gt;{{ row.qty }} {{ row.uom or row.stock_uom }}&lt;/td&gt;|||			&lt;td style="width: 15%; text-align: right;"&gt;{{|||				row.get_formatted("rate", doc) }}&lt;/td&gt;|||			&lt;td style="width: 15%; text-align: right;"&gt;{{|||				row.get_formatted("amount", doc) }}&lt;/td&gt;|||		&lt;/tr&gt;|||		{%- endfor -%}|||	&lt;/tbody&gt;|||&lt;/table&gt;</code></pre>|||<hr>|||<h4>Common Functions</h4>|||<table class="table table-bordered">|||	<tbody>|||		<tr>|||			<td style="width: 30%;"><code>doc.get_formatted("[fieldname]", [parent_doc])</code></td>|||			<td>Get document value formatted as Date, Currency, etc. Pass parent <code>doc</code> for currency type fields.</td>|||		</tr>|||		<tr>|||			<td style="width: 30%;"><code>frappe.db.get_value("[doctype]", "[name]", "fieldname")</code></td>|||			<td>Get value from another document.</td>|||		</tr>|||	</tbody>|||</table>|||
+<h4>Default Template</h4>|||<p>Uses <a href="http://jinja.pocoo.org/docs/templates/">Jinja Templating</a> and all the fields of Address (including Custom Fields if any) will be available</p>|||<pre><code>{{ address_line1 }}&lt;br&gt;|||{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}|||{{ city }}&lt;br&gt;|||{% if state %}{{ state }}&lt;br&gt;{% endif -%}|||{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}|||{{ country }}&lt;br&gt;|||{% if phone %}Phone: {{ phone }}&lt;br&gt;{% endif -%}|||{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}|||{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}|||</code></pre>
+<h4>Email Reply Example</h4>||||||<pre>Order Overdue||||||Transaction {{ name }} has exceeded Due Date. Please take necessary action.||||||Details||||||- Customer: {{ customer }}|||- Amount: {{ grand_total }}|||</pre>||||||<h4>How to get fieldnames</h4>||||||<p>The fieldnames you can use in your email template are the fields in the document from which you are sending the email. You can find out the fields of any documents via Setup &gt; Customize Form View and selecting the document type (e.g. Sales Invoice)</p>||||||<h4>Templating</h4>||||||<p>Templates are compiled using the Jinja Templating Language. To learn more about Jinja, <a class="strong" href="http://jinja.pocoo.org/docs/dev/templates/">read this documentation.</a></p>|||
+<h5 class="text-muted uppercase">Or</h5>
+<h5>Message Example</h5>||||||<pre>&lt;h3&gt;Order Overdue&lt;/h3&gt;||||||&lt;p&gt;Transaction {{ doc.name }} has exceeded Due Date. Please take necessary action.&lt;/p&gt;||||||&lt;!-- show last comment --&gt;|||{% if comments %}|||Last comment: {{ comments[-1].comment }} by {{ comments[-1].by }}|||{% endif %}||||||&lt;h4&gt;Details&lt;/h4&gt;||||||&lt;ul&gt;|||&lt;li&gt;Customer: {{ doc.customer }}|||&lt;li&gt;Amount: {{ doc.grand_total }}|||&lt;/ul&gt;|||</pre>
+<p><strong>Condition Examples:</strong></p>|||<pre>doc.status=="Open"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000|||</pre>
+<p><strong>Condition Examples:</strong></p>|||<pre>doc.status=="Open"<br>doc.due_date==nowdate()<br>doc.total &gt; 40000|||</pre>|||
+<p>Multiple webforms can be created for a single doctype. Add filters specific to this webform to display correct record after submission.</p><p>For Example:</p>|||<p>If you create a separate webform every year to capture feedback from employees add a ||| field named year in doctype and add a filter <b>year = 2023</b></p>|||
+<p>Set context before rendering a template. Example:</p><p>|||</p><div><pre><code>|||context.project = frappe.get_doc("Project", frappe.form_dict.name)|||</code></pre></div>
+<p>To interact with above HTML you will have to use `root_element` as a parent selector.</p><p>For example:</p><pre class="p-3 bg-gray-100 border-radius rounded-sm mb-0" style="width: fit-content;"><code>// here root_element is provided by default|||let some_class_element = root_element.querySelector('.some-class');|||some_class_element.textContent = "New content";|||</code></pre>
+<p>Your OTP secret on {0} has been reset. If you did not perform this reset and did not request it, please contact your System Administrator immediately.</p>
+<pre>*  *  *  *  *|||┬  ┬  ┬  ┬  ┬|||│  │  │  │  │|||│  │  │  │  └ day of week (0 - 6) (0 is Sunday)|||│  │  │  └───── month (1 - 12)|||│  │  └────────── day of month (1 - 31)|||│  └─────────────── hour (0 - 23)|||└──────────────────── minute (0 - 59)||||||---||||||* - Any value|||/ - Step values|||</pre>|||
+<pre><code>doc.grand_total &gt; 0</code></pre>||||||<p>Conditions should be written in simple Python. Please use properties available in the form only.</p>|||<p>Allowed functions:|||</p><ul>|||<li>frappe.db.get_value</li>|||<li>frappe.db.get_list</li>|||<li>frappe.session</li>|||<li>frappe.utils.now_datetime</li>|||<li>frappe.utils.get_datetime</li>|||<li>frappe.utils.add_to_date</li>|||<li>frappe.utils.now</li>|||</ul>|||<p>Example: </p><pre><code>doc.creation &gt; frappe.utils.add_to_date(frappe.utils.now_datetime(), days=-5, as_string=True, as_datetime=True) </code></pre><p></p>
+<strong>Warning:</strong> This field is system generated and may be overwritten by a future update. Modify it using {0} instead.
+A DocType's name should start with a letter and can only consist of letters, numbers, spaces, underscores and hyphens
+A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.
+A featured post must have a cover image
+A field with the name {0} already exists in {1}
+A file with same name {} already exists
+A new account has been created for you at {0}
+A recurring {0} {1} has been created for you via Auto Repeat {2}.
+A template already exists for field {0} of {1}
+A version identifier string for the client software.|||<br>|||The value of the should change on any update of the client software with the same Software ID.
+A word by itself is easy to guess.
+A0
+A1
+A2
+A3
+A4
+A5
+A6
+A7
+A8
+A9
+API
+API Endpoint
+API Endpoint Args
+API Key and Secret to interact with the relay server. These will be auto-generated when the first push notification is sent from any of the apps installed on this site.
+API Key cannot be regenerated
+API Logging
+API Request Log
+ASC
+About
+About Us
+About Us Settings
+About Us Team Member
+About {0} minute remaining
+About {0} minutes remaining
+About {0} seconds remaining
+Access Control
+Access Log
+Access Token
+Access Token URL
+Access not allowed from this IP Address
+Account Deletion Settings
+Accurate count can not be fetched, click here to view all documents
+Action Complete
+Action Failed
+Action Label
+Action Type
+Action {0} completed successfully on {1} {2}. View it {3}
+Action {0} failed on {1} {2}. View it {3}
+Activate
+Active Directory
+Active Sessions
+Activity Log
+Add / Remove Columns
+Add / Update
+Add A New Rule
+Add Attachment
+Add Background Image
+Add Border at Bottom
+Add Border at Top
+Add Card to Dashboard
+Add Chart to Dashboard
+Add Column
+Add Contact
+Add Contacts
+Add Custom Tags
+Add Filters
+Add Group
+Add Indexes
+Add New
+Add New Permission Rule
+Add Query Parameters
+Add Roles
+Add Row
+Add Signature
+Add Space at Bottom
+Add Space at Top
+Add Subscribers
+Add Tags
+Add Template
+Add User Permissions
+Add Video Conferencing
+Add a Filter
+Add a New Role
+Add a Row
+Add a comment
+Add a new section
+Add a row above the current row
+Add a row at the bottom
+Add a row at the top
+Add a row below the current row
+Add a {0} Chart
+Add column
+Add field
+Add new tab
+Add page break
+Add script for Child Table
+Add section above
+Add section below
+Add tab
+Add to Dashboard
+Add to ToDo
+Add to table
+Add to this activity by mailing to {0}
+Add {0}
+Add/Update Filter
+Added
+Added HTML in the &lt;head&gt; section of the web page, primarily used for website verification and SEO
+Added default log doctypes: {}
+Address Line 1
+Address Line 2
+Address Template
+Address Title is mandatory.
+Address Type
+Addresses
+Addresses And Contacts
+Adds a custom client script to a DocType
+Adds a custom field to a DocType
+Adicionar
+Administration
+Administrator Logged In
+Administrator accessed {0} on {1} via IP Address {2}.
+Administrator can't follow
+Advanced
+Advanced Control
+Advanced Search
+After
+After Discard
+After Insert
+After Rename
+After Submission
+Aggregate Field is required to create a number card
+Aggregate Function field is required to create a dashboard chart
+Alias cannot be a SQL keyword: {0}
+Alias must be a string
+Align
+Align Value
+All Images attached to Website Slideshow should be public
+All Records
+All Results
+All Submissions
+All customizations will be removed. Please confirm.
+All fields are necessary to submit the comment.
+All possible Workflow States and roles of the workflow. Docstatus Options: 0 is "Saved", 1 is "Submitted" and 2 is "Cancelled"
+All-uppercase is almost as easy to guess as all-lowercase.
+Allow
+Allow API Indexing Access
+Allow Bulk Editing
+Allow Consecutive Login Attempts 
+Allow Google Calendar Access
+Allow Google Contacts Access
+Allow Guest to comment
+Allow Guests to Upload Files
+Allow Import (via Data Import Tool)
+Allow Login After Fail
+Allow Login using Mobile Number
+Allow Older Web View Links (Insecure)
+Allow Print for Draft
+Allow Sending Usage Data for Improving Applications
+Allow comments
+Allow delete
+Allow document creation via Email
+Allow editing after submit
+Allow editing even if the doctype has a workflow set up.||||||Does nothing if a workflow isn't set up.
+Allow incomplete forms
+Allow multiple responses
+Allow page break inside tables
+Allow print
+Allow recording my first session to improve user experience
+Allow sending usage data for improving applications
+Allow user to login only after this hour (0-24)
+Allow user to login only before this hour (0-24)
+Allow users to log in without a password, using a login link sent to their email
+Allowed File Extensions
+Allowed Modules
+Allowed Public Client Origins
+Allowed Roles
+Allowed embedding domains
+Allowing DocType, DocType. Be careful!
+Allows clients to fetch metadata from the <code>/.well-known/oauth-authorization-server</code> endpoint. Reference: <a href="https://datatracker.ietf.org/doc/html/rfc8414">RFC8414</a>
+Allows clients to fetch metadata from the <code>/.well-known/oauth-protected-resource</code> endpoint. Reference: <a href="https://datatracker.ietf.org/doc/html/rfc9728#name-protected-resource-metadata">RFC9728</a>
+Allows clients to register themselves without manual intervention. Registration creates a <b>OAuth Client</b> entry. Reference: <a href="https://datatracker.ietf.org/doc/html/rfc7591">RFC7591</a>
+Allows clients to view this as an Authorization Server when querying the <code>/.well-known/oauth-protected-resource</code> end point.
+Allows enabled Social Login Key Base URL to be shown as authorization server.
+Allows skipping authorization if a user has active tokens.
+Already Registered
+Already in the following Users ToDo list:{0}
+Also adding the dependent currency field {0}
+Also adding the status dependency field {0}
+Alternative Email ID
+Always BCC Address
+Always use this email address as sender address
+Always use this name as sender name
+Amend Counter
+Amended Document Naming Settings
+Amended Documents
+Amended From
+Amending
+Amendment Naming Override
+Amendment Not Allowed
+Amendment naming rules updated.
+An error occurred while setting Session Defaults
+An icon file with .ico extension. Should be 16 x 16 px. Generated using a favicon generator. [favicon-generator.org]
+An unexpected error occurred while authorizing {}.
+Ancestors Of
+Announcement Widget
+Announcements
+Ano
+Anonymization Matrix
+Anonymous responses
+Another transaction is blocking this one. Please try again in a few seconds.
+Another {0} with name {1} exists, select another name
+Any string-based printer languages can be used. Writing raw commands requires knowledge of the printer's native language provided by the printer manufacturer. Please refer to the developer manual provided by the printer manufacturer on how to write their native commands. These commands are rendered on the server side using the Jinja Templating Language.
+Apart from System Manager, roles with Set User Permissions right can set permissions for other users for that Document Type.
+Apenas para feriados estaduais
+Apenas para feriados municipais
+Apontamento direto
+App ID
+App Logo
+App Name
+App Name (Client Name)
+App not found for module: {0}
+App {0} is not installed
+Append Emails to Sent Folder
+Append To can be one of {0}
+Append as communication against this DocType (must have fields: "Sender" and "Subject"). These fields can be defined in the email settings section of the appended doctype.
+Applicable Document Types
+Applicable For
+Apply
+Apply Assignment Rule
+Apply Filters
+Apply To
+Apply To All Document Types
+Apply User Permission On
+Apply document permissions
+Apply to all Documents Types
+Applying: {0}
+Approval Required
+Apps
+Aprovador
+Ar
+Archive
+Archived
+Archived Columns
+Are you sure you want to clear the assignments?
+Are you sure you want to delete all rows?
+Are you sure you want to delete the attachment?
+Are you sure you want to delete the column? All the fields in the column will be moved to the previous column.
+Are you sure you want to delete the section? All the columns along with fields in the section will be moved to the previous section.
+Are you sure you want to delete the tab? All the sections along with fields in the tab will be moved to the previous tab.
+Are you sure you want to discard the changes?
+Are you sure you want to generate a new report?
+Are you sure you want to merge {0} with {1}?
+Are you sure you want to proceed?
+Are you sure you want to re-enable scheduler?
+Are you sure you want to relink this communication to {0}?
+Are you sure you want to remove all failed jobs?
+Are you sure you want to remove the {0} filter?
+Are you sure you want to reset all customizations?
+Are you sure you want to save this document?
+Are you sure?
+Arguments
+Arial
+Arteris
+As a best practice, do not assign the same set of permission rule to different Roles. Instead, set multiple Roles to the same User.
+As document sharing is disabled, please give them the required permissions before assigning.
+As per your request, your account and data on {0} associated with email {1} has been permanently deleted
+Asset
+Asset Config Kartado
+Assign To
+Assign To User Group
+Assign a user
+Assign one by one, in sequence
+Assign to me
+Assign to the one who has the least assignments
+Assign to the user set in this field
+Assigned By
+Assigned To/Owner
+Assigning...
+Assignment
+Assignment Rule
+Assignment Rule Day
+Assignment Rule User
+Assignment Rule is not allowed on document type {0}
+Assignment Update on {0}
+Assignment for {0} {1}
+Assignment of {0} removed by {1}
+Assignments
+At least one column is required to show in the grid.
+At least one field is required in Web Form Fields Table
+At least one field of Parent Document Type is mandatory
+Attach
+Attach Document Print
+Attach Package
+Attach a web link
+Attach files / urls and add in table.
+Attached To DocType
+Attached To Name must be a string or an integer
+Attachment Limit Reached
+Attempting Connection to QZ Tray...
+Attempting to launch QZ Tray...
+Attribution
+Audit System Hooks
+Audit Trail
+Authenticate as Service Principal
+Authentication
+Authentication Apps you can use are: 
+Authentication failed while receiving emails from Email Account: {0}.
+Authorization
+Authorization URI
+Authorization error for {}.
+Authorize API Access
+Authors
+Authors / Maintainers
+Auto
+Auto Email Report
+Auto Repeat
+Auto Repeat Day
+Auto Repeat Day{0} {1} has been repeated.
+Auto Repeat Document Creation Failed
+Auto Repeat Schedule
+Auto Repeat created for this document
+Auto Repeat failed for {0}
+Auto Reply
+Auto assignment failed: {0}
+Auto follow documents that are assigned to you
+Auto follow documents that are shared with you
+Auto follow documents that you Like
+Auto follow documents that you comment on
+Auto follow documents that you create
+Auto repeat failed. Please enable auto repeat after fixing the issues.
+Autocomplete
+Autoincrement
+Automated Message
+Automatic
+Automatic Linking can be activated only for one Email Account.
+Automatic Linking can be activated only if Incoming is enabled.
+Automatically Assign Documents to Users
+Automatically applied a filter for recent data. You can disable this behavior from the list view settings.
+Automatically delete account within (hours)
+Automation
+Avatar
+Average
+Average of {0}
+Avoid dates and years that are associated with you.
+Avoid recent years.
+Avoid sequences like abc or 6543 as they are easy to guess
+Avoid years that are associated with you.
+Awesome Work
+Awesome, now try making an entry yourself
+B
+B0
+B1
+B10
+B2
+B3
+B4
+B5
+B6
+B7
+B8
+B9
+BCC
+Back
+Back to Desk
+Back to Home
+Back to Login
+Background Image
+Background Jobs
+Background Jobs Check
+Background Jobs Queue
+Background Print (required for >25 documents)
+Backup Encryption Key
+Backup job is already queued. You will receive an email with the download link
+Backups
+Backups (MB)
+Bad Cron Expression
+Banker's Rounding
+Banker's Rounding (legacy)
+Banner Image
+Banner is above the Top Menu Bar.
+Bar
+Basic Info
+Before
+Before Discard
+Before Print
+Before Rename
+Before Validate
+Beginner
+Beginning with
+Beta
+Better add a few more letters or another word
+Between
+Billing Contact
+Binary Logging
+Bio
+Blank Template
+Block Module
+Blog
+Blog Category
+Blog Post
+Blog Settings
+Blogger
+Boletim de medição
+Bot
+Both DocType and Name required
+Both login and password required
+Bottom Center
+Bottom Left
+Bottom Right
+Bounced
+Brand Logo
+Breadcrumbs
+Browse by category
+Browser
+Browser not supported
+Bufferpool Size
+Build {0}
+Built on {0}
+Bulk Actions
+Bulk Delete
+Bulk Edit
+Bulk Edit {0}
+Bulk Operation Failed
+Bulk Operation Successful
+Bulk PDF Export
+Bulk Update
+Bulk approval only support up to 500 documents.
+Bulk operation is enqueued in background.
+Bulk operations only support up to 500 documents.
+Bulk {0} is enqueued in background.
+By "Naming Series" field
+By default the title is used as meta title, adding a value here will override it.
+By fieldname
+By script
+Bypass Two Factor Auth for users who login from restricted IP Address
+C.C. ou PEP
+C5E
+CANCELLED
+CC
+CMD
+CNPJ
+COLOR PICKER
+CSS
+CSS selector for the element you want to highlight.
+CSV
+Cabeçalho
+Cache
+Cache Cleared
+Calculate
+Calendar
+Calendar View
+Call
+Call to Action
+Camera
+Campaign Description (Optional)
+Campo
+Campo link
+Can Read
+Can Share
+Can Submit
+Can Write
+Can not rename as column {0} is already present on DocType.
+Can only change to/from Autoincrement naming rule when there is no data in the doctype
+Can only list down the document types which has been linked to the User document type.
+Can't follow since changes are not tracked.
+Can't rename {0} to {1} because {0} doesn't exist.
+Cancel
+Cancel All
+Cancel All Documents
+Cancel {0} documents?
+Cancelled Document restored as Draft
+Cancelling
+Cancelling documents
+Cancelling {0}
+Cannot Download Report due to insufficient permissions
+Cannot Fetch Values
+Cannot Remove
+Cannot Update After Submit
+Cannot access file path {0}
+Cannot cancel before submitting while transitioning from <b>{0} State</b> to <b>{1} State</b>
+Cannot cancel before submitting. See Transition {0}
+Cannot cancel {0}.
+Cannot change docstatus from 0 (Draft) to 2 (Cancelled)
+Cannot change docstatus from 1 (Submitted) to 0 (Draft)
+Cannot change state of Cancelled Document <b>({0} State)</b>
+Cannot change state of Cancelled Document. Transition row {0}
+Cannot change to/from autoincrement autoname in Customize Form
+Cannot create a {0} against a child document: {1}
+Cannot create private workspace of other users
+Cannot delete Home and Attachments folders
+Cannot delete or cancel because {0} {1} is linked with {2} {3} {4}
+Cannot delete standard action. You can hide it if you want
+Cannot delete standard document state.
+Cannot delete standard field <strong>{0}</strong>. You can hide it instead.
+Cannot delete standard field. You can hide it if you want
+Cannot delete standard link. You can hide it if you want
+Cannot delete system generated field <strong>{0}</strong>. You can hide it instead.
+Cannot delete {0}
+Cannot delete {0} as it has child nodes
+Cannot edit Standard Dashboards
+Cannot edit Standard Notification. To edit, please disable this and duplicate it
+Cannot edit Standard charts
+Cannot edit a standard report. Please duplicate and create a new report
+Cannot edit cancelled document
+Cannot edit filters for standard charts
+Cannot edit filters for standard number cards
+Cannot edit standard fields
+Cannot enable {0} for a non-submittable doctype
+Cannot find file {} on disk
+Cannot get file contents of a Folder
+Cannot have multiple printers mapped to a single print format.
+Cannot import table with more than 5000 rows.
+Cannot link cancelled document: {0}
+Cannot map because following condition fails:
+Cannot match column {0} with any field
+Cannot move row
+Cannot remove ID field
+Cannot set 'Report' permission if 'Only If Creator' permission is set
+Cannot set Notification with event {0} on Document Type {1}
+Cannot share {0} with submit permission as the doctype {1} is not submittable
+Cannot submit {0}.
+Cannot update {0}
+Cannot use sub-query in order by
+Cannot use {0} in order/group by
+Cannot {0} {1}.
+Capex
+Capitalization doesn't help very much.
+Capture
+Card Break
+Card Label
+Card Links
+Caso não tenha quantidade informe 1 como padrão
+Caso seja o mesmo do pedido SAP, não preencher
+Categoria
+Category
+Caução
+Caução Contratual [G] =  5% . [F]
+Caução acumulado
+Caução acumulado anterior
+Caução atual
+Certain documents, like an Invoice, should not be changed once final. The final state for such documents is called Submitted. You can restrict which roles can Submit.
+Chain Integrity
+Chaining Hash
+Change
+Change Image
+Change Letter Head
+Change Print Format
+Change the starting / current sequence number of an existing series. <br>||||||Warning: Incorrectly updating counters can prevent documents from getting created. 
+Changed at
+Changed by
+Changelog Feed
+Changes
+Changing any setting will reflect on all the email accounts associated with this domain.
+Changing rounding method on site with data can result in unexpected behaviour.
+Chart Type
+Chat
+Chave
+Chave Kartado
+Chave Osiris
+Chaves
+Check Request URL
+Check columns to select, drag to set order.
+Check the Error Log for more information: {0}
+Check this if you don't want users to sign up for an account on your site. Users won't get desk access unless you explicitly provide it.
+Check to display the full numeric value (e.g., 1,234,567 instead of 1.2M).
+Checking one moment
+Checking this will enable tracking page views for blogs, web pages, etc.
+Checking this will hide custom doctypes and reports cards in Links section
+Checking this will publish the page on your website and it'll be visible to everyone.
+Checking this will show a text area where you can write custom javascript that will run on this page.
+Checksum Version
+Child DocTypes are not allowed
+Child Doctype
+Child Table {0} for field {1}
+Child Tables are shown as a Grid in other DocTypes
+Child query fields for '{0}' must be a list or tuple.
+Choose Existing Card or create New Card
+Choose a block or continue typing
+Choose a color
+Choose an icon
+Cidade
+Cidade base
+Cidade base da equipe (P/ cálculo de mão de obra)
+Cidades
+Clear
+Clear & Add Template
+Clear & Add template
+Clear All
+Clear Assignment
+Clear Cache and Reload
+Clear Error Logs
+Clear Filters
+Clear Logs After (days)
+Clear User Permissions
+Clear all filters
+Clear the email message and add the template
+Clearing end date, as it cannot be in the past for published pages.
+Click On Customize to add your first widget
+Click here
+Click on a file to select it.
+Click on the button to log in to {0}
+Click on the link below to approve the request
+Click on the link below to complete your registration and set a new password
+Click on the link below to download your data
+Click on the link below to verify your request
+Click on {0} to generate Refresh Token.
+Click table to edit
+Click to Set Dynamic Filters
+Click to Set Filters
+Click to sort by {0}
+Client Id
+Client Metadata
+Client Script
+Client Secret Basic
+Client Secret Post
+Client URI
+Client URLs
+Client script
+Clima da manhã
+Clima da noite
+Clima da tarde
+Close properties
+Cmd+Enter to add comment
+Code Challenge
+Code Editor Type
+Code challenge method
+Collapse
+Collapsible Depends On (JS)
+Color
+Column
+Column 1
+Column 2
+Column <b>{0}</b> already exist.
+Column Labels:
+Column Name
+Column Name cannot be empty
+Column Width
+Column width cannot be zero.
+Column {0}
+Columns based on
+Combination of Grant Type (<code>{0}</code>) and Response Type (<code>{1}</code>) not allowed
+Comm10E
+Comment
+Comment Email
+Comment Type
+Comment can only be edited by the owner
+Comment limit
+Comment limit per hour
+Comment publicity can only be updated by the original author or a System Manager.
+Comments cannot have links or email addresses
+Commercial Rounding
+Committed
+Common names and surnames are easy to guess.
+Communication Link
+Communication Type
+Communication secret not set
+Company History
+Compare Versions
+Compensações
+Compilation warning
+Compiled Successfully
+Complete By
+Complete Registration
+Complete Setup
+Completed By Role
+Completed By User
+Component
+Compose Email
+Compressed
+Condition
+Condition JSON
+Condition description
+Conditions
+Condições da manhã
+Condições da noite
+Condições da tarde
+Config
+Configurar
+Configuration
+Configurações
+Configure Chart
+Configure Columns
+Configure Recorder
+Configure columns for {0}
+Configure how amended documents will be named.<br>||||||Default behaviour is to follow an amend counter which adds a number to the end of the original name indicating the amended version. <br>||||||Default Naming will make the amended document to behave same as new documents.
+Configure various aspects of how document naming works like naming series, current counter.
+Confirm
+Confirm Access
+Confirm Deletion of Account
+Confirm New Password
+Confirm Password
+Confirm Request
+Confirmation Email Template
+Confirmed
+Congratulations on completing the module setup. If you want to learn more you can refer to the documentation <a target="_blank" href="{0}">here</a>.
+Connect to {}
+Connected App
+Connected User
+Connected to QZ Tray!
+Connection Lost
+Connection Success
+Connection lost. Some features might not work.
+Connections
+Console
+Console Log
+Console Logs can not be deleted
+Constraints
+Contact
+Contact Email
+Contact Phone
+Contact Synced with Google Contacts.
+Contact Us
+Contact Us Settings
+Contact options, like "Sales Query, Support Query" etc each on a new line or separated by commas.
+Contacts
+Contains {0} security fix
+Contains {0} security fixes
+Content
+Content Hash
+Content Type
+Content data shoud be a list
+Content type for building the page
+Context Script
+Contract
+Contract Adjustment
+Contract Adjustment Data
+Contract Item
+Contract Item Asset
+Contract Item City
+Contract Item Config Kartado
+Contract Item Highway
+Contract Item Order
+Contract Item Type
+Contract Item Work Role
+Contract Item Workload Cfg
+Contract Item Workload Cfg Values
+Contract Items
+Contract Measurement
+Contract Measurement 01
+Contract Measurement Asset
+Contract Measurement City
+Contract Measurement FTD
+Contract Measurement Item
+Contract Measurement Note
+Contract Measurement Note Asset
+Contract Measurement Note Resource
+Contract Measurement Note SAP Order
+Contract Measurement Note Work Role
+Contract Measurement Record
+Contract Measurement Record - Asset
+Contract Measurement Record - Resource
+Contract Measurement Record - Time
+Contract Measurement Record - Work Role
+Contract Measurement Record Asset
+Contract Measurement Record Log
+Contract Measurement Record Material
+Contract Measurement Record Resource
+Contract Measurement Record SAP Order
+Contract Measurement Record Time
+Contract Measurement Record Work Role
+Contract Measurement SAP Order
+Contract Measurement Team
+Contract Measurement Work Role
+Contract Measurement not found
+Contract Price
+Contracted Company
+Contratada
+Contrato
+Contrato encerrado em
+Contribution Status
+Controls whether new users can sign up using this Social Login Key. If unset, Website Settings is respected.
+Copied to clipboard.
+Copy Link
+Copy embed code
+Copy error to clipboard
+Copy to Clipboard
+Core
+Core DocTypes cannot be customized.
+Core Modules {0} cannot be searched in Global Search.
+Correct version :
+Could not connect to outgoing email server
+Could not find {0}
+Could not map column {0} to field {1}
+Could not parse field: {0}
+Could not start up: 
+Couldn't save, please check the data you have entered
+Count
+Count Customizations
+Count Filter
+Count of linked documents
+Country Code Required
+Cr
+Create & Continue
+Create Address
+Create Card
+Create Chart
+Create Child Doctype
+Create Contacts from Incoming Emails
+Create Letter Head
+Create Log
+Create New
+Create New DocType
+Create New Kanban Board
+Create User Email
+Create a New Format
+Create a Reminder
+Create a new ...
+Create a new record
+Create a new {0}
+Create a {0} Account
+Create or Edit Print Format
+Create or Edit Workflow
+Create your first {0}
+Create your workflow visually using the Workflow Builder.
+Created
+Created At
+Created By
+Created Custom Field {0} in {1}
+Created On
+Creating {0}
+Creation of this document is only permitted in developer mode.
+Criado por
+Cron
+Cron format is required for job types with Cron frequency.
+Crop
+Ctrl + Down
+Ctrl + Up
+Ctrl+Enter to add comment
+Currency list stores the currency value, its symbol and fraction unit
+Current
+Current Job ID
+Current Value
+Current status
+Currently Viewing
+Custom
+Custom Base URL
+Custom Block Name
+Custom Blocks
+Custom Delimiters
+Custom DocPerm
+Custom Document Types (Select Permission)
+Custom Document Types Limit Exceeded
+Custom Documents
+Custom Field
+Custom Field {0} is created by the Administrator and can only be deleted through the Administrator account.
+Custom Fields can only be added to a standard DocType.
+Custom Fields cannot be added to core DocTypes.
+Custom Footer
+Custom Group Search
+Custom Group Search if filled needs to contain the user placeholder {0}, eg uid={0},ou=users,dc=example,dc=com
+Custom HTML
+Custom HTML Block
+Custom LDAP Directoy Selected, please ensure 'LDAP Group Member attribute' and 'Group Object Class' are entered
+Custom Label
+Custom Menu Items
+Custom Page
+Custom Reports
+Custom Role
+Custom Sidebar Menu
+Custom field renamed to {0} successfully.
+Custom get_list method for {0} must return a QueryBuilder object or None, got {1}
+Custom?
+Customization
+Customizations Discarded
+Customizations Reset
+Customizations for <b>{0}</b> exported to:<br>{1}
+Customize
+Customize Child Table
+Customize Dashboard
+Customize Form
+Customize Form - {0}
+Customize Form Field
+Cut
+Cyan
+Código
+Código PEP
+Código item kartado
+Código relatório 
+DELETE
+DESC
+DLE
+DRAFT
+Dados de encerramento do contrato
+Daily Event Digest is sent for Calendar Events where reminders are set.
+Daily Events should finish on the Same Day.
+Daily Maintenance
+Dark
+Dark Theme
+Dashboard
+Dashboard Chart
+Dashboard Chart Field
+Dashboard Chart Link
+Dashboard Chart Source
+Dashboard Manager
+Dashboard Name
+Dashboard Settings
+Dashboard View
+Dashboards
+Data
+Data 
+Data Clipped
+Data Export
+Data Import
+Data Import Log
+Data Import Template
+Data Too Long
+Data aprovação
+Data de reajuste
+Data do desconto
+Data e hora
+Data e hora da submissão
+Data emissão
+Data execução
+Data final
+Data final da medição
+Data final do contrato
+Data final medição
+Data incial
+Data inicial da medição
+Data inicial do contrato
+Data inicial medição
+Database
+Database Engine
+Database Processes
+Database Row Size Utilization
+Database Storage Usage By Tables
+Database Table Row Size Limit
+Database Table Row Size Utilization: {0}%, this limits number of fields you can add.
+Database Version
+Datas
+Date Range
+Date {0} must be in format: {1}
+Dates are often easy to guess.
+Day
+Days
+De para de ativos Kartado
+De para de funções do Kartado
+De para, integrações
+Deadlock Occurred
+Dear User,
+Dear {0}
+Debug Log
+Decimal Separator must be '.' when Quoting is set to Non-numeric
+Decimal Separator must be a single character
+Default Address Template cannot be deleted
+Default Amendment Naming
+Default App
+Default Email Template
+Default Inbox
+Default Incoming
+Default Naming
+Default Outgoing
+Default Sending
+Default Sending and Inbox
+Default Template For Field
+Default Theme
+Default User Role
+Default User Type
+Default View
+Default Workspace
+Default display currency
+Default for 'Check' type of field {0} must be either '0' or '1'
+Default value for {0} must be in the list of options.
+Default {0}
+DefaultValue
+Defaults Updated
+Defines actions on states and the next step and allowed roles.
+Defines workflow states and rules for a document.
+Delayed
+Delete Account
+Delete All
+Delete Column
+Delete Data
+Delete Kanban Board
+Delete Section
+Delete Tab
+Delete and Generate New
+Delete column
+Delete comment?
+Delete entire column with fields
+Delete entire section with fields
+Delete entire tab with fields
+Delete section
+Delete tab
+Delete this record to allow sending to this email address
+Delete {0} item permanently?
+Delete {0} items permanently?
+Deleted
+Deleted DocType
+Deleted Document
+Deleted all documents successfully
+Deleting {0}
+Deleting {0} records...
+Deleting {0}...
+Deletion Steps 
+Deletion of this document is only permitted in developer mode.
+Delimiter Options
+Delimiter detection failed. Try to enable custom delimiters and adjust the delimiter options as per your data.
+Delimiter must be a single character
+Delivery Status
+Deny
+Departamento
+Dependencies
+Dependencies & Licenses
+Depth Period Setting
+Descendants Of
+Descendants Of (inclusive)
+Desconto do REIDI [C] = -3,65% . [B]
+Description to inform the user about any action that is going to be performed
+Descriçao
+Descrição
+Descrição Kartado
+Descrição da regra do caução
+Descrição do ativo Kartado
+Descrrção
+Desk
+Desk Settings
+Desk Theme
+Desk User
+Desktop Icon
+Desktop Icon already exists
+Details
+Detect CSV type
+Dia da semana
+Dia final
+Dia inicial
+Dias uteis
+Did not add
+Did not remove
+Diff
+Different "States" this document can exist in. Like "Open", "Pending Approval" etc.
+Directory Server
+Disable Automatic Recency Filters
+Disable Change Log Notification
+Disable Comment Count
+Disable Contact Us Page
+Disable Document Sharing
+Disable Likes
+Disable Report
+Disable Signup for your site
+Disable Standard Email Footer
+Disable System Update Notification
+Disable Username/Password Login
+Disable signups
+Disabled Auto Reply
+Discard
+Discard {0}
+Discard?
+Discarded
+Disclaimer: These indexes are suggested based on data and queries performed during this recording. These suggestions may or may not help.
+Discussion Reply
+Discussion Topic
+Dismiss
+Display
+Display Depends On (JS)
+Divider
+Do Not Create New User 
+Do not create new user if user with email does not exist in the system
+Do not edit headers which are preset in the template
+Do you still want to proceed?
+Do you want to cancel all linked documents?
+Doc Event
+Doc Events
+Doc Status
+DocField
+DocPerm
+DocShare
+DocStatus of the following states have changed:<br><strong>{0}</strong><br>|||				Do you want to update the docstatus of existing documents in those states?<br>|||				This does not undo any effect bought in by the document's existing docstatus.|||				
+DocType
+DocType <b>{0}</b> provided for the field <b>{1}</b> must have atleast one Link field
+DocType Action
+DocType Event
+DocType Layout
+DocType Layout Field
+DocType Link
+DocType State
+DocType View
+DocType can not be merged
+DocType can only be renamed by Administrator
+DocType is a Table / Form in the application.
+DocType must be Submittable for the selected Doc Event
+DocType must be a string
+DocType must have atleast one field
+DocType not supported by Log Settings.
+DocType on which this Workflow is applicable.
+DocType required
+DocType {0} does not exist.
+DocType {} not found
+DocType's name should not start or end with whitespace
+DocTypes cannot be modified, please use {0} instead
+Doctype
+Doctype (en-US)
+Doctype (pt-BR)
+Doctype name is limited to {0} characters ({1})
+Doctype required
+Document Follow
+Document Follow Notification
+Document Linking
+Document Links Row #{0}: Could not find field {1} in {2} DocType
+Document Links Row #{0}: Invalid doctype or fieldname.
+Document Links Row #{0}: Parent DocType is mandatory for internal links
+Document Links Row #{0}: Table Fieldname is mandatory for internal links
+Document Name must be a string
+Document Naming Rule
+Document Naming Rule Condition
+Document Naming Settings
+Document Queued
+Document Restoration Summary
+Document Restored
+Document Saved
+Document Share Key
+Document Share Key Expiry (in Days)
+Document Share Report
+Document Status
+Document Type
+Document Type and Function are required to create a number card
+Document Type is not importable
+Document Type is not submittable
+Document Type to Track
+Document Type {0} has been repeated.
+Document Types
+Document Types (Select Permissions Only)
+Document Types and Permissions
+Document Unlocked
+Document follow is not enabled for this user.
+Document has been cancelled
+Document has been submitted
+Document is in draft state
+Document is only editable by users with role
+Document not Relinked
+Document renamed from {0} to {1}
+Document renaming from {0} to {1} has been queued
+Document type is required to create a dashboard chart
+Document {0} Already Restored
+Document {0} has been set to state {1} by {2}
+Document {0} {1} does not exist
+Documentation
+Documents
+Documents restored successfully
+Documents that failed to restore
+Documents that were already restored
+Dom Hora
+Domain
+Domain Name
+Domain Settings
+Domains
+Don't HTML Encode HTML tags like &lt;script&gt; or just characters like &lt; or &gt;, as they could be intentionally used in this field
+Don't Import
+Don't Override Status
+Don't Send Emails
+Don't encode HTML tags like &lt;script&gt; or just characters like &lt; or &gt;, as they could be intentionally used in this field
+Don't have an account?
+Double click to edit label
+Download Backups
+Download Data
+Download Files Backup
+Download Link
+Download PDF
+Download Report
+Download Your Data
+Download as CSV
+Download vCard
+Download vCards
+Dr
+Drag
+Drag & Drop a section here from another tab
+Drag and drop files here or upload from
+Drag columns to set order. Column width is set in percentage. The total width should not be more than 100. Columns marked in red will be removed.
+Drag elements from the sidebar to add. Drag them back to trash.
+Drag to add state
+Drop files here
+Dropdowns
+Duplicate Entry
+Duplicate Filter Name
+Duplicate Name
+Duplicate Row
+Duplicate current row
+Duplicate field
+Dynamic
+Dynamic Link
+ESC
+Edit Address in Form
+Edit Auto Email Report Settings
+Edit Chart
+Edit Custom Block
+Edit Custom HTML
+Edit DocType
+Edit Existing
+Edit Filter
+Edit Filters
+Edit Footer
+Edit Format
+Edit Full Form
+Edit HTML
+Edit Header
+Edit Heading
+Edit Letter Head
+Edit Letter Head Footer
+Edit Links
+Edit Number Card
+Edit Onboarding
+Edit Print Format
+Edit Profile
+Edit Properties
+Edit Quick List
+Edit Shortcut
+Edit Values
+Edit mode
+Edit the {0} Doctype
+Edit to add content
+Edit your response
+Edit your workflow visually using the Workflow Builder.
+Edit {0}
+Editable Grid
+Editing Row
+Editing {0}
+Eg. smsgateway.com/api/send_sms.cgi
+Either key or IP flag is required.
+Element Selector
+Elemento PEP
+Email
+Email Account
+Email Account Disabled.
+Email Account Name
+Email Account added multiple times
+Email Account not setup. Please create a new Email Account from Settings > Email Account
+Email Account {0} Disabled
+Email Address
+Email Address whose Google Contacts are to be synced.
+Email Addresses
+Email Domain
+Email Flag Queue
+Email Footer Address
+Email Group
+Email Group Member
+Email Header
+Email ID
+Email IDs
+Email Id
+Email Queue
+Email Queue Recipient
+Email Queue flushing aborted due to too many failures.
+Email Queue records.
+Email Reply Help
+Email Retry Limit
+Email Rule
+Email Sent
+Email Settings
+Email Signature
+Email Status
+Email Sync Option
+Email Template
+Email Threads on Assigned Document
+Email To
+Email Unsubscribe
+Email has been marked as spam
+Email has been moved to trash
+Email is mandatory to create User Email
+Email not sent to {0} (unsubscribed / disabled)
+Email not verified with {0}
+Email queue is currently suspended. Resume to automatically send other emails.
+Emails
+Emails Pulled
+Emails are already being pulled from this account.
+Emails are muted
+Emails will be sent with next possible workflow actions
+Embed code copied
+Empty alias is not allowed
+Empty column
+Empty string arguments are not allowed
+Enable Address Autocompletion
+Enable Allow Auto Repeat for the doctype {0} in Customize Form
+Enable Dynamic Client Registration
+Enable Email Notification
+Enable Email Notifications
+Enable Google API in Google Settings.
+Enable Google indexing
+Enable Incoming
+Enable Onboarding
+Enable Outgoing
+Enable Prepared Report
+Enable Push Notification Relay
+Enable Rate Limit
+Enable Report
+Enable Scheduler
+Enable Tracking Page Views
+Enable Two Factor Auth
+Enable developer mode to create a standard Print Template
+Enable developer mode to create a standard Web Template
+Enable email notification for any comment or likes received on your Blog Post.
+Enable if on click|||opens modal.
+Enable in-app website tracking
+Enabled
+Enabled Scheduler
+Enabled email inbox for user {0}
+Enables Calendar and Gantt views.
+Enabling auto reply on an incoming email account will send automated replies to all the synchronized emails. Do you wish to continue?
+Enabling this will register your site on a central relay server to send push notifications for all installed apps through Firebase Cloud Messaging. This server only stores user tokens and error logs, and no messages are saved.
+Enabling this will register your site on a central relay server to send push notifications for all installed apps through Firebase Cloud Messaging. This server only stores user tokens and error logs, and no messages are saved. 
+Enabling this will submit documents in background
+Encrypt Backups
+Encryption key is in invalid format!
+Encryption key is invalid! Please check site_config.json
+End
+End Date cannot be before Start Date!
+Ended At
+Endereço
+Endpoints
+Enqueued By
+Enqueued creation of indexes
+Ensure the user and group search paths are correct.
+Enter Client Id and Client Secret in Google Settings.
+Enter Code displayed in OTP App.
+Enter Email Recipient(s)
+Enter Form Type
+Enter Value
+Enter a name for this {0}
+Enter default value fields (keys) and values. If you add multiple values for a field, the first one will be picked. These defaults are also used to set "match" permission rules. To see list of fields, go to "Customize Form".
+Enter folder name
+Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)
+Enter url parameter for message
+Enter url parameter for receiver nos
+Enter your password
+Entity Name
+Entity Type
+Equals
+Equipe
+Equipes
+Error Log
+Error Message
+Error connecting to QZ Tray Application...<br><br> You need to have QZ Tray application installed and running, to use the Raw Print feature.<br><br><a target="_blank" href="https://qz.io/download/">Click here to Download and install QZ Tray</a>.<br> <a target="_blank" href="https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing">Click here to learn more about Raw Printing</a>.
+Error connecting via IMAP/POP3: {e}
+Error connecting via SMTP: {e}
+Error has occurred in {0}
+Error in Client Script
+Error in Client Script.
+Error in Header/Footer Script
+Error in Notification
+Error in print format on line {0}: {1}
+Error in {0}.get_list: {1}
+Error parsing nested filters: {0}
+Error while connecting to email account {0}
+Error while evaluating Notification {0}. Please fix your template.
+Error: Data missing in table {0}
+Error: Value missing for {0}: {1}
+Error: {0} Row #{1}: Value missing for: {2}
+Errors
+Estrutura de Itens
+Event
+Event Frequency
+Event Participants
+Event Reminders
+Event Synced with Google Calendar.
+Event Type
+Events
+Events in Today's Calendar
+Everyone
+Ex: "colors": ["#d1d8dd", "#ff5858"]
+Exact Copies
+Example: "/desk"
+Example: Setting this to 24:00 will log out a user if they are not active for 24:00 hours.
+Example: {{ subject }}
+Excel
+Excellent
+Execute
+Execute Console script
+Executing Code
+Executing...
+Execution Time: {0} sec
+Executive
+Existing Role
+Expand
+Expected 'and' or 'or' operator, found: {0}
+Experimental
+Expire Notification On
+Export
+Export 1 record
+Export Custom Permissions
+Export Customizations
+Export Data
+Export Errored Rows
+Export Import Log
+Export Report: {0}
+Export Type
+Export all matching rows?
+Export all {0} rows?
+Export as zip
+Export not allowed. You need {0} role to export.
+Export the data without any header notes and column descriptions
+Export without main header
+Export {0} records
+Exported permissions will be force-synced on every migrate overriding any other customization.
+Expression
+Expression (old style)
+External Link
+Extra Parameters
+Facebook
+Fail
+Failed Emails
+Failed Job Count
+Failed Jobs
+Failed Logins (Last 30 days)
+Failed Transactions
+Failed to aquire lock: {}. Lock may be held by another process.
+Failed to change password.
+Failed to complete setup
+Failed to compute request body: {}
+Failed to connect to server
+Failed to decode token, please provide a valid base64-encoded token.
+Failed to decrypt key {0}
+Failed to delete {0} documents: {1}
+Failed to enable scheduler: {0}
+Failed to evaluate conditions: {}
+Failed to export python type hints
+Failed to generate names from the series
+Failed to generate preview of series
+Failed to get method for command {0} with {1}
+Failed to get method {0} with {1}
+Failed to get site info
+Failed to import virtual doctype {}, is controller file present?
+Failed to optimize image: {0}
+Failed to render message: {}
+Failed to render subject: {}
+Failed to request login to Frappe Cloud
+Failed to send email with subject:
+Failed to send notification email
+Failed to update global settings
+Failed while calling API {0}
+Failing Scheduled Jobs (last 7 days)
+Failure
+Failure Rate
+Faixa
+Fator de pagamento %
+Fator de plantio
+Faturamento Direto
+Faturamento direto (FTD) acumulado
+Faturamento direto (FTD) acumulado anterior
+Faturamento direto (FTD) na fase atual
+FavIcon
+Fax
+Featured
+Fechamento mensal
+Feriado
+Fetch Images
+Fetch attached images from document
+Fetch on Save if Empty
+Fetching default Global Search documents.
+Field
+Field "route" is mandatory for Web Views
+Field "title" is mandatory if "Website Search Field" is set.
+Field "value" is mandatory. Please specify value to be updated
+Field Missing
+Field Name
+Field Orientation (Left-Right)
+Field Orientation (Top-Down)
+Field Template
+Field Type
+Field not permitted in query
+Field that represents the Workflow State of the transaction (if field is not present, a new hidden Custom Field will be created)
+Field type cannot be changed for {0}
+Field {0} does not exist on {1}
+Field {0} is referring to non-existing doctype {1}.
+Field {0} not found.
+Field {0} on document {1} is neither a Mobile number field nor a Customer or User link
+Fieldname
+Fieldname '{0}' conflicting with a {1} of the name {2} in {3}
+Fieldname called {0} must exist to enable autonaming
+Fieldname is limited to 64 characters ({0})
+Fieldname label
+Fieldname not set for Custom Field
+Fieldname which will be the DocType for this link field.
+Fieldname {0} appears multiple times
+Fieldname {0} cannot have special characters like {1}
+Fieldname {0} conflicting with meta object
+Fieldname {0} is restricted
+Fields
+Fields Multicheck
+Fields `file_name` or `file_url` must be set for File
+Fields must be a list or tuple when as_list is enabled
+Fields must be a string, list, tuple, pypika Field, or pypika Function
+Fields separated by comma (,) will be included in the "Search By" list of Search dialog box
+Fieldtype
+Fieldtype cannot be changed from {0} to {1}
+Fieldtype cannot be changed from {0} to {1} in row {2}
+File
+File "{0}" was skipped because of invalid file type
+File "{0}" was skipped because only {1} uploads are allowed
+File "{0}" was skipped because only {1} uploads are allowed for DocType "{2}"
+File "{0}" was skipped because size exceeds {1} MB
+File '{0}' not found
+File Manager
+File Storage
+File Type
+File backup is ready
+File name cannot have {0}
+File not attached
+File size exceeded the maximum allowed size of {0} MB
+File too big
+File type of {0} is not allowed
+File {0} does not exist
+Files
+Filter
+Filter By
+Filter List
+Filter Name
+Filter condition missing after operator: {0}
+Filter fields cannot contain backticks (`).
+Filter...
+Filtered By
+Filtered Records
+Filtered by "{0}"
+Filters applied for {0}
+Filters saved
+Filters will be accessible via <code>filters</code>. <br><br>Send output as <code>result = [result]</code>, or for old style <code>data = [columns], [result]</code>
+Filters {0}
+Filters:
+Find '{0}' in ...
+Find {0} in {1}
+Finished At
+First
+First Day of the Week
+First Name
+First Transaction
+First data column must be blank.
+First set the name and save the record.
+Fit
+Float
+Fold can not be at the end of the form
+Fold must come before a Section Break
+Folder Name
+Folder name should not include '/' (slash)
+Folder {0} is not empty
+Folio
+Follow
+Followed by
+Following Report Filters have missing values:
+Following document {0}
+Following fields are missing:
+Following fields have invalid values:
+Following fields have missing values
+Following fields have missing values:
+Font
+Footer "Powered By"
+Footer Based On
+Footer Content
+Footer Details
+Footer HTML set from attachment {0}
+Footer Image
+Footer Script
+Footer might not be visible as {0} option is disabled</div>
+For DocType
+For DocType Link / DocType Action
+For Document
+For Document Type
+For Example: {} Open
+For Links, enter the DocType as range.|||For Select, enter list of Options, each on a new line.
+For User
+For comparison, use >5, <10 or =324. For ranges, use 5:10 (for values between 5 & 10).
+For example if you cancel and amend INV004 it will become a new document INV004-1. This helps you to keep track of each amendment.
+For example:
+For example: If you want to include the document ID, use {0}
+For help see <a href="https://frappeframework.com/docs/user/en/guides/portal-development/web-forms" target="_blank">Client Script API and Examples</a>
+For more information, <a class="text-muted" href="https://erpnext.com/docs/user/manual/en/setting-up/email/linking-emails-to-document">click here</a>.
+For more information, {0}.
+For multiple addresses, enter the address on different line. e.g. test@test.com ⏎ test1@test.com
+For updating, you can update only selective columns.
+For {0} at level {1} in {2} in row {3}
+Force Re-route to Default View
+Force Stop job
+Force Web Capture Mode for Uploads
+Forgot Password?
+Form
+Form Builder
+Form Dict
+Form Tour
+Form Tour Step
+Format
+Formula
+Formula Fields
+Formula Group
+Formula Group Field
+Formula Template
+Fornecedor
+Forward
+Forward To Email Address
+Frappe
+Frappe Framework
+Frappe Light
+Frappe Mail
+Frappe Mail OAuth Error
+Frappe Mail Site
+Frappe Support
+Frappe page builder using components
+Free
+Frequency
+Friday
+From Document Type
+From User
+From version
+Full Name
+Full Page
+Function
+Function Based On
+Function {0} is not whitelisted.
+Function {0} requires arguments but none were provided
+Função
+Funções
+Further nodes can be only created under 'Group' type nodes
+Fw: {0}
+Fórmula
+Fórmulas
+GET
+GNU Affero General Public License
+GNU General Public License
+Gantt
+Gantt View
+Gender
+Genderqueer
+General
+Generate New Report
+Generate Random Password
+Generate Tracking URL
+Geo
+Geoapify
+Geolocation Settings
+Get Alerts for Today
+Get Backup Encryption Key
+Get Fields
+Get Header and Footer wkhtmltopdf variables
+Get OpenID Configuration
+Get PDF
+Get a preview of generated names with a series.
+Get more insights with
+Get notified when an email is received on any of the documents assigned to you.
+Git Branch
+GitHub
+Github flavoured markdown syntax
+Global Administrator
+Global Search DocType
+Global Search Document Types Reset.
+Global Search Settings
+Global Shortcuts
+Go
+Go Back
+Go to Login Required field
+Go to Notification Settings List
+Go to Workflow
+Go to Workspace
+Go to next record
+Go to previous record
+Go to the document
+Go to this URL after completing the form
+Go to {0}
+Go to {0} List
+Go to {0} Page
+Goal
+Google
+Google Analytics anonymise IP
+Google Calendar
+Google Calendar - Contact / email not found. Did not add attendee for -<br>{0}
+Google Calendar - Could not create Calendar for {0}, error code {1}.
+Google Calendar - Could not delete Event {0} from Google Calendar, error code {1}.
+Google Calendar - Could not fetch event from Google Calendar, error code {0}.
+Google Calendar - Could not find Calendar for {0}, error code {1}.
+Google Calendar - Could not insert contact in Google Contacts {0}, error code {1}.
+Google Calendar - Could not insert event in Google Calendar {0}, error code {1}.
+Google Calendar - Could not update Event {0} in Google Calendar, error code {1}.
+Google Calendar has been configured.
+Google Contacts
+Google Contacts - Could not sync contacts from Google Contacts {0}, error code {1}.
+Google Contacts - Could not update contact in Google Contacts {0}, error code {1}.
+Google Contacts Id
+Google Drive
+Google Drive Picker
+Google Drive Picker Enabled
+Google Font
+Google Meet Link
+Google Settings
+Google Sheets URL is invalid or not publicly accessible.
+Google Sheets URL must end with "gid={number}". Copy and paste the URL from the browser address bar and try again.
+Google Snippet Preview
+Grant Type
+Graph
+Gray
+Greater Than
+Greater Than Or Equal To
+Grid Empty State
+Grid Page Length
+Grid Shortcuts
+Group By field is required to create a dashboard chart
+Group By must be a string
+Group Object Class
+Grouped by <span style='font-weight:600;'>{0}</b>
+Grupo
+Grupo de fórmulas
+HEAD
+HERE
+HH:mm:ss
+HTML
+HTML with jinja support
+Half Day
+Half Yearly
+Half-yearly
+Handled Emails
+Has  Attachment
+Has Attachments
+Has Domain
+Has Next Condition
+Has Role
+Has Setup Wizard
+Has Web View
+Have an account? Login
+Header HTML set from attachment {0}
+Header Script
+Header and Breadcrumbs
+Header, Robots
+Header/Footer scripts can be used to add dynamic behaviours.
+Headers must be a dictionary
+Heading
+Hello
+Help Article
+Help Category
+Help Dropdown
+Help on Search
+Help: To link to another record in the system, use "/app/note/[Note Name]" as the Link URL. (don't use "http://")
+Helpful
+Helvetica
+Helvetica Neue
+Here's your tracking URL
+Hi {0}
+Hidden
+Hidden Fields
+Hide
+Hide Buttons
+Hide Custom DocTypes and Reports
+Hide Descendants
+Hide Empty Read-Only Fields
+Hide Error
+Hide Label
+Hide Login
+Hide Preview
+Hide Previous, Next and Close button on highlight dialog.
+Hide Saved
+Hide Sidebar, Menu, and Comments
+Hide Standard Menu
+Hide Tags
+Hide Weekends
+Hide descendant records of <b>For Value</b>.
+Hide details
+Hide footer
+Hide footer in auto email reports
+Hide footer signup
+Hide navbar
+Highway
+Highway City
+Highway Kartado
+Hint: Include symbols, numbers and capital letters in the password
+Holiday
+Home/Test Folder 1
+Home/Test Folder 1/Test Folder 3
+Home/Test Folder 2
+Hora apresentada em formato numérico 
+Hora extra (Sáb. e dias úteis)
+Hora extra 100% (Dom. e feriados)
+Hora final
+Hora inicial
+Hora normal (Dias úteis) 
+Hora normal desc. e acrés.
+Hourly Maintenance
+Hours
+Human-readable name intended for display to the end user.
+ID
+ID (name)
+ID (name) of the entity whose property is to be set
+IDs must contain only alphanumeric characters, not contain spaces, and should be unique.
+IMAP Details
+IMAP Folder
+ISS
+Icon
+Identificação da rodovia
+Idx
+If Apply Strict User Permission is checked and User Permission is defined for a DocType for a User, then all the documents where value of the link is blank, will not be shown to that User
+If Checked workflow status will not override status in list view
+If Owner
+If a Role does not have access at Level 0, then higher levels are meaningless.
+If checked, negative numeric values of Currency, Quantity or Count would be shown as positive
+If checked, users will not see the Confirm Access dialog.
+If enabled,  user can login from any IP Address using Two Factor Auth, this can also be set for all users in System Settings
+If enabled, all responses on the web form will be submitted anonymously
+If enabled, all users can login from any IP Address using Two Factor Auth. This can also be set only for specific user(s) in User Page
+If enabled, the password strength will be enforced based on the Minimum Password Score value. A value of 1 being very weak and 4 being very strong.
+If enabled, users who login from Restricted IP Address, won't be prompted for Two Factor Auth
+If left empty, the default workspace will be the last visited workspace
+If non standard port (e.g. 587). If on Google Cloud, try port 2525.
+If non-standard port (e.g. POP3: 995/110, IMAP: 993/143)
+If set, only user with these roles can access this chart. If not set, DocType or Report permissions will be used.
+If the user has any role checked, then the user becomes a "System User". "System User" has access to the desktop
+If these instructions where not helpful, please add in your suggestions on GitHub Issues.
+If unchecked, the value will always be re-fetched on save.
+If you are updating, please select "Overwrite" else existing rows will not be deleted.
+If you are uploading new records, "Naming Series" becomes mandatory, if present.
+If you are uploading new records, leave the "name" (ID) column blank.
+If you have recently restored the site, you may need to copy the site_config.json containing the original encryption key.
+If you set this, this Item will come in a drop-down under the selected parent.
+If you think this is unauthorized, please change the Administrator password.
+If your CSV uses a different delimiter, add that character here, ensuring no spaces or additional characters are included.
+If your data is in HTML, please copy paste the exact HTML code with the tags.
+Ignore User Permissions
+Illegal Document Status for {0}
+Illegal SQL Query
+Illegal template
+Image Height
+Image View
+Image Width
+Image field must be a valid fieldname
+Image field must be of type Attach Image
+Image link '{0}' is not valid
+Image optimized
+Image: Corrupted Data Stream
+Images
+Impersonate
+Impersonate as {0}
+Impersonated by {0}
+Impersonating {0}
+Implement `clear_old_logs` method to enable auto error clearing.
+Import Email From
+Import Log
+Import Progress
+Import Subscribers
+Import Type
+Import Zip
+Import template should be of type .csv, .xlsx or .xls
+Import template should contain a Header and atleast one row.
+Import timed out, please re-try.
+Importing {0} is not allowed.
+Importing {0} of {1}
+Importing {0} of {1}, {2}
+Imprimir
+In
+In Grid View
+In List Filter
+In List View
+In Minutes
+In Read Only Mode
+Inactive
+Inbox
+Inbox User
+Inbox View
+Include Disabled
+Include Name Field
+Include Theme from Apps
+Include Web View Link in Email
+Include filters
+Include indentation
+Include symbols, numbers and capital letters in the password
+Incoming (POP/IMAP) Settings
+Incoming Emails (Last 7 days)
+Incoming Server
+Incoming Settings
+Incoming email account not correct
+Incomplete Virtual Doctype Implementation
+Incomplete login details
+Incorrect Configuration
+Incorrect URL
+Incorrect User or Password
+Incorrect Verification code
+Incorrect value in row {0}:
+Incorrect value:
+Index
+Index Web Pages for Search
+Index created successfully on column {0} of doctype {1}
+Indexing authorization code
+Indexing refresh token
+Indicator Color
+Indicator color
+Indice de reajuste
+Info:
+Informações
+Informações sobre o tipo do item
+InnoDB
+Input existing role name if you would like to extend it with access of another role.
+Insert
+Insert Above
+Insert After
+Insert After cannot be set as {0}
+Insert After field '{0}' mentioned in Custom Field '{1}', with label '{2}', does not exist
+Insert Below
+Insert Column Before {0}
+Insert Image in Markdown
+Install {0} from Marketplace
+Installed Application
+Installed Applications
+Installed Apps
+Instructions
+Instructions Emailed
+Insufficient Permission Level for {0}
+Insufficient Permission for {0}
+Insufficient Permissions for deleting Report
+Insufficient Permissions for editing Report
+Insufficient attachment limit
+Integration Inconsistency
+Integration Record
+Integration Record Keys
+Integration Request
+Integrations
+Integrations can use this field to set email delivery status
+Inter
+Interests
+Intermediate
+Internal Server Error
+Internal record of document shares
+Intro Video URL
+Introduction
+Introspection URI
+Invalid
+Invalid "depends_on" expression
+Invalid "depends_on" expression set in filter {0}
+Invalid "mandatory_depends_on" expression
+Invalid Action
+Invalid CSV Format
+Invalid Code. Please try again.
+Invalid Condition: {}
+Invalid Date
+Invalid DocType
+Invalid DocType: {0}
+Invalid Fieldname
+Invalid File URL
+Invalid Filter
+Invalid Filter Format for field {0} of type {1}. Try using filter icon on the field to set it correctly
+Invalid Filter Value
+Invalid Home Page
+Invalid Link
+Invalid Login Token
+Invalid Login. Try again.
+Invalid Mail Server. Please rectify and try again.
+Invalid Naming Series: {}
+Invalid Operation
+Invalid Option
+Invalid Outgoing Mail Server or Port: {0}
+Invalid Output Format
+Invalid Override
+Invalid Parameters.
+Invalid Password
+Invalid Phone Number
+Invalid Request
+Invalid Search Field {0}
+Invalid Table Fieldname
+Invalid Transition
+Invalid User Name or Support Password. Please rectify and try again.
+Invalid Values
+Invalid Webhook Secret
+Invalid aggregate function
+Invalid alias format: {0}. Alias must be a simple identifier.
+Invalid argument format: {0}. Only quoted string literals or simple field names are allowed.
+Invalid argument type: {0}. Only strings, numbers, and None are allowed.
+Invalid characters in fieldname: {0}. Only letters, numbers, and underscores are allowed.
+Invalid characters in table name: {0}
+Invalid column
+Invalid condition type in nested filters: {0}
+Invalid direction in Order By: {0}. Must be 'ASC' or 'DESC'.
+Invalid docstatus
+Invalid expression set in filter {0}
+Invalid expression set in filter {0} ({1})
+Invalid field format for SELECT: {0}. Field names must be simple, backticked, table-qualified, aliased, or '*'.
+Invalid field format in {0}: {1}. Use 'field', 'link_field.field', or 'child_table.field'.
+Invalid field name in function: {0}. Only simple field names are allowed.
+Invalid field name {0}
+Invalid field name: {0}
+Invalid field type: {0}
+Invalid fieldname '{0}' in autoname
+Invalid file path: {0}
+Invalid filter condition: {0}. Expected a list or tuple.
+Invalid filter field format: {0}. Use 'fieldname' or 'link_fieldname.target_fieldname'.
+Invalid filter: {0}
+Invalid function argument type: {0}. Only strings, numbers, lists, and None are allowed.
+Invalid function dictionary format
+Invalid json added in the custom options: {0}
+Invalid name type (integer) for varchar name column
+Invalid naming series {}: dot (.) missing
+Invalid or corrupted content for import
+Invalid redirect regex in row #{}: {}
+Invalid request arguments
+Invalid simple filter format: {0}
+Invalid start for filter condition: {0}. Expected a list or tuple.
+Invalid string literal format: {0}
+Invalid template file for import
+Invalid token state! Check if the token has been created by the OAuth user.
+Invalid username or password
+Invalid value specified for UUID: {}
+Invalid values for fields:
+Invalid wkhtmltopdf version
+Invalid {0} condition
+Investimento/Operação
+Invite as User
+Início dos serviços conf. contrato
+Início real dos serviços
+Is
+Is Calendar and Gantt
+Is Child Table
+Is Custom
+Is Default
+Is Dynamic URL?
+Is Global
+Is Group
+Is Hidden
+Is Home Folder
+Is Published Field must be a valid fieldname
+Is Query Report
+Is Remote Request?
+Is Setup Complete?
+Is Single
+Is Spam
+Is Submittable
+Is System Generated
+Is Table Field
+Is Virtual
+Is standard
+It is risky to delete this file: {0}. Please contact your System Manager.
+Item
+Item Config Kartado
+Item Group
+Item Label
+Item Sub Group
+Item Type
+Item adicionado com sucesso
+Item cannot be added to its own descendants
+Item do contrato
+Items/Recursos
+Itens
+Itens do contrato
+JS
+JS Message
+JSON
+Jane Doe
+JavaScript
+JavaScript Format: frappe.query_reports['REPORTNAME'] = {}
+Javascript
+Javascript is disabled on your browser
+Jinja
+Job ID
+Job Id
+Job Info
+Job Name
+Job Status
+Job Stopped Successfully
+Job is in {0} state and can't be cancelled
+Job is not running.
+Join video conference with {0}
+Jump to field
+K
+KM Final
+KM Inicial
+KM final
+KM inicial
+Kanban
+Kanban Board Column
+Kanban Board Name
+Kanban Settings
+Kanban View
+Kartado
+Kartado Apontamento
+Kartado Outros
+Kartado RDO
+Keep track of all update feeds
+Keeps track of all communications
+Keyboard Shortcuts
+Keycloak
+Kh
+Km final
+Km inicial
+Knowledge Base
+Knowledge Base Contributor
+Knowledge Base Editor
+L
+LDAP Auth
+LDAP Custom Settings
+LDAP Email Field
+LDAP Group Mapping
+LDAP Group Member attribute
+LDAP Not Installed
+LDAP Search String must be enclosed in '()' and needs to contian the user placeholder {0}, eg sAMAccountName={0}
+LDAP Search and Paths
+LDAP Server Settings
+LDAP Server Url
+LDAP Settings
+LDAP is not enabled.
+LDAP search path for Groups
+LDAP search path for Users
+LDAP settings incorrect. validation response was: {0}
+Label
+Label is mandatory
+Landscape
+Language
+Last
+Last 10 active users
+Last 14 Days
+Last 30 Days
+Last 6 Months
+Last 7 Days
+Last 90 Days
+Last Heartbeat
+Last Modified Date
+Last Modified On
+Last Name
+Last Reset Password Key Generated On
+Last Run
+Last Synced At
+Last Updated By
+Last Updated On
+Last synced {0}
+Latitude
+Layout Reset
+Layout will be reset to standard layout, are you sure you want to do this?
+Leaderboard
+Learn more
+Leave this conversation
+Left
+Left Bottom
+Left Center
+Left this conversation
+Legal
+Length
+Length of passed data array is greater than value of maximum allowed label points!
+Length of {0} should be between 1 and 1000
+Less
+Less Than
+Less Than Or Equal To
+Leste
+Let us continue with the onboarding
+Let's Get Started
+Let's avoid repeated words and characters
+Let's set up your account
+Let's take you back to onboarding
+Letter Head
+Letter Head Scripts
+Letter Head cannot be both disabled and default
+Level
+Level 0 is for document level permissions, higher levels for field level permissions.
+Library
+License
+License Type
+Light
+Light Blue
+Light Theme
+Like
+Like limit
+Like limit per hour
+Like on {0}: {1}
+Liked
+Liked By
+Liked by me
+Limit must be a non-negative integer
+Linha SAP
+Linha de pedido SAP
+Linha do pedido
+Linha pedido
+Link
+Link Count
+Link Details
+Link DocType
+Link Document Type
+Link Expired
+Link Field Results Limit
+Link Filters
+Link To in Row
+Link Type
+Link Type in Row
+Link for About Us Page is "/about".
+Link that is the website home page. Standard Links (home, login, products, blog, about, contact)
+Linked With
+Linked with {0}
+Links
+List / Search Settings
+List Columns
+List Filter
+List Settings
+List View
+List View Settings
+List a document type
+List as [{"label": _("Jobs"), "route":"jobs"}]
+List of email addresses, separated by comma or new line.
+List of patches executed
+List setting message
+Lista
+Lists
+Load More
+Load More Communications
+Load more
+Loading
+Loading Filters...
+Loading import file...
+Loading versions...
+Loading...
+Log API Requests
+Log Data
+Log DocType
+Log In To {0}
+Log Index
+Log Setting User
+Log Settings
+Log in to access this page.
+Log out
+Logged Out
+Login
+Login After
+Login Before
+Login Failed please try again
+Login Id is required
+Login Methods
+Login Page
+Login To {0}
+Login Verification Code from {}
+Login and view in Browser
+Login is required to see web form list view. Enable {0} to see list settings
+Login link sent to your email
+Login not allowed at this time
+Login required
+Login session expired, refresh page to retry
+Login to comment
+Login to start a new discussion
+Login to {0}
+Login token required
+Login with Email Link
+Login with Frappe Cloud
+Login with LDAP
+Login with email link
+Login with email link expiry (in minutes)
+Login with username and password is not allowed.
+Login with {0}
+Logo URI
+Logout All Sessions
+Logs To Clear
+Logs to Clear
+Longitude
+Looks like you didn't change the value
+Looks like you haven\u2019t received any notifications.
+Looks like you haven’t added any third party apps.
+Looks like you haven’t received any notifications.
+M
+MIT License
+Major
+Make "name" searchable in Global Search
+Make Attachment Public (by default)
+Make Attachments Public by Default
+Make sure to configure a Social Login Key before disabling to prevent lockout
+Make use of longer keyboard patterns
+Make {0}
+Makes the page public
+Manage 3rd party apps
+Mandatory Depends On (JS)
+Mandatory Information missing:
+Mandatory field: set role for
+Mandatory field: {0}
+Mandatory fields required in table {0}, Row {1}
+Mandatory fields required in {0}
+Mandatory fields required:
+Mandatory:
+Map
+Map Columns
+Map View
+Map columns from {0} to fields in {1}
+Mapping column {0} to field {1}
+Maq., equip. e veículos
+Maq., equip. e veículos (Ativos)
+Maq., equipamentos e veículos
+Maquina, equipamento ou ferramenta
+Maquinas, equipamentos e veículos
+Margin Bottom
+Margin Left
+Margin Right
+Margin Top
+MariaDB Variables
+Mark all as read
+Mark as Read
+Mark as Spam
+Mark as Unread
+Markdown
+Marked As Spam
+Marketing Manager
+Materiais
+Material
+Material ou projeto
+Max 500 records at a time
+Max File Size (MB)
+Max Height
+Max Report Rows
+Max attachment size
+Max auto email report per user
+Max width for type Currency is 100px in row {0}
+Maximum Attachment Limit of {0} has been reached for {1} {2}.
+Maximum attachment limit of {0} has been reached.
+Maximum {0} rows allowed
+Me
+Meaning of Submit, Cancel, Amend
+Medição acum. ant. (%)
+Medição acum. anterior
+Medição acum. atual
+Medição acum. atual (%)
+Medição acumulada anterior
+Medição acumulada atual
+Medição atual
+Medição atual (%)
+Medição atual (A)
+Medição atual com desconto de FTD (B)
+Medição equivalente líquida do REIDI [F] = [A]+(E)
+Medição líquida do REIDI (Vl. bruto NF) [D] = [B]+[C]
+Medição mês cheio
+Medição vigente
+Meeting
+Meets Condition?
+Memory Usage
+Memory Usage in MB
+Menu
+Merging is only possible between Group-to-Group or Leaf Node-to-Leaf Node
+Message
+Message Type
+Message clipped
+Message from server: {0}
+Message not setup
+Message to be displayed on successful completion
+Message-id
+Messages
+Meta
+Meta Description
+Meta Image
+Meta Tags
+Meta Title
+Meta description
+Meta image
+Meta title
+Meta title for SEO
+Metadata
+Method Not Allowed
+Method is required to create a number card
+Mid Center
+Milestone
+Milestone Tracker
+Minimum Password Score
+Minor
+Minutes
+Minutes After
+Minutes Before
+Minutes Offset
+Misconfigured
+Missing DocType
+Missing Field
+Missing Fields
+Missing Filters Required
+Missing Permission
+Missing Value
+Modal Trigger
+Modified By
+Module
+Module (for export)
+Module Def
+Module HTML
+Module Onboarding
+Module Profile
+Module Profile Name
+Module onboarding progress reset
+Module to Export
+Module {} not found
+Modules
+Monday
+Monospace
+More
+More Info
+More articles on {0}
+Most Used
+Most probably your password is too long.
+Move To
+Move To Trash
+Move current and all subsequent sections to a new tab
+Move cursor to above row
+Move cursor to below row
+Move cursor to next column
+Move cursor to previous column
+Move sections to new tab
+Move the current field and the following fields to a new column
+Move to Row Number
+Move to next step when clicked inside highlighted area.
+Mozilla doesn't support :has() so you can pass parent selector here as workaround
+Mr
+Mrs
+Ms
+Multiple root nodes not allowed.
+Municipio
+Município
+Municípios
+Must be enclosed in '()' and include '{0}', which is a placeholder for the user/login name. i.e. (&(objectclass=user)(uid={0}))
+Must be of type "Attach Image"
+Must have report permission to access this report.
+Must specify a Query to run
+Mx
+My Account
+My Device
+My Filter
+My Workspaces
+MyISAM
+Máquina, equipamento ou veículos
+Máquinas, equipamentos e veículos
+Mão de obra
+Mão de obra (Funções)
+Mão de obra - Cfg. de horas e percentual de hora extra
+Mês
+Módulo
+NF Nº
+NOTE: If you add states or transitions in the table, it will be reflected in the Workflow Builder but you will have to position them manually. Also Workflow Builder is currently in <b>BETA</b>.
+NOTE: This box is due for depreciation. Please re-setup LDAP to work with the newer settings
+Name (Doc Name)
+Name already taken, please set a new name
+Name cannot contain special characters like {0}
+Name of the Document Type (DocType) you want this field to be linked to. e.g. Customer
+Name of the new Print Format
+Name of {0} cannot be {1}
+Names and surnames by themselves are easy to guess.
+Naming Options:|||<ol><li><b>field:[fieldname]</b> - By Field</li><li><b>naming_series:</b> - By Naming Series (field called naming_series must be present)</li><li><b>Prompt</b> - Prompt user for a name</li><li><b>[series]</b> - Series by prefix (separated by a dot); for example PRE.#####</li>|||<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Replace all braced words (fieldnames, date words (DD, MM, YY), series) with their value. Outside braces, any characters can be used.</li></ol>
+Naming Rule
+Naming Series
+Naming Series mandatory
+Navbar
+Navbar Item
+Navbar Settings
+Navbar Template
+Navbar Template Values
+Navigate list down
+Navigate list up
+Navigate to main content
+Navigation Settings
+Need Workspace Manager role to edit private workspace of other users
+Negative Value
+Nested filters must be provided as a list or tuple.
+Nested set error. Please contact the Administrator.
+Network Printer Settings
+New Activity
+New Address
+New Chart
+New Comment on {0}: {1}
+New Contact
+New Custom Block
+New Custom Print Format
+New Document Form
+New Document Shared {0}
+New Email
+New Email Account
+New Event
+New Folder
+New Kanban Board
+New Links
+New Mention on {0}
+New Message from Website Contact Page
+New Name
+New Newsletter
+New Notification
+New Number Card
+New Onboarding
+New Password
+New Print Format Name
+New Quick List
+New Report name
+New Role
+New Shortcut
+New Users (Last 30 days)
+New Value
+New Workflow Name
+New Workspace
+New line separated list of allowed public client URLs (eg <code>https://frappe.io</code>), or <code>*</code> to accept all.|||<br>|||Public clients are restricted by default.
+New line separated list of scope values.
+New lines separated list of strings representing ways to contact people responsible for this client, typically email addresses.
+New password cannot be same as old password
+New updates are available
+New users will have to be manually registered by system managers.
+New {0}
+New {0} Created
+New {0} {1} added to Dashboard {2}
+New {0} {1} created
+New {0}: {1}
+New {} releases for the following apps are available
+Newly created user {0} has no roles enabled.
+Newsletter Manager
+Next 14 Days
+Next 30 Days
+Next 6 Months
+Next 7 Days
+Next Action Email Template
+Next Actions HTML
+Next Execution
+Next Form Tour
+Next Month
+Next Quarter
+Next Scheduled Date
+Next State
+Next Step Condition
+Next Sync Token
+Next Week
+Next Year
+Next actions
+Next on Click
+No Active Sessions
+No Data...
+No Email Account
+No Email Accounts Assigned
+No Emails
+No Entry for the User {0} found within LDAP!
+No Filters Set
+No Google Calendar Event to sync.
+No Images
+No LDAP User found for email: {0}
+No Label
+No Letterhead
+No Name Specified for {0}
+No New notifications
+No Permissions Specified
+No Permissions set for this criteria.
+No Permitted Charts
+No Permitted Charts on this Dashboard
+No Preview
+No Preview Available
+No Printer is Available.
+No RQ Workers connected. Try restarting the bench.
+No Results
+No Results found
+No Roles Specified
+No Select Field Found
+No Suggestions
+No Tags
+No Upcoming Events
+No address added yet.
+No alerts for today
+No automatic optimization suggestions available.
+No changes in document
+No changes made
+No changes made because old and new name are the same.
+No changes to sync
+No changes to update
+No comments yet
+No comments yet. 
+No contacts added yet.
+No contacts linked to document
+No default Address Template found. Please create a new one from Setup > Printing and Branding > Address Template.
+No documents found tagged with {0}
+No email account associated with the User. Please add an account under User > Email Inbox.
+No failed logs
+No fields found that can be used as a Kanban Column. Use the Customize Form to add a Custom Field of type "Select".
+No file attached
+No filters found
+No filters selected
+No further records
+No id provided in URL
+No matching records. Search something new
+No more items to display
+No need for symbols, digits, or uppercase letters.
+No new Google Contacts synced.
+No new notifications
+No of Columns
+No of Requested SMS
+No of Rows (Max 500)
+No of Sent SMS
+No permission for {0}
+No permission to '{0}' {1}
+No permission to read {0}
+No permission to {0} {1} {2}
+No records deleted
+No records present in {0}
+No records tagged.
+No records will be exported
+No rows
+No subject
+No template found at path: {0}
+No values to show
+No {0}
+No {0} Found
+No {0} found
+No {0} found with matching filters. Clear filters to see all {0}.
+No {0} mail
+No.
+Nomatim
+Nome
+Nome do ativo
+None
+None: End of Workflow
+Normal
+Normalized Copies
+Normalized Query
+Norte
+Not Allowed: Disabled User
+Not Ancestors Of
+Not Descendants Of
+Not Equals
+Not Found
+Not Helpful
+Not In
+Not Like
+Not Linked to any record
+Not Nullable
+Not Permitted to read {0}
+Not Published
+Not Saved
+Not Seen
+Not Sent
+Not Set
+Not a valid Comma Separated Value (CSV File)
+Not a valid User Image.
+Not a valid Workflow Action
+Not a valid user
+Not allowed for {0}: {1}
+Not allowed to attach {0} document, please enable Allow Print For {0} in Print Settings
+Not allowed to create custom Virtual DocType.
+Not allowed to print cancelled documents
+Not allowed to print draft documents
+Not allowed via controller permission check
+Not found
+Not in Developer Mode
+Not in Developer Mode! Set in site_config.json or make 'Custom' DocType.
+Not permitted to view {0}
+Note Seen By
+Note:
+Note: Changing the Page Name will break previous URL to this page.
+Note: Etc timezones have their signs reversed.
+Note: This will be shared with user.
+Note: Your request for account deletion will be fulfilled within {0} hours.
+Notes:
+Nothing New
+Nothing left to redo
+Nothing left to undo
+Nothing to show
+Nothing to update
+Notification
+Notification Log
+Notification Recipient
+Notification Settings
+Notification Subscribed Document
+Notification sent to
+Notification: customer {0} has no Mobile number set
+Notification: document {0} has no {1} number set (field: {2})
+Notification: user {0} has no Mobile number set
+Notifications
+Notifications Disabled
+Notifications and bulk mails will be sent from this outgoing server.
+Notify Users On Every Login
+Notify by Email
+Notify by email
+Notify users with a popup when they log in
+Novo Item de Contrato
+Now
+Number Card
+Number Card Link
+Number Card Name
+Number Cards
+Number of Queries
+Number of attachment fields are more than {}, limit updated to {}.
+Number of backups must be greater than zero.
+Number of columns for a field in a Grid (Total Columns in a grid should be less than 11)
+Number of columns for a field in a List View or a Grid (Total Columns should be less than 11)
+Number of days after which the document Web View link shared on email will be expired
+Number of keys
+Number of onsite backups
+Nº do Contrato
+Nº do contrato
+Nº do pedido
+Nº do pedido SAP
+Nº do pedido SAP - Linha
+Nº pedido SAP
+Não
+O código é informado pelo usuário
+OAuth
+OAuth Authorization Code
+OAuth Bearer Token
+OAuth Client
+OAuth Client ID
+OAuth Client Role
+OAuth Error
+OAuth Provider Settings
+OAuth Scope
+OAuth Settings
+OAuth has been enabled but not authorised. Please use "Authorise API Access" button to do the same.
+OPTIONS
+OR
+OTP Secret Reset - {0}
+OTP Secret has been reset. Re-registration will be required on next login.
+OTP setup using OTP App was not completed. Please contact Administrator.
+Objeto
+Obra
+Observações
+Occurrences
+Oeste
+Office 365
+Official Documentation
+Offset X
+Offset Y
+Offset must be a non-negative integer
+Old Parent
+Old Password
+Old and new fieldnames are same.
+Older backups will be automatically deleted
+Oldest Unscheduled Job
+On Payment Authorization
+On Payment Charge Processed
+On Payment Failed
+On Payment Mandate Acquisition Processed
+On Payment Mandate Charge Processed
+On Payment Paid
+On checking this option, URL will be treated like a jinja template string
+On or After
+On or Before
+On {0}, {1} wrote:
+Onboard
+Onboarding Name
+Onboarding Permission
+Onboarding Status
+Onboarding Step
+Onboarding Step Map
+Onboarding complete
+Once submitted, submittable documents cannot be changed. They can only be Cancelled and Amended.
+Once you have set this, the users will only be able access documents (eg. Blog Post) where the link exists (eg. Blogger).
+One Last Step
+One Time Password (OTP) Registration Code from {}
+One of
+Only 200 inserts allowed in one request
+Only Administrator can delete Email Queue
+Only Administrator can edit
+Only Administrator can save a standard report. Please rename and save.
+Only Administrator is allowed to use Recorder
+Only Options allowed for Data field are:
+Only Workspace Manager can edit public workspaces
+Only allowed to export customizations in developer mode
+Only draft documents can be discarded
+Only for
+Only mandatory fields are necessary for new records. You can delete non-mandatory columns if you wish.
+Only one {0} can be set as primary.
+Only reports of type Report Builder can be deleted
+Only reports of type Report Builder can be edited
+Only standard DocTypes are allowed to be customized from Customize Form.
+Only the Administrator can delete a standard DocType.
+Only the assignee can complete this to-do.
+Only {0} emailed reports are allowed per user.
+Oops! Something went wrong.
+Open Awesomebar
+Open Communication
+Open Document
+Open Help
+Open Link
+Open Settings
+Open Source Applications for the Web
+Open Translation
+Open a dialog with mandatory fields to create a new record quickly. There must be at least one mandatory field to show in dialog.
+Open a module or tool
+Open console
+Open in a new tab
+Open list item
+Open reference document
+Open your authentication app on your mobile phone.
+Open {0}
+OpenID Configuration
+OpenLDAP
+Operator must be one of {0}
+Opex
+Optimize
+Optimizing image...
+Option 1
+Option 2
+Option 3
+Option {0} for field {1} is not a child table
+Optional: Always send to these ids. Each Email Address on a new row
+Options
+Options 'Dynamic Link' type of field must point to another Link Field with options as 'DocType'
+Options for Rating field can range from 3 to 10
+Options for select. Each option on a new line.
+Options for {0} must be set before setting the default value.
+Options is required for field {0} of type {1}
+Options not set for link field {0}
+Orange
+Order By must be a string
+Orientation
+Origem
+Original Value
+Osiris
+Outgoing (SMTP) Settings
+Outgoing Emails (Last 7 days)
+Outgoing Server
+Outgoing Settings
+Outgoing email account not correct
+Outlook.com
+Overview
+PATCH
+PDF
+PDF Generation in Progress
+PDF Generator
+PDF Page Height (in mm)
+PDF Page Width (in mm)
+PDF generation failed
+PDF generation failed because of broken image links
+PDF generation may not work as expected.
+PDF printing via "Raw Print" is not supported.
+PID
+POST
+PUT
+Package
+Package Import
+Package Name
+Package Release
+Pagamento por hora
+Page
+Page Break
+Page Builder
+Page Height (in mm)
+Page Margins
+Page Number
+Page Route
+Page Shortcuts
+Page Size
+Page Title
+Page Width (in mm)
+Page has expired!
+Page height and width cannot be zero
+Page not found
+Page to show on the website|||
+Parameter
+Parent
+Parent Contract Item
+Parent DocType
+Parent Document Type
+Parent Document Type is required to create a number card
+Parent Element Selector
+Parent Field
+Parent Field (Tree)
+Parent Field must be a valid fieldname
+Parent Missing
+Parent Page
+Parent Table
+Parent document type is required to create a dashboard chart
+Parent is the name of the document to which the data will get added to.
+Parent-to-child or child-to-different-child grouping is not allowed.
+Parentfield not specified in {0}: {1}
+Parenttype, Parent and Parentfield are required to insert a child record
+Partial
+Partial Success
+Partially Sent
+Participants
+Participação %
+Pass
+Password
+Password Email Sent
+Password Reset
+Password cannot be filtered
+Password changed successfully.
+Password is required or select Awaiting Password
+Password missing in Email Account
+Password not found for {0} {1} {2}
+Password reset instructions have been sent to {}'s email
+Password set
+Password size exceeded the maximum allowed size
+Password size exceeded the maximum allowed size.
+Passwords do not match
+Passwords do not match!
+Paste
+Patch Log
+Patch type {} not found in patches.txt
+Path
+Path to CA Certs File
+Path {0} it not a valid path
+Payload Count
+Peak Memory Usage
+Pedido SAP
+Pedidos SAP
+Pending Emails
+Pending Jobs
+Pending Verification
+Percent
+Percentual caução
+Percentual de consumo
+Percentual padrão para hora extra
+Percentual para hora extra (Sáb. e dias úteis)
+Permanently Cancel {0}?
+Permanently Discard {0}?
+Permanently Submit {0}?
+Permanently delete {0}?
+Permission Error
+Permission Inspector
+Permission Level
+Permission Levels
+Permission Log
+Permission Query
+Permission Type
+Permissions
+Permissions Error
+Permissions are automatically applied to Standard Reports and searches.
+Permissions are set on Roles and Document Types (called DocTypes) by setting rights like Read, Write, Create, Delete, Submit, Cancel, Amend, Report, Import, Export, Print, Email and Set User Permissions.
+Permissions at higher levels are Field Level permissions. All Fields have a Permission Level set against them and the rules defined at that permissions apply to the field. This is useful in case you want to hide or make certain field read-only for certain Roles.
+Permissions at level 0 are Document Level permissions, i.e. they are primary for access to the document.
+Permissions get applied on Users based on what Roles they are assigned.
+Permitted Documents For User
+Permitted Roles
+Person
+Personal Data Deletion Request
+Personal Data Deletion Step
+Personal Data Download Request
+Período Medição
+Períodos
+Peso
+Phone No.
+Phone Number {0} set in field {1} is not valid.
+Pick Columns
+Pincode
+Pink
+Placeholder
+Places
+Plain Text
+Please Authorize OAuth for Email Account {0}
+Please Authorize OAuth for Email Account {}
+Please Duplicate this Website Theme to customize.
+Please Install the ldap3 library via pip to use ldap functionality.
+Please Set Chart
+Please Update SMS Settings
+Please add a subject to your email
+Please add a valid comment.
+Please ask your administrator to verify your sign-up
+Please attach a file first.
+Please attach an image file to set HTML for Footer.
+Please attach an image file to set HTML for Letter Head.
+Please attach the package
+Please check OpenID Configuration URL
+Please check the filter values set for Dashboard Chart: {}
+Please check the value of "Fetch From" set for field {0}
+Please check your email for verification
+Please check your email login credentials.
+Please check your registered email address for instructions on how to proceed. Do not close this window as you will have to return to it.
+Please click Edit on the Workspace for best results
+Please click on 'Export Errored Rows', fix the errors and import again.
+Please click on the following link and follow the instructions on the page. {0}
+Please click on the following link to set your new password
+Please confirm your action to {0} this document.
+Please contact your system manager to install correct version.
+Please create Card first
+Please create chart first
+Please delete the field from {0} or add the required doctype.
+Please do not change the template headings.
+Please duplicate this to make changes
+Please enable atleast one Social Login Key or LDAP or Login With Email Link before disabling username/password based login.
+Please enable pop-ups
+Please enable pop-ups in your browser
+Please enable {} before continuing.
+Please ensure that your profile has an email address
+Please enter Access Token URL
+Please enter Authorize URL
+Please enter Base URL
+Please enter Client ID before social login is enabled
+Please enter Client Secret before social login is enabled
+Please enter OpenID Configuration URL
+Please enter Redirect URL
+Please enter a valid email address.
+Please enter both your email and message so that we can get back to you. Thanks!
+Please enter the password
+Please enter the password for: <b>{0}</b>
+Please enter valid mobile nos
+Please enter your new password.
+Please enter your old password.
+Please find attached {0}: {1}
+Please login to post a comment.
+Please make sure the Reference Communication Docs are not circularly linked.
+Please refresh to get the latest document.
+Please remove the printer mapping in Printer Settings and try again.
+Please save before attaching.
+Please save the document before assignment
+Please save the document before removing assignment
+Please save the report first
+Please save to edit the template.
+Please select DocType first
+Please select Entity Type first
+Please select Minimum Password Score
+Please select X and Y fields
+Please select a country code for field {1}.
+Please select a file first.
+Please select a file or url
+Please select a valid csv file with data
+Please select a valid date filter
+Please select applicable Doctypes
+Please select atleast 1 column from {0} to sort/group
+Please select prefix first
+Please select the Document Type.
+Please select the LDAP Directory being used
+Please select {0}
+Please set Email Address
+Please set a printer mapping for this print format in the Printer Settings
+Please set filters
+Please set filters value in Report Filter table.
+Please set the document name
+Please set the following documents in this Dashboard as standard first.
+Please set the series to be used.
+Please setup SMS before setting it as an authentication method, via SMS Settings
+Please setup a message first
+Please setup default outgoing Email Account from Settings > Email Account
+Please setup default outgoing Email Account from Tools > Email Account
+Please specify
+Please specify a valid parent DocType for {0}
+Please specify at least 10 minutes due to the trigger cadence of the scheduler
+Please specify the minutes offset
+Please specify which date field must be checked
+Please specify which datetime field must be checked
+Please specify which value field must be checked
+Please try again
+Please update {} before continuing.
+Please use a valid LDAP search filter
+Please use following links to download file backup.
+Please visit https://frappecloud.com/docs/sites/migrate-an-existing-site#encryption-key for more information.
+Policy URI
+Polling
+Popover Element
+Popover or Modal Description
+Por favor, selecione um contrato antes de adicionar itens
+Portal Menu
+Portal Menu Item
+Portal Settings
+Portrait
+Post
+Post it here, our mentors will help you out.
+Postal
+Postal Code
+Posting Timestamp
+Posts by {0}
+Posts filed under {0}
+Potentially dangerous content in string literal: {0}
+Precision should be between 1 and 6
+Predictable substitutions like '@' instead of 'a' don't help very much.
+Prepared Report
+Prepared Report Analytics
+Prepared Report User
+Prepared report render failed
+Preparing Report
+Prepend the template to the email message
+Press Alt Key to trigger additional shortcuts in Menu and Sidebar
+Press Enter to save
+Preview Image
+Preview Mode
+Preview of generated names
+Preview on {0}
+Preview type
+Preview:
+Previous
+Previous Hash
+Previous Submission
+Primary Address
+Primary Contact
+Primary Email
+Primary Mobile
+Primary Phone
+Primary key of doctype {0} can not be changed as there are existing values.
+Print Documents
+Print Format
+Print Format Builder
+Print Format Builder Beta
+Print Format Error
+Print Format Field Template
+Print Format For
+Print Format not found
+Print Format {0} is disabled
+Print Language
+Print Sent to the printer!
+Print Settings
+Print Style
+Print document
+Printer
+Printer Mapping
+Printer Settings
+Printer mapping not set.
+Printing
+Printing failed
+Private
+Private Files (MB)
+Private Files Backup:
+ProTip: Add <code>Reference: {{ reference_doctype }} {{ reference_name }}</code> to send document reference
+Proceed
+Proceed Anyway
+Processing
+Processing...
+Prof
+Progress
+Property
+Property Setter
+Property Setter overrides a standard DocType or Field property
+Property Type
+Protect Attached Files
+Protected File
+Provide a list of allowed file extensions for file uploads. Each line should contain one allowed file type. If unset, all file extensions are allowed. Example: <br>CSV<br>JPG<br>PNG
+Public
+Public Files (MB)
+Public Files Backup:
+Publish
+Published
+Published on
+Publishing Dates
+Pull Emails
+Pull from Google Contacts
+Pulling emails...
+Purple
+Push Notification Settings
+Put on Hold
+Python
+Página Personalizada
+QR Code
+QR Code for Login Verification
+QZ Tray Connection Active!
+QZ Tray Failed: 
+Qua Hora
+Quantidade
+Quantidade acumulada
+Quantidade acumulada anterior
+Quantidade medida
+Quantidade total vigente
+Quarter Day
+Query / Script
+Query Parameters
+Query Report
+Query analysis complete. Check suggested indexes.
+Query must be of SELECT or read-only WITH type.
+Queue
+Queue Overloaded
+Queue Status
+Queue Type(s)
+Queue in Background (BETA)
+Queue should be one of {0}
+Queue(s)
+Queued
+Queued At
+Queued By
+Queued for Submission. You can track the progress over {0}.
+Queued for backup. You will receive an email with the download link
+Queues
+Queuing {0} for Submission
+Qui Hora
+Quick Help for Setting Permissions
+Quick List Filter
+Quick Lists
+Quoting must be between 0 and 3
+REIDI %
+RQ Job
+RQ Worker
+Random
+Rate Limiting
+Rate Limits
+Rate limit for email link login
+Rating
+Raw Commands
+Raw Email
+Raw Printing
+Raw Printing Setting
+Raw Printing Settings
+Razão Social
+Re-Run in Console
+Re:
+Re: {0}
+Read
+Read Only
+Read Only Depends On (JS)
+Read Only Mode
+Read mode
+Read the documentation to know more
+Readme
+Reajustes
+Realtime (SocketIO)
+Rebuild
+Rebuild Tree
+Rebuilding of tree is not supported for {}
+Received an invalid token type.
+Recent years are easy to guess.
+Recents
+Recorder
+Recorder Query
+Recorder Suggested Index
+Records for following doctypes will be filtered
+Recursive Fetch From
+Recursos
+Redirect HTTP Status
+Redirect URI
+Redirect URI Bound To Auth Code
+Redirect URIs
+Redirect to the selected app after login
+Redirect to this URL after successful confirmation.
+Redirects
+Redis cache server not running. Please contact Administrator / Tech support
+Redo
+Redo last action
+Ref DocType
+Referance Doctype and Dashboard Name both can't be used at the same time.
+Reference Datetime
+Reference DocType
+Reference DocType and Reference Name are required
+Reference Doctype
+Reference Document
+Reference Document Name
+Reference Document Type
+Reference Type
+Reference: {0} {1}
+Referrer
+Refresh All
+Refresh List
+Refresh Token
+Refreshing
+Refreshing...
+Registered but disabled
+Registro de horas
+Rejected
+Relatório
+Relatórios
+Relay Server URL missing
+Relay Settings
+Release Notes
+Relink
+Relink Communication
+Reload
+Reload File
+Reload List
+Reload Report
+Remind At
+Remind Me
+Remind Me In
+Reminder
+Reminder cannot be created in past.
+Reminder set at {0}
+Remove
+Remove Failed Jobs
+Remove Field
+Remove Filter
+Remove Section
+Remove all customizations?
+Remove all fields in the column
+Remove column
+Remove field
+Remove last column
+Remove page break
+Remove section
+Remove tab
+Removed
+Rename Fieldname
+Rename {0}
+Renamed files and replaced code in controllers, please check!
+Render labels to the left and values to the right in this section
+Repeat
+Repeat Header and Footer
+Repeat on Days
+Repeats like "aaa" are easy to guess
+Repeats like "abcabcabc" are only slightly harder to guess than "abc"
+Repeats {0}
+Replicate
+Replicating...
+Replication completed.
+Reply
+Reply All
+Report Builder
+Report Column
+Report Document Error
+Report Filter
+Report Manager
+Report Name
+Report Name, Report Field and Fucntion are required to create a number card
+Report Ref DocType
+Report Reference Doctype
+Report Type
+Report View
+Report bug
+Report cannot be set for Single types
+Report has no data, please modify the filters or change the Report Name
+Report has no numeric fields, please change the Report Name
+Report initiated, click to view status
+Report limit reached
+Report timed out.
+Report updated successfully
+Report was not saved (there were errors)
+Report with more than 10 columns looks better in Landscape mode.
+Report {0}
+Report {0} deleted
+Report {0} is disabled
+Report {0} saved
+Report:
+Reports & Masters
+Reports already in Queue
+Represents a User in the system.
+Represents the states allowed in one document and role assigned to change the state.
+Request Body
+Request Description
+Request Headers
+Request ID
+Request Limit
+Request Method
+Request Timed Out
+Request Timeout
+Requested Numbers
+Requires any valid fdn path. i.e. ou=groups,dc=example,dc=com
+Requires any valid fdn path. i.e. ou=users,dc=example,dc=com
+Res: {0}
+Reset All Customizations
+Reset Changes
+Reset Chart
+Reset Dashboard Customizations
+Reset Fields
+Reset LDAP Password
+Reset Layout
+Reset OTP Secret
+Reset Password
+Reset Password Link Expiry Duration
+Reset Password Template
+Reset Permissions for {0}?
+Reset To Default
+Reset sorting
+Reset to default
+Reset to defaults
+Reset your password
+Resource
+Resource Documentation
+Resource Name
+Resource Policy URI
+Resource TOS URI
+Responsavel
+Response 
+Response Type
+Responsável
+Rest of the day
+Restore
+Restore Original Permissions
+Restore to default settings?
+Restoring Deleted Document
+Restrict user from this IP address only. Multiple IP addresses can be added by separating with commas. Also accepts partial IP addresses like (111.111.111)
+Restrictions
+Result
+Resume Sending
+Retention Type
+Retry
+Retry Sending
+Return to the Verification screen and enter the code displayed by your authentication app
+Reverting length to {0} for '{1}' in '{2}'. Setting the length as {3} will cause truncation of data.
+Revocation URI
+Revoke
+Rich Text
+Right
+Right Bottom
+Right Center
+Robots.txt
+Rodovia
+Rodovia (Para identificação de cidade e ISS)
+Rodovias (Delimitação do serviço)
+Role
+Role 'All' will be given to all system + website users.
+Role 'Desk User' will be given to all system users.
+Role Permission for Page and Report
+Role Permissions
+Role Permissions Manager
+Role Profile
+Role Profiles
+Role Replication
+Role has been set as per the user type {0}
+Roles
+Roles & Permissions
+Roles Html
+Roles can be set for users from their User page.
+Root {0} cannot be deleted
+Rounding Method
+Route
+Route History
+Route: Example "/app"
+Row
+Row #
+Row # {0}: Non administrator user can not set the role {1} to the custom doctype
+Row #{0}:
+Row #{}: Fieldname is required
+Row Format
+Row Indexes
+Row Number
+Row Values Changed
+Row {0}
+Row {0}: Not allowed to disable Mandatory for standard fields
+Row {0}: Not allowed to enable Allow on Submit for standard fields
+Rows Added
+Rows Removed
+Rows Threshold for Grid Search
+Rule for this doctype, role, permlevel and if-owner combination already exists.
+Rules defining transition of state in the workflow.
+Rules for how states are transitions, like next state and which role is allowed to change state etc.
+Runtime in Minutes
+Runtime in Seconds
+SAP Order
+SAP Order Highway
+SAP Order Period
+SMS
+SMS Gateway URL
+SMS Log
+SMS Parameter
+SMS Settings
+SMS sent successfully
+SMS was not sent. Please contact Administrator.
+SMTP Server is required
+SQL
+SQL Conditions. Example: status="Open"
+SQL Explain
+SQL Output
+SQL Queries
+SWATCHES
+Sab Hora
+Saldo
+Saldo Contratual (%)
+Saldo Contratual (R$)
+Saldo anterior
+Saldo atual
+Saldo do item do contrato
+Salesforce
+Salutation
+Same Field is entered more than once
+Saturday
+Save API Secret: {0}
+Save Anyway
+Save As
+Save Customizations
+Save Report
+Save filters
+Save on Completion
+Save the document.
+Saved
+Saved Filters
+Saving
+Saving Customization...
+Saving this will export this document as well as the steps linked here as json.
+Saving...
+Scan
+Scan QRCode
+Scan the QR Code and enter the resulting code displayed.
+Schedule
+Schedule Send At
+Scheduled
+Scheduled Against
+Scheduled Job Log
+Scheduled Job Type
+Scheduled execution for script {0} has updated
+Scheduled to send
+Scheduler
+Scheduler Event
+Scheduler Status
+Scheduler can not be re-enabled when maintenance mode is active.
+Scheduler: Active
+Scheduler: Inactive
+Scope
+Scopes
+Scopes Supported
+Script
+Script Manager
+Script Report
+Script Type
+Script to attach to all web pages.
+Scripting
+Scripting / Style
+Scripts
+Search Bar
+Search Help
+Search Results
+Search by filename or extension
+Search field {0} is not valid
+Search fields
+Search fieldtypes...
+Search for anything
+Search for countries...
+Search for icons...
+Search for {0}
+Search in a document type
+Search or type a command ({0})
+Search properties...
+Search results for
+Search the docs (Press / to focus)
+Search...
+Searching ...
+Seconds
+Section Heading
+Section ID
+Section Title
+Section must have at least one column
+See all Activity
+See all past reports.
+See on Website
+See previous responses
+See the document at {0}
+Seen
+Seg Hora
+Select All
+Select Attachments
+Select Child Table
+Select Column
+Select Columns
+Select Country
+Select Currency
+Select Dashboard
+Select DocType
+Select Doctype
+Select Document Type
+Select Document Type or Role to start.
+Select Document Types to set which User Permissions are used to limit access.
+Select Field
+Select Field...
+Select Fields
+Select Fields To Insert
+Select Fields To Update
+Select Filters
+Select Google Calendar to which event should be synced.
+Select Google Contacts to which contact should be synced.
+Select Group By...
+Select Kanban
+Select Language
+Select List View
+Select Mandatory
+Select Module
+Select Network Printer
+Select Page
+Select Print Format
+Select Print Format to Edit
+Select Report
+Select Table Columns for {0}
+Select Time Zone
+Select Workflow
+Select Workspace
+Select Workspaces
+Select a Brand Image first.
+Select a DocType to make a new format
+Select a field to edit its properties.
+Select a group node first.
+Select a valid Sender Field for creating documents from Email
+Select a valid Subject field for creating documents from Email
+Select an Image
+Select an app to continue
+Select an existing format to edit or start a new format.
+Select an image of approx width 150px with a transparent background for best results.
+Select atleast 1 record for printing
+Select atleast 2 actions
+Select list item
+Select multiple list items
+Select or drag across time slots to create a new event.
+Select records for assignment
+Select records for removing assignment
+Select two versions to view the diff.
+Select {0}
+Self approval is not allowed
+Send <b>at the earliest</b> this number of minutes before or after the reference datetime. The actual sending may be delayed by up to 5 minutes due to the scheduler's trigger cadence.
+Send Email Alert
+Send Email On State
+Send Email Print Attachments as PDF (Recommended)
+Send Email To Creator
+Send Me A Copy of Outgoing Emails
+Send Notifications For Email Threads
+Send Read Receipt
+Send Welcome Email
+Send alert if datetime matches this field's value
+Send an email reminder in the morning
+Send email when document transitions to the state.
+Send enquiries to this email address
+Send login link
+Send me a copy
+Send unsubscribe message in email
+Sender
+Sender Email
+Sender Email Field
+Sender Field should have Email in options
+Sender Name
+Sender Name Field
+Sendgrid
+Sent
+Sent Folder Name
+Sent On
+Sent To
+Sent/Received Email
+Sentido
+Sentido (Norte/Sul/Leste/Oeste)
+Sequence Id
+Series Updated for {}
+Series counter for {} updated to {} successfully
+Series {0} already used in {1}
+Server Error
+Server Script
+Server Scripts are disabled. Please enable server scripts from bench configuration.
+Server Scripts feature is not available on this site.
+Server failed to process this request because of a concurrent conflicting request. Please try again.
+Server was too busy to process this request. Please try again.
+Será considerada a seguinte composição:<br>|||Osiris = {sigla}-{uf}-{via}-{sentido}-{faixa}. Ex: "BR381-MG-Tronco-Decrescente-2"<br>Kartado = {sigla}-{uf}-{sentido}-{faixa}. Ex: "SPA-348/334-0-22"|||
+Session Default
+Session Default Settings
+Session Defaults
+Session Defaults Saved
+Session Expired
+Session Expiry (idle timeout)
+Session Expiry must be in format {0}
+Set
+Set Banner from Image
+Set Chart
+Set Default Options for all charts on this Dashboard (Ex: "colors": ["#d1d8dd", "#ff5858"])
+Set Dynamic Filters
+Set Filters
+Set Filters for {0}
+Set Level
+Set Limit
+Set Naming Series options on your transactions.
+Set Number of Backups
+Set Password
+Set Permissions
+Set Properties
+Set Quantity
+Set User Permissions
+Set all private
+Set all public
+Set as Default
+Set as Default Theme
+Set by user
+Set dynamic filter values in JavaScript for the required fields here.
+Set non-standard precision for a Float or Currency field
+Set only once
+Set size in MB
+Set the filters here. For example:|||<pre class="small text-muted"><code>|||[{|||	fieldname: "company",|||	label: __("Company"),|||	fieldtype: "Link",|||	options: "Company",|||	default: frappe.defaults.get_user_default("Company"),|||	reqd: 1|||},|||{|||	fieldname: "account",|||	label: __("Account"),|||	fieldtype: "Link",|||	options: "Account",|||	reqd: 1|||}]|||</code></pre>
+Set the path to a whitelisted function that will return the data for the number card in the format:||||||<pre class="small text-muted"><code>|||{|||	"value": value,|||	"fieldtype": "Currency",|||	"route_options": {"from_date": "2023-05-23"},|||	"route": ["query-report", "Permitted Documents For User"]|||}</code></pre>
+Setting
+Setting this Address Template as default as there is no other default
+Setting up Global Search documents.
+Setting up your system
+Settings for Contact Us Page
+Settings for the About Us Page
+Settings to control blog categories and interactions like comments and likes
+Setup
+Setup > Customize Form
+Setup > User
+Setup > User Permissions
+Setup Auto Email
+Setup Complete
+Setup Series for transactions
+Setup Wizard
+Setup failed
+Sex Hora
+Share
+Share With
+Share this document with
+Share {0} with
+Shared with the following Users with Read access:{0}
+Short keyboard patterns are easy to guess
+Shortcuts
+Show
+Show "Call to Action" in Blog
+Show Absolute Datetime in Timeline
+Show Absolute Values
+Show All
+Show Auth Server Metadata
+Show Calendar
+Show Currency Symbol on Right Side
+Show Dashboard
+Show Document
+Show Error
+Show Fieldname (click to copy on clipboard)
+Show First Document Tour
+Show Form Tour
+Show Full Number
+Show Keyboard Shortcuts
+Show Labels
+Show Language Picker
+Show Links
+Show Only Failed Logs
+Show Permissions
+Show Preview
+Show Preview Popup
+Show Processlist
+Show Protected Resource Metadata
+Show Related Errors
+Show Report
+Show Saved
+Show Sidebar
+Show Social Login Key as Authorization Server
+Show Tags
+Show Title in Link Fields
+Show Totals
+Show Tour
+Show Traceback
+Show Warnings
+Show Weekends
+Show account deletion link in My Account page
+Show all Versions
+Show all activity
+Show all blogs
+Show as cc
+Show attachments
+Show footer on login
+Show in Resource Metadata
+Show link to document
+Show list
+Show more details
+Show on Timeline
+Show sidebar
+Show title in browser window as "Prefix - title"
+Show {0} List
+Showing only Numeric fields from Report
+Showing only first {0} rows out of {1}
+Sidebar
+Sidebar and Comments
+Sigla
+Sign Up and Confirmation
+Sign Up is disabled
+Sign up
+Sign ups
+Signup Disabled
+Signups have been disabled for this website.
+Sim
+Simple Python Expression, Example: Status in ("Closed", "Cancelled")
+Simple Python Expression, Example: Status in ("Invalid")
+Simple Python Expression, Example: status == 'Open' and type == 'Bug'
+Simples Nacional
+Single DocTypes cannot be customized.
+Single Types have only one record no tables associated. Values are stored in tabSingles
+Site is running in read only mode for maintenance or site update, this action can not be performed right now. Please try again later.
+Size (MB)
+Skip
+Skip Step
+Skipped
+Skipping Duplicate Column {0}
+Skipping Untitled Column
+Skipping column {0}
+Skipping fixture syncing for doctype {0} from file {1}
+Skipping {0} of {1}, {2}
+Skype
+Slack Webhook Error
+Slack Webhook URL
+Slideshow
+Slideshow Items
+Slideshow Name
+Slideshow like display for the website
+Slug
+Smallest circulating fraction unit (coin). For e.g. 1 cent for USD and it should be entered as 0.01
+Snippet and more variables:  {0}
+Social Link Settings
+Social Link Type
+Social Login Key
+Social Logins
+SocketIO Ping Check
+SocketIO Transport Mode
+Soft-Bounced
+Software ID
+Software Version
+Some columns might get cut off when printing to PDF. Try to keep number of columns under 10.
+Some mailboxes require a different Sent Folder Name e.g. "INBOX.Sent"
+Some of the features might not work in your browser. Please update your browser to the latest version.
+Something went wrong
+Something went wrong during the token generation. Click on {0} to generate a new one.
+Something went wrong.
+Sorry! I could not find what you were looking for.
+Sorry! You are not permitted to view this page.
+Sort Ascending
+Sort Descending
+Sort Options
+Sort field {0} must be a valid fieldname
+Source Name
+Source Text
+Spacer
+Spam
+SparkPost
+Special Characters are not allowed
+Special Characters except '-', '#', '.', '/', '{{' and '}}' not allowed in naming series {0}
+Specify a custom timeout, default timeout is 1500 seconds
+Specify the domains or origins that are permitted to embed this form. Enter one domain per line (e.g., https://example.com). If no domains are specified, the form can only be embedded on the same origin.
+Splash Image
+Sr
+Sr No.
+Stack Trace
+Standard
+Standard DocType can not be deleted.
+Standard DocType cannot have default print format, use Customize Form
+Standard Not Set
+Standard Permissions
+Standard Print Format cannot be updated
+Standard Print Style cannot be changed. Please duplicate to edit.
+Standard Reports cannot be deleted
+Standard Reports cannot be edited
+Standard Sidebar Menu
+Standard Web Forms can not be modified, duplicate the Web Form instead.
+Standard rich text editor with controls
+Standard roles cannot be disabled
+Standard roles cannot be renamed
+Standard user type {0} can not be deleted.
+Start Import
+Start Recording
+Start Time
+Start a new discussion
+Start entering data below this line
+Start new Format
+StartTLS
+Started At
+Starting Frappe ...
+State Properties
+Statistics
+Stats
+Status
+Status Updated
+Status Updated. The email will be picked up in the next scheduled run.
+Status do laboratório
+Status: {0}
+Steps to verify your login
+Sticky
+Storage Usage (MB)
+Storage Usage By Table
+Store Attached PDF Document
+Stores the datetime when the last reset password key was generated.
+Straight rows of keys are easy to guess
+Strip EXIF tags from uploaded images
+Strong
+Style represents the button color: Success - Green, Danger - Red, Inverse - Black, Primary - Dark Blue, Info - Light Blue, Warning - Orange
+Sub-currency. For e.g. "Cent"
+Sub-grupo
+Subject Field
+Subject Field type should be Data, Text, Long Text, Small Text, Text Editor
+Submission Queue
+Submit an Issue
+Submit another response
+Submit button label
+Submit on Creation
+Submit this document to complete this step.
+Submit this document to confirm
+Submit {0} documents?
+Submitted Document cannot be converted back to draft. Transition row {0}
+Submitted document cannot be converted back to draft while transitioning from <b>{0} State</b> to <b>{1} State</b>
+Submitting
+Submitting {0}
+Subsidiaria
+Subsidiária 
+Success Action
+Success URI
+Success message
+Success title
+Success! You are good to go 👍
+Successful Job Count
+Successful Transactions
+Successful: {0} to {1}
+Successfully Updated
+Successfully imported {0}
+Successfully imported {0} out of {1} records.
+Successfully reset onboarding status for all users.
+Successfully updated translations
+Successfully updated {0}
+Successfully updated {0} out of {1} records.
+Suggest Optimizations
+Suggested Indexes
+Suggested Username: {0}
+Sul
+Sum
+Sum of {0}
+Summary
+Sunday
+Suspend Sending
+Switch Camera
+Switch Theme
+Switch To Desk
+Switch to Frappe CRM for smarter sales
+Switching Camera
+Sync Calendar
+Sync Contacts
+Sync events from Google as public
+Sync on Migrate
+Sync token was invalid and has been reset, Retry syncing.
+Sync {0} Fields
+Synced Fields
+Syncing
+Syncing {0} of {1}
+Syntax Error
+System Console
+System Generated Fields can not be renamed
+System Health
+System Health Report
+System Health Report Errors
+System Health Report Failing Jobs
+System Health Report Queue
+System Health Report Tables
+System Health Report Workers
+System Manager privileges required.
+System Settings
+T
+TOS URI
+Tab Break
+Tab Label
+Tabela de preços
+Table
+Table Field
+Table Fieldname
+Table Fieldname Missing
+Table MultiSelect
+Table Trimmed
+Table updated
+Table {0} cannot be empty
+Tabloid
+Tag
+Tag Link
+Tags
+Take Photo
+Target
+Team Members
+Team Members Subtitle
+Telefone/Celular
+Telemetry
+Template Error
+Template File
+Template de item
+Templates
+Temporarily Disabled
+Ter Hora
+Test Data
+Test Job ID
+Test Spanish
+Test_Folder
+Teste
+Teto percentual caução
+Text Content
+Thank you
+Thank you for reaching out to us. We will get back to you at the earliest.|||||||||Your query:||||||{0}
+Thank you for spending your valuable time to fill this form
+Thank you for your email
+Thank you for your feedback!
+Thank you for your message
+Thanks
+The Auto Repeat for this document has been disabled.
+The CSV format is case sensitive
+The Client ID obtained from the Google Cloud Console under <a href="https://console.cloud.google.com/apis/credentials">|||"APIs &amp; Services" &gt; "Credentials"|||</a>
+The Condition '{0}' is invalid
+The File URL you've entered is incorrect
+The Next Scheduled Date cannot be later than the End Date.
+The Push Relay Server URL key (`push_relay_server_url`) is missing in your site config
+The User record for this request has been auto-deleted due to inactivity by system admins.
+The application has been updated to a new version, please refresh this page
+The application name will be used in the Login page.
+The attachments could not be correctly linked to the new document
+The browser API key obtained from the Google Cloud Console under <a href="https://console.cloud.google.com/apis/credentials">|||"APIs &amp; Services" &gt; "Credentials"|||</a>
+The changes have been reverted.
+The column {0} has {1} different date formats. Automatically setting {2} as the default format as it is the most common. Please change other values in this column to this format.
+The comment cannot be empty
+The contents of this email are strictly confidential. Please do not forward this email to anyone.
+The count shown is an estimated count. Click here to see the accurate count.
+The country's ISO 3166 ALPHA-2 code.
+The document could not be correctly assigned
+The document has been assigned to {0}
+The document type selected is a child table, so the parent document type is required.
+The field {0} is mandatory
+The fieldname you've specified in Attached To Field is invalid
+The following Assignment Days have been repeated: {0}
+The following Header Script will add the current date to an element in 'Header HTML' with class 'header-content'
+The following values are invalid: {0}. Values must be one of {1}
+The following values do not exist for {0}: {1}
+The limit has not set for the user type {0} in the site config file.
+The link will expire in {0} minutes
+The link you trying to login is invalid or expired.
+The meta description is an HTML attribute that provides a brief summary of a web page. Search engines such as Google often display the meta description in search results, which can influence click-through rates.
+The meta image is unique image representing the content of the page. Images for this Card should be at least 280px in width, and at least 150px in height.
+The next tour will start from where the user left off.
+The number of seconds until the request expires
+The password of your account has expired.
+The process for deletion of {0} data associated with {1} has been initiated.
+The project number obtained from Google Cloud Console under <a href="https://console.cloud.google.com/iam-admin/settings">|||"IAM &amp; Admin" &gt; "Settings"|||</a>
+The reset password link has been expired
+The reset password link has either been used before or is invalid
+The resource you are looking for is not available
+The role {0} should be a custom role.
+The selected document {0} is not a {1}.
+The system is being updated. Please refresh again after a few moments.
+The system provides many pre-defined roles. You can add new roles to set finer permissions.
+The total number of user document types limit has been crossed.
+The value you pasted was {0} characters long. Max allowed characters is {1}.
+The webhook will be triggered if this expression is true
+The {0} is already on auto repeat {1}
+Theme Changed
+There are documents which have workflow states that do not exist in this Workflow. It is recommended that you add these states to the Workflow and change their states before removing these states.
+There are no upcoming events for you.
+There are no {0} for this {1}, why don't you start one!
+There are {0} with the same filters already in the queue:
+There can be only 9 Page Break fields in a Web Form
+There can be only one Fold in a form
+There is an error in your Address Template {0}
+There is no data to be exported
+There is nothing new to show you right now.
+There is some problem with the file url: {0}
+There is {0} with the same filters already in the queue:
+There must be atleast one permission rule.
+There was an error building this page
+There was an error saving filters
+There were errors
+There were errors while creating the document. Please try again.
+There were errors while sending email. Please try again.
+There were some errors setting the name, please contact the administrator
+These announcements will appear inside a dismissible alert below the Navbar.
+These fields are used to provide resource server metadata to clients querying the "well known protected resource" end point.
+These settings are required if 'Custom' LDAP Directory is used
+Third Party Apps
+This Currency is disabled. Enable to use in transactions
+This Kanban Board will be private
+This Month
+This Quarter
+This Week
+This Year
+This action is irreversible. Do you wish to continue?
+This action is only allowed for {}
+This cannot be undone
+This doctype has no orphan fields to trim
+This doctype has pending migrations, run 'bench migrate' before modifying the doctype to avoid losing changes.
+This document can not be deleted right now as it's being modified by another user. Please try again after some time.
+This document has been modified after the email was sent.
+This document has unsaved changes which might not appear in final PDF. <br> Consider saving the document before printing.
+This document is already amended, you cannot ammend it again
+This document is currently locked and queued for execution. Please try again after some time.
+This email is autogenerated
+This feature can not be used as dependencies are missing.|||				Please contact your system manager to enable this by installing pycups!
+This feature is brand new and still experimental
+This field will appear only if the fieldname defined here has value OR the rules are true (examples):|||myfield|||eval:doc.myfield=='My Value'|||eval:doc.age&gt;18
+This file is attached to a protected document and cannot be deleted.
+This file is public and can be accessed by anyone, even without logging in. Mark it private to limit access.
+This file is public. It can be accessed without authentication.
+This form has been modified after you have loaded it
+This form is not editable due to a Workflow.
+This geolocation provider is not supported yet.
+This goes above the slideshow.
+This is a background report. Please set the appropriate filters and then generate a new one.
+This is a top-10 common password.
+This is a top-100 common password.
+This is a very common password.
+This is a virtual doctype and data is cleared periodically.
+This is an automatically generated reply
+This is similar to a commonly used password.
+This link has already been activated for verification.
+This link is invalid or expired. Please make sure you have pasted correctly.
+This may get printed on multiple pages
+This month
+This report contains {0} rows and is too big to display in browser, you can {1} this report instead.
+This report was generated on {0}
+This report was generated {0}.
+This request has not yet been approved by the user.
+This site is in read only mode, full functionality will be restored soon.
+This site is running in developer mode. Any change made here will be updated in code.
+This software is built on top of many open source packages.
+This title will be used as the title of the webpage as well as in meta tags
+This value is fetched from {0}'s {1} field
+This value specifies the max number of rows that can be rendered in report view. 
+This will be automatically generated when you publish the page, you can also enter a route yourself if you wish
+This will log out {0} from all other devices
+This will permanently remove your data.
+This will reset this tour and show it to all users. Are you sure?
+This will terminate the job immediately and might be dangerous, are you sure? 
+Throttled
+Thumbnail URL
+Thursday
+Time
+Time Interval
+Time Taken
+Time Window (Seconds)
+Time Zone
+Time in Queries
+Time series based on is required to create a dashboard chart
+Time {0} must be in format: {1}
+Timed Out
+Timeless Night
+Timeline
+Timeline DocType
+Timeline Field
+Timeline Name
+Timeline field must be a Link or Dynamic Link
+Timeline field must be a valid fieldname
+Timeout
+Timeout (In Seconds)
+Timeseries
+Timespan
+Timestamp
+Tip: Try the new dropdown console using
+Tipo
+Tipo de regime
+Tipo do item
+Title field must be a valid fieldname
+Title of the page
+To Do
+To add dynamic subject, use jinja tags like||||||<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>
+To add dynamic subject, use jinja tags like||||||<div><pre><code>{{ doc.name }} Delivered</code></pre></div>
+To add dynamic values from the document, use jinja tags like||||||<div>|||<pre><code>{ "id": "{{ doc.name }}" }</code>|||</pre>|||</div>
+To allow more reports update limit in System Settings.
+To begin the date range at the start of the chosen period. For example, if 'Year' is selected as the period, the report will start from January 1st of the current year.
+To configure Auto Repeat, enable "Allow Auto Repeat" from {0}.
+To enable it follow the instructions in the following link: {0}
+To enable server scripts, read the {0}.
+To export this step as JSON, link it in a Onboarding document and save the document.
+To generate password click {0}
+To get the updated report, click on {0}.
+To know more click {0}
+To print output use <code>print(text)</code>
+To set the role {0} in the user {1}, kindly set the {2} field as {3} in one of the {4} record.
+To use Google Calendar, enable {0}.
+To use Google Contacts, enable {0}.
+To use Google Indexing, enable <a href="/app/google-settings">Google Settings</a>.
+To use Slack Channel, add a <a href="#List/Slack%20Webhook%20URL/List">Slack Webhook URL</a>.
+To version
+ToDo
+Today
+Toggle Chart
+Toggle Full Width
+Toggle Grid View
+Toggle Sidebar
+Toggle Theme
+Token Cache
+Token Endpoint Auth Method
+Token Type
+Token URI
+Token is missing
+Tomorrow
+Too Many Documents
+Too Many Requests
+Too many changes to database in single action.
+Too many queued background jobs ({0}). Please retry after some time.
+Too many users signed up recently, so the registration is disabled. Please try back in an hour
+Top 10
+Top Bar Item
+Top Center
+Top Errors
+Top Left
+Top Right
+Total
+Total Background Workers
+Total Errors (last 1 day)
+Total Images
+Total Outgoing Emails
+Total Users
+Total Working Time
+Total da medição
+Total da medição anterior
+Total de compensações
+Total de dias uteis realizados
+Total de horas extras (Sáb. e dias úteis)
+Total de horas normais (Dias úteis) 
+Total horas extras 100% (Dom. e feriados)
+Total horas normais desc. e acrés.
+Total number of emails to sync in initial sync process 
+Total:
+Totals Row
+Trace ID
+Traceback
+Track Email Status
+Track Steps
+Track if your email has been opened by the recipient.|||<br>|||Note: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered "Opened"
+Track milestones for any document
+Tracking URL generated and copied to clipboard
+Transaction Hash
+Transaction Log
+Transaction Log Report
+Transition Properties
+Translate Data
+Translate Link Fields
+Translate values
+Translate {0}
+Translation
+Translations
+Trash
+Tree View
+Tree view is not available for {0}
+Trigger Primary Action
+Trigger caching
+Trigger on valid methods like "before_insert", "after_update", etc (will depend on the DocType selected)
+Trim Table
+Try Again
+Try a Naming Series
+Try the new Print Designer
+Try to avoid repeated words and characters
+Try to use a longer keyboard pattern with more turns
+Tuesday
+Type a reply / comment
+Type something in the search box to search
+Type title
+Type your reply here...
+Type:
+Término previsto dos serviços
+Término serviços conf. contrato
+UF
+UI Tour
+UID
+UIDNEXT
+UIDVALIDITY
+URIs for receiving authorization code once the user allows access, as well as failure responses. Typically a REST endpoint exposed by the Client App.|||<br>e.g. http://hostname/api/method/frappe.integrations.oauth2_logins.login_via_facebook
+URL
+URL must start with http:// or https://
+URL of a human-readable page with info that developers might need.
+URL of a web page providing information about the client.
+URL of human-readable page with info about the protected resource's terms of service.
+URL of human-readable page with info on requirements about how the client can use the data.
+URL of the page
+URL that points to a human-readable policy document for the client. Should be shown to end-user before authorizing.
+URL that points to a human-readable terms of service document for the client. Should be shown to end-user before authorizing.
+URL that references a logo for the client.
+URL to go to on clicking the slideshow image
+UTM Campaign
+UTM Medium
+UTM Source
+UUID
+Un-following document {0}
+Unable to find DocType {0}
+Unable to load camera.
+Unable to load: {0}
+Unable to open attached file. Did you export it as CSV?
+Unable to read file format for {0}
+Unable to send mail because of a missing email account. Please setup default Email Account from Settings > Email Account
+Unable to update event
+Unable to write file format for {0}
+Uncaught Exception
+Unchanged
+Undo
+Undo last action
+Unescaped quotes in string literal: {0}
+Unfollow
+Unhandled Email
+Unhandled Emails
+Unidade
+Unique ID assigned by the client developer used to identify the client software to be dynamically registered.|||<br>|||<b>Should remain same</b> across multiple versions or updates of the software.
+Unit
+Unknown Column: {0}
+Unknown Rounding Method: {}
+Unknown User
+Unknown file encoding. Tried to use: {0}
+Unlock Reference Document
+Unpublish
+Unsafe SQL query
+Unselect All
+Unsubscribe
+Unsubscribe Params
+Unsubscribed
+Unsupported function or invalid field name: {0}
+Untitled Column
+Unzip
+Unzipped {0} files
+Unzipping files...
+Upcoming Events for Today
+Update Amendment Naming
+Update Hooks Resolution Order
+Update Order
+Update Password
+Update Series Counter
+Update Translations
+Update from Frappe Cloud
+Update {0} records
+Updated
+Updated Successfully
+Updated To A New Version \u{1F389}
+Updated To A New Version 🎉
+Updated successfully
+Updating
+Updating Email Queue Statuses. The emails will be picked up in the next scheduled run.
+Updating counter may lead to document name conflicts if not done properly
+Updating global settings
+Updating naming series options
+Updating related fields...
+Updating {0}
+Updating {0} of {1}, {2}
+Upgrade plan
+Upgrade your support experience with Frappe Helpdesk
+Upload
+Upload Image
+Upload file
+Upload {0} files
+Use % for any non empty value.
+Use First Day of Period
+Use HTML
+Use Number Format from Currency
+Use POST
+Use STARTTLS
+Use a few words, avoid common phrases.
+Use different Email ID
+Use if the default settings don't seem to detect your data correctly
+Use of function {0} in field is restricted
+Use of sub-query or function is restricted
+Use the new Print Format Builder
+Use this, for example, if all sent emails should also be send to an archive.
+Used OAuth
+User '{0}' already has the role '{1}'
+User Changed
+User Details
+User Doctype Permissions
+User Document Type
+User Document Types Limit Exceeded
+User Email
+User Emails
+User Group
+User Group Member
+User Group Members
+User ID of a Blogger
+User Id
+User Id Field
+User Id Field is mandatory in the user type {0}
+User Menu
+User Permission
+User Permissions
+User Permissions are used to limit users to specific records.
+User Permissions created successfully
+User Profile
+User Role
+User Role Profile
+User Select Document Type
+User Settings
+User Social Login
+User Type
+User Type Module
+User can login using Email id or Mobile number
+User can login using Email id or User Name
+User does not exist.
+User does not have permission to create the new {0}
+User is mandatory for Share
+User permission already exists
+User with email address {0} does not exist
+User with email: {0} does not exist in the system. Please ask 'System Administrator' to create the user for you.
+User {0} cannot be deleted
+User {0} cannot be disabled
+User {0} cannot be renamed
+User {0} does not have access to this document
+User {0} does not have doctype access via role permission for document {1}
+User {0} does not have the permission to create a Workspace.
+User {0} has requested for data deletion
+User {0} impersonated as {1}
+User {0} is disabled. Please contact your System Manager.
+User {0} is not permitted to access this document.
+Userinfo URI
+Username
+Username {0} already exists
+Users
+Users are only able to delete attached files if the document is either in draft or if the document is canceled and they are also able to delete the document.
+Users with role {0}:
+Uses system's theme to switch between light and dark mode
+Using this console may allow attackers to impersonate you and steal your information. Do not enter or paste code that you do not understand.
+Utilization
+Utilization %
+Uuid
+Valid Login id required.
+Valid email and name required
+Validate Frappe Mail Settings
+Validate SSL Certificate
+Validation Error
+Valor
+Valor Total Vigente
+Valor calculado
+Valor do contrato
+Valor do fator de pagamento
+Valor do reajuste
+Valor medido
+Valor medição com REIDI
+Valor mensal
+Valor para o período
+Valor por hora
+Valor total
+Valor total acumulado
+Valor total acumulado anterior
+Valor total da nota fiscal
+Valor total do contrato
+Valor total do pedido
+Valor total medido
+Valor total mensal
+Valor total vigente
+Valor total vigente com desconto de FTD
+Valor unitário
+Valor unitário vigente*
+Value Change
+Value cannot be changed for {0}
+Value cannot be negative for
+Value cannot be negative for {0}: {1}
+Value for a check field can be either 0 or 1
+Value for field {0} is too long in {1}. Length should be lesser than {2} characters
+Value for {0} cannot be a list
+Value from this field will be set as the due date in the ToDo
+Value must be one of {0}
+Value of "None" implies a public client. In such a case Client Secret is not given to the client and token exchange makes use of PKCE.
+Value too big
+Value {0} missing for {1}
+Value {0} must be in the valid duration format: d h m s
+Value {0} must in {1} format
+Verdana
+Verification
+Verification Code
+Verification Link
+Verification code email not sent. Please contact Administrator.
+Verification code has been sent to your registered email address.
+Verifique a codificação do Kartado, ela pode estar com um nível a mais, ex: 1.1.1 -> Kartado -> 1.1.1.1
+Verify
+Verify Password
+Verifying...
+Version
+Version Updated
+Vertical
+Via
+View All
+View Audit Trail
+View Blog Post
+View Comment
+View Doctype Permissions
+View File
+View Full Log
+View List
+View Log
+View Permitted Documents
+View Switcher
+View Website
+View document
+View report in your browser
+View this in your browser
+View your response
+View {0}
+Virtual
+Virtual DocType {} requires a static method called {} found {}
+Virtual DocType {} requires overriding an instance method called {} found {}
+Visibility
+Visible to website/portal users.
+Visit Web Page
+Visitor ID
+Volume final (Qtd.)
+Volume inicial (Qtd.)
+Want to discuss?
+Warning: DATA LOSS IMMINENT! Proceeding will permanently delete following database columns from doctype {0}:
+Warning: Naming is not set
+Warning: Unable to find {0} in any table related to {1}
+Warning: Updating counter may lead to document name conflicts if not done properly
+Was this article helpful?
+Watch Tutorial
+Watch Video
+We do not allow editing of this document. Simply click the Edit button on the workspace page to make your workspace editable and customize it as you wish
+We have received a request for deletion of {0} data associated with: {1}
+We have received a request from you to download your {0} data associated with: {1}
+We would like to thank the authors of these packages for their contribution.
+We've received your query!
+Weak
+Web Form
+Web Form Field
+Web Form List Column
+Web Page
+Web Page Block
+Web Page URL
+Web Page View
+Web Template
+Web Template Field
+Web Template Values
+Web Template is not specified
+Web View
+Webhook
+Webhook Data
+Webhook Header
+Webhook Headers
+Webhook Request
+Webhook Request Log
+Webhook Secret
+Webhook Security
+Webhook Trigger
+Webhook URL
+Website Analytics
+Website Meta Tag
+Website Route Meta
+Website Route Redirect
+Website Script
+Website Search Field
+Website Search Field must be a valid fieldname
+Website Settings
+Website Sidebar
+Website Sidebar Item
+Website Slideshow
+Website Slideshow Item
+Website Theme
+Website Theme Ignore App
+Website Theme image link
+Websocket
+Wednesday
+Week
+Welcome
+Welcome Email Template
+Welcome URL
+Welcome email sent
+What's New
+When enabled this will allow guests to upload files to your application, You can enable this if you wish to collect files from user without having them to log in, for example in job applications web form.
+When sending document using email, store the PDF on Communication. Warning: This can increase your storage usage.
+When uploading files, force the use of the web-based image capture. If this is unchecked, the default behavior is to use the mobile native camera when use from a mobile is detected.
+When you Amend a document after Cancel and save it, it will get a new number that is a version of the old number.
+Which view of the associated DocType should this shortcut take you to?
+Width
+Widths can be set in px or %.
+Wildcard Filter
+Will add "%" before and after the query
+Will be used in url (usually first name).
+Will be your login ID
+Will only be shown if section headings are enabled
+Will run scheduled jobs only once a day for inactive sites. Set it to 0 to avoid automatically disabling the scheduler.
+With Letter head
+Work Role
+Work Role Config Kartado
+Worker Information
+Worker Name
+Workflow
+Workflow Action
+Workflow Action Master
+Workflow Action Permitted Role
+Workflow Builder
+Workflow Builder ID
+Workflow Builder allows you to create workflows visually. You can drag and drop states and link them to create transitions. Also you can update thieir properties from the sidebar.
+Workflow Data
+Workflow Details
+Workflow Document State
+Workflow State
+Workflow State Field
+Workflow State not set
+Workflow State transition not allowed from {0} to {1}
+Workflow States Don't Exist
+Workflow Status
+Workflow Transition
+Workflow state represents the current state of a document.
+Workflow updated successfully
+Workspace
+Workspace <b>{0}</b> does not exist
+Workspace Chart
+Workspace Custom Block
+Workspace Link
+Workspace Manager
+Workspace Number Card
+Workspace Quick List
+Workspace Settings
+Workspace Setup Completed
+Workspace Shortcut
+Workspace Visibility
+Workspace {0} created
+Workspaces
+Would you like to publish this comment? This means it will become visible to website/portal users.
+Would you like to unpublish this comment? This means it will no longer be visible to website/portal users.
+Wrong Fetch From value
+X Axis Field
+XLSX
+Y Axis Fields
+Y Field
+Yahoo Mail
+Yandex.Mail
+Yellow
+Yesterday
+You
+You Liked
+You are connected to internet.
+You are impersonating as another user.
+You are not allowed to access this resource
+You are not allowed to access this {0} record because it is linked to {1} '{2}' in field {3}
+You are not allowed to access this {0} record because it is linked to {1} '{2}' in row {3}, field {4}
+You are not allowed to create columns
+You are not allowed to delete Standard Report
+You are not allowed to delete a standard Website Theme
+You are not allowed to edit the report.
+You are not allowed to export {} doctype
+You are not allowed to print this report
+You are not allowed to send emails related to this document
+You are not allowed to update this Web Form Document
+You are not connected to Internet. Retry after sometime.
+You are not permitted to access this page without login.
+You are not permitted to access this page.
+You are not permitted to access this resource. Login to access
+You are now following this document. You will receive daily updates via email. You can change this in User Settings.
+You are only allowed to update order, do not remove or add apps.
+You are selecting Sync Option as ALL, It will resync all read as well as unread message from server. This may also cause the duplication of Communication (emails).
+You attached {0}
+You can add dynamic properties from the document by using Jinja templating.
+You can also access wkhtmltopdf variables (valid only in PDF print):
+You can also copy-paste following link in your browser
+You can also copy-paste this 
+You can also copy-paste this {0} to your browser
+You can change Submitted documents by cancelling them and then, amending them.
+You can change the retention policy from {0}.
+You can continue with the onboarding after exploring this page
+You can disable this {0} instead of deleting it.
+You can increase the limit from System Settings.
+You can manually remove the lock if you think it's safe: {}
+You can only insert images in Markdown fields
+You can only print upto {0} documents at a time
+You can only set the 3 custom doctypes in the Document Types table.
+You can only upload JPG, PNG, PDF, TXT, CSV or Microsoft documents.
+You can only upload upto 5000 records in one go. (may be less in some cases)
+You can select one from the following,
+You can set a high value here if multiple users will be logging in from the same network.
+You can try changing the filters of your report.
+You can use Customize Form to set levels on fields.
+You can use wildcard %
+You can't set 'Options' for field {0}
+You can't set 'Translatable' for field {0}
+You cancelled this document
+You cancelled this document {1}
+You cannot create a dashboard chart from single DocTypes
+You cannot unset 'Read Only' for field {0}
+You changed the value of {0}
+You changed the value of {0} {1}
+You changed the values for {0}
+You changed the values for {0} {1}
+You changed {0} to {1}
+You created this
+You created this document {0}
+You do not have Read or Select Permissions for {}
+You do not have enough permissions to access this resource. Please contact your manager to get access.
+You do not have enough permissions to complete the action
+You do not have permission to access field: {0}
+You do not have permission to access {0}: {1}.
+You do not have permissions to cancel all linked documents.
+You don't have access to Report: {0}
+You don't have permission to access the {0} DocType.
+You don't have permission to access this file
+You don't have permission to get a report on: {0}
+You don't have the permissions to access this document
+You have a new message from: 
+You have been successfully logged out
+You have hit the row size limit on database table: {0}
+You have not entered a value. The field will be set to empty.
+You have received a ❤️ like on your blog post
+You have to enable Two Factor Auth from System Settings.
+You have unsaved changes in this form. Please save before you continue.
+You have unseen notifications
+You have unseen {0}
+You haven't added any Dashboard Charts or Number Cards yet.
+You haven't created a {0} yet
+You hit the rate limit because of too many requests. Please try after sometime.
+You last edited this
+You must add atleast one link.
+You must be logged in to use this form.
+You must login to submit this form
+You need the '{0}' permission on {1} {2} to perform this action.
+You need to be Workspace Manager to delete a public workspace.
+You need to be Workspace Manager to edit this document
+You need to be a system user to access this page.
+You need to be in developer mode to edit a Standard Web Form
+You need to be logged in and have System Manager Role to be able to access backups.
+You need to be logged in to access this page
+You need to be logged in to access this {0}.
+You need to create these first: 
+You need to enable JavaScript for your app to work.
+You need to have "Share" permission
+You need to install pycups to use this feature!
+You need to select indexes you want to add first.
+You need to set one IMAP folder for {0}
+You need write permission on {0} {1} to merge
+You need write permission on {0} {1} to rename
+You need {0} permission to fetch values from {1} {2}
+You removed attachment {0}
+You seem good to go!
+You seem to have written your name instead of your email. Please enter a valid email address so that we can get back.
+You selected Draft or Cancelled documents
+You submitted this document
+You submitted this document {0}
+You unfollowed this document
+You viewed this
+You've logged in as another user from another tab. Refresh this page to continue using system.
+Your CSV file is being generated and will appear in the Attachments section once ready. Additionally, you will get notified when the file is available for download.
+Your Country
+Your Language
+Your Name
+Your PDF is ready for download
+Your Shortcuts
+Your account has been deleted
+Your account has been locked and will resume after {0} seconds
+Your assignment on {0} {1} has been removed by {2}
+Your browser does not support the audio element.
+Your browser does not support the video element.
+Your connection request to Google Calendar was successfully accepted
+Your email address
+Your form has been successfully updated
+Your login id is
+Your new password has been set successfully.
+Your old password is incorrect.
+Your organization name and address for the email footer.
+Your query has been received. We will reply back shortly. If you have any additional information, please reply to this mail.
+Your session has expired, please login again to continue.
+Your site is undergoing maintenance or being updated.
+Your verification code is {0}
+Zero
+[Action taken by {0}]
+\u2190 Back to upload files
+_doctype
+`as_iterator` only works with `as_list=True` or `as_dict=True`
+`job_id` paramater is required for deduplication.
+added
+added rows for {0}
+adjust
+after_insert
+align-center
+align-justify
+align-left
+align-right
+amend
+arrow-down
+arrow-left
+arrow-right
+arrow-up
+ascending
+asterisk
+backward
+ban-circle
+barcode
+bell
+bold
+book
+bookmark
+briefcase
+bullhorn
+by Role
+cProfile Output
+calendar
+camera
+cancel
+canceled
+certificate
+check
+chevron-down
+chevron-left
+chevron-right
+chevron-up
+circle-arrow-down
+circle-arrow-left
+circle-arrow-right
+circle-arrow-up
+clear
+cog
+comment
+commented
+create
+custom doc type test
+cyan
+d
+darkgrey
+dashboard
+data
+day
+dd-mm-yyyy
+dd.mm.yyyy
+default
+deferred
+delete
+descending
+descrição
+document type..., e.g. customer
+download
+download-alt
+e.g. "Support", "Sales", "Jerry Yang"
+e.g. (55 + 434) / 4 or =Math.sin(Math.PI/2)...
+e.g. replies@yourcomany.com. All replies will come to this inbox.
+e.g.:
+edit
+eject
+emacs
+email
+email inbox
+empty
+entitysystem
+envelope
+exclamation-sign
+export
+eye-close
+eye-open
+facebook
+facetime-video
+failed
+fairlogin
+fast-backward
+fast-forward
+file
+film
+filter
+finished
+fire
+flag
+folder-close
+folder-open
+font
+forward
+fullscreen
+gift
+glass
+globe
+gray
+grey
+gzip not found in PATH! This is required to take a backup.
+h
+hand-down
+hand-left
+hand-right
+hand-up
+hdd
+headphones
+heart
+heatmap-legend-unit
+here
+home
+hub
+import
+inbox
+indent-left
+indent-right
+info-sign
+inverted
+italic
+item_name
+jane@example.com
+just now
+label
+leaf
+length
+light-blue
+link
+linkedin
+list
+list-alt
+lock
+logged in
+login_required
+long
+m
+magnet
+map-marker
+mend
+merged {0} into {1}
+min read
+minus
+minus-sign
+mm-dd-yyyy
+module name...
+move
+mstart
+music
+new type of document
+nonce
+none
+notified
+of
+off
+ok
+ok-circle
+ok-sign
+old_parent
+on_cancel
+on_submit
+on_trash
+on_update
+on_update_after_submit
+pause
+pencil
+picture
+pink
+plain
+plane
+play
+play-circle
+plus
+plus-sign
+print-format-builder-beta
+processlist
+qrcode
+question-sign
+queued
+random
+read
+refresh
+remove
+remove-circle
+remove-sign
+removed
+removed rows for {0}
+repeat
+report
+resize-full
+resize-horizontal
+resize-small
+resize-vertical
+restored {0} as {1}
+retweet
+road
+s
+s256
+scheduled
+screenshot
+search
+select
+share-alt
+shopping-cart
+short
+signal
+since last month
+since last week
+since last year
+spill
+star
+star-empty
+started
+starting the setup...
+step-backward
+step-forward
+stop
+string value, i.e. group
+string value, i.e. member
+string value, i.e. {0} or uid={0},ou=users,dc=example,dc=com
+submit
+tag
+tag name..., e.g. #tag
+tags
+tasks
+teste curva s
+text in document type
+text-height
+text-width
+th
+th-large
+th-list
+thickness
+this form
+this shouldn't break
+thumbs-down
+thumbs-up
+time
+tint
+trash
+twitter
+updated to {0}
+upload
+use % as wildcard
+user
+version_table
+via Assignment Rule
+via Auto Repeat
+via Data Import
+via Google Meet
+via Notification
+via {0}
+vim
+volume-down
+volume-off
+volume-up
+vscode
+wants to access the following details from your account
+warning-sign
+when clicked on element it will focus popover if present.
+width
+wkhtmltopdf
+wkhtmltopdf 0.12.x (with patched qt).
+wrench
+write
+zoom-in
+zoom-out
+{0}
+{0} ${skip_list ? "" : type}
+{0} ${type}
+{0} ({1})
+{0} ({1}) (1 row mandatory)
+{0} ({1}) - {2}%
+{0} = {1}
+{0} Chart
+{0} Dashboard
+{0} Google Calendar Events synced.
+{0} Google Contacts synced.
+{0} Liked
+{0} List
+{0} Map
+{0} Name
+{0} Not allowed to change {1} after submission from {2} to {3}
+{0} Report
+{0} Reports
+{0} Settings
+{0} Tree
+{0} Web page views
+{0} Workspace
+{0} added
+{0} already exists. Select another name
+{0} already unsubscribed
+{0} already unsubscribed for {1} {2}
+{0} are currently {1}
+{0} are required
+{0} assigned a new task {1} {2} to you
+{0} assigned {1}: {2}
+{0} attached {1}
+{0} can not be more than {1}
+{0} cancelled this document
+{0} cancelled this document {1}
+{0} cannot be amended because it is not cancelled. Please cancel the document before creating an amendment.
+{0} cannot be hidden and mandatory without any default value
+{0} changed the value of {1}
+{0} changed the value of {1} {2}
+{0} changed the values for {1}
+{0} changed the values for {1} {2}
+{0} changed {1} to {2}
+{0} contains an invalid Fetch From expression, Fetch From can't be self-referential.
+{0} created this
+{0} created this document {1}
+{0} d
+{0} does not exist in row {1}
+{0} field cannot be set as unique in {1}, as there are non-unique existing values
+{0} fields cannot contain backticks (`): {1}
+{0} format could not be determined from the values in this column. Defaulting to {1}.
+{0} from {1} to {2}
+{0} from {1} to {2} in row #{3}
+{0} h
+{0} has already assigned default value for {1}.
+{0} has left the conversation in {1} {2}
+{0} if you are not redirected within {1} seconds
+{0} in row {1} cannot have both URL and child items
+{0} is a not a valid zip file
+{0} is an invalid Data field.
+{0} is an invalid email address in 'Recipients'
+{0} is between {1} and {2}
+{0} is currently {1}
+{0} is equal to {1}
+{0} is greater than or equal to {1}
+{0} is greater than {1}
+{0} is less than or equal to {1}
+{0} is less than {1}
+{0} is like {1}
+{0} is not a child table of {1}
+{0} is not a field of doctype {1}
+{0} is not a raw printing format.
+{0} is not a valid Calendar. Redirecting to default Calendar.
+{0} is not a valid Cron expression.
+{0} is not a valid DocType for Dynamic Link
+{0} is not a valid Email Address
+{0} is not a valid ISO 3166 ALPHA-2 code.
+{0} is not a valid Name
+{0} is not a valid parent DocType for {1}
+{0} is not a valid parentfield for {1}
+{0} is not a zip file
+{0} is not equal to {1}
+{0} is not like {1}
+{0} is not one of {1}
+{0} is not set
+{0} is now default print format for {1} doctype
+{0} is one of {1}
+{0} is set
+{0} is within {1}
+{0} just impersonated as you. They gave this reason: {1}
+{0} last edited this
+{0} logged in
+{0} logged out: {1}
+{0} m
+{0} must be beginning with '{1}'
+{0} must be equal to '{1}'
+{0} must be none of {1}
+{0} must be {1} {2}
+{0} must begin and end with a letter and can only contain letters, hyphen or underscore.
+{0} of {1} ({2} rows with children)
+{0} only.
+{0} records are not automatically deleted.
+{0} records are retained for {1} days.
+{0} removed attachment {1}
+{0} removed their assignment.
+{0} role does not have permission on any doctype
+{0} row #{1}: 
+{0} self assigned this task: {1}
+{0} shared a document {1} {2} with you
+{0} shared this document with everyone
+{0} should be indexed because it's referred in dashboard connections
+{0} should not be same as {1}
+{0} submitted this document
+{0} submitted this document {1}
+{0} subscribers added
+{0} to stop receiving emails of this type
+{0} to {1}
+{0} un-shared this document with {1}
+{0} updated
+{0} values selected
+{0} viewed this
+{0} w
+{0} y
+{0} {1} added to Dashboard {2}
+{0} {1} cannot be "{2}". It should be one of "{3}"
+{0} {1} cannot be a leaf node as it has children
+{0} {1} does not exist, select a new target to merge
+{0} {1} is linked with the following submitted documents: {2}
+{0}, Row {1}
+{0}/{1} complete | Please leave this tab open until completion.
+{0}: '{1}' ({3}) will get truncated, as max characters allowed is {2}
+{0}: Cannot set Assign Amend if not Submittable
+{0}: Cannot set Assign Submit if not Submittable
+{0}: Cannot set Import without Create
+{0}: Cannot set Submit, Cancel, Amend without Write
+{0}: Cannot set import as {1} is not importable
+{0}: Failed to attach new recurring document. To enable attaching document in the auto repeat notification email, enable {1} in Print Settings
+{0}: Field {1} in row {2} cannot be hidden and mandatory without default
+{0}: Field {1} of type {2} cannot be mandatory
+{0}: Fieldname {1} appears multiple times in rows {2}
+{0}: Fieldtype {1} for {2} cannot be unique
+{0}: No basic permissions set
+{0}: Only one rule allowed with the same Role, Level and {1}
+{0}: Options must be a valid DocType for field {1} in row {2}
+{0}: Options required for Link or Table type field {1} in row {2}
+{0}: Options {1} must be the same as doctype name {2} for the field {3}
+{0}: Other permission rules may also apply
+{0}: Permission at level 0 must be set before higher levels are set
+{0}: You can increase the limit for the field if required via {1}
+{0}: fieldname cannot be set to reserved keyword {1}
+{0}: {1}
+{0}: {1} is set to state {2}
+{0}: {1} vs {2}
+{0}:Fieldtype {1} for {2} cannot be indexed
+{1} saved
+{count} cell copied
+{count} cells copied
+{count} row selected
+{count} rows selected
+{{{0}}} is not a valid fieldname pattern. It should be {{field_name}}.
+{} Invalid python code on line {}
+{} Possibly invalid python code. <br>{}
+{} does not support automated log clearing.
+{} field cannot be empty.
+{} has been disabled. It can only be enabled if {} is checked.
+{} is not a valid date string.
+{} not found in PATH! This is required to access the console.
+{} not found in PATH! This is required to restore the database.
+{} not found in PATH! This is required to take a backup.
+← Back to upload files
+✏️ Editar fómula

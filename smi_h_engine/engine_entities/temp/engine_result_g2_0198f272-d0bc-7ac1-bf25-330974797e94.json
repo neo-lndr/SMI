@@ -1,0 +1,372 @@
+[
+    {
+        "id": "BM-CW082025-001",
+        "results": [
+            {
+                "path": "e00012v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-97ff66f9f8cf",
+        "results": [
+            {
+                "path": "e00019v",
+                "status": "success",
+                "result": 13928.57
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98006064305e",
+        "results": [
+            {
+                "path": "e00019v",
+                "status": "success",
+                "result": 11964.29
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-981657157f22",
+        "results": [
+            {
+                "path": "e00019v",
+                "status": "success",
+                "result": 6071.43
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-982505924d62",
+        "results": [
+            {
+                "path": "e00019v",
+                "status": "success",
+                "result": 8839.29
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98387d424a3d",
+        "results": [
+            {
+                "path": "e00019v",
+                "status": "success",
+                "result": 636.9
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9845f996b9a9",
+        "results": [
+            {
+                "path": "e00032v",
+                "status": "success",
+                "result": 19047.62
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9858140d352d",
+        "results": [
+            {
+                "path": "e00032v",
+                "status": "success",
+                "result": 19047.62
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9867e0867f2b",
+        "results": [
+            {
+                "path": "e00032v",
+                "status": "success",
+                "result": 12142.86
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98744c21ce6c",
+        "results": [
+            {
+                "path": "e00032v",
+                "status": "success",
+                "result": 2380.95
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-988fee7e3f7b",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-989e21493034",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 5.047619047
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 1.904761905
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98ac5cb55cc0",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.607142857
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98bd7dc79ebf",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 1.607142857
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98c9d7b6b104",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.084920635
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aac64b51fd19",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.952380952
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aad6ccae03cb",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.80952381
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aaea46d06687",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 4.761904762
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-aaf39768be26",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab05dfc39279",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab13099923e8",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab2a176c87a5",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab3d807c0319",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab43f4690c08",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab54a73e93e6",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab647cc4f56f",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab7dfbf5edaf",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfd-7c71-8eda-ab8e3a953695",
+        "results": [
+            {
+                "path": "e00053v",
+                "status": "success",
+                "result": 0.0
+            },
+            {
+                "path": "e00055v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    }
+]

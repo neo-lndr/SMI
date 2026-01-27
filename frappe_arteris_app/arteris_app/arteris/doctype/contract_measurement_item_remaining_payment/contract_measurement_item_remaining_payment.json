@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-08-04 16:04:39.793545",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "boletimmedicao",
+  "percentual",
+  "valor",
+  "datahora",
+  "column_break_bzzg",
+  "origem",
+  "section_break_htgm",
+  "observacoes"
+ ],
+ "fields": [
+  {
+   "fieldname": "boletimmedicao",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Boletim de medi\u00e7\u00e3o",
+   "options": "Contract Measurement",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "percentual",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "% Percentual",
+   "non_negative": 1,
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "datahora",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Data e hora",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "observacoes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Observa\u00e7\u00f5es",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bzzg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_htgm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "origem",
+   "fieldtype": "Check",
+   "label": "Lan\u00e7amento origem",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:17.274504",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Item Remaining Payment",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

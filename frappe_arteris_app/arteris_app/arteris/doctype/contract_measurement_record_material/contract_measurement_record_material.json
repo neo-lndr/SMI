@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-08-15 12:42:43.855546",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "material",
+  "quantidademedida",
+  "valortotal",
+  "valorcalculado"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material",
+   "options": "Material"
+  },
+  {
+   "fieldname": "quantidademedida",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantidade",
+   "precision": "3"
+  },
+  {
+   "fieldname": "valortotal",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "valorcalculado",
+   "fieldtype": "Currency",
+   "label": "Valor calculado",
+   "precision": "2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:23.015271",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Record Material",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

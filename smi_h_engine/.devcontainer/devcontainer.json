@@ -1,0 +1,68 @@
+{
+	"name": "SMI H Engine Development",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "smi-h-engine-api",
+	"workspaceFolder": "/app",
+
+	// Sobrescrever o comando padrão para desenvolvimento
+	"overrideCommand": true,
+	"shutdownAction": "stopCompose",
+
+	// Customizações do VSCode
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.debugpy",
+				"ms-python.black-formatter",
+				"charliermarsh.ruff",
+				"tamasfe.even-better-toml",
+				"redhat.vscode-yaml",
+				"usernamehw.errorlens"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.linting.enabled": true,
+				"python.formatting.provider": "black",
+				"python.analysis.typeCheckingMode": "basic",
+				"editor.formatOnSave": true,
+				"files.exclude": {
+					"**/__pycache__": true,
+					"**/*.pyc": true
+				}
+			}
+		}
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+
+	"forwardPorts": [8084],
+	"portsAttributes": {
+		"8084": {
+			"label": "API Engine",
+			"onAutoForward": "notify"
+		}
+	},
+
+	// Instalar debugpy globalmente após criar o container
+	"postCreateCommand": "pip install debugpy",
+
+	"postStartCommand": "echo 'Dev container pronto! Pressione F5 para iniciar debug.'",
+
+	// Usar o usuário appuser do container
+	"remoteUser": "appuser",
+
+	// Montar apenas o .vscode do projeto
+	"mounts": [
+		"source=${localWorkspaceFolder}/.vscode,target=/app/.vscode,type=bind,consistency=cached"
+	],
+
+	// Variáveis de ambiente adicionais para debug
+	"containerEnv": {
+		"LOG_LEVEL": "DEBUG",
+		"ENABLE_CRON": "false"
+	}
+}

@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-07-23 14:13:23.438466",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jcwi",
+  "origem",
+  "linhaorigem",
+  "boletimmedicao",
+  "item",
+  "saldo",
+  "valorpago"
+ ],
+ "fields": [
+  {
+   "fieldname": "origem",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Saldo de pagamento de origem",
+   "options": "Contract Measurement Item Remaining",
+   "read_only": 1
+  },
+  {
+   "fieldname": "boletimmedicao",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Boletim de medi\u00e7\u00e3o referenciado",
+   "options": "Contract Measurement",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Saldo para pagamento",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valorpago",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor pago",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "linhaorigem",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Saldo de pagamento de origem - Linha",
+   "options": "Contract Measurement Item Remaining Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jcwi",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-25 15:02:58.377793",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Item Balance Payment",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

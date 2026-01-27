@@ -1,0 +1,102 @@
+[
+    {
+        "id": "BM-CW082025-001",
+        "results": [
+            {
+                "path": "e00011v",
+                "status": "success",
+                "result": 0.0
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-97ff66f9f8cf",
+        "results": [
+            {
+                "path": "e00018v",
+                "status": "success",
+                "result": 1.857142857
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98006064305e",
+        "results": [
+            {
+                "path": "e00018v",
+                "status": "success",
+                "result": 3.19047619
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-981657157f22",
+        "results": [
+            {
+                "path": "e00018v",
+                "status": "success",
+                "result": 0.607142857
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-982505924d62",
+        "results": [
+            {
+                "path": "e00018v",
+                "status": "success",
+                "result": 1.607142857
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98387d424a3d",
+        "results": [
+            {
+                "path": "e00018v",
+                "status": "success",
+                "result": 0.084920635
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9845f996b9a9",
+        "results": [
+            {
+                "path": "e00031v",
+                "status": "success",
+                "result": 1.904761905
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9858140d352d",
+        "results": [
+            {
+                "path": "e00031v",
+                "status": "success",
+                "result": 0.952380952
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-9867e0867f2b",
+        "results": [
+            {
+                "path": "e00031v",
+                "status": "success",
+                "result": 0.80952381
+            }
+        ]
+    },
+    {
+        "id": "0199c998-fbfc-7312-9342-98744c21ce6c",
+        "results": [
+            {
+                "path": "e00031v",
+                "status": "success",
+                "result": 4.761904762
+            }
+        ]
+    }
+]

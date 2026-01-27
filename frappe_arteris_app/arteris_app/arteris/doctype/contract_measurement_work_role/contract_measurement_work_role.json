@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-04-27 16:09:17.078292",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_tyby",
+  "item",
+  "tipodoitem",
+  "funcao",
+  "quantidade",
+  "valorunitario",
+  "quantidademedida",
+  "valormedido",
+  "section_break_ykpk",
+  "column_break_kicy",
+  "quantidadetotal",
+  "totaldias",
+  "horanormal",
+  "horanormalda",
+  "compensacoes",
+  "horaextra",
+  "percentualhe",
+  "horaextra100"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item",
+   "options": "Contract Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "funcao",
+   "fieldtype": "Link",
+   "label": "Fun\u00e7\u00e3o",
+   "options": "Work Role",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valormedido",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor medido",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidademedida",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantidade medida",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valorunitario",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor unit\u00e1rio",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kicy",
+   "fieldtype": "Column Break",
+   "label": "* Horas representadas em decimais"
+  },
+  {
+   "default": "0",
+   "fieldname": "horanormal",
+   "fieldtype": "Float",
+   "label": "Total de horas normais (Dias \u00fateis) ",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "horanormalda",
+   "fieldtype": "Float",
+   "label": "Total horas normais desc. e acr\u00e9s.",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "compensacoes",
+   "fieldtype": "Float",
+   "label": "Total de compensa\u00e7\u00f5es",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "horaextra",
+   "fieldtype": "Float",
+   "label": "Total de horas extras (S\u00e1b. e dias \u00fateis)",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "percentualhe",
+   "fieldtype": "Float",
+   "label": "Percentual para hora extra (S\u00e1b. e dias \u00fateis)",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "horaextra100",
+   "fieldtype": "Float",
+   "label": "Total horas extras 100% (Dom. e feriados)",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ykpk",
+   "fieldtype": "Section Break",
+   "label": "Totaliza\u00e7\u00e3o dos registros",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tipodoitem",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tipo",
+   "options": "Contract Item Type",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "totaldias",
+   "fieldtype": "Int",
+   "label": "Dias \u00fateis",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidade",
+   "fieldtype": "Float",
+   "label": "Quantidade contratada",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "quantidadetotal",
+   "fieldtype": "Float",
+   "label": "Quantidade total",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tyby",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-06 15:24:10.773910",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Work Role",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-15 12:04:19.702019",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "geral_section",
+  "codigorelatorio",
+  "dataexecucao",
+  "latitude",
+  "longitude",
+  "observacoes",
+  "rodovia_name",
+  "cidade_name",
+  "uuidrelatorio",
+  "column_break_dhdm",
+  "rodovia",
+  "via",
+  "sentido",
+  "faixa",
+  "kminicial",
+  "kmfinal",
+  "width",
+  "height",
+  "length",
+  "rap"
+ ],
+ "fields": [
+  {
+   "fieldname": "geral_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "codigorelatorio",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C\u00f3digo do apontamento",
+   "length": 36
+  },
+  {
+   "fieldname": "dataexecucao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data da execu\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "observacoes",
+   "fieldtype": "Small Text",
+   "label": "Observa\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "rodovia_name",
+   "fieldtype": "Link",
+   "label": "Rodovia",
+   "options": "Highway"
+  },
+  {
+   "fieldname": "cidade_name",
+   "fieldtype": "Link",
+   "label": "Cidade",
+   "options": "City"
+  },
+  {
+   "fieldname": "column_break_dhdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rodovia",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Identifica\u00e7\u00e3o da rodovia",
+   "length": 30
+  },
+  {
+   "fieldname": "via",
+   "fieldtype": "Data",
+   "label": "Via",
+   "length": 60
+  },
+  {
+   "fieldname": "sentido",
+   "fieldtype": "Data",
+   "label": "Sentido",
+   "length": 60
+  },
+  {
+   "fieldname": "faixa",
+   "fieldtype": "Data",
+   "label": "Faixa",
+   "length": 60
+  },
+  {
+   "fieldname": "kminicial",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Km inicial",
+   "precision": "3"
+  },
+  {
+   "fieldname": "kmfinal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Km final",
+   "precision": "3"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Largura",
+   "precision": "3"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Altura",
+   "precision": "3"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Comprimento",
+   "precision": "3"
+  },
+  {
+   "fieldname": "rap",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "% RAP",
+   "precision": "3"
+  },
+  {
+   "fieldname": "uuidrelatorio",
+   "fieldtype": "Data",
+   "label": "UUID "
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-08 16:27:45.617972",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Record Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

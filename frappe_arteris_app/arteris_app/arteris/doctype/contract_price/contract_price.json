@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-06-25 21:06:12.018814",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "templateitem",
+  "unidade",
+  "volumeinicial",
+  "volumefinal",
+  "valor",
+  "column_break_azcz",
+  "rap",
+  "faixa"
+ ],
+ "fields": [
+  {
+   "fieldname": "templateitem",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Template de item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "volumeinicial",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Vol. inicial (Qtd.)",
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "volumefinal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Vol. final (Qtd.)",
+   "non_negative": 1,
+   "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unidade",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Un.",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_azcz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "rap",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "% RAP",
+   "non_negative": 1,
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "faixa",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Faixa de rendimento",
+   "options": "Menor\nM\u00e9dia\nAcima",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:27.944451",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Price",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 14:23:57.018669",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "adobesign_section",
+  "adobesign_token",
+  "path_para_playwright_section",
+  "pwpath",
+  "kartado_section",
+  "kartado_usuario",
+  "kartado_senha"
+ ],
+ "fields": [
+  {
+   "fieldname": "adobesign_section",
+   "fieldtype": "Section Break",
+   "label": "AdobeSign"
+  },
+  {
+   "fieldname": "adobesign_token",
+   "fieldtype": "Password",
+   "label": "Token"
+  },
+  {
+   "fieldname": "path_para_playwright_section",
+   "fieldtype": "Section Break",
+   "label": "Path para playwright"
+  },
+  {
+   "fieldname": "pwpath",
+   "fieldtype": "Data",
+   "label": "Path"
+  },
+  {
+   "fieldname": "kartado_section",
+   "fieldtype": "Section Break",
+   "label": "Kartado"
+  },
+  {
+   "fieldname": "kartado_usuario",
+   "fieldtype": "Data",
+   "label": "Usu\u00e1rio"
+  },
+  {
+   "fieldname": "kartado_senha",
+   "fieldtype": "Password",
+   "label": "Senha"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-09-08 16:19:12.012818",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "SMI Config",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,100 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Logs (não copiar logs antigos)
+logs/*.log
+*.log
+
+# Data (não copiar dados temporários)
+data/temp/*
+engine_entities/temp/*
+
+# Cache
+.cache/
+.ruff_cache/
+*.cache
+
+# Documentation (arquivos de desenvolvimento)
+docs/
+*.md
+!README.md
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose*.yml
+Dockerfile
+.dockerignore
+
+# Backups
+*.bak
+*.backup
+*.old
+*.orig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scripts de desenvolvimento
+setup_cron.sh
+remove_cron.sh
+exemplo.sh
+
+# Claude
+.claude/

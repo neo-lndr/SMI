@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-04-26 14:50:49.075341",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "funcao",
+  "configura\u00e7\u00f5es_tab",
+  "de_para_de_fun\u00e7\u00f5es_do_kartado_section",
+  "tabkartado"
+ ],
+ "fields": [
+  {
+   "fieldname": "funcao",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Fun\u00e7\u00e3o",
+   "sticky": 1
+  },
+  {
+   "fieldname": "configura\u00e7\u00f5es_tab",
+   "fieldtype": "Tab Break",
+   "label": "Configura\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "tabkartado",
+   "fieldtype": "Table",
+   "options": "Work Role Config Kartado"
+  },
+  {
+   "fieldname": "de_para_de_fun\u00e7\u00f5es_do_kartado_section",
+   "fieldtype": "Section Break",
+   "label": "De para de fun\u00e7\u00f5es do Kartado"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:39.006454",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Work Role",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "funcao",
+ "track_changes": 1
+}

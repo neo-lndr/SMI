@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2025-05-21 12:59:02.502614",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "codigo",
+  "descricao",
+  "grupo",
+  "subgrupo",
+  "column_break_ycro",
+  "observacaoes",
+  "configura\u00e7\u00f5es_tab",
+  "kartado_section",
+  "tabkartado"
+ ],
+ "fields": [
+  {
+   "description": "O c\u00f3digo \u00e9 informado pelo usu\u00e1rio",
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C\u00f3digo",
+   "length": 30,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "descricao",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Descri\u00e7\u00e3o",
+   "length": 120,
+   "reqd": 1
+  },
+  {
+   "fieldname": "grupo",
+   "fieldtype": "Link",
+   "label": "Grupo",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "subgrupo",
+   "fieldtype": "Link",
+   "label": "Sub-grupo",
+   "options": "Item Sub Group"
+  },
+  {
+   "fieldname": "column_break_ycro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observacaoes",
+   "fieldtype": "Text",
+   "label": "Observa\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "configura\u00e7\u00f5es_tab",
+   "fieldtype": "Tab Break",
+   "label": "Configura\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "kartado_section",
+   "fieldtype": "Section Break",
+   "label": "Kartado"
+  },
+  {
+   "fieldname": "tabkartado",
+   "fieldtype": "Table",
+   "options": "Item Config Kartado"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:33.870859",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "descricao",
+ "track_changes": 1
+}

@@ -1,0 +1,385 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-05-21 10:27:11.634491",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jhbn",
+  "itemcontrato",
+  "column_break_klzj",
+  "aplicar_performance",
+  "section_break_euhs",
+  "tipodoitem",
+  "valorunitario",
+  "quantidadetotalvigente",
+  "valortotalvigente",
+  "quantidademedida",
+  "valortotalmedido",
+  "column_break_ugjc",
+  "saldoanterior",
+  "saldoatual",
+  "valortotalacumuladoanterior",
+  "valortotalacumulado",
+  "quantidadeacumuladaanterior",
+  "quantidadeacumulada",
+  "totaliza\u00e7\u00f5es_section",
+  "m\u00e3o_de_obra_column",
+  "quantidademedidamo",
+  "valortotalmedidomo",
+  "column_break_thbe",
+  "quantidademedidaativos",
+  "valortotalmedidoativos",
+  "recursos_column",
+  "quantidademedidarecursos",
+  "valortotalmedidorecursos",
+  "section_break_syuj",
+  "produtividade_compensat\u00f3ria_column",
+  "quantidademedidapc",
+  "valortotalmedidopc",
+  "column_break_zjeu",
+  "column_break_oydq",
+  "section_break_gfnf",
+  "fatorpagamento",
+  "valorfatorpagamento",
+  "column_break_nnxr",
+  "cidade",
+  "diasuteis",
+  "column_break_buis",
+  "payfactor_discount",
+  "valorretroativo",
+  "saldopago",
+  "valorpago"
+ ],
+ "fields": [
+  {
+   "fieldname": "itemcontrato",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valortotalvigente",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total vigente",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidadetotalvigente",
+   "fieldtype": "Float",
+   "label": "Quantidade total vigente",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "saldoanterior",
+   "fieldtype": "Currency",
+   "label": "Saldo anterior",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidademedida",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantidade medida",
+   "precision": "9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valortotalmedido",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total medido",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "saldoatual",
+   "fieldtype": "Currency",
+   "label": "Saldo atual",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidadeacumulada",
+   "fieldtype": "Float",
+   "label": "Quantidade acumulada atual",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valortotalacumulado",
+   "fieldtype": "Currency",
+   "label": "Valor total acumulado atual",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ugjc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valortotalacumuladoanterior",
+   "fieldtype": "Currency",
+   "label": "Valor total acumulado anterior",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantidadeacumuladaanterior",
+   "fieldtype": "Float",
+   "label": "Quantidade acumulada anterior",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valorfatorpagamento",
+   "fieldtype": "Currency",
+   "label": "Valor do fator de pagamento",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gfnf",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "default": "100",
+   "fieldname": "fatorpagamento",
+   "fieldtype": "Float",
+   "label": "Fator de pagamento %",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nnxr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diasuteis",
+   "fieldtype": "Int",
+   "label": "Dias uteis",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cidade",
+   "fieldtype": "Link",
+   "label": "Cidade base",
+   "options": "City",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valorunitario",
+   "fieldtype": "Currency",
+   "label": "Valor unit\u00e1rio vigente*",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tipodoitem",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tipo",
+   "options": "Contract Item Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_buis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Descontos incluindo payfactor",
+   "fieldname": "payfactor_discount",
+   "fieldtype": "Currency",
+   "label": "Descontos",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "aplicar_performance",
+   "fieldtype": "Check",
+   "label": "Aplicar performance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totaliza\u00e7\u00f5es_section",
+   "fieldtype": "Section Break",
+   "label": "Totaliza\u00e7\u00f5es",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "quantidademedidamo",
+   "fieldtype": "Float",
+   "label": "Quantidade medida M.O.",
+   "precision": "9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valortotalmedidomo",
+   "fieldtype": "Currency",
+   "label": "Valor total medido M.O.",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_thbe",
+   "fieldtype": "Column Break",
+   "label": "Ativos"
+  },
+  {
+   "default": "0",
+   "fieldname": "quantidademedidaativos",
+   "fieldtype": "Float",
+   "label": "Quantidade medida A.",
+   "precision": "9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valortotalmedidoativos",
+   "fieldtype": "Currency",
+   "label": "Valor total medido A.",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "m\u00e3o_de_obra_column",
+   "fieldtype": "Column Break",
+   "label": "M\u00e3o de obra"
+  },
+  {
+   "fieldname": "recursos_column",
+   "fieldtype": "Column Break",
+   "label": "Recursos"
+  },
+  {
+   "fieldname": "quantidademedidarecursos",
+   "fieldtype": "Float",
+   "label": "Quantidade medida R.",
+   "precision": "9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valortotalmedidorecursos",
+   "fieldtype": "Currency",
+   "label": "Valor total medido R.",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_klzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_euhs",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valorpago",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total pago",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "saldopago",
+   "fieldtype": "Currency",
+   "label": "Saldo pago",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_syuj",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "produtividade_compensat\u00f3ria_column",
+   "fieldtype": "Column Break",
+   "label": "Produtividade compensat\u00f3ria"
+  },
+  {
+   "fieldname": "valortotalmedidopc",
+   "fieldtype": "Currency",
+   "label": "Valor total medido Prod. Comp.",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zjeu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oydq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantidademedidapc",
+   "fieldtype": "Float",
+   "label": "Quantidade medida Prod. Comp.",
+   "precision": "3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_jhbn",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valorretroativo",
+   "fieldtype": "Currency",
+   "label": "Valor de reajuste retroativo",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-05 17:39:46.518882",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Item",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

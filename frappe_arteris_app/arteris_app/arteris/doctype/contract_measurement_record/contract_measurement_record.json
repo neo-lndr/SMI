@@ -1,0 +1,391 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-08-15 11:19:14.809424",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payfactor_section",
+  "apontamento_origem",
+  "percent_payfactor",
+  "lote_payfactor",
+  "column_break_fcbr",
+  "datahoraimagens",
+  "productionid",
+  "cabecalho_section",
+  "origem_integracao",
+  "datacriacao",
+  "dataexecucao",
+  "dataaprovacao",
+  "contrato",
+  "boletimmedicao",
+  "medicaovigente",
+  "column_break_vfdv",
+  "codigo",
+  "climadamanha",
+  "condicoesdamanha",
+  "climadatarde",
+  "condicoesdatarde",
+  "climadanoite",
+  "condicoesdanoite",
+  "apontamentodireto",
+  "relatorios_section",
+  "tablog",
+  "section_break_jmcj",
+  "tabimagens",
+  "tab_mo",
+  "funcoes",
+  "tabworkrole",
+  "equipes",
+  "tabworkroleteam",
+  "ativos",
+  "tabasset",
+  "materais_tab",
+  "tblmateriais",
+  "recursos",
+  "tabrecurso",
+  "registro_de_horas_tab",
+  "_dataexecucao",
+  "_equipe",
+  "column_break_lprq",
+  "diasemana",
+  "eh_feriado",
+  "feriado",
+  "section_break_mfyo",
+  "tabhoras",
+  "sap_tab",
+  "taborder"
+ ],
+ "fields": [
+  {
+   "fieldname": "payfactor_section",
+   "fieldtype": "Section Break",
+   "label": "Payfactor"
+  },
+  {
+   "fieldname": "apontamento_origem",
+   "fieldtype": "Data",
+   "label": "Apontamento de origem"
+  },
+  {
+   "fieldname": "percent_payfactor",
+   "fieldtype": "Float",
+   "label": "% Payfactor",
+   "precision": "3"
+  },
+  {
+   "fieldname": "lote_payfactor",
+   "fieldtype": "Data",
+   "label": "Observa\u00e7\u00e3o (Lote)",
+   "length": 60
+  },
+  {
+   "fieldname": "cabecalho_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "origem_integracao",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Origem",
+   "options": "Kartado RDO\nKartado Apontamento\nKartado Outros\nOsiris\nApontamento direto\nPayfactor"
+  },
+  {
+   "fieldname": "datacriacao",
+   "fieldtype": "Datetime",
+   "label": "Data"
+  },
+  {
+   "fieldname": "dataexecucao",
+   "fieldtype": "Datetime",
+   "label": "Data execu\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "dataaprovacao",
+   "fieldtype": "Datetime",
+   "label": "Data aprova\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "label": "Contrato",
+   "options": "Contract"
+  },
+  {
+   "fieldname": "column_break_vfdv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "boletimmedicao",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Boletim de medi\u00e7\u00e3o",
+   "options": "Contract Measurement"
+  },
+  {
+   "fieldname": "medicaovigente",
+   "fieldtype": "Select",
+   "label": "Medi\u00e7\u00e3o vigente",
+   "options": "Sim\nN\u00e3o"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "label": "C\u00f3digo",
+   "length": 36
+  },
+  {
+   "fieldname": "climadamanha",
+   "fieldtype": "Data",
+   "label": "Clima da manh\u00e3",
+   "length": 15
+  },
+  {
+   "fieldname": "condicoesdamanha",
+   "fieldtype": "Data",
+   "label": "Condi\u00e7\u00f5es da manh\u00e3",
+   "length": 15
+  },
+  {
+   "fieldname": "climadatarde",
+   "fieldtype": "Data",
+   "label": "Clima da tarde",
+   "length": 15
+  },
+  {
+   "fieldname": "condicoesdatarde",
+   "fieldtype": "Data",
+   "label": "Condi\u00e7\u00f5es da tarde"
+  },
+  {
+   "fieldname": "climadanoite",
+   "fieldtype": "Data",
+   "label": "Clima da noite",
+   "length": 15
+  },
+  {
+   "fieldname": "condicoesdanoite",
+   "fieldtype": "Data",
+   "label": "Condi\u00e7\u00f5es da noite",
+   "length": 15
+  },
+  {
+   "fieldname": "apontamentodireto",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Apontamento direto",
+   "options": "Contract Measurement Note"
+  },
+  {
+   "fieldname": "relatorios_section",
+   "fieldtype": "Section Break",
+   "label": "Apontamentos"
+  },
+  {
+   "fieldname": "tablog",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Log"
+  },
+  {
+   "fieldname": "tab_mo",
+   "fieldtype": "Tab Break",
+   "label": "M\u00e3o de obra"
+  },
+  {
+   "fieldname": "funcoes",
+   "fieldtype": "Section Break",
+   "label": "Fun\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "tabworkrole",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Work Role"
+  },
+  {
+   "fieldname": "equipes",
+   "fieldtype": "Section Break",
+   "label": "Equipes"
+  },
+  {
+   "fieldname": "tabworkroleteam",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Team"
+  },
+  {
+   "fieldname": "ativos",
+   "fieldtype": "Tab Break",
+   "label": "Maq., equip. e ve\u00edculos"
+  },
+  {
+   "fieldname": "tabasset",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Asset"
+  },
+  {
+   "fieldname": "materais_tab",
+   "fieldtype": "Tab Break",
+   "label": "Materais"
+  },
+  {
+   "fieldname": "tblmateriais",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Material"
+  },
+  {
+   "fieldname": "recursos",
+   "fieldtype": "Tab Break",
+   "label": "Recursos"
+  },
+  {
+   "fieldname": "tabrecurso",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Resource"
+  },
+  {
+   "fieldname": "registro_de_horas_tab",
+   "fieldtype": "Tab Break",
+   "label": "Registro de horas"
+  },
+  {
+   "fieldname": "_dataexecucao",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Data execu\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "_equipe",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Equipe"
+  },
+  {
+   "fieldname": "column_break_lprq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diasemana",
+   "fieldtype": "Data",
+   "label": "Dia da semana"
+  },
+  {
+   "default": "0",
+   "fieldname": "eh_feriado",
+   "fieldtype": "Check",
+   "label": "Feriado"
+  },
+  {
+   "fieldname": "feriado",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_mfyo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tabhoras",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Time"
+  },
+  {
+   "fieldname": "sap_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pedido SAP"
+  },
+  {
+   "fieldname": "taborder",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record SAP Order"
+  },
+  {
+   "fieldname": "column_break_fcbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "datahoraimagens",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Verifica\u00e7\u00e3o de imagens do apontamento",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jmcj",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "tabimagens",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Record Image"
+  },
+  {
+   "fieldname": "productionid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "ProductionId - Osiris",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-16 17:07:21.506991",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Record",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "origem_integracao"
+}

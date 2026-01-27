@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+
+  # Serviço principal da API Engine
+  smi-h-engine-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: smi-h-engine:latest
+    container_name: smi-h-engine-api
+    restart: unless-stopped
+    environment:
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL}
+      - LOG_TO_CONSOLE=${LOG_TO_CONSOLE}
+      - LOG_TO_FILE=${LOG_TO_FILE}
+      - LOG_DIR=/app/logs
+      - LOG_FILE=engine.log
+      - LOG_FILE_MAX_SIZE_BYTES=${LOG_FILE_MAX_SIZE_BYTES}
+      - LOG_FILE_BACKUP_COUNT=${LOG_FILE_BACKUP_COUNT}
+
+      # API Externa
+      - ARTERIS_API_TOKEN=${ARTERIS_API_TOKEN}
+      - ARTERIS_API_BASE_URL=${ARTERIS_API_BASE_URL}
+      - ARTERIS_API_URL_UPDATE_DOCKTYPE=${ARTERIS_API_URL_UPDATE_DOCKTYPE}
+      - DISABLE_SSL_VERIFY=${DISABLE_SSL_VERIFY}
+
+      # Cron
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-0 23 * * *}
+      - ENABLE_CRON=${ENABLE_CRON:-true}
+
+      # Configurações da aplicação
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Persistência de logs
+      - ./logs:/app/logs
+      # Persistência de dados/cache
+      - ./data:/app/data
+      # Montagem de arquivo .env (opcional)
+      - ./.env:/app/.env:ro
+      # Bind mounts específicos para desenvolvimento (hot reload)
+      # Arquivos Python principais
+      - ./src/api_client.py:/app/api_client.py
+      - ./src/api_engine.py:/app/api_engine.py
+      - ./src/engine_eval.py:/app/engine_eval.py
+      - ./src/engine_exec.py:/app/engine_exec.py
+      - ./src/engine_parser.py:/app/engine_parser.py
+      - ./src/formula_classifier.py:/app/formula_classifier.py
+      - ./src/update_tree.py:/app/update_tree.py
+      # Diretórios de módulos
+      - ./src/config:/app/config
+      - ./src/filters:/app/filters
+      # engine_entities - arquivos individuais (não a pasta temp/)
+      - ./src/engine_entities/__init__.py:/app/engine_entities/__init__.py
+      - ./src/engine_entities/api_smi.py:/app/engine_entities/api_smi.py
+      - ./src/engine_entities/engine_data.py:/app/engine_entities/engine_data.py
+      - ./src/engine_entities/file_manager.py:/app/engine_entities/file_manager.py
+      - ./src/engine_entities/get_doctypes.py:/app/engine_entities/get_doctypes.py
+      - ./src/engine_entities/hierarchical_tree.py:/app/engine_entities/hierarchical_tree.py
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://127.0.0.1:8084/', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - smi_default
+
+networks:
+  smi_default:
+    external: true

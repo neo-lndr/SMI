@@ -1,0 +1,50 @@
+/tmp/cron_env: line 11: 21: command not found
+/tmp/cron_env: line 21: be2ff702de81b65:032e6f9ddc52aad: command not found
+=========================================
+=== INICIO DAS TAREFAS DIÁRIAS ===
+=== 2025-10-01 21:00:01 ===
+=========================================
+[0;32m[INFO][0m 2025-10-01 21:00:01 - Diretório de trabalho: /usr/local/bin
+[0;32m[INFO][0m 2025-10-01 21:00:01 - Iniciando execução sequencial de tarefas
+
+[0;34m=========================================[0m
+[0;34m=== EXECUTANDO: SAPORDER[0m
+[0;34m=========================================[0m
+[0;31m[ERROR][0m 2025-10-01 21:00:01 - ✗ Script não encontrado: ./run_saporder.sh
+[1;33m[WARNING][0m 2025-10-01 21:00:01 - Continuando apesar da falha em SAPORDER...
+
+[0;34m=========================================[0m
+[0;34m=== EXECUTANDO: FTD[0m
+[0;34m=========================================[0m
+[0;31m[ERROR][0m 2025-10-01 21:00:01 - ✗ Script não encontrado: ./run_ftd.sh
+[1;33m[WARNING][0m 2025-10-01 21:00:01 - Continuando apesar da falha em FTD...
+
+[0;34m=========================================[0m
+[0;34m=== EXECUTANDO: KARTADO[0m
+[0;34m=========================================[0m
+[0;31m[ERROR][0m 2025-10-01 21:00:01 - ✗ Script não encontrado: ./run_kartado.sh
+[1;33m[WARNING][0m 2025-10-01 21:00:01 - Continuando apesar da falha em KARTADO...
+
+[0;34m=========================================[0m
+[0;34m=== EXECUTANDO: OSIRIS[0m
+[0;34m=========================================[0m
+[0;31m[ERROR][0m 2025-10-01 21:00:01 - ✗ Script não encontrado: ./run_osiris.sh
+[1;33m[WARNING][0m 2025-10-01 21:00:01 - Continuando apesar da falha em OSIRIS...
+
+=========================================
+=== RESUMO DA EXECUÇÃO ===
+=========================================
+[0;32m[INFO][0m 2025-10-01 21:00:01 - Total de tarefas: 4
+[0;32m[INFO][0m 2025-10-01 21:00:01 - Concluídas com sucesso: 0
+[0;32m[INFO][0m 2025-10-01 21:00:01 - Falharam: 4
+
+[1;33m⚠[0m SAPORDER: NOT_FOUND
+[1;33m⚠[0m FTD: NOT_FOUND
+[1;33m⚠[0m KARTADO: NOT_FOUND
+[1;33m⚠[0m OSIRIS: NOT_FOUND
+
+=========================================
+=== FIM DAS TAREFAS DIÁRIAS ===
+=== 2025-10-01 21:00:01 ===
+=========================================
+[1;33m[WARNING][0m 2025-10-01 21:00:01 - Execução concluída com 4 falha(s)

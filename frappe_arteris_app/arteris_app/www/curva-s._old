@@ -1,0 +1,457 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Custom Page") }}{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="/assets/frappe/css/frappe-web.css">
+<style>
+    #custom-page-container input.form-control {
+        background-color: #002d4745 !important;
+        border-color: #002d4745 !important;
+        box-shadow: none !important;
+    }
+    /* Make table header sticky */
+    #measurement-items table thead th {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 2;
+    }
+    /* Optional: Add a shadow for better visibility */
+    #measurement-items table thead th {
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+    }
+        /* Make the first column (Descrição do Item) wider */
+    #measurement-items table th:first-child,
+    #measurement-items table td:first-child {
+        min-width: 600px;
+        width: 500px;
+        max-width: 750px;
+        white-space: normal;
+        word-break: break-word;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+<script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
+<script src="/assets/frappe/js/frappe-web.min.js"></script>
+<script src="/assets/frappe/js/lib/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+
+{% block header %}
+<h1>{{ _("Página Personalizada") }}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="custom-page-container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Gerenciador de valores esperados para contratos</h3>
+            <div class="form-group">
+                <label for="contract-select">Selecionar Contrato:</label>
+                <select id="contract-select" class="form-control" style="width: 300px;">
+                    <option value="">Selecione um Contrato...</option>
+                </select>
+                <h5>
+                    <div id="subsidiaria-name"></div>
+                    <div id="contratada-name"></div>
+                </h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mb-2">
+        <input type="text" id="item-filter" class="form-control" placeholder="Filtrar item de contrato...">
+    </div>
+    <div class="row mb-2" id="date-filter-row">
+    <div class="col-auto">
+        <label for="date-filter-start">De:</label>
+        <input type="date" id="date-filter-start" class="form-control" style="min-width: 150px;">
+    </div>
+    <div class="col-auto">
+        <label for="date-filter-end">Até:</label>
+        <input type="date" id="date-filter-end" class="form-control" style="min-width: 150px;">
+    </div>
+    <div class="col-auto align-self-end">
+        <button type="button" class="btn btn-primary" id="apply-date-filter">Filtrar Datas</button>
+        <button type="button" class="btn btn-secondary" id="clear-date-filter">Limpar</button>
+    </div>
+</div>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div id="contract-list-container" style="display: none;">
+                <div class="col-md-4" id="measurement-items"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for frappe to be ready
+    if (window.frappe) {
+        init_page();
+    } else {
+        document.addEventListener('frappe-ready', init_page);
+    }
+});
+
+function init_page() {
+    init_custom_page();
+}
+
+function init_custom_page() {
+    load_contracts();
+    
+    $('#contract-select').on('change', function() {
+        const selected_contract = $(this).val();
+        if (selected_contract) {
+            const selected_option = $(this).find('option:selected');
+            const contratada = selected_option.attr('contratada');
+            const subsidiaria = selected_option.attr('subsidiaria');
+            
+            load_subsidiaria(subsidiaria);
+            load_contratada(contratada);
+            load_contract_items(selected_contract);
+            $('#contract-list-container').show();
+            $('#input-form').show();
+        } else {
+            $('#contract-list-container').hide();
+            $('#input-form').hide();
+        }
+    });
+}
+
+function load_contracts() {
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract',
+            fields: ['name', 'contrato', 'contratada', 'subsidiaria'],
+            order_by: 'creation asc',
+            limit_page_length: 100,
+        },
+        callback: function(r) {
+            if (r.message) {
+                const select = $('#contract-select');
+                select.empty().append('<option value="">Selecione um Contrato...</option>');
+                
+                r.message.forEach(function(item) {
+                    select.append(`<option value="${item.name}" 
+                                    contratada="${item.contratada}" 
+                                    subsidiaria="${item.subsidiaria}">
+                                    ${item.contrato}</option>`);
+                });
+            }
+        }
+    });
+}
+
+function load_contratada(contratada_id){
+        frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contracted Company',
+            filters: {
+                'name': contratada_id
+            },
+            fields: ['nome'],
+            order_by: 'creation desc'
+        },
+        callback: function(r) {
+            if (r.message) {
+                let html = `<p>Empresa: ${r.message[0].nome}</p>`
+                $('#contratada-name').html(html);
+            }
+        }
+    });
+}
+function load_subsidiaria(subsidiaria_id){
+        frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Subsidiary',
+            filters: {
+                'name': subsidiaria_id
+            },
+            fields: ['nome'],
+            order_by: 'creation desc'
+        },
+        callback: function(r) {
+            if (r.message) {
+                let html = `<p>Concessionária: ${r.message[0].nome}</p>`
+                $('#subsidiaria-name').html(html);
+            }
+        }
+    });
+}
+
+function load_contract_items(contract_name){
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract Measurement',
+            filters: {
+                'contrato': contract_name
+            },
+            fields: ['name', 'tabitenscontatrato', 'obra','datafinalmedicao'],
+            order_by: 'datafinalmedicao asc'
+        },
+        callback: function(r) {
+            const measurements = r.message || [];
+            frappe.call({
+                method: 'frappe.client.get_list',
+                args: {
+                    doctype: 'Contract Item Workload Cfg',
+                    filters: {
+                        'contrato': contract_name
+                    },
+                    fields: ['name', 'mes', 'ano'],
+                    limit_page_length: 1000
+                },
+                callback: function(r) {
+                    if (r.message && r.message.length) {
+                        let docsFetched = 0;
+                        let allDocs = [];
+                        r.message.forEach(function(row) {
+                            frappe.call({
+                                method: 'frappe.client.get',
+                                args: {
+                                    doctype: 'Contract Item Workload Cfg',
+                                    name: row.name
+                                },
+                                callback: function(docRes) {
+                                    allDocs.push(docRes.message);
+                                    docsFetched++;
+                                    if (docsFetched === r.message.length) {
+                                        // Merge all tabitens from allDocs into a flat array
+                                        let workload_cfgs = [];
+                                        allDocs.forEach(doc => {
+                                            if (doc.tabitens && doc.tabitens.length) {
+                                                doc.tabitens.forEach(item => {
+                                                    workload_cfgs.push({
+                                                        item: item.item,
+                                                        mes: String(doc.mes).padStart(2, '0'), // always two digits
+                                                        ano: String(doc.ano),
+                                                        valor: item.valor
+                                                    });
+                                                });
+                                            }
+                                        });
+                                        console.log(workload_cfgs)
+                                        // Now render the table with measurements and workload_cfgs
+                                        render_contract_measurement_items(measurements, workload_cfgs);
+                                        $(document).on('input', '#item-filter', function() {
+                                            const filter = $(this).val().toLowerCase();
+                                            $('#measurement-items table tbody tr').each(function() {
+                                                const descricao = $(this).find('td:first').text().toLowerCase();
+                                                if (descricao.indexOf(filter) > -1) {
+                                                    $(this).show();
+                                                } else {
+                                                    $(this).hide();
+                                                }
+                                            });
+                                        });
+                                        $(document).on('click', '#apply-date-filter', function() {
+                                            const start = $('#date-filter-start').val();
+                                            const end = $('#date-filter-end').val();
+
+                                            // Esconde/mostra colunas conforme o filtro
+                                            $('#measurement-items table thead tr:nth-child(1) th').each(function(idx) {
+                                                if (idx === 0) return; // Descrição do Item
+                                                const th = $(this);
+                                                const dateText = th.text().trim();
+                                                const date = moment(dateText, 'DD/MM/YYYY').format('YYYY-MM-DD');
+                                                let show = true;
+                                                if (start && date < start) show = false;
+                                                if (end && date > end) show = false;
+
+                                                // Esconde/mostra th e todas as tds da coluna
+                                                const colIdx = idx + 1;
+                                                $('#measurement-items table tr').each(function() {
+                                                    $(this).find('th,td').eq(idx).toggle(show);
+                                                });
+                                            });
+                                        });
+
+                                        $(document).on('click', '#clear-date-filter', function() {
+                                            $('#date-filter-start').val('');
+                                            $('#date-filter-end').val('');
+                                            // Mostra todas as colunas
+                                            $('#measurement-items table tr').each(function() {
+                                                $(this).find('th,td').show();
+                                            });
+                                        });
+                                    }
+                                }
+                            });
+                        });
+                    } else {
+                        // No workload cfgs, just render measurements
+                        render_contract_measurement_items(measurements, []);
+                    }
+                }
+            });
+        }
+    });
+}
+
+function render_contract_measurement_items(measurements, workload_cfgs) {
+    const dates = measurements.map(item => item.datafinalmedicao);
+
+    // Helper: build a lookup for quick access
+    const cfg_lookup = {};
+    workload_cfgs.forEach(cfg => {
+        const key = `${cfg.item}_${cfg.mes}_${cfg.ano}`;
+        cfg_lookup[key] = cfg.valor;
+    });
+
+    let html = `
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Descrição do Item</th>
+    `;
+    dates.forEach((date, idx) => {
+        html += `<th>
+            ${moment(date).format('DD/MM/YYYY')}
+            <button 
+                type="button" 
+                class="btn btn-sm btn-success save-date-btn" 
+                data-date="${date}" 
+                data-idx="${idx}" 
+                style="margin-left:5px;"
+                disabled >
+                Salvar
+            </button>
+        </th>`;
+    });
+    html += `
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    // Fetch contract items for the selected contract
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract Item',
+            filters: {
+                'contrato': $('#contract-select').val()
+            },
+            fields: ['name', 'descricao'],
+            order_by: 'codigo asc'
+        },
+        callback: function(r) {
+            if (r.message) {
+                r.message.forEach(function(item) {
+                    html += `<tr data-item-id="${item.name}"><td>${item.descricao}</td>`;
+                    dates.forEach(date => {
+                        const mes = moment(date).format('MM');
+                        const ano = moment(date).format('YYYY');
+                        const key = `${item.name}_${mes}_${ano}`;
+                        const valor = cfg_lookup[key] || '';
+                        html += `<td><input type="number" min="0" class="form-control measurement-input" value="${valor}" /></td>`;
+                    });
+                    html += `</tr>`;
+                });
+                html += '</tbody></table>';
+                $('#measurement-items').html(html);
+                $('.save-date-btn').on('click', function(event) {
+                    const date = $(this).data('date');
+                    saveMeasurementPlan(date, event);
+                });
+                // Allow only numbers in input fields
+                $('.measurement-input').on('input', function() {
+                    this.value = this.value.replace(/[^0-9.,]/g, '');
+
+                    // Find the column index of the changed input
+                    const td = $(this).closest('td');
+                    const tr = $(this).closest('tr');
+                    const colIdx = td.index(); // 0-based, 0 is description
+                    console.log(colIdx)
+
+                    // Enable the corresponding save button in the header
+                    // colIdx matches the th index, so use colIdx
+                    const saveBtn = $('#measurement-items table thead th').eq(colIdx).find('.save-date-btn');
+                    saveBtn.prop('disabled', false);
+                });
+            }
+        }
+    });
+}
+
+// Update saveMeasurementPlan to use item id instead of description
+function saveMeasurementPlan(selectedDate, event) {
+    const month = moment(selectedDate).format('MM')
+    const year = moment(selectedDate).format('YYYY')
+
+    // Get contract
+    const contract = $('#contract-select').val();
+    if (!contract) {
+        frappe.msgprint('Selecione um contrato.');
+        return;
+    }
+
+    // Get dates from table header
+    const dateHeaders = [];
+    $('#measurement-items table thead tr:nth-child(1) th').each(function(idx) {
+        if (idx > 0) { // skip first column
+            dateHeaders.push($(this).text().trim());
+        }
+    });
+
+    // Get item ids from data attribute
+    const items = [];
+    const columnIndex = $(event.target).data('idx') + 1; // +1 because first column is description
+    
+    $('#measurement-items table tbody tr').each(function() {
+        const row = $(this);
+        const item_id = row.attr('data-item-id');
+        const input = row.find(`td:nth-child(${columnIndex + 1}) input.measurement-input`);
+        const valor_esperado = input.val();
+        
+        if (valor_esperado) {
+            items.push({
+                contract_item: item_id,
+                valor_esperado: valor_esperado
+            });
+        }
+    });
+
+    if (items.length === 0) {
+        frappe.msgprint('Nenhum valor preenchido para salvar.');
+        return;
+    }
+
+    // Send to backend (replace 'Contract Measurement Plan' and child table as needed)
+    frappe.call({
+        method: 'arteris_app.api.workloadcfg.insert_contract_item_workload_cfg',
+        args: {
+            doctype: 'Contract Item Workload Cfg',
+            contrato: contract,
+            mes: month,
+            ano: year,
+            tabitens: items.map(i => ({
+                item: i.contract_item,
+                valor: i.valor_esperado,
+            }))
+        },
+        callback: function(r) {
+            if (r.message) {
+                frappe.msgprint('Plano de medição salvo com sucesso!');
+                if (event && event.target) {
+                    const colIdx = $(event.target).data('idx') + 1;
+                    console.log(colIdx)
+                    $('#measurement-items table thead th').eq(colIdx).find('.save-date-btn').prop('disabled', true);
+                }
+            }
+        }
+    });
+}
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-25 10:27:23.306019",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "boletimmedicao",
+  "status",
+  "datainicial",
+  "datafinal"
+ ],
+ "fields": [
+  {
+   "fieldname": "boletimmedicao",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Boletim de medi\u00e7\u00e3o",
+   "options": "Contract Measurement"
+  },
+  {
+   "fetch_from": "boletimmedicao.datainicialmedicao",
+   "fetch_if_empty": 1,
+   "fieldname": "datainicial",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data inicial da medi\u00e7\u00e3o"
+  },
+  {
+   "fetch_from": "boletimmedicao.datafinalmedicao",
+   "fetch_if_empty": 1,
+   "fieldname": "datafinal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data final da medi\u00e7\u00e3o"
+  },
+  {
+   "fetch_from": "boletimmedicao.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-25 10:33:32.491777",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Adjustment Measurement",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

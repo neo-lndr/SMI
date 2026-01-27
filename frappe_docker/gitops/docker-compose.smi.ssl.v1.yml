@@ -1,0 +1,450 @@
+name: ${DOCKER_PROJECT_NAME}
+services:
+  backend:
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+      - type: bind
+        source: ./ssl-certs
+        target: /etc/nginx/conf.d/ssl
+      - type: bind
+        source: ./backup
+        target: /tmp/backup
+  configurator:
+    command:
+      - |
+        ls -1 apps > sites/apps.txt;
+
+        # Configurações básicas
+        bench set-config -g db_host $$DB_HOST; 
+        bench set-config -gp db_port $$DB_PORT; 
+        bench set-config -g redis_cache "redis://$$REDIS_CACHE"; 
+        bench set-config -g redis_queue "redis://$$REDIS_QUEUE"; 
+        bench set-config -g redis_socketio "redis://$$REDIS_QUEUE"; 
+        bench set-config -gp socketio_port $$SOCKETIO_PORT;
+        
+        # CONFIGURAÇÕES DE SEGURANÇA CRÍTICAS
+        bench set-config -g secure_cookies 1;
+        bench set-config -g use_ssl 1;
+        bench set-config -g force_https 1;
+        bench set-config -g cookie_secure 1;
+        bench set-config -g session_cookie_secure 1;
+        bench set-config -g session_cookie_httponly 1;
+        bench set-config -g csrf_cookie_secure 1;
+        bench set-config -g csrf_cookie_httponly 1;
+        bench set-config -g session_cookie_samesite "Strict";
+        bench set-config -g csrf_cookie_samesite "Strict";
+        
+        # Configurações anti-disclosure
+        bench set-config -g developer_mode 0;
+        bench set-config -g hide_version 1;
+        bench set-config -g server_script_enabled 1;
+        bench set-config -g hide_footer 1;
+        bench set-config -g disable_signup 1;
+        bench set-config -g login_with_email_link 0;        
+
+    depends_on:
+      db:
+        condition: service_healthy
+        required: true
+      redis-cache:
+        condition: service_started
+        required: true
+      redis-queue:
+        condition: service_started
+        required: true
+    entrypoint:
+      - bash
+      - -c
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      REDIS_CACHE: ${REDIS_CACHE_HOST}
+      REDIS_QUEUE: ${REDIS_QUEUE_HOST}
+      SOCKETIO_PORT: "9000"
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: on-failure
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+      - type: bind
+        source: ./frappe/app.py
+        target: /tmp/custom-files/app.py
+      - type: bind
+        source: ./frappe/login.html
+        target: /tmp/custom-files/login.html
+  db:
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mariadb-admin ping -h localhost --password=${MYSQL_ROOT_PASSWORD}
+      interval: 1s
+      retries: 20
+    image: mariadb:11.7
+    networks:
+      default: null
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: db-data
+        target: /var/lib/mysql
+        volume: {}
+  frontend:
+    command:
+      - nginx-entrypoint.sh
+    depends_on:
+      backend:
+        condition: service_started
+        required: true
+      websocket:
+        condition: service_started
+        required: true
+    environment:
+      BACKEND: backend:8000
+      CLIENT_MAX_BODY_SIZE: 50m
+      FRAPPE_SITE_NAME_HEADER: $$host
+      PROXY_READ_TIMEOUT: "120"
+      SOCKETIO: websocket:9000
+      UPSTREAM_REAL_IP_ADDRESS: 127.0.0.1
+      UPSTREAM_REAL_IP_HEADER: X-Forwarded-For
+      UPSTREAM_REAL_IP_RECURSIVE: "off"
+      NGINX_SERVER_TOKENS: "off"  # Ocultar versão do nginx
+    image: ${DOCKER_IMAGE}
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.frontend-http.entrypoints: websecure
+      traefik.http.routers.frontend-http.rule: Host(`${SITE_NAME}`)
+      traefik.http.routers.frontend-http.tls: "true"
+      traefik.http.services.frontend.loadbalancer.server.port: "8080"
+      # Middlewares completos
+      traefik.http.routers.frontend-http.middlewares: complete-security@docker #,rate-limit@docker
+      
+      # HEADERS DE SEGURANÇA COMPLETOS
+      traefik.http.middlewares.complete-security.headers.customFrameOptionsValue: DENY
+      traefik.http.middlewares.complete-security.headers.contentTypeNosniff: true
+      traefik.http.middlewares.complete-security.headers.browserXssFilter: true
+      traefik.http.middlewares.complete-security.headers.stsSeconds: 31536000
+      traefik.http.middlewares.complete-security.headers.stsIncludeSubdomains: true
+      traefik.http.middlewares.complete-security.headers.stsPreload: true
+      traefik.http.middlewares.complete-security.headers.forceSTSHeader: true
+      traefik.http.middlewares.complete-security.headers.referrerPolicy: strict-origin-when-cross-origin
+      
+      # Headers customizados para resolver problemas específicos
+      traefik.http.middlewares.complete-security.headers.customResponseHeaders.Server: ""
+      traefik.http.middlewares.complete-security.headers.customResponseHeaders.X-Powered-By: ""
+      traefik.http.middlewares.complete-security.headers.customResponseHeaders.X-Content-Type-Options: nosniff
+      traefik.http.middlewares.complete-security.headers.customResponseHeaders.X-XSS-Protection: "1; mode=block"
+      
+      # CSP rigoroso mas funcional
+      traefik.http.middlewares.complete-security.headers.contentSecurityPolicy: >-
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        img-src 'self' data: blob: https:;
+        font-src 'self' data: https://cdnjs.cloudflare.com;
+        connect-src 'self' wss: ws:;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self';
+        object-src 'none';
+        upgrade-insecure-requests;
+      # Rate limiting
+      traefik.http.middlewares.rate-limit.ratelimit.average: 100
+      traefik.http.middlewares.rate-limit.ratelimit.burst: 200
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+      - type: bind
+        source: ./ssl-certs
+        target: /etc/nginx/conf.d/ssl
+      - type: bind
+        source: ./nginx-custom
+        target: /etc/nginx/conf.d/custom        
+  proxy:
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.file.directory=/etc/traefik/dynamic
+      - --providers.file.watch=true
+      #- --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --entrypoints.websecure.address=:443
+      # Configuração global de TLS
+      - --entrypoints.websecure.http.tls=true
+      - --entrypoints.websecure.http.tls.options=default
+      - --providers.file.filename=/etc/traefik/traefik-tls.yml      
+    image: traefik:v2.11
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        published: "443"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: ./ssl-certs
+        target: /etc/ssl/certs
+      - type: bind
+        source: ./traefik
+        target: /etc/traefik/dynamic
+      - type: bind
+        source: ./traefik-tls.yml
+        target: /etc/traefik/traefik-tls.yml        
+  queue-long:
+    command:
+      - bench
+      - worker
+      - --queue
+      - long,default,short
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+  queue-short:
+    command:
+      - bench
+      - worker
+      - --queue
+      - short,default
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+  redis-cache:
+    image: redis:6.2-alpine
+    networks:
+      default: null
+    restart: unless-stopped
+  redis-queue:
+    image: redis:6.2-alpine
+    networks:
+      default: null
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: redis-queue-data
+        target: /data
+        volume: {}
+  scheduler:
+    command:
+      - bench
+      - schedule
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+  websocket:
+    command:
+      - node
+      - /home/frappe/frappe-bench/apps/frappe/socketio.js
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    environment:
+      FRAPPE_SITE_NAME_HEADER: ${SITE_NAME}
+      SITE_NAME: ${SITE_NAME}
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS}"  
+    image: ${DOCKER_IMAGE}
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: missing
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+      - type: volume
+        source: apps
+        target: /home/frappe/frappe-bench/apps
+        volume: {}
+  sftp:
+    image: atmoz/sftp:alpine
+    container_name: smi-sftp
+    restart: unless-stopped
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 22
+        published: "${SFTP_PORT}"  
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: ${SFTP_FOLDER}
+        target: ${SFTP_TARGET_FOLDER}
+        bind:
+          create_host_path: true
+      - type: volume
+        source: sftp-ssh-keys
+        target: /etc/ssh/keys
+        volume: {}
+    environment:
+      SFTP_USERS: "${SFTP_USER}:${SFTP_PASSWORD}:1001:1001:upload"
+      SFTP_ENABLE_PASSWORD_AUTH: "true"
+      SFTP_ENABLE_ROOT_LOGIN: "false"
+      SFTP_LOG_LEVEL: "VERBOSE"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "22"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      com.arteris.service: "sftp"
+      com.arteris.description: "Servidor SFTP para transferência segura de arquivos"
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.54.0-noble
+    container_name: smi-playwright
+    restart: unless-stopped
+    networks:
+      default: null
+    extra_hosts:
+      - "hostmachine:host-gateway"
+    working_dir: /home/pwuser
+    user: pwuser
+    init: true
+    environment:
+      - DEBUG=pw:*
+      - NODE_ENV=development
+    command: 
+      - /bin/sh
+      - -c
+      - "npx -y playwright@1.54.0 run-server --port 3000 --host 0.0.0.0"
+networks:
+  default:
+    name: ${DOCKER_NETWORK}
+volumes:
+  apps:
+    name: ${DOCKER_VOLUME_APPS}
+  db-data:
+    name: ${DOCKER_VOLUME_DB}
+  redis-queue-data:
+    name: ${DOCKER_VOLUME_REDIS_QUEUE}
+  sites:
+    name: ${DOCKER_VOLUME_SITES}
+  sftp-ssh-keys: 
+    name: ${DOCKER_VOLUME_SFTP_SSH_KEYS}
+x-backend-defaults:
+  depends_on:
+    configurator:
+      condition: service_completed_successfully
+  image: ${DOCKER_IMAGE}
+  pull_policy: if_not_present
+  restart: unless-stopped
+  volumes:
+    - sites:/home/frappe/frappe-bench/sites
+    - apps:/home/frappe/frappe-bench/apps
+x-customizable-image:
+  image: ${DOCKER_IMAGE}
+  pull_policy: if_not_present
+  restart: unless-stopped
+x-depends-on-configurator:
+  depends_on:
+    configurator:
+      condition: service_completed_successfully

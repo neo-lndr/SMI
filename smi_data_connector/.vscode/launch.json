@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Osiris - Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Osiris - Ontem até Hoje",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/osiris.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Osiris - Data Específica",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/osiris.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "--start-date",
+        "2025-09-01",
+        "--end-date",
+        "2025-09-15"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Osiris - Contrato Específico",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/osiris.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "--contract-code",
+        "CW37277-RB",
+        "--ignore-check"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Osiris - Apenas Imagens",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/osiris.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "--only-images"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: API Import",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "api_import:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8085",
+        "--reload"
+      ],
+      "jinja": true,
+      "justMyCode": false,
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Debug Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "-s"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

@@ -1,0 +1,724 @@
+[
+    {
+        "entity": "e00006v",
+        "id": "BM-CW082025-001",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00011v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00009v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00010v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-97ff66f9f8cf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00018v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00016v)",
+                                "values": [
+                                    2.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00020v)",
+                                "values": [
+                                    39.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00021v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00022v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00023v)",
+                                "values": [
+                                    8.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00024v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00025v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-98006064305e",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00018v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00016v)",
+                                "values": [
+                                    4.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00020v)",
+                                "values": [
+                                    67.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00021v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00022v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00023v)",
+                                "values": [
+                                    7.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00024v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00025v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-981657157f22",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00018v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00016v)",
+                                "values": [
+                                    1.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00020v)",
+                                "values": [
+                                    18.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00021v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00022v)",
+                                "values": [
+                                    -6.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00023v)",
+                                "values": [
+                                    2.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00024v)",
+                                "values": [
+                                    70.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00025v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-982505924d62",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00018v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00016v)",
+                                "values": [
+                                    5.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00020v)",
+                                "values": [
+                                    95.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00021v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00022v)",
+                                "values": [
+                                    -9.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00023v)",
+                                "values": [
+                                    2.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00024v)",
+                                "values": [
+                                    70.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00025v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-98387d424a3d",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00018v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00016v)",
+                                "values": [
+                                    1.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00020v)",
+                                "values": [
+                                    18.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00021v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00022v)",
+                                "values": [
+                                    -9.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00023v)",
+                                "values": [
+                                    1.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00024v)",
+                                "values": [
+                                    70.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00025v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9845f996b9a9",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00031v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00029v)",
+                                "values": [
+                                    2.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00034v)",
+                                "values": [
+                                    40.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00035v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00036v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00037v)",
+                                "values": [
+                                    8.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00038v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00039v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9858140d352d",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00031v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00029v)",
+                                "values": [
+                                    1.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00034v)",
+                                "values": [
+                                    20.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00035v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00036v)",
+                                "values": [
+                                    -9.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00037v)",
+                                "values": [
+                                    2.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00038v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00039v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9867e0867f2b",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00031v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00029v)",
+                                "values": [
+                                    1.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00034v)",
+                                "values": [
+                                    17.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00035v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00036v)",
+                                "values": [
+                                    -9.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00037v)",
+                                "values": [
+                                    1.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00038v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00039v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-98744c21ce6c",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00031v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00029v)",
+                                "values": [
+                                    5.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00034v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00035v)",
+                                "values": [
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00036v)",
+                                "values": [
+                                    -9.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00037v)",
+                                "values": [
+                                    2.5
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00038v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00039v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

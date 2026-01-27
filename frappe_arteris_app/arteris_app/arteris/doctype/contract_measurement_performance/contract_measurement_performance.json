@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-07-18 09:39:18.910508",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_yhqh",
+  "datacriacao",
+  "dataexecucao",
+  "dataaprovacao",
+  "mediaponderada",
+  "aprovadopor",
+  "boletimkartado"
+ ],
+ "fields": [
+  {
+   "fieldname": "datacriacao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data da cria\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "dataexecucao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data da execu\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "dataaprovacao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data da aprova\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "mediaponderada",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "M\u00e9dia ponderada",
+   "precision": "3"
+  },
+  {
+   "fieldname": "aprovadopor",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Aprovado por"
+  },
+  {
+   "fieldname": "boletimkartado",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Boletim de medi\u00e7\u00e3o - Kartado"
+  },
+  {
+   "fieldname": "section_break_yhqh",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-12 18:12:44.331655",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Performance",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

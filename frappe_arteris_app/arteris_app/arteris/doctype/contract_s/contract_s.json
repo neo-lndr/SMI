@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:contratotexto",
+ "creation": "2025-09-25 22:35:00.136023",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contrato",
+  "contratotexto",
+  "column_break_rgiu",
+  "html_wltt",
+  "datainicial",
+  "datafinal",
+  "valortotal",
+  "per\u00edodos_section",
+  "tabperiodos"
+ ],
+ "fields": [
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "label": "Contrato",
+   "options": "Contract"
+  },
+  {
+   "fieldname": "column_break_rgiu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_wltt",
+   "fieldtype": "HTML",
+   "options": "Informe o valor da evolu\u00e7\u00e3o esperada para o valor acumulado de medi\u00e7\u00f5es durante os per\u00edodos. "
+  },
+  {
+   "fieldname": "per\u00edodos_section",
+   "fieldtype": "Section Break",
+   "label": "Per\u00edodos "
+  },
+  {
+   "fieldname": "tabperiodos",
+   "fieldtype": "Table",
+   "options": "Contract S Period"
+  },
+  {
+   "fetch_from": "contrato.datainicial",
+   "fieldname": "datainicial",
+   "fieldtype": "Date",
+   "label": "Data inicial",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.datafinal",
+   "fieldname": "datafinal",
+   "fieldtype": "Date",
+   "label": "Data final",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.valortotal",
+   "fieldname": "valortotal",
+   "fieldtype": "Currency",
+   "label": "Valor total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.contrato",
+   "fieldname": "contratotexto",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-25 23:39:18.045817",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract S",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

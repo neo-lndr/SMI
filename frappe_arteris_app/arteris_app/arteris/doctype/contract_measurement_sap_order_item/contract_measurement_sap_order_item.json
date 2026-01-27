@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-07-29 16:37:34.106156",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_umqt",
+  "item",
+  "pedido_sap",
+  "linhapedido",
+  "valortotalvigente",
+  "valordotitem",
+  "column_break_xfem",
+  "percentualfixo",
+  "rateio"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item"
+  },
+  {
+   "fieldname": "pedido_sap",
+   "fieldtype": "Link",
+   "label": "Pedido SAP",
+   "options": "SAP Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "linhapedido",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linha pedido",
+   "options": "SAP Order Period",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valortotalvigente",
+   "fieldtype": "Currency",
+   "label": "Valor total vigente",
+   "precision": "2"
+  },
+  {
+   "fieldname": "percentualfixo",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "% Percentual fixo",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_xfem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valordotitem",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor",
+   "precision": "2"
+  },
+  {
+   "fieldname": "rateio",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "% Rateio",
+   "precision": "3"
+  },
+  {
+   "fieldname": "section_break_umqt",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-06 01:46:17.745551",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement SAP Order Item",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

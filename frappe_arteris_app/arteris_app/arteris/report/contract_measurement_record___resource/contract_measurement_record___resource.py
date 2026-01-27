@@ -1,0 +1,189 @@
+# Copyright (c) 2025, Renoir and contributors
+# For license information, please see license.txt
+
+import frappe
+
+
+def execute(filters: dict | None = None):
+	"""Return columns and data for the report.
+
+	This is the main entry point for the report. It accepts the filters as a
+	dictionary and should return columns and data. It is called by the framework
+	every time the report is refreshed or a filter is updated.
+	"""
+	contract_measuremnent_name = filters.medicao
+
+	columns = get_columns()
+	data = get_data(contract_measuremnent_name)
+
+	return columns, data
+
+
+def get_columns() -> list[dict]:
+	"""Return columns for the report.
+
+	One field definition per column, just like a DocType field definition.
+	"""
+	return [
+		{
+			"label": "...",#
+			"fieldtype": "Html",
+			"width": 50
+		},
+		{
+			"label": "Origem integração",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Código Item",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Descrição item",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Equipe",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Valor unitário",#
+			"fieldtype": "Currency",
+		},
+		{
+			"label": "Data execução",#
+			"fieldtype": "Datetime",
+		},	
+		{
+			"label": "Data aprovação",#
+			"fieldtype": "Datetime",
+		},		
+		{
+			"label": "RDO",#
+			"fieldtype": "Data",
+		},	
+		{
+			"label": "Relatório",#
+			"fieldtype": "Data",
+		},	
+		{
+			"label": "Rodovia",#
+			"fieldtype": "Data",
+		},	
+		{
+			"label": "Quantidade medida",#
+			"fieldtype": "Float",
+		},
+		{
+			"label": "Valor total",#
+			"fieldtype": "Currency",
+		},
+		{
+			"label": "Valor calculado",#
+			"fieldtype": "Currency",
+		},
+		{
+			"label": "% Payfactor",#
+			"fieldtype": "Float",
+		},
+		{
+			"label": "Desc. Payfactor",#
+			"fieldtype": "Currency",
+		},
+		{
+			"label": "Prod. comp. - Faixa",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Prod. comp. - RAP",#
+			"fieldtype": "Data",
+		},
+		{
+			"label": "Prod. comp. - Fresagem",#
+			"fieldtype": "Float",
+		},
+		{
+			"label": "Prod. comp. - Quantidade",#
+			"fieldtype": "Float",
+		}
+	]
+
+def get_data(contract_measuremnent_name: str) -> list[list]:
+	"""Return data for the report.
+
+	The report data is a list of rows, with each row being a list of cell values.
+	"""
+	data = []
+
+	records = frappe.db.sql("""
+		SELECT
+			cmr.name,
+			cmr.origem_integracao,
+			ci.codigo,
+			ci.descricao,
+			CASE 
+				WHEN cmp.equipe IS NULL THEN cmr.equipe
+				ELSE cmp.equipe
+			END AS equipe,
+			CASE 
+				WHEN NOT cmpt.valorunitario IS NULL THEN cmpt.valorunitario
+				ELSE ci.valorunitario
+			END AS valorunitario,
+			cmr.dataexecucao,
+			cmr.dataaprovacao,
+			cmr.codigo AS codigordo,
+			cmr.relatorio,
+			cmr.rodovia,
+			cmrr.quantidademedida,
+			cmrr.valortotal,
+			cmrr.valorcalculado,
+			cmrr.percent_payfactor,
+			cmrr.payfactor_discount,
+			cmp.faixa,
+			cmp.rap,
+			cmp.fresagem,
+			cmp.quantidade
+		FROM
+			`tabContract Measurement Record` cmr
+			INNER JOIN `tabContract Measurement Record Resource` cmrr ON cmr.name = cmrr.parent
+			INNER JOIN `tabContract Item` ci ON cmrr.item = ci.name
+			LEFT JOIN `tabContract Measurement Productivity` cmp ON cmrr.item = cmp.item AND 
+															DATE(cmp.dataexecucao) = DATE(cmr.dataexecucao) AND
+															cmp.parent = cmr.boletimmedicao
+			LEFT JOIN `tabContract Measurement Productivity Total` cmpt ON cmpt.item = cmp.item AND 
+						 										   cmpt.parent = cmr.boletimmedicao AND 
+																   cmpt.equipe = cmp.equipe AND 
+																   cmpt.faixa = cmp.faixa AND
+						 										   cmpt.rap = cmp.rap 
+		WHERE
+			cmr.boletimmedicao = %s
+	""",
+	(contract_measuremnent_name,), as_dict=True)
+
+	for record in records:
+		data.append(
+			[
+				'<a href="/app/contract-measurement-record/{0}" target="_blank">🔗</a>'.format(record['name']),  # Link to the record
+				record['origem_integracao'],
+				record['codigo'],
+				record['descricao'],
+				record['equipe'],
+				record['valorunitario'],
+				record['dataexecucao'],
+				record['dataaprovacao'],
+				record['codigordo'], 
+				record['relatorio'],
+				record['rodovia'],
+				record['quantidademedida'],
+				record['valortotal'],
+				record['valorcalculado'],
+				record['percent_payfactor'],
+				record['payfactor_discount'],
+				record['faixa'],
+				record['rap'],
+				record['fresagem'],
+				record['quantidade']
+			]
+		) 
+
+	return data

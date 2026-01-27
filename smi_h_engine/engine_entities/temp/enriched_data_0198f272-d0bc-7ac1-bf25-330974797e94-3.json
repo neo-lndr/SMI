@@ -1,0 +1,1861 @@
+[
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-988fee7e3f7b",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    60.145
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2bh1rog4m2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2bh1rog4m2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-989e21493034",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    5.047619047
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    1.904761905
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    60.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00019v",
+                                    "values": [
+                                        13928.57,
+                                        11964.29
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00032v",
+                                    "values": [
+                                        19047.62
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98ac5cb55cc0",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.607142857
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00019v",
+                                    "values": [
+                                        6071.43
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2oft0tccvh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2oft0tccvh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98bd7dc79ebf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    1.607142857
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00019v",
+                                    "values": [
+                                        8839.29
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2s1a7bsqi2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2s1a7bsqi2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98c9d7b6b104",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.084920635
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00019v",
+                                    "values": [
+                                        636.9
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "30jljf53rk"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "30jljf53rk"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aac64b51fd19",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.952380952
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "352tgfnd54"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00032v",
+                                    "values": [
+                                        19047.62
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "352tgfnd54"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aad6ccae03cb",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.80952381
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3a0fc80kg0"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00032v",
+                                    "values": [
+                                        12142.86
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "3a0fc80kg0"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aaea46d06687",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    4.761904762
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3dpqg7ncrn"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00032v",
+                                    "values": [
+                                        2380.95
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "3dpqg7ncrn"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aaf39768be26",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    8067.6
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3jjpbf4vpb"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3jjpbf4vpb"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab05dfc39279",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    161352.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3osuahkpr5"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3osuahkpr5"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab13099923e8",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    8067.6
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3vmebmmrhc"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3vmebmmrhc"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab2a176c87a5",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PERFORMANCE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "44t5ms7ip4"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "44t5ms7ip4"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab3d807c0319",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PERFORMANCE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "48pbeb1fm8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "48pbeb1fm8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab43f4690c08",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PERFORMANCE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4cemek4vni"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4cemek4vni"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab54a73e93e6",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PERFORMANCE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4gaah6q5u8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4gaah6q5u8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab647cc4f56f",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    5251.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    60.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4lg2k71np8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4lg2k71np8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab7dfbf5edaf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    3192.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    30.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4po437qodf"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4po437qodf"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab8e3a953695",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00045v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00042v)",
+                                "values": [
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00043v)",
+                                "values": [
+                                    "PRECO UNIT"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00053v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00055v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00057v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00059v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00061v)",
+                                "values": [
+                                    100.0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00054v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00019v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4v12dsmebe"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00056v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00032v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4v12dsmebe"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

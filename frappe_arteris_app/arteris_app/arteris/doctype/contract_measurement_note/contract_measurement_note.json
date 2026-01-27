@@ -1,0 +1,281 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-06-28 16:33:30.191801",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contrato",
+  "contratada",
+  "subsidiaria",
+  "datasubmissao",
+  "column_break_zhwi",
+  "boletim",
+  "datainicial",
+  "datafinal",
+  "database",
+  "itemsrecursos_section",
+  "tabitem",
+  "totalrecursos",
+  "rodovia_section",
+  "tabrodovias",
+  "fun\u00e7\u00f5es_section",
+  "tabfuncoes",
+  "totalfuncoes",
+  "maq_equipamentos_e_ve\u00edculos_section",
+  "tabativos",
+  "totalativos",
+  "linha_de_pedido_sap_section",
+  "tabsap",
+  "totalmedido",
+  "totalsap",
+  "section_break_jvbp",
+  "observacoes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contrato",
+   "options": "Contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "boletim",
+   "fieldtype": "Link",
+   "label": "Boletim de medi\u00e7\u00e3o",
+   "options": "Contract Measurement",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "boletim.datainicialmedicao",
+   "fieldname": "datainicial",
+   "fieldtype": "Date",
+   "label": "Data inicial da medi\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "boletim.datafinalmedicao",
+   "fieldname": "datafinal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data final da medi\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "itemsrecursos_section",
+   "fieldtype": "Section Break",
+   "label": "Items/Recursos"
+  },
+  {
+   "fieldname": "tabitem",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Note Resource"
+  },
+  {
+   "fieldname": "linha_de_pedido_sap_section",
+   "fieldtype": "Section Break",
+   "label": "Linha de pedido SAP"
+  },
+  {
+   "fieldname": "tabsap",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Note SAP Order"
+  },
+  {
+   "fieldname": "fun\u00e7\u00f5es_section",
+   "fieldtype": "Section Break",
+   "label": "Fun\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "tabfuncoes",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Note Work Role"
+  },
+  {
+   "fieldname": "maq_equipamentos_e_ve\u00edculos_section",
+   "fieldtype": "Section Break",
+   "label": "Maq., equipamentos e ve\u00edculos"
+  },
+  {
+   "fieldname": "tabativos",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Note Asset"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract Measurement Note",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_zhwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contratada",
+   "fieldtype": "Data",
+   "label": "Contratada",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subsidiaria",
+   "fieldtype": "Data",
+   "label": "Subsidiaria",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jvbp",
+   "fieldtype": "Section Break",
+   "label": "Observa\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "observacoes",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "datasubmissao",
+   "fieldtype": "Datetime",
+   "label": "Data e hora da submiss\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totalrecursos",
+   "fieldtype": "Currency",
+   "is_virtual": 1,
+   "label": "Total de recursos",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totalfuncoes",
+   "fieldtype": "Currency",
+   "is_virtual": 1,
+   "label": "Total para fun\u00e7\u00f5es",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totalativos",
+   "fieldtype": "Currency",
+   "is_virtual": 1,
+   "label": "Total para maq. equip. e ve\u00edculos",
+   "precision": "2"
+  },
+  {
+   "fieldname": "totalmedido",
+   "fieldtype": "Currency",
+   "is_virtual": 1,
+   "label": "Total medido",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totalsap",
+   "fieldtype": "Currency",
+   "is_virtual": 1,
+   "label": "Total ped. SAP",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rodovia_section",
+   "fieldtype": "Section Break",
+   "label": "Rodovia"
+  },
+  {
+   "fieldname": "tabrodovias",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Note Highway"
+  },
+  {
+   "fieldname": "database",
+   "fieldtype": "Date",
+   "label": "Data base da medi\u00e7\u00e3o (Execu\u00e7\u00e3o dos servi\u00e7os)",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Contract Measurement Record",
+   "link_fieldname": "apontamentodireto"
+  }
+ ],
+ "modified": "2025-09-18 07:59:38.208236",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement Note",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "contrato"
+}

@@ -1,0 +1,45 @@
+FROM python:3.11-slim
+
+# Instalar dependências do sistema
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    git \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
+
+# Criar usuário não-root
+RUN useradd -m -u 1000 recalcular && \
+    mkdir -p /app && \
+    chown -R recalcular:recalcular /app
+
+# Definir diretório de trabalho
+WORKDIR /app
+
+# Copiar requirements primeiro para cache de layer
+COPY requirements_web.txt .
+
+# Instalar dependências Python
+RUN pip install --no-cache-dir -r requirements_web.txt
+
+# # Copiar código da aplicação
+# COPY ./msi_data_conector/web_service.py .
+# COPY ./msi_data_conector/correcao.py .
+# COPY ./msi_data_conector/kartado.py .
+# COPY ./msi_data_conector/osiris.py .
+
+# Criar diretório para logs
+RUN mkdir -p /app/logs && chown -R recalcular:recalcular /app/logs
+
+# Mudar para usuário não-root
+USER recalcular
+
+# Expor porta
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Comando para iniciar o serviço
+CMD ["uvicorn", "web_service:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]

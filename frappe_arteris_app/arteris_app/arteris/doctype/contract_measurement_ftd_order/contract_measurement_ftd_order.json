@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-07-31 20:10:46.304211",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kgjj",
+  "notafiscal",
+  "quantidade",
+  "unidade",
+  "valor",
+  "column_break_mstk",
+  "linhapedidosap",
+  "miro",
+  "migo"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "quantidade",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantidade",
+   "non_negative": 1,
+   "precision": "6",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "unidade",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unidade",
+   "length": 10,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor total",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mstk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linhapedidosap",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linha do pedido SAP",
+   "options": "SAP Order Period",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "miro",
+   "fieldtype": "Data",
+   "label": "Doc. material MIRO",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "migo",
+   "fieldtype": "Data",
+   "label": "Doc. refer\u00eancia MIGO",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "notafiscal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "NF N\u00ba",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_kgjj",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-25 15:08:43.613849",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement FTD Order",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

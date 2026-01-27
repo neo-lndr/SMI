@@ -1,0 +1,203 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:contrato_str",
+ "creation": "2025-09-03 19:54:09.076551",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contrato",
+  "contratada",
+  "contrato_str",
+  "column_break_ovxt",
+  "section_break_vgsi",
+  "1_col",
+  "pessoa1",
+  "2_col",
+  "pessoa2",
+  "section_break_giuu",
+  "3_col",
+  "pessoa3",
+  "4_col",
+  "pessoa4",
+  "se\u00e7\u00e3o_exclusiva_para_exce\u00e7\u00e3o_de_valor_de_medi\u00e7\u00e3o_section",
+  "valor_col",
+  "valormedicao",
+  "5_col",
+  "pessoa5"
+ ],
+ "fields": [
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "label": "Contrato",
+   "options": "Contract",
+   "read_only": 1,
+   "read_only_depends_on": "eval:!doc.__islocal;",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_vgsi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "1_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "2_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_giuu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "3_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "4_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "se\u00e7\u00e3o_exclusiva_para_exce\u00e7\u00e3o_de_valor_de_medi\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Se\u00e7\u00e3o exclusiva para exce\u00e7\u00e3o de valor de medi\u00e7\u00e3o "
+  },
+  {
+   "fieldname": "valor_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valormedicao",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Se valor da medi\u00e7\u00e3o for maior que:",
+   "precision": "2"
+  },
+  {
+   "fieldname": "5_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ovxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contrato_str",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Nr. Contrato",
+   "unique": 1
+  },
+  {
+   "default": "...",
+   "fieldname": "contratada",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contratada",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pessoa1",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "1\u00b0 Assinante",
+   "options": "Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pessoa2",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "2\u00b0 Assinante",
+   "options": "Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pessoa3",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "3\u00b0 Assinante",
+   "options": "Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pessoa4",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "4\u00b0 Assinante",
+   "options": "Person"
+  },
+  {
+   "fieldname": "pessoa5",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "5\u00b0 Assinante",
+   "options": "Person"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-04 15:34:28.556630",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Signature",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Gerente",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Administrador",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "contrato_str"
+}

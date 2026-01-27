@@ -1,0 +1,32 @@
+# AWS and Data Processing
+boto3>=1.28.0
+pandas>=1.5.0
+pyarrow>=12.0.0
+
+# Environment and HTTP
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Date handling
+python-dateutil>=2.8.0
+
+# Encoding detection
+chardet>=5.0.0
+
+# Brazil holidays
+holidays>=0.34
+
+# Web frameworks
+flask>=3.0.0
+
+# FastAPI + Celery dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+celery>=5.3.0
+redis>=5.0.0
+kombu>=5.3.0
+pydantic>=2.4.0
+websockets>=11.0
+
+# Pillow
+Pillow>=11.3.0

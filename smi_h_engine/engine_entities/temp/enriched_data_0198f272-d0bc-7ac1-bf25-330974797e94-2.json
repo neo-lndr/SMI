@@ -1,0 +1,1385 @@
+[
+    {
+        "entity": "e00006v",
+        "id": "BM-CW082025-001",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00012v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "max(e00001v)",
+                                "vars": {
+                                    "path": "e00001v",
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                "filter": []
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00002v)",
+                                "vars": {
+                                    "path": "e00002v",
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                "filter": []
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00007v)",
+                                "vars": {
+                                    "path": "e00007v",
+                                    "values": [
+                                        41300000.0
+                                    ]
+                                },
+                                "filter": []
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00008v)",
+                                "vars": {
+                                    "path": "e00008v",
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                "filter": []
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00011v)",
+                                "vars": {
+                                    "path": "e00011v",
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                "filter": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-97ff66f9f8cf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00019v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00017v)",
+                                "values": [
+                                    7500.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00018v)",
+                                "values": [
+                                    1.857142857
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00013v)",
+                                "values": [
+                                    "2ih3ndbrnh"
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00014v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        50000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00014v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-98006064305e",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00019v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00017v)",
+                                "values": [
+                                    3750.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00018v)",
+                                "values": [
+                                    3.19047619
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00013v)",
+                                "values": [
+                                    "2ih3ndbrnh"
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00014v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        50000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00014v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-981657157f22",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00019v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00017v)",
+                                "values": [
+                                    10000.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00018v)",
+                                "values": [
+                                    0.607142857
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00013v)",
+                                "values": [
+                                    "2ih3ndbrnh"
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00014v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        10000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00014v": "2oft0tccvh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-982505924d62",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00019v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00017v)",
+                                "values": [
+                                    5500.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00018v)",
+                                "values": [
+                                    1.607142857
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00013v)",
+                                "values": [
+                                    "2ih3ndbrnh"
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00014v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        5500.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00014v": "2s1a7bsqi2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00013v",
+        "id": "0199c998-fbfc-7312-9342-98387d424a3d",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00019v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00015v)",
+                                "values": [
+                                    "ADM DIA HE"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00017v)",
+                                "values": [
+                                    7500.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00018v)",
+                                "values": [
+                                    0.084920635
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00013v)",
+                                "values": [
+                                    "2ih3ndbrnh"
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00014v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        7500.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00014v": "30jljf53rk"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9845f996b9a9",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00032v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA RCM"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00030v)",
+                                "values": [
+                                    10000.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00031v)",
+                                "values": [
+                                    1.904761905
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00033v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00027v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        50000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00027v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9858140d352d",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00032v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00030v)",
+                                "values": [
+                                    20000.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00031v)",
+                                "values": [
+                                    0.952380952
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00033v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00027v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        20000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00027v": "352tgfnd54"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-9867e0867f2b",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00032v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00030v)",
+                                "values": [
+                                    15000.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00031v)",
+                                "values": [
+                                    0.80952381
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00033v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00027v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        15000.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00027v": "3a0fc80kg0"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00026v",
+        "id": "0199c998-fbfc-7312-9342-98744c21ce6c",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00032v",
+                    "data": [
+                        {
+                            "non_aggr": {
+                                "path": "first(e00028v)",
+                                "values": [
+                                    "ADM DIA"
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00030v)",
+                                "values": [
+                                    500.0
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00031v)",
+                                "values": [
+                                    4.761904762
+                                ]
+                            }
+                        },
+                        {
+                            "non_aggr": {
+                                "path": "first(e00033v)",
+                                "values": [
+                                    0.0
+                                ]
+                            }
+                        },
+                        {
+                            "aggr": {
+                                "base": "max(e00005v, e00004v == e00027v)",
+                                "vars": {
+                                    "path": "e00005v",
+                                    "values": [
+                                        500.0
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00027v": "3dpqg7ncrn"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-988fee7e3f7b",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2bh1rog4m2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2bh1rog4m2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-989e21493034",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00018v",
+                                    "values": [
+                                        1.857142857,
+                                        3.19047619
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00031v",
+                                    "values": [
+                                        1.904761905
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2ih3ndbrnh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98ac5cb55cc0",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00018v",
+                                    "values": [
+                                        0.607142857
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2oft0tccvh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2oft0tccvh"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98bd7dc79ebf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00018v",
+                                    "values": [
+                                        1.607142857
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "2s1a7bsqi2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "2s1a7bsqi2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfc-7312-9342-98c9d7b6b104",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": {
+                                    "path": "e00018v",
+                                    "values": [
+                                        0.084920635
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "30jljf53rk"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "30jljf53rk"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aac64b51fd19",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "352tgfnd54"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00031v",
+                                    "values": [
+                                        0.952380952
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "352tgfnd54"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aad6ccae03cb",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3a0fc80kg0"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00031v",
+                                    "values": [
+                                        0.80952381
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "3a0fc80kg0"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aaea46d06687",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3dpqg7ncrn"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": {
+                                    "path": "e00031v",
+                                    "values": [
+                                        4.761904762
+                                    ]
+                                },
+                                "filter": [
+                                    {
+                                        "e00041v": "3dpqg7ncrn"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-aaf39768be26",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3jjpbf4vpb"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3jjpbf4vpb"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab05dfc39279",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3osuahkpr5"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3osuahkpr5"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab13099923e8",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3vmebmmrhc"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "3vmebmmrhc"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab2a176c87a5",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "44t5ms7ip4"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "44t5ms7ip4"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab3d807c0319",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "48pbeb1fm8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "48pbeb1fm8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab43f4690c08",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4cemek4vni"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4cemek4vni"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab54a73e93e6",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4gaah6q5u8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4gaah6q5u8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab647cc4f56f",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4lg2k71np8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4lg2k71np8"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab7dfbf5edaf",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4po437qodf"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4po437qodf"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "entity": "e00040v",
+        "id": "0199c998-fbfd-7c71-8eda-ab8e3a953695",
+        "formula_data": {
+            "formulas": [
+                {
+                    "formula": "e00053v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00018v, e00014v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4v12dsmebe"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "formula": "e00055v",
+                    "data": [
+                        {
+                            "aggr": {
+                                "base": "sum(e00031v, e00027v == e00041v)",
+                                "vars": [],
+                                "filter": [
+                                    {
+                                        "e00041v": "4v12dsmebe"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UUID",
+ "creation": "2025-04-30 11:07:36.355758",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_do_contrato_column",
+  "pedidolinha",
+  "item",
+  "indicereajuste",
+  "valorunitario",
+  "valorreajuste",
+  "valores_retroativos_column",
+  "quantidadetotal",
+  "valortotal",
+  "valorreajustado",
+  "saldopagamento"
+ ],
+ "fields": [
+  {
+   "description": "Indice do reajuste",
+   "fieldname": "indicereajuste",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Ind. %",
+   "precision": "9"
+  },
+  {
+   "fieldname": "valorreajuste",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor unit. reajustado R$",
+   "precision": "2"
+  },
+  {
+   "description": "Linha do pedido SAP",
+   "fieldname": "pedidolinha",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pedido SAP",
+   "options": "SAP Order Period"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Contract Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valorunitario",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor unit. atual (R$)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valores_retroativos_column",
+   "fieldtype": "Column Break",
+   "label": "Valores retroativos"
+  },
+  {
+   "fieldname": "quantidadetotal",
+   "fieldtype": "Float",
+   "label": "Quantidade total",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valortotal",
+   "fieldtype": "Currency",
+   "label": "Valor total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valorreajustado",
+   "fieldtype": "Currency",
+   "label": "Valor reajustado",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldopagamento",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Saldo a pagar",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_do_contrato_column",
+   "fieldtype": "Column Break",
+   "label": "Item do contrato"
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-25 20:45:28.236133",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Adjustment Data",
+ "naming_rule": "UUID",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

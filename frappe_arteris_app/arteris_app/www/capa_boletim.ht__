@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boletim de Medição - {{ concessionaria_json.nome or 'Concessionária' }}</title>
+<style>
+   body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px solid #000;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    th, td {
+        border: 1px solid #000;
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    /* CSS compatível com wkhtmltopdf - substituindo flexbox por table layout */
+    .header {
+        display: table;
+        width: 100%;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    .logo, .title, .contract {
+        display: table-cell;
+        vertical-align: middle;
+        border-right: 1px solid #000;
+        padding: 10px;
+    }
+    
+    .logo { width: 20%; }
+    .title { width: 60%; text-align: center; }
+    .contract { width: 20%; text-align: right; border-right: none; }
+    
+    .logo img {
+        max-width: 100%;
+        height: 50px;
+    }
+    
+    .title h1 {
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    
+    .title p {
+        margin: 5px 0;
+    }
+    
+    .measurement-header {
+        display: table;
+        width: 100%;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    .measurement-phase, .measurement-month, .measurement-period {
+        display: table-cell;
+        width: 33.33%;
+        text-align: center;
+        padding: 5px;
+        border-right: 1px solid #000;
+        vertical-align: middle;
+    }
+    
+    .measurement-period {
+        border-right: none;
+    }
+    
+    .section-title {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    .contract-data {
+        display: table;
+        width: 100%;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    .contractor-data, .dates-data, .deviation-data {
+        display: table-cell;
+        vertical-align: top;
+        border-right: 1px solid #000;
+        padding: 10px;
+    }
+    
+    .contractor-data { width: 50%; }
+    .dates-data { width: 30%; }
+    .deviation-data { width: 20%; border-right: none; }
+    
+    .object-section {
+        border: 1px solid #000;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .text-right {
+        text-align: right;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-bold {
+        font-weight: bold;
+    }
+    
+    .measurement-table th, .measurement-table td {
+        font-size: 10px;
+        padding: 3px;
+    }
+    
+    .measurement-row:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    .totals-section {
+        display: table;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .measurement-total, .contract-total {
+        display: table-cell;
+        width: 50%;
+        border: 1px solid #000;
+        vertical-align: top;
+    }
+    
+    .approval-section {
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+    
+    .approval-header {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        border-bottom: 1px solid #000;
+    }
+    
+    .approval-note {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #000;
+    }
+    
+    .signatures {
+        display: table;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .signature {
+        display: table-cell;
+        width: 25%;
+        text-align: center;
+        padding: 10px;
+        vertical-align: top;
+    }
+    
+    .signature-line {
+        border-bottom: 1px solid #000;
+        margin: 30px 10px 5px 10px;
+        height: 1px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Cabeçalho -->
+    <div class="header">
+        <div class="logo">
+            <!-- Logo como placeholder simples -->
+            <div style="border: 1px solid #ccc; text-align: center; padding: 20px; font-size: 10px; color: #666;">
+                LOGO
+            </div>
+        </div>
+        <div class="title">
+            <h1>CAPA DO BOLETIM DE MEDIÇÃO</h1>
+            <p>CONCESSIONÁRIA <span id="concessionaria">{{ (concessionaria_json | from_json).nome or '' }}</span></p>
+            <p>OBRA <span id="obra">{{ (contract_measurement_json | from_json).obra or '' }}</span></p>
+        </div>
+        <div class="contract">
+            <p>CONTRATO:</p>
+            <p><span id="contrato">{{ (contract_json | from_json).contrato or '' }}</span></p>
+        </div>
+    </div>
+    
+    <!-- Fase de medição -->
+    <div class="measurement-header">
+        <div class="measurement-phase">
+            <p><strong>FASE DA MEDIÇÃO</strong></p>
+            <p><span id="faseMedicao">{{ (contract_measurement_json | from_json).faseMedicao or '' }}</span></p>
+        </div>
+        <div class="measurement-month">
+            <p><strong>MÊS:</strong></p>
+            <p><span id="mesMedicao"></span></p>
+        </div>
+        <div class="measurement-period">
+            <p><strong>PERÍODO:</strong></p>
+            <p><span id="periodoMedicao"></span></p>
+        </div>
+    </div>
+    
+    <!-- Seção de contrato -->
+    <div class="section-title">CONTRATO</div>
+    
+    <div class="contract-data">
+        <div class="contractor-data">
+            <p><strong>RAZÃO SOCIAL DO FORNECEDOR:</strong></p>
+            <p><strong><span id="fornecedor_razaosocial">{{ (contracted_company_json | from_json).razaosocial or '' }}</span></strong></p>
+            <p><strong>CNPJ:</strong> <span id="fornecedor_cnpj">{{ (contracted_company_json | from_json).cnpj or '' }}</span></p>
+            <p><strong>ENDEREÇO:</strong> <span id="fornecedor_endereco">{{ (contracted_company_json | from_json).endereco or '' }}</span></p>
+        </div>
+        <div class="dates-data">
+            <p>Data inicial do Contrato: <span id="data_ejak"></span><br>
+            Data final do Contrato: <span id="data_final_do_contrato"></span></p>
+            <p>Início das obras conf. Contrato: <span id="inicioservicosprevisto"></span><br>
+            Início real das obras: <span id="inicioservicos"></span></p>
+            <p>Término das obras conf. Contrato: <span id="terminoservicosprevisto"></span><br>
+            Término previsto das obras:<span id="terminoservicos"></span></p>
+        </div>
+        <div class="deviation-data">
+            <p><strong>Desvios</strong></p>
+            <p>Conforme Contratado: <span id="desvioContratado">0</span></p>
+            <p>Conforme Medição Anterior: <span id="desvioMedicaoAnterior">0</span></p>
+        </div>
+    </div>
+    
+    <!-- Objeto -->
+    <div class="section-title">OBJETO</div>
+    <div class="object-section">
+        <p><span id="descricao_objeto">{{ (contract_json | from_json).descricao or '' }}</span></p>
+    </div>
+    
+    <!-- Seção de medição -->
+    <div class="section-title">MEDIÇÃO</div>
+    
+    <table class="measurement-table">
+        <thead>
+            <tr>
+                <th rowspan="2">Nº Pedido</th>
+                <th rowspan="2">Posição da linha no pedido</th>
+                <th rowspan="2">Investimento/Operação</th>
+                <th rowspan="2">Tipo</th>
+                <th rowspan="2">Código PEP / Centro de Custo</th>
+                <th rowspan="2">Valor Total Vigente</th>
+                <th colspan="3">Percentual (%)</th>
+                <th colspan="3">Valores Medidos (R$)</th>
+            </tr>
+            <tr>
+                <th>Medição Acum. Ant.</th>
+                <th>Medição Atual (mês)</th>
+                <th>Medição Acum. Atual</th>
+                <th>Medição Acum. Anterior</th>
+                <th>Medição Atual (mês)</th>
+                <th>Medição Acum. Atual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="measurement-row">
+                <td>Sem pedidos</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="text-right">0,00</td>
+                <td class="text-right">0,00%</td>
+                <td class="text-right">0,00%</td>
+                <td class="text-right">0,00%</td>
+                <td class="text-right">0,00</td>
+                <td class="text-right">0,00</td>
+                <td class="text-right">0,00</td>
+            </tr>
+            <!-- Linha de total -->
+            <tr class="text-bold">
+                <td colspan="5">TOTAL</td>
+                <td class="text-right" id="valorpedidos_total">0,00</td>
+                <td class="text-right" id="saldopercentual_total">-</td>
+                <td class="text-right" id="percentualAtual_total">-</td>
+                <td class="text-right" id="percentualAcumuladoAtual_total">-</td>
+                <td class="text-right" id="medicaoacumulada_total">0,00</td>
+                <td class="text-right" id="valorAtual_total">0,00</td>
+                <td class="text-right" id="valorAcumuladoAtual_total">0,00</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Totais -->
+    <div class="totals-section">
+        <div class="measurement-total">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">TOTAL DA MEDIÇÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fator</strong></td>
+                        <td class="text-right"><strong>(R$)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Medição Atual [A]:</td>
+                        <td class="text-right" id="medicaoatual">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Faturamento Direto (FTD) na Fase Atual:</td>
+                        <td class="text-right" id="faturamentodireto">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Medição Atual com Desconto de FTD (B):</td>
+                        <td class="text-right" id="medicaoatualdescontoftd">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Desconto do REIDI [C] = -3,65% . [B]:</td>
+                        <td class="text-right" id="descontoreidi">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Medição líquida do REIDI (vlr. bruto NF) [D] = [B]+[C]:</td>
+                        <td class="text-right" id="medicaoliquida">0,00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Medição Atual [A]:</td>
+                        <td class="text-right">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Desconto do REIDI [E] = -3,65% . [A]:</td>
+                        <td class="text-right" id="percentualreidi">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Medição equivalente líquida do REIDI [F] = [A]+(E):</td>
+                        <td class="text-right" id="medicaoequivalente">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Caução Contratual [G] = 5% . [F]</td>
+                        <td class="text-right" id="caucaocontratual">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Liberação da Caução na Fase Atual:</td>
+                        <td class="text-right" id="liberacaoCaucao">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Penalidades Revisadas:</td>
+                        <td class="text-right" id="penalidadesRevisadas">0,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contract-total">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">TOTAL CONTRATO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td class="text-right"><strong>(R$)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Valor Total Vigente:</td>
+                        <td class="text-right" id="valorcontrato">{{ "{:,.2f}".format((contract_measurement_json | from_json).valorcontrato or 0).replace(',', 'X').replace('.', ',').replace('X', '.') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Faturamento Direto (FTD) Acumulado:</td>
+                        <td class="text-right" id="ftdacumulado">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Valor Total Vigente com desconto de FTD:</td>
+                        <td class="text-right" id="totalvigentemenosftd">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Medição Acumulada Atual</td>
+                        <td class="text-right" id="medicaoacumulada">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Saldo Contratual (R$):</td>
+                        <td class="text-right" id="saldo">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Saldo Contratual (%):</td>
+                        <td class="text-right" id="saldopercentual">0,00%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Aprovação -->
+    <div class="approval-section">
+        <div class="approval-header">APROVAÇÃO</div>
+        <div class="approval-note">Para contratos acima de R$3 Milhões de reais a assinatura do Diretor/Superintendente se faz premente</div>
+        <div class="signatures">
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>Diretor/Sup</p>
+            </div>
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>Gestor do Contrato</p>
+            </div>
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>Gerente Implantação e Conserva</p>
+            </div>
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>Responsável da Empreiteira</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript simplificado e seguro -->
+<script>
+// Função segura para formatar datas
+function formatarData(dateStr, onlyMonth) {
+    if (!dateStr) return '';
+    try {
+        const parts = dateStr.split('-');
+        if (parts.length !== 3) return '';
+        
+        const year = parseInt(parts[0]);
+        const month = parseInt(parts[1]);
+        const day = parseInt(parts[2]);
+        
+        if (isNaN(year) || isNaN(month) || isNaN(day)) return '';
+        
+        const date = new Date(year, month - 1, day);
+        
+        if (onlyMonth) {
+            const monthNames = [
+                'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+            ];
+            return monthNames[month - 1] + ' de ' + year;
+        }
+        
+        return day.toString().padStart(2, '0') + '/' + 
+               month.toString().padStart(2, '0') + '/' + year;
+    } catch (e) {
+        return '';
+    }
+}
+
+// Função segura para formatar moeda
+function formatarMoeda(valor) {
+    if (valor == null || isNaN(valor)) return '0,00';
+    try {
+        return parseFloat(valor).toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    } catch (e) {
+        return '0,00';
+    }
+}
+
+// Função segura para formatar percentual
+function formatarPercentual(valor) {
+    if (valor == null || isNaN(valor)) return '0,00%';
+    try {
+        return parseFloat(valor).toFixed(2).replace('.', ',') + '%';
+    } catch (e) {
+        return '0,00%';
+    }
+}
+
+// Função segura para definir texto
+function setTexto(id, valor) {
+    try {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = valor || '';
+        }
+    } catch (e) {
+        // Ignorar erros
+    }
+}
+
+// Executar após carregamento completo
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        // Buscar dados JSON de forma segura
+        const contractMeasurementEl = document.getElementById('contract-measurement-data');
+        const contractEl = document.getElementById('contract-data');
+        
+        let contractMeasurement = {};
+        let contract = {};
+        
+        if (contractMeasurementEl) {
+            try {
+                contractMeasurement = JSON.parse(contractMeasurementEl.textContent || '{}');
+            } catch (e) {}
+        }
+        
+        if (contractEl) {
+            try {
+                contract = JSON.parse(contractEl.textContent || '{}');
+            } catch (e) {}
+        }
+        
+        // Aplicar formatação de datas
+        setTexto('mesMedicao', formatarData(contractMeasurement.datafinalmedicao, true));
+        setTexto('periodoMedicao', 
+            formatarData(contractMeasurement.datainicialmedicao) + 
+            (contractMeasurement.datainicialmedicao && contractMeasurement.datafinalmedicao ? ' a ' : '') +
+            formatarData(contractMeasurement.datafinalmedicao)
+        );
+        
+        setTexto('data_ejak', formatarData(contractMeasurement.data_ejak));
+        setTexto('data_final_do_contrato', formatarData(contractMeasurement.data_final_do_contrato));
+        setTexto('inicioservicosprevisto', formatarData(contract.inicioservicosprevisto));
+        setTexto('inicioservicos', formatarData(contract.inicioservicos));
+        setTexto('terminoservicosprevisto', formatarData(contract.terminoservicosprevisto));
+        setTexto('terminoservicos', formatarData(contract.terminoservicos));
+        
+        // Aplicar formatação de valores
+        setTexto('medicaoatual', formatarMoeda(contractMeasurement.medicaoatual));
+        setTexto('faturamentodireto', formatarMoeda(contractMeasurement.faturamentodireto));
+        setTexto('medicaoatualdescontoftd', formatarMoeda(contractMeasurement.medicaoatualdescontoftd));
+        setTexto('descontoreidi', formatarMoeda(contractMeasurement.descontoreidi));
+        setTexto('medicaoliquida', formatarMoeda(contractMeasurement.medicaoliquida));
+        setTexto('medicaoequivalente', formatarMoeda(contractMeasurement.medicaoequivalente));
+        setTexto('caucaocontratual', formatarMoeda(contractMeasurement.caucaocontratual));
+        setTexto('liberacaoCaucao', formatarMoeda(contractMeasurement.liberacaoCaucao || 0));
+        setTexto('penalidadesRevisadas', formatarMoeda(contractMeasurement.penalidadesRevisadas || 0));
+        
+        setTexto('ftdacumulado', formatarMoeda(contractMeasurement.ftdacumulado));
+        setTexto('totalvigentemenosftd', formatarMoeda(contractMeasurement.totalvigentemenosftd));
+        setTexto('medicaoacumulada', formatarMoeda(contractMeasurement.medicaoacumulada));
+        setTexto('saldo', formatarMoeda(contractMeasurement.saldo));
+        setTexto('saldopercentual', formatarPercentual(contractMeasurement.saldopercentual));
+        
+        setTexto('percentualreidi', formatarPercentual(contract.percentualreidi || -3.65));
+        
+    } catch (e) {
+        // Em caso de erro, manter valores padrão
+    }
+});
+</script>
+</body>
+</html>

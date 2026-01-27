@@ -1,0 +1,765 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2025-05-13 06:10:27.754993",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sbwarning",
+  "hatencao",
+  "warning",
+  "section_break_gfay",
+  "status",
+  "contrato",
+  "contratada",
+  "datainicialmedicao",
+  "datafinalmedicao",
+  "datainicialtrabalho",
+  "datafinaltrabalho",
+  "nrcontrato",
+  "column_break_ufsa",
+  "data_ejak",
+  "data_final_do_contrato",
+  "obra",
+  "valorcontrato",
+  "medicaovigente",
+  "idadobesign",
+  "importacaosaldos",
+  "total_da_medi\u00e7\u00e3o_anterior_section",
+  "medicaoacumuladaanterior",
+  "caucaoacumuladoanterior",
+  "column_break_gzvz",
+  "ftdacumuladoanterior",
+  "total_da_medi\u00e7\u00e3o_section",
+  "medicaoatual",
+  "faturamentodireto",
+  "medicaoatualdescontoftd",
+  "descontoreidi",
+  "medicaoliquida",
+  "medicaoequivalente",
+  "caucaocontratual",
+  "column_break_awmi",
+  "valortotalvigente",
+  "ftdacumulado",
+  "totalvigentemenosftd",
+  "medicaoacumulada",
+  "saldopagamento",
+  "saldo",
+  "saldopercentual",
+  "cau\u00e7\u00e3o_section",
+  "caucaoatual",
+  "caucaoacumulado",
+  "column_break_hgvs",
+  "apontamento_desconto",
+  "percent_payfatror_descont",
+  "section_break_adqh",
+  "tabetapas",
+  "pedidos_sap_tab",
+  "pedidos_section",
+  "tablepedidossap",
+  "total_tablepedidossap",
+  "section_break_zasc",
+  "tablepedidossapitem",
+  "total_tablepedidossapitem",
+  "pedidos_por_munic\u00edpio_section",
+  "tabsapmunicipio",
+  "total_tabsapmunicipio",
+  "breakftp",
+  "totaliza\u00e7\u00e3o_por_nota_fiscal_section",
+  "tableftp",
+  "total_tableftp",
+  "valor_por_linha_de_pedido_sap_section",
+  "tabftporder",
+  "total_tabftporder",
+  "breakmaodeobra",
+  "fun\u00e7\u00f5es_section",
+  "tablemaodeobra",
+  "total_tablemaodeobra",
+  "equipes_section",
+  "tabmaodeobraequipes",
+  "tablemaodeobraequipe",
+  "breakativos",
+  "section_break_nqhr",
+  "tableativos",
+  "total_tableativos",
+  "tabperformance",
+  "tabperfm",
+  "breakmunicipios",
+  "tablemunicipios",
+  "total_tablemunicipios",
+  "section_break_fgpx",
+  "tblmunicipiositem",
+  "total_tblmunicipiositem",
+  "itens_tab",
+  "tabitenscontatrato",
+  "total_tabitenscontatrato",
+  "origem",
+  "tblsaldos",
+  "total_tblsaldos",
+  "prod_compensat\u00f3ria_tab",
+  "totaliza\u00e7\u00e3o_section",
+  "tblpctotal",
+  "section_break_bncz",
+  "total_di\u00e1rio_column",
+  "tblpc",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "label": "N\u00ba do contrato",
+   "options": "Contract",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ufsa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "breakftp",
+   "fieldtype": "Tab Break",
+   "label": "Faturamento Direto"
+  },
+  {
+   "fieldname": "tableftp",
+   "fieldtype": "Table",
+   "options": "Contract Measurement FTD"
+  },
+  {
+   "fieldname": "breakmunicipios",
+   "fieldtype": "Tab Break",
+   "label": "Munic\u00edpios"
+  },
+  {
+   "fieldname": "tablemunicipios",
+   "fieldtype": "Table",
+   "label": "Totaliza\u00e7\u00e3o por munic\u00edpio",
+   "options": "Contract Measurement City"
+  },
+  {
+   "fieldname": "breakmaodeobra",
+   "fieldtype": "Tab Break",
+   "label": "M\u00e3o de obra (Fun\u00e7\u00f5es)"
+  },
+  {
+   "fieldname": "tablemaodeobra",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Work Role"
+  },
+  {
+   "fieldname": "breakativos",
+   "fieldtype": "Tab Break",
+   "label": "Maq., equip. e ve\u00edculos (Ativos)"
+  },
+  {
+   "fieldname": "tableativos",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Asset"
+  },
+  {
+   "fetch_from": "contrato.contratada",
+   "fieldname": "contratada",
+   "fieldtype": "Link",
+   "label": "Contratada",
+   "options": "Contracted Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "datainicialmedicao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data inicial da medi\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "datafinalmedicao",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data final da medi\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaovigente",
+   "fieldtype": "Select",
+   "label": "Medi\u00e7\u00e3o vigente",
+   "options": "Sim\nN\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.datainicial",
+   "fieldname": "data_ejak",
+   "fieldtype": "Data",
+   "label": "Data inicial do contrato",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_final_do_contrato",
+   "fieldtype": "Data",
+   "label": "Data final do contrato",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.obra",
+   "fieldname": "obra",
+   "fieldtype": "Data",
+   "label": "Obra"
+  },
+  {
+   "fetch_from": "contrato.valortotal",
+   "fieldname": "valorcontrato",
+   "fieldtype": "Currency",
+   "label": "Valor do contrato",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_da_medi\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Total da medi\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoatual",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o atual (A)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_awmi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "faturamentodireto",
+   "fieldtype": "Currency",
+   "label": "Faturamento direto (FTD) na fase atual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoatualdescontoftd",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o atual com desconto de FTD (B)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "descontoreidi",
+   "fieldtype": "Currency",
+   "label": "Desconto do REIDI [C] = -3,65% . [B]",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoliquida",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o l\u00edquida do REIDI (Vl. bruto NF) [D] = [B]+[C]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoequivalente",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o equivalente l\u00edquida do REIDI [F] = [A]+(E)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "caucaocontratual",
+   "fieldtype": "Currency",
+   "label": "Cau\u00e7\u00e3o Contratual [G] =  5% . [F]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valortotalvigente",
+   "fieldtype": "Currency",
+   "label": "Valor Total Vigente",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ftdacumulado",
+   "fieldtype": "Currency",
+   "label": "Faturamento direto (FTD) acumulado"
+  },
+  {
+   "fieldname": "totalvigentemenosftd",
+   "fieldtype": "Currency",
+   "label": "Valor total vigente com desconto de FTD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoacumulada",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o acumulada atual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "label": "Saldo Contratual (R$)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldopercentual",
+   "fieldtype": "Float",
+   "label": "Saldo Contratual (%)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cau\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Cau\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "caucaoatual",
+   "fieldtype": "Currency",
+   "label": "Cau\u00e7\u00e3o atual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "caucaoacumulado",
+   "fieldtype": "Currency",
+   "label": "Cau\u00e7\u00e3o acumulado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "itens_tab",
+   "fieldtype": "Tab Break",
+   "label": "Itens"
+  },
+  {
+   "fieldname": "tabitenscontatrato",
+   "fieldtype": "Table",
+   "label": "Itens do contrato",
+   "options": "Contract Measurement Item"
+  },
+  {
+   "fieldname": "total_da_medi\u00e7\u00e3o_anterior_section",
+   "fieldtype": "Section Break",
+   "label": "Total da medi\u00e7\u00e3o anterior",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medicaoacumuladaanterior",
+   "fieldtype": "Currency",
+   "label": "Medi\u00e7\u00e3o acumulada anterior",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "caucaoacumuladoanterior",
+   "fieldtype": "Currency",
+   "label": "Cau\u00e7\u00e3o acumulado anterior",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gzvz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ftdacumuladoanterior",
+   "fieldtype": "Currency",
+   "label": "Faturamento direto (FTD) acumulado anterior",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gfay",
+   "fieldtype": "Section Break",
+   "label": "...",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contrato.contrato",
+   "fieldname": "nrcontrato",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "fun\u00e7\u00f5es_section",
+   "fieldtype": "Section Break",
+   "label": "Fun\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "equipes_section",
+   "fieldtype": "Section Break",
+   "label": "Equipes"
+  },
+  {
+   "fieldname": "tabmaodeobraequipes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tablemaodeobraequipe",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Team"
+  },
+  {
+   "fieldname": "apontamento_desconto",
+   "fieldtype": "Select",
+   "label": "Apontamento do desconto",
+   "options": "Contract Measurement Record",
+   "read_only": 1
+  },
+  {
+   "fieldname": "percent_payfatror_descont",
+   "fieldtype": "Percent",
+   "label": "Porcentagem de desconto do payfactor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hgvs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tabperformance",
+   "fieldtype": "Tab Break",
+   "label": "Performance"
+  },
+  {
+   "fieldname": "tabperfm",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Performance"
+  },
+  {
+   "fieldname": "origem",
+   "fieldtype": "Section Break",
+   "label": "Saldos pagos neste boletim"
+  },
+  {
+   "fieldname": "datainicialtrabalho",
+   "fieldtype": "Date",
+   "label": "Data inicial da aprova\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "fieldname": "datafinaltrabalho",
+   "fieldtype": "Date",
+   "label": "Data final de aprovacao",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pedidos_sap_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pedidos SAP"
+  },
+  {
+   "fieldname": "tablepedidossap",
+   "fieldtype": "Table",
+   "options": "Contract Measurement SAP Order"
+  },
+  {
+   "fieldname": "section_break_zasc",
+   "fieldtype": "Section Break",
+   "label": "Pedidos por Item"
+  },
+  {
+   "fieldname": "tablepedidossapitem",
+   "fieldtype": "Table",
+   "options": "Contract Measurement SAP Order Item"
+  },
+  {
+   "fieldname": "section_break_fgpx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tblmunicipiositem",
+   "fieldtype": "Table",
+   "label": "Itens por munic\u00edpio",
+   "options": "Contract Measurement City Item"
+  },
+  {
+   "fieldname": "totaliza\u00e7\u00e3o_por_nota_fiscal_section",
+   "fieldtype": "Section Break",
+   "label": "Totaliza\u00e7\u00e3o por Nota Fiscal"
+  },
+  {
+   "fieldname": "valor_por_linha_de_pedido_sap_section",
+   "fieldtype": "Section Break",
+   "label": "Valor por Linha de Pedido SAP"
+  },
+  {
+   "fieldname": "tabftporder",
+   "fieldtype": "Table",
+   "options": "Contract Measurement FTD Order"
+  },
+  {
+   "fieldname": "pedidos_section",
+   "fieldtype": "Section Break",
+   "label": "Pedidos"
+  },
+  {
+   "fieldname": "tblsaldos",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Item Balance Payment"
+  },
+  {
+   "fieldname": "section_break_nqhr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "<br>",
+   "fieldname": "hatencao",
+   "fieldtype": "Heading",
+   "hidden": 1,
+   "label": "\u26a0\ufe0f Aten\u00e7\u00e3o!"
+  },
+  {
+   "fieldname": "sbwarning",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prod_compensat\u00f3ria_tab",
+   "fieldtype": "Tab Break",
+   "label": "Prod. Compensat\u00f3ria"
+  },
+  {
+   "fieldname": "tblpc",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Productivity"
+  },
+  {
+   "fieldname": "totaliza\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Totaliza\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "tblpctotal",
+   "fieldtype": "Table",
+   "options": "Contract Measurement Productivity Total"
+  },
+  {
+   "fieldname": "section_break_bncz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_di\u00e1rio_column",
+   "fieldtype": "Column Break",
+   "label": "Total di\u00e1rio"
+  },
+  {
+   "fieldname": "pedidos_por_munic\u00edpio_section",
+   "fieldtype": "Section Break",
+   "label": "Pedidos por munic\u00edpio"
+  },
+  {
+   "fieldname": "tabsapmunicipio",
+   "fieldtype": "Table",
+   "options": "Contract Measurement SAP Order City"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Aberto\nAprovado\nAssinatura\nDevolvido\nConclu\u00eddo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warning",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract Measurement",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "total_tablepedidossap",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tablepedidossapitem",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tabsapmunicipio",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tableftp",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tabftporder",
+   "fieldtype": "HTML",
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tablemaodeobra",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tableativos",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tablemunicipios",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tblmunicipiositem",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tabitenscontatrato",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_tblsaldos",
+   "fieldtype": "HTML",
+   "is_virtual": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "section_break_adqh",
+   "fieldtype": "Section Break",
+   "label": "Etapas"
+  },
+  {
+   "fieldname": "tabetapas",
+   "fieldtype": "Table",
+   "options": "Contract Measurement State"
+  },
+  {
+   "fieldname": "idadobesign",
+   "fieldtype": "Data",
+   "label": "Chave Adobe Sign",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldopagamento",
+   "fieldtype": "Currency",
+   "label": "Saldo de Pagamento (R$)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "importacaosaldos",
+   "fieldtype": "Datetime",
+   "label": "Importa\u00e7\u00e3o de saldos em",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Contract Measurement Record",
+   "link_fieldname": "boletimmedicao"
+  },
+  {
+   "link_doctype": "Integration Record",
+   "link_fieldname": "boletimmedicao"
+  },
+  {
+   "link_doctype": "Contract Measurement Reload",
+   "link_fieldname": "medicao"
+  },
+  {
+   "link_doctype": "Contract Measurement Item Discount",
+   "link_fieldname": "boletimmedicao"
+  }
+ ],
+ "modified": "2025-10-09 15:10:34.856705",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "Contract Measurement",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Global Administrator",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Operador"
+  },
+  {
+   "read": 1,
+   "role": "Gerente"
+  },
+  {
+   "read": 1,
+   "role": "Administrador"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrador Global",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Aberto"
+  },
+  {
+   "color": "Blue",
+   "title": "Aprovado"
+  },
+  {
+   "color": "Yellow",
+   "title": "Assinatura"
+  },
+  {
+   "color": "Green",
+   "title": "Conclu\u00eddo"
+  },
+  {
+   "color": "Red",
+   "title": "Devolvido"
+  }
+ ],
+ "track_changes": 1
+}

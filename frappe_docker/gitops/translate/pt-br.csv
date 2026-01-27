@@ -1,0 +1,5164 @@
+ para o seu navegador
+História da empresa
+Pai significa a tabela pai na qual esta linha deve ser adicionada
+"Membros da equipe ou ""gerenciamento"""
+amended_from campo deve estar presente para fazer uma alteração.
+{0} não é um URL válido do Planilhas Google
+#{0}
+${values.doctype_name} foi adicionado à fila para otimização
+© Frappe Technologies Pvt. Ltd. e colaboradores
+HTML &lt;cabeça&gt;
+'Na Pesquisa Global' não é permitido para {0} de campo do tipo {1}
+"""Na pesquisa global"" não é permitido para digitar {0} na linha {1}"
+'Na exibição de lista' não é permitido para {0} de campo do tipo {1}
+'Na exibição de lista' não é permitido para o tipo {0} na linha {1}
+«Destinatários» não especificados
+'{0}' não é um URL válido
+«{0}» não é permitida para o tipo {1} na linha {2}
+(Obrigatório)
+** Reprovado: {0} para {1}: {2}
++ Adicionar / Remover Campos
+0 - Rascunho; 1 - Submetido; 2 - Cancelado
+0 é o mais alto
+1 = Verdadeiro e 0 = Falso
+"1 Moeda = [?] Fração|||Por exemplo, 1 USD = 100 Cent"
+1 dia
+1 evento do Google Agenda sincronizado.
+1 Relatório
+1 comentário
+há 1 dia
+1 hora
+há 1 hora
+há 1 minuto
+há 1 mês
+1 de 2
+1 registro será exportado
+1 segundo atrás
+há 1 semana
+há 1 ano
+há 2 horas
+há 2 meses
+há 2 semanas
+anos 2 atrás
+há 3 minutos
+30 minutos
+4 horas
+5 Registros
+há 5 dias
+; não permitido em condições
+<b>{0}</b> não é um URL válido
+<br>|||Em caso de medição de mês cheio
+"<div class=""alert"">Por favor, não o atualize, pois isso pode atrapalhar seu formulário. Use a opção Personalizar visualização de formulário e campos personalizados para definir propriedades!</div>"
+"<div class=""well"">|||    Edite a lista de séries na caixa. Réguas:|||    <ul>|||        <li>Cada prefixo de série em uma nova linha.</li>|||        <li>Os caracteres especiais permitidos são ""/"" e ""-""</li>|||        <li>|||            Opcionalmente"
+"<h3>Ajuda CSS personalizado</h3>||||||<p>Anotações:</p>||||||<ol>|||<li>Todos os grupos de campos (rótulo + valor) são atributos definidos <code>tipo de campo de dados</code> e <code>nome do campo de dados</code></li>|||<li>Todos os valores recebem classe <code>valor</code></li>|||<li>Todas as quebras de seção recebem classe <code>quebra de seção</code></li>|||<li>Todas as quebras de coluna recebem classe <code>quebra de coluna</code></li>|||</ol>||||||<h4>Exemplos</h4>||||||<p>1. Inteiros de alinhamento à esquerda</p>||||||<pre><code>[data-fieldtype=""Int""] .value { text-align: left; }</code></pre>||||||<p>1. Adicione borda às seções, exceto a última seção</p>||||||<pre><code>.section-break {preenchimento: 30px 0px; borda inferior: 1px sólido #eee; }|||.section-break: último filho {padding-bottom: 0px; borda inferior: 0px;  }</code></pre>|||"
+<h3>Ajuda do formato de impressão</h3>|||<hr>|||<h4>Introdução</h4>|||<p>Os formatos de impressão são renderizados no lado do servidor usando a linguagem de modelos Jinja. Todos os formulários têm acesso ao <code>Doc</code> que contém informações sobre o documento que está sendo formatado. Você também pode acessar utilitários comuns por meio do <code>frapê</code> módulo.</p>|||<p>Para estilizar
+"<h4>Modelo padrão</h4>|||<p>Usa <a href=""http://jinja.pocoo.org/docs/templates/"">Jinja Modelos</a> e todos os campos de Endereço (incluindo Campos Personalizados, se houver) estarão disponíveis</p>|||<pre><code>{{ address_line1 }}&lt;br&gt;|||{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}|||{{ city }}&lt;br&gt;|||{% if state %}{{ state }}&lt;br&gt;{% endif -%}|||{% if pincode %} ALFINETE:  {{ pincode }}&lt;br&gt;{% endif -%}|||{{ country }}&lt;br&gt;|||{% if phone %}Telefone: {{ phone }}&lt;br&gt;{% endif -%}|||{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}|||{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}|||</code></pre>"
+"<h4>Exemplo de resposta de e-mail</h4>||||||<pre>Pedido vencido||||||Transação {{ name }} excedeu a Data de Vencimento. Por favor, tome as medidas necessárias.||||||Detalhes||||||-Cliente: {{ customer }}|||-Quantidade: {{ grand_total }}|||</pre>||||||<h4>Como obter nomes de campo</h4>||||||<p>Os nomes de campo que você pode usar em seu modelo de e-mail são os campos no documento do qual você está enviando o e-mail. Você pode descobrir os campos de qualquer documento por meio de Configuração &gt; Personalizar Visualização de Formulário e selecionando o tipo de documento (por exemplo, Fatura de Venda)</p>||||||<h4>Modelos</h4>||||||<p>Os modelos são compilados usando a Jinja Templating Language. Para saber mais sobre Jinja"
+"<h5 class=""text-muted uppercase"">Ou</h5>"
+"<h5>Exemplo de mensagem</h5>||||||<pre>&lt;h3&gt;Pedido vencido&lt;/h3&gt;||||||&lt;p&gt;Transação {{ doc.name }} excedeu a Data de Vencimento. Por favor, tome as medidas necessárias.&lt;/p&gt;||||||&lt;!-- mostrar último comentário --&gt;|||{% if comments %}|||Último comentário: {{ comments[-1].comment }} por {{ comments[-1].by }}|||{% endif %}||||||&lt;h4&gt;Detalhes&lt;/h4&gt;||||||&lt;ul&gt;|||&lt;li&gt;Cliente: {{ doc.customer }}|||&lt;li&gt;Quantia: {{ doc.grand_total }}|||&lt;/ul&gt;|||</pre>"
+"<p><strong>Exemplos de condições:</strong></p>|||<pre>doc.status==""Abrir""<br>doc.due_date==nowdate()<br>total de documentos &gt; 40000|||</pre>"
+"<p><strong>Exemplos de condições:</strong></p>|||<pre>doc.status==""Abrir""<br>doc.due_date==nowdate()<br>total de documentos &gt; 40000|||</pre>|||"
+"<p>Vários formulários da web podem ser criados para um único doctype. Adicione filtros específicos a este formulário da web para exibir o registro correto após o envio.</p><p>Por exemplo:</p>|||<p>Se você criar um formulário da Web separado todos os anos para capturar feedback dos funcionários, adicione um ||| campo chamado ano no doctype e adicione um filtro <b>ano = 2023</b></p>|||"
+"<p>Defina o contexto antes de renderizar um modelo. Exemplo:</p><p>|||</p><div><pre><code>|||context.project = frappe.get_doc(""Projeto"""
+"<p>Para interagir com o HTML acima, você terá que usar 'root_element' como seletor pai.</p><p>Por exemplo:</p><pre class=""p-3 bg-gray-100 border-radius rounded-sm mb-0"" style=""width: fit-content;""><code>aqui root_element é fornecido por padrão|||let some_class_element = root_element.querySelector('.alguma-classe');|||some_class_element.textContent = ""Novo conteúdo"";|||</code></pre>"
+<p>Seu segredo OTP no {0} foi redefinido. Se você não executou essa redefinição e não a solicitou
+<pre>*  *  *  *  *|||┬  ┬  ┬  ┬  ┬|||│  │  │  │  │|||│ │ │ │ └ dia da semana (0 - 6) (0 é domingo)|||│ │ │ └───── mês (1 - 12)|||│ │ └────────── dia do mês (1 - 31)|||│ └─────────────── hora (0 - 23)|||└──────────────────── minuto (0 - 59)||||||---||||||* - Qualquer valor|||/ - Valores de passo|||</pre>|||
+"<pre><code>doc.grand_total &gt; 0</code></pre>||||||<p>As condições devem ser escritas em Python simples. Por favor, use as propriedades disponíveis apenas no formulário.</p>|||<p>Funções permitidas:|||</p><ul>|||<li>frappe.db.get_value</li>|||<li>frappe.db.get_list</li>|||<li>frappe.session</li>|||<li>frappe.utils.now_datetime</li>|||<li>frappe.utils.get_datetime</li>|||<li>frappe.utils.add_to_date</li>|||<li>frap-brasil.utils.now</li>|||</ul>|||<p>Exemplo: </p><pre><code>doc.criação &gt; frappe.utils.add_to_date(frappe.utils.now_datetime()"
+<strong>Aviso:</strong> Este campo é gerado pelo sistema e pode ser substituído por uma atualização futura. Modifique-o usando {0} em vez disso.
+O nome de um DocType deve começar com uma letra e só pode consistir em letras
+Uma instância do Frappe Framework pode funcionar como um cliente OAuth
+Uma postagem em destaque deve ter uma imagem de capa
+Um campo com o nome {0} já existe no {1}
+Um arquivo com o mesmo nome {} já existe
+Uma nova conta foi criada para você em {0}
+Um {0} {1} recorrente foi criado para você por meio do {2} de repetição automática.
+Já existe um modelo para o campo {0} de {1}
+Uma cadeia de caracteres de identificador de versão para o software cliente.|||<br>|||O valor do deve mudar em qualquer atualização do software cliente com a mesma ID de Software.
+Uma palavra por si só é fácil de adivinhar.
+A0
+A1
+Resposta 2
+A3
+Resposta 4
+A5
+RESPOSTA 6
+A7
+Resposta 8
+RESPOSTA 9
+API
+API Endpoint
+Argumentos de endpoint de API
+Chave de API e segredo para interagir com o servidor de retransmissão. Eles serão gerados automaticamente quando a primeira notificação push for enviada de qualquer um dos aplicativos instalados neste site.
+A chave de API não pode ser regenerada
+Registro de API
+Registro de solicitação de API
+ASC
+Sobre
+Quem somos
+Sobre nós Configurações
+Sobre nós Membro da equipe
+Cerca de {0} minutos restantes
+Cerca de {0} minutos restantes
+Cerca de {0} segundos restantes
+Controle de acesso
+Registro de acesso
+Token de acesso
+URL do token de acesso
+Acesso não permitido a partir deste endereço IP
+Configurações de exclusão de conta
+A contagem precisa não pode ser buscada
+Ação concluída
+Falha na ação
+Rótulo de ação
+Tipo de ação
+A ação {0} concluída com êxito no {1} {2}. Veja {3}
+A ação {0} falhou em {1} {2}. Veja {3}
+Ativar
+Diretório ativo
+Sessões ativas
+Registro de atividades
+Adicionar / remover colunas
+Adicionar / Atualizar
+Adicionar uma nova regra
+Adicionar anexo
+Adicionar imagem de fundo
+Adicionar borda na parte inferior
+Adicionar borda na parte superior
+Adicionar cartão ao painel
+Adicionar gráfico ao painel
+Adicionar coluna
+Adicionar contato
+Adicionar contatos
+Adicionar tags personalizadas
+Adicionar filtros
+Adicionar grupo
+Adicionar índices
+Adicionar novo
+Adicionar nova regra de permissão
+Adicionar parâmetros de consulta
+Adicionar funções
+Adicionar linha
+Adicionar assinatura
+Adicionar espaço na parte inferior
+Adicionar espaço no topo
+Adicionar assinantes
+Adicionar tags
+Adicionar modelo
+Adicionar permissões de usuário
+Adicionar videoconferência
+Adicionar um filtro
+Adicionar uma nova função
+Adicionar uma linha
+Adicionar um comentário
+Adicionar uma nova seção
+Adicionar uma linha acima da linha atual
+Adicionar uma linha na parte inferior
+Adicionar uma linha na parte superior
+Adicionar uma linha abaixo da linha atual
+Adicionar um gráfico {0}
+Adicionar coluna
+Adicionar campo
+Adicionar nova guia
+Adicionar quebra de página
+Adicionar script para Tabela Filho
+Adicionar seção acima
+Adicione a seção abaixo
+Adicionar guia
+Adicionar ao painel
+Adicionar ao ToDo
+Adicionar à tabela
+Adicione a esta atividade enviando para {0}
+Adicionar {0}
+Filtro Adicionar/Atualizar
+Adicionado
+Adicionado HTML na seção &lt;head&gt; da página da web
+Adicionados doctypes de log padrão: {}
+Linha de endereço 1
+Linha de endereço 2
+Modelo de Endereço
+O Título do Endereço é obrigatório.
+Tipo de endereço
+Endereços
+Endereços e contatos
+Adiciona um script de cliente personalizado a um DocType
+Adiciona um campo personalizado a um DocType
+Adicionar
+Administração
+Administrador conectado
+O administrador acessou {0} no {1} por meio do endereço IP {2}.
+O administrador não pode seguir
+Avançado
+Controle avançado
+Pesquisa Avançada
+Depois
+Após o descarte
+Após a inserção
+Depois de renomear
+Após o envio
+O campo agregado é necessário para criar um cartão numérico
+O campo Função de agregação é necessário para criar um gráfico de painel
+O alias não pode ser uma palavra-chave SQL: {0}
+O alias deve ser uma string
+Alinhar
+Alinhar valor
+Todas as imagens anexadas à apresentação de slides do site devem ser públicas
+Todos os registros
+Todos os resultados
+Todos os envios
+"Todas as personalizações serão removidas. Por favor, confirme."
+Todos os campos são necessários para enviar o comentário.
+"Todos os estados de fluxo de trabalho possíveis e funções do fluxo de trabalho. Opções de status do documento: 0 é ""Salvo"""
+Todas as letras maiúsculas são quase tão fáceis de adivinhar quanto as minúsculas.
+Permitir
+Permitir acesso à indexação da API
+Permitir edição em massa
+Permitir tentativas consecutivas de login 
+Permitir acesso ao Google Agenda
+Permitir acesso aos Contatos do Google
+Permitir que o convidado comente
+Permitir que os convidados carreguem arquivos
+Permitir importação (via ferramenta de importação de dados)
+Permitir login após falha
+Permitir login usando o número de celular
+Permitir links de exibição da Web mais antigos (inseguro)
+Permitir impressão para rascunho
+Permitir o envio de dados de uso para melhorar os aplicativos
+Permitir comentários
+Permitir exclusão
+Permitir a criação de documentos por e-mail
+Permitir edição após o envio
+Permitir a edição mesmo que o doctype tenha um fluxo de trabalho configurado.||||||Não faz nada se um fluxo de trabalho não estiver configurado.
+Permitir formulários incompletos
+Permitir várias respostas
+Permitir quebra de página dentro de tabelas
+Permitir impressão
+Permitir gravar minha primeira sessão para melhorar a experiência do usuário
+Permitir o envio de dados de uso para melhorar os aplicativos
+Permitir que o usuário faça login somente após esta hora (0-24)
+Permitir que o usuário faça login somente antes desta hora (0-24)
+Permitir que os usuários façam login sem uma senha
+Extensões de arquivo permitidas
+Módulos permitidos
+Origens de cliente público permitidas
+Funções permitidas
+Domínios de incorporação permitidos
+Permitindo DocType
+"Permite que os clientes busquem metadados do <code>/.conhecido/oauth-authorization-server</code> Extremidade. Referência: <a href=""https://datatracker.ietf.org/doc/html/rfc8414"">RFC8414</a>"
+"Permite que os clientes busquem metadados do <code>/.well-known/oauth-protected-resource</code> Extremidade. Referência: <a href=""https://datatracker.ietf.org/doc/html/rfc9728#name-protected-resource-metadata"">RFC9728</a>"
+"Permite que os clientes se registrem sem intervenção manual. O registro cria um <b>Cliente OAuth</b> entrada. Referência: <a href=""https://datatracker.ietf.org/doc/html/rfc7591"">RFC7591</a>"
+Permite que os clientes visualizem isso como um Servidor de Autorização ao consultar o <code>/.well-known/oauth-protected-resource</code> ponto final.
+Permite que o URL da Base da Chave de Logon Social ativado seja mostrado como servidor de autorização.
+Permite ignorar a autorização se um usuário tiver tokens ativos.
+Já Registrado
+Já na seguinte lista de tarefas de usuários:{0}
+Também adicionando o campo de moeda dependente {0}
+Também adicionando o campo de dependência de status {0}
+ID de e-mail alternativo
+Endereço sempre CCO
+Sempre use este endereço de e-mail como endereço do remetente
+Sempre use esse nome como nome do remetente
+Contador de Emendas
+Configurações de nomenclatura de documentos alteradas
+Documentos alterados
+Alterado de
+Alteração
+Substituição de nomenclatura de alteração
+Alteração não permitida
+Regras de nomenclatura de alteração atualizadas.
+Ocorreu um erro ao definir os padrões da sessão
+Um arquivo de ícone com .ico extensão. Deve ser 16 x 16 px. Gerado usando um gerador de favicon. [favicon-generator.org]
+Ocorreu um erro inesperado ao autorizar {}.
+Ancestrais de
+Widget de anúncio
+Anúncios
+Ano
+Matriz de anonimização
+Respostas anônimas
+Outra transação está bloqueando esta. Tente novamente em alguns segundos.
+Existe outro {0} com nome {1}
+Qualquer linguagem de impressora baseada em cadeia de caracteres pode ser usada. Escrever comandos raw requer conhecimento do idioma nativo da impressora fornecido pelo fabricante da impressora. Consulte o manual do desenvolvedor fornecido pelo fabricante da impressora para saber como escrever seus comandos nativos. Esses comandos são renderizados no lado do servidor usando a Jinja Templating Language.
+Além do System Manager
+Apenas para feriados estaduais
+Apenas para feriados municipais
+Apontamento direto
+ID do aplicativo
+Logotipo do aplicativo
+Nome do aplicativo
+Nome do aplicativo (nome do cliente)
+Aplicativo não encontrado para o módulo: {0}
+O aplicativo {0} não está instalado
+Anexar e-mails à pasta de enviados
+Anexar a pode ser um dos {0}
+"Anexar como comunicação contra este DocType (deve ter campos: ""Remetente"" e ""Assunto""). Esses campos podem ser definidos na seção de configurações de e-mail do doctype anexado."
+Tipos de documentos aplicáveis
+Aplicável para
+Aplicar
+Aplicar regra de atribuição
+Aplicar filtros
+Aplicar a
+Aplicar a todos os tipos de documentos
+Aplicar permissão de usuário em
+Aplicar permissões de documentos
+Aplicar a todos os tipos de documentos
+Aplicação: {0}
+Aprovação necessária
+Apps
+Aprovador
+Ar
+Arquivo
+Arquivados
+Colunas arquivadas
+Tem certeza de que deseja limpar as tarefas?
+Tem certeza de que deseja excluir todas as linhas?
+Tem certeza de que deseja excluir o anexo?
+Tem certeza de que deseja excluir a coluna? Todos os campos da coluna serão movidos para a coluna anterior.
+"Tem certeza de que deseja excluir a seção? Todas as colunas, juntamente com os campos da seção, serão movidos para a seção anterior."
+"Tem certeza de que deseja excluir a guia? Todas as seções, juntamente com os campos na guia, serão movidas para a guia anterior."
+Tem certeza de que deseja descartar as alterações?
+Tem certeza de que deseja gerar um novo relatório?
+Tem certeza de que deseja mesclar {0} com {1}?
+Tem certeza de que deseja prosseguir?
+Tem certeza de que deseja reativar o agendador?
+Tem certeza de que deseja vincular novamente esta comunicação ao {0}?
+Tem certeza de que deseja remover todos os trabalhos com falha?
+Tem certeza de que deseja remover o filtro {0}?
+Tem certeza de que deseja redefinir todas as personalizações?
+Tem certeza de que deseja salvar este documento?
+Tem certeza?
+Argumentos
+Arial
+Arteris
+Como prática recomendada
+Como o compartilhamento de documentos está desativado
+Conforme seu pedido
+Ativo
+Configuração de ativos Kartado
+Atribuir a
+Atribuir ao grupo de usuários
+Atribuir um usuário
+Atribua um por um
+Atribua a mim
+Atribua àquele que tem menos atribuições
+Atribuir ao usuário definido neste campo
+Atribuído por
+Atribuído a/Proprietário
+Atribuir...
+Designação
+Regra de atribuição
+Dia da Regra de Atribuição
+Usuário da regra de atribuição
+A regra de atribuição não é permitida no tipo de documento {0}
+Atualização de atribuição no {0}
+Atribuição para {0} {1}
+Atribuição de {0} removida por {1}
+Atribuições
+Pelo menos uma coluna é necessária para ser exibida na grade.
+Pelo menos um campo é obrigatório na Tabela de Campos de Formulário da Web
+Pelo menos um campo do Tipo de Documento Pai é obrigatório
+Anexar
+Anexar impressão de documento
+Anexar pacote
+Anexar um link da Web
+Anexe arquivos / urls e adicione na tabela.
+Anexado ao DocType
+Anexado ao nome deve ser uma cadeia de caracteres ou um número inteiro
+Limite de anexos atingido
+Tentando conexão com a bandeja QZ...
+Tentando iniciar o QZ Tray...
+Atribuição
+Ganchos do sistema de auditoria
+Trilha de auditoria
+Autenticar como entidade de serviço
+Autenticação
+Os aplicativos de autenticação que você pode usar são: 
+Falha na autenticação ao receber e-mails da conta de e-mail: {0}.
+Autorização
+URI de autorização
+Erro de autorização para {}.
+Autorizar o acesso à API
+Autores
+Autores / Mantenedores
+Automático
+Relatório automático por e-mail
+Repetição automática
+Dia de repetição automática
+Dia de repetição automática{0} {1} foi repetido.
+Falha na criação de documentos de repetição automática
+Programação de repetição automática
+Repetição automática criada para este documento
+Falha na repetição automática para {0}
+Resposta automática
+Falha na atribuição automática: {0}
+Seguir automaticamente os documentos atribuídos a você
+Seguir automaticamente documentos compartilhados com você
+Seguir automaticamente os documentos que você gosta
+Seguir automaticamente os documentos que você comenta
+Seguir automaticamente os documentos que você cria
+Falha na repetição automática. Ative a repetição automática após corrigir os problemas.
+Preenchimento automático
+Autoincrement
+Mensagem automatizada
+Automático
+A vinculação automática pode ser ativada apenas para uma conta de e-mail.
+A vinculação automática só pode ser ativada se a opção Entrada estiver ativada.
+Atribuir documentos automaticamente aos usuários
+Aplicou automaticamente um filtro para dados recentes. Você pode desativar esse comportamento nas configurações do modo de exibição de lista.
+Excluir conta automaticamente em (horas)
+Automação
+Avatar
+Média
+Média de {0}
+Evite datas e anos associados a você.
+Evite os últimos anos.
+"Evite sequências como abc ou 6543, pois são fáceis de adivinhar"
+Evite anos associados a você.
+Trabalho incrível
+Incrível
+B
+B0
+B1
+B10
+B2
+B3
+B4
+B5
+B6
+B7
+B8
+B9
+CCO
+Voltar
+Voltar para a mesa
+Voltar para a página inicial
+Voltar ao login
+Imagem de fundo
+Trabalhos em segundo plano
+Verificação de trabalhos em segundo plano
+Fila de trabalhos em segundo plano
+Impressão de fundo (necessária para >25 documentos)
+Chave de criptografia de backup
+O trabalho de backup já está enfileirado. Você receberá um e-mail com o link para download
+Backups
+Backups (MB)
+Expressão Cron Ruim
+Arredondamento do banqueiro
+Arredondamento do banqueiro (legado)
+Imagem do banner
+O banner está acima da barra de menu superior.
+Barra
+Informação básica
+Antes
+Antes de descartar
+Antes da impressão
+Antes de renomear
+Antes de validar
+Iniciante
+Começando com
+Beta
+Melhor adicionar mais algumas letras ou outra palavra
+Entre
+Contato de cobrança
+Registro em log binário
+Bio
+Modelo em branco
+Módulo de Bloco
+Blogue
+Categoria do blog
+Postagem do blog
+Configurações do blog
+Blogueiro
+Boletim de medição
+Bot
+DocType e Name necessários
+Login e senha necessários
+Centro inferior
+Canto inferior esquerdo
+Canto inferior direito
+Saltou
+Logotipo da marca
+Farinha de rosca
+Navegue por categoria
+Navegador
+Navegador não suportado
+Tamanho do Bufferpool
+Construa {0}
+Construído em {0}
+Ações em massa
+Exclusão em massa
+Edição em massa
+Edição em massa {0}
+Falha na operação em massa
+Operação em massa bem-sucedida
+Exportação de PDF em massa
+Atualização em massa
+A aprovação em massa suporta apenas até 500 documentos.
+A operação em massa é enfileirada em segundo plano.
+As operações em massa suportam apenas até 500 documentos.
+O {0} em massa é enfileirado em segundo plano.
+"Por campo ""Naming Series"""
+"Por padrão, o título é usado como meta título"
+Por nome do campo
+Por script
+Ignorar a autenticação de dois fatores para usuários que fazem login a partir de um endereço IP restrito
+C.C. ou PEP
+C5E
+CANCELADO
+CC
+CMD
+CNPJ
+SELETOR DE CORES
+CSS
+Seletor de CSS para o elemento que você deseja destacar.
+CSV
+Cabeçalho
+Cache
+Cache limpo
+Calcular
+Calendário
+Visualização de calendário
+Chamar
+Chamada à ação
+Câmera
+Descrição da campanha (opcional)
+Campo
+Link do Campo
+Pode ler
+Pode compartilhar
+Pode enviar
+Pode escrever
+Não é possível renomear como coluna {0} já está presente no DocType.
+Só pode ser alterado de/para a regra de nomenclatura de incremento automático quando não houver dados no doctype
+Só é possível listar os tipos de documento que foram vinculados ao tipo de documento Usuário.
+"Não é possível acompanhar, pois as alterações não são controladas."
+Não é possível renomear {0} para {1} porque {0} não existe.
+Cancelar
+Cancelar tudo
+Cancelar todos os documentos
+Cancelar {0} documentos?
+Documento cancelado restaurado como rascunho
+Cancelar
+Cancelamento de documentos
+Cancelando {0}
+Não é possível baixar o relatório devido a permissões insuficientes
+Não é possível buscar valores
+Não é possível remover
+Não é possível atualizar após o envio
+Não é possível acessar o caminho do arquivo {0}
+Não é possível cancelar antes de enviar durante a transição de <b>{0} Estado</b> Para <b>{1} Estado</b>
+Não é possível cancelar antes de enviar. Consulte {0} de transição
+Não é possível cancelar {0}.
+Não é possível alterar o status do documento de 0 (Rascunho) para 2 (Cancelado)
+Não é possível alterar o status do documento de 1 (Enviado) para 0 (Rascunho)
+Não é possível alterar o estado do documento cancelado <b>({0} Estado)</b>
+Não é possível alterar o estado do Documento Cancelado. Linha de transição {0}
+Não é possível alterar de/para o autoincrement autoname em Personalizar formulário
+Não é possível criar um {0} em relação a um documento filho: {1}
+Não é possível criar espaço de trabalho privado de outros usuários
+Não é possível excluir as pastas Início e Anexos
+Não é possível excluir ou cancelar porque {0} {1} está vinculado a {2} {3} {4}
+Não é possível excluir a ação padrão. Você pode escondê-lo se quiser
+Não é possível excluir o estado padrão do documento.
+"Não é possível excluir o campo padrão <strong>{0}</strong>. Em vez disso, você pode ocultá-lo."
+Não é possível excluir o campo padrão. Você pode escondê-lo se quiser
+Não é possível excluir o link padrão. Você pode escondê-lo se quiser
+"Não é possível excluir o campo gerado pelo sistema <strong>{0}</strong>. Em vez disso, você pode ocultá-lo."
+Não é possível excluir {0}
+Não é possível excluir {0} pois ele tem nós filho
+Não é possível editar painéis padrão
+Não é possível editar a Notificação Padrão. Para editar
+Não é possível editar gráficos padrão
+"Não é possível editar um relatório padrão. Por favor, duplique e crie um novo relatório"
+Não é possível editar o documento cancelado
+Não é possível editar filtros para gráficos padrão
+Não é possível editar filtros para cartões numéricos padrão
+Não é possível editar campos padrão
+Não é possível habilitar {0} para um doctype não submetível
+Não é possível encontrar o arquivo {} no disco
+Não é possível obter o conteúdo do arquivo de uma pasta
+Não é possível ter várias impressoras mapeadas para um único formato de impressão.
+Não é possível importar tabela com mais de 5000 linhas.
+Não é possível vincular o documento cancelado: {0}
+Não é possível mapear porque a seguinte condição falha:
+Não é possível corresponder {0} de coluna a nenhum campo
+Não é possível mover a linha
+Não é possível remover o campo ID
+Não é possível definir a permissão 'Denunciar' se a permissão 'Somente se o Criador' estiver definida
+Não é possível definir Notificação com {0} de eventos no Tipo de Documento {1}
+"Não é possível compartilhar {0} com permissão de envio, pois o {1} do tipo de documento não pode ser enviado"
+Não é possível enviar {0}.
+Não é possível atualizar {0}
+Não é possível usar a subconsulta em ordem por
+Não é possível usar {0} em ordem/grupo por
+Não pode {0} {1}.
+Investimentos
+A capitalização não ajuda muito.
+Capturar
+Quebra de cartão
+Etiqueta do cartão
+Links de Cartões
+Caso não tenha quantidade informe 1 como padrão
+Caso seja o mesmo do pedido SAP
+Categoria
+Categoria
+Caução
+Caução Contratual [G] = 5% . [F]
+Caução acumulado
+Caução acumulado anterior
+Caução atual
+Certos documentos
+Integridade da cadeia
+Encadeamento de hash
+Mudar
+Alterar imagem
+Alterar cabeçalho da carta
+Alterar formato de impressão
+Altere o número de sequência inicial/atual de uma série existente. <br>||||||Aviso: A atualização incorreta de contadores pode impedir que os documentos sejam criados. 
+Alterado em
+Alterado por
+Feed do registro de alterações
+Alterações
+A alteração de qualquer configuração refletirá em todas as contas de e-mail associadas a esse domínio.
+Alterar o método de arredondamento no local com dados pode resultar em um comportamento inesperado.
+Tipo de gráfico
+Bater papo
+Chave
+Chave Kartado
+Chave Osíris
+Chaves
+Verificar URL da solicitação
+Verifique as colunas a serem selecionadas
+Verifique o Log de Erros para obter mais informações: {0}
+"Marque isso se você não quiser que os usuários se inscrevam em uma conta em seu site. Os usuários não terão acesso à mesa, a menos que você o forneça explicitamente."
+"Marque para exibir o valor numérico completo (por exemplo,"
+Verificando um momento
+Marcar isso permitirá o rastreamento de visualizações de página para blogs
+Marcar isso ocultará doctypes e cartões de relatórios personalizados na seção Links
+Marcar isso publicará a página em seu site e ficará visível para todos.
+Marcar isso mostrará uma área de texto onde você pode escrever javascript personalizado que será executado nesta página.
+Versão da soma de verificação
+DocTypes filhos não são permitidos
+Doctype filho
+Tabela filho {0} para campo {1}
+As Tabelas Filhas são mostradas como uma Grid em outros DocTypes
+Os campos de consulta filho para '{0}' devem ser uma lista ou tupla.
+Escolha Cartão Existente ou crie Novo Cartão
+Escolha um bloco ou continue digitando
+Escolha uma cor
+Escolha um ícone
+Cidade
+Cidade base
+Cidade base da equipe (P/ cálculo de mão de obra)
+Cidades
+Claro
+Limpar & Adicionar Modelo
+Limpar & Adicionar template
+Apagar tudo
+Limpar atribuição
+Limpe o cache e recarregue
+Limpar logs de erros
+Limpar filtros
+Limpar logs após (dias)
+Limpar permissões de usuário
+Limpar todos os filtros
+Limpe a mensagem de e-mail e adicione o modelo
+Data final de compensação
+Clique em Personalizar para adicionar seu primeiro widget
+Clique aqui
+Clique em um arquivo para selecioná-lo.
+Clique no botão para fazer login no {0}
+Clique no link abaixo para aprovar a solicitação
+Clique no link abaixo para concluir seu cadastro e definir uma nova senha
+Clique no link abaixo para baixar seus dados
+Clique no link abaixo para verificar sua solicitação
+Clique em {0} para gerar o Refresh Token.
+Clique na tabela para editar
+Clique para definir filtros dinâmicos
+Clique para definir filtros
+Clique para classificar por {0}
+ID do cliente
+Metadados do cliente
+Script do cliente
+Segredo do cliente básico
+Postagem secreta do cliente
+URI do cliente
+URLs do cliente
+Script do cliente
+Clima da manhã
+Clima da noite
+Clima da tarde
+Fechar propriedades
+Cmd+Enter para adicionar comentário
+Desafio de código
+Tipo de editor de código
+Método de desafio de código
+Colapso
+Depende de (JS)
+Cor
+Coluna
+Coluna 1
+Coluna 2
+Coluna <b>{0}</b> já existem.
+Rótulos de coluna:
+Nome da coluna
+O nome da coluna não pode estar vazio
+Largura da coluna
+A largura da coluna não pode ser zero.
+Coluna {0}
+Colunas baseadas em
+Combinação do tipo de subvenção (<code>{0}</code>) e o tipo de resposta (<code>{1}</code>) não permitido
+Comm10E
+Comentário
+Comentário E-mail
+Tipo de comentário
+O comentário só pode ser editado pelo proprietário
+Limite de comentários
+Limite de comentários por hora
+A publicidade de comentários só pode ser atualizada pelo autor original ou por um gerente de sistema.
+Os comentários não podem ter links ou endereços de e-mail
+Arredondamento Comercial
+Empenhado
+Nomes comuns e sobrenomes são fáceis de adivinhar.
+Link de comunicação
+Tipo de comunicação
+Segredo de comunicação não definido
+História da empresa
+Comparar versões
+Compensações
+Aviso de compilação
+Compilado com sucesso
+Concluir por
+Registro completo
+Configuração completa
+Concluído por função
+Concluído pelo usuário
+Componente
+Escrever e-mail
+Comprimido
+Condição
+Condição JSON
+Descrição da condição
+Condições
+Condições da manhã
+Condições da noite
+Condições da tarde
+Configuração
+Configurar
+Configuração
+Configurações
+Configurar gráfico
+Configurar colunas
+Configurar gravador
+Configurar colunas para {0}
+Configure como os documentos alterados serão nomeados.<br>||||||O comportamento padrão é seguir um contador de emendas que adiciona um número ao final do nome original indicando a versão alterada. <br>||||||A nomenclatura padrão fará com que o documento alterado se comporte da mesma forma que os novos documentos.
+"Configure vários aspectos de como a nomenclatura de documentos funciona, como séries de nomenclatura"
+Confirmar
+Confirmar acesso
+Confirmar exclusão da conta
+Confirme a nova senha
+Confirme a senha
+Confirmar solicitação
+Modelo de e-mail de confirmação
+Inveterado
+"Parabéns por concluir a configuração do módulo. Se você quiser saber mais, pode consultar a documentação <a target=""_blank"" href=""{0}"">aqui</a>."
+Conecte-se a {}
+Aplicativo conectado
+Usuário conectado
+Conectado ao QZ Tray!
+Conexão perdida
+Sucesso da conexão
+Conexão perdida. Alguns recursos podem não funcionar.
+Conexões
+Consolar
+Registro do console
+Os registros do console não podem ser excluídos
+Restrições
+Contato
+E-mail de contato
+Telefone de contato
+Contato sincronizado com os contatos do Google.
+Contate-nos
+Fale Conosco Configurações
+Opções de contato
+Contatos
+Contém {0} correção de segurança
+Contém {0} correções de segurança
+Conteúdo
+Hash de conteúdo
+Tipo de conteúdo
+Os dados de conteúdo devem ser uma lista
+Tipo de conteúdo para criar a página
+Script de contexto
+Contrato
+Ajuste de contrato
+Dados de ajuste de contrato
+Item de contrato
+Ativo de item de contrato
+Cidade do item de contrato
+Configuração de Item de Contrato Kartado
+Item de Contrato Rodovia
+Ordem de item de contrato
+Tipo de item de contrato
+Função de Trabalho de Item de Contrato
+Carga de trabalho do item de contrato cfg
+Valores de Cfg da carga de trabalho do item de contrato
+Itens do contrato
+Medição de contrato
+Medição de Contrato 01
+Ativo de Mensuração de Contrato
+Cidade de Medição de Contrato
+FTD de medição de contrato
+Item de Medição de Contrato
+Nota de Medição de Contrato
+Ativo da Nota de Mensuração do Contrato
+Recurso de nota de medição de contrato
+Nota de medição de contrato SAP Order
+Função de Trabalho da Nota de Medição de Contrato
+Registro de Medição de Contrato
+Registro de Mensuração de Contrato - Ativo
+Registro de Medição de Contrato - Recurso
+Registro de Medição de Contrato - Tempo
+Registro de Medição de Contrato - Função de Trabalho
+Ativo de registro de medição de contrato
+Registro de Registro de Medição de Contrato
+Material de registro de medição de contrato
+Recurso de registro de medição de contrato
+Registro de Medição de Contrato Ordem SAP
+Tempo Recorde de Medição de Contrato
+Função de trabalho de registro de medição de contrato
+Medição de contrato Pedido SAP
+Equipe de Medição de Contratos
+Função de trabalho de medição de contrato
+Medição de contrato não encontrada
+Preço do contrato
+Empresa Contratada
+Contratada
+Contrato
+Contrato encerrado em
+Status da contribuição
+Controla se novos usuários podem se inscrever usando essa chave de login social. Se não definido
+Copiado para a área de transferência.
+Link de cópia
+Copiar código de incorporação
+Erro de cópia para a área de transferência
+Copiar para área de transferência
+Núcleo
+Os DocTypes principais não podem ser personalizados.
+Os Módulos Principais {0} não podem ser pesquisados na Pesquisa Global.
+Versão correta:
+Não foi possível conectar ao servidor de e-mail de saída
+Não foi possível encontrar {0}
+Não foi possível mapear {0} de coluna para o campo {1}
+Não foi possível analisar o campo: {0}
+Não foi possível iniciar: 
+Não foi possível salvar
+Contar
+Personalizações de contagem
+Filtro de contagem
+Contagem de documentos vinculados
+Código do país obrigatório
+Cr
+Criar e continuar
+Criar endereço
+Criar cartão
+Criar gráfico
+Criar Doctype filho
+Criar contatos a partir de e-mails recebidos
+Criar Cabeçalho de Carta
+Criar log
+Criar novo
+Criar novo DocType
+Criar novo quadro Kanban
+Criar e-mail do usuário
+Criar um novo formato
+Criar um lembrete
+Crie um novo ...
+Criar um novo registro
+Criar um novo {0}
+Criar uma conta {0}
+Criar ou editar formato de impressão
+Criar ou editar fluxo de trabalho
+Crie seu primeiro {0}
+Crie seu fluxo de trabalho visualmente usando o Construtor de fluxo de trabalho.
+Criado
+Criado em
+Criado por
+Criado {0} de campo personalizado no {1}
+Criado em
+Criando {0}
+A criação deste documento só é permitida no modo de desenvolvedor.
+Criado por
+Cron
+O formato Cron é necessário para tipos de trabalho com frequência Cron.
+Colheita
+Ctrl + Baixo
+Ctrl + para cima
+Ctrl+Enter para adicionar comentário
+A lista de moedas armazena o valor da moeda
+Atual
+ID do trabalho atual
+Valor Atual
+Status atual
+Visualizando no momento
+Costume
+URL base personalizada
+Nome do bloco personalizado
+Blocos personalizados
+Delimitadores personalizados
+DocPerm personalizado
+Tipos de documentos personalizados (selecione a permissão)
+Limite de tipos de documentos personalizados excedido
+Documentos personalizados
+Campo personalizado
+O {0} de campo personalizado é criado pelo administrador e só pode ser excluído por meio da conta do administrador.
+Os Campos Personalizados só podem ser adicionados a um DocType padrão.
+Os campos personalizados não podem ser adicionados aos DocTypes principais.
+Rodapé personalizado
+Pesquisa de grupo personalizada
+"A Pesquisa de Grupo Personalizada, se preenchida, precisa conter o espaço reservado do usuário {0}"
+HTML personalizado
+Bloco HTML personalizado
+Directoy LDAP personalizado selecionado
+Rótulo personalizado
+Itens de menu personalizados
+Página personalizada
+Relatórios personalizados
+Função personalizada
+Menu da barra lateral personalizado
+O campo personalizado foi renomeado para {0} com êxito.
+O método get_list personalizado para {0} deve retornar um objeto QueryBuilder ou None
+Costume?
+Personalização
+Personalizações descartadas
+Redefinição de personalizações
+Personalizações para <b>{0}</b> exportado para:<br>{1}
+Personalizar
+Personalizar tabela filho
+Personalizar painel
+Personalizar formulário
+Personalizar Formulário - {0}
+Personalizar campo de formulário
+Cortar
+Ciano
+Código
+Código PEP
+Código item kartado
+Código relatório 
+EXCLUIR
+DESC
+MORRER
+RASCUNHO
+Dados de encerramento do contrato
+O resumo diário do evento é enviado para eventos do calendário em que os lembretes são definidos.
+Os eventos diários devem terminar no mesmo dia.
+Manutenção diária
+Escuro
+Tema escuro
+Painel
+Gráfico do painel
+Campo do gráfico do painel
+Link do gráfico do painel
+Origem do gráfico do painel
+Gerenciador de painel
+Nome do painel
+Configurações do painel
+Visualização do painel
+Painéis
+Dados
+Dados 
+Dados recortados
+Exportação de dados
+Importação de dados
+Registro de importação de dados
+Modelo de importação de dados
+Dados muito longos
+Data aprovação
+Data de reajuste
+Data do desconto
+Data e hora
+Data e hora da submissão
+Emissão de dados
+Data execução
+Dados finais
+Data final da medição
+Data final do contrato
+Data final medição
+Dados incipiais
+Data inicial da medição
+Data inicial do contrato
+Data inicial medição
+Base de dados
+Mecanismo de Banco de Dados
+Processos de banco de dados
+Utilização do tamanho da linha do banco de dados
+Uso de armazenamento de banco de dados por tabelas
+Limite de tamanho de linha da tabela de banco de dados
+Utilização do tamanho da linha da tabela do banco de dados: {0}%
+Versão do banco de dados
+Dados
+Intervalo de datas
+A data {0} deve estar no formato: {1}
+As datas costumam ser fáceis de adivinhar.
+Dia
+Dias
+De para de ativos Kartado
+De para de funções do Kartado
+De para
+Ocorreu um impasse
+Prezado usuário
+Caro {0}
+Log de depuração
+O separador decimal deve ser '.' quando a citação estiver definida como não numérica
+O separador decimal deve ser um único caractere
+O modelo de endereço padrão não pode ser excluído
+Nomenclatura de emenda padrão
+Aplicativo padrão
+Modelo de e-mail padrão
+Caixa de entrada padrão
+Entrada padrão
+Nomenclatura padrão
+Saída padrão
+Envio padrão
+Envio e caixa de entrada padrão
+Modelo padrão para campo
+Tema padrão
+Função de usuário padrão
+Tipo de usuário padrão
+Visualização padrão
+Área de trabalho padrão
+Moeda de exibição padrão
+O padrão para o tipo de campo 'Verificar' {0} deve ser '0' ou '1'
+O valor padrão para {0} deve estar na lista de opções.
+Padrão {0}
+Valor padrão
+Padrões atualizados
+Define ações em estados e a próxima etapa e funções permitidas.
+Define estados e regras de fluxo de trabalho para um documento.
+Retardado
+Excluir conta
+Excluir tudo
+Excluir coluna
+Excluir dados
+Excluir quadro Kanban
+Excluir seção
+Excluir guia
+Excluir e gerar novos
+Excluir coluna
+Excluir comentário?
+Excluir coluna inteira com campos
+Excluir seção inteira com campos
+Excluir guia inteira com campos
+Excluir seção
+Guia Excluir
+Exclua este registro para permitir o envio para este endereço de e-mail
+Excluir {0} item permanentemente?
+Excluir {0} itens permanentemente?
+Deletado
+DocType excluído
+Documento excluído
+Excluiu todos os documentos com sucesso
+Excluindo {0}
+Excluindo {0} registros...
+Excluir {0}...
+Etapas de exclusão 
+A exclusão deste documento só é permitida no modo de desenvolvedor.
+Opções de delimitador
+Falha na detecção do delimitador. Tente habilitar delimitadores personalizados e ajustar as opções do delimitador de acordo com seus dados.
+O delimitador deve ser um único caractere
+Status de entrega
+Negar
+Departamento
+Dependências
+Dependências e licenças
+Configuração do período de profundidade
+Descendentes de
+Descendentes de (inclusive)
+Desconto do REIDI [C] = -3
+Descrição para informar o usuário sobre qualquer ação que será executada
+Descrição
+Descrição
+Descrição Kartado
+Descrição da regra do caução
+Descrição do ativo Kartado
+Descrrção
+Mesa
+Configurações de mesa
+Tema de mesa
+Usuário de mesa
+Ícone da área de trabalho
+O ícone da área de trabalho já existe
+Detalhes
+Detectar tipo CSV
+Dia da semana
+Dia final
+Dia inicial
+Dias úteis
+Não adicionou
+Não removeu
+Diff
+"Diferentes ""Estados"" em que este documento pode existir. Como ""Aberto"""
+Servidor de diretório
+Desativar filtros de recência automática
+Desativar notificação de log de alterações
+Desativar contagem de comentários
+Desativar página Fale conosco
+Desativar compartilhamento de documentos
+Desativar curtidas
+Desativar relatório
+Desativar inscrição para o seu site
+Desativar rodapé de e-mail padrão
+Desativar notificação de atualização do sistema
+Desativar login de nome de usuário/senha
+Desativar inscrições
+Resposta automática desativada
+Descartar
+Descarte {0}
+Descartar?
+Descartado
+Isenção de responsabilidade: esses índices são sugeridos com base em dados e consultas realizadas durante esta gravação. Essas sugestões podem ou não ajudar.
+Resposta da discussão
+Tópico de discussão
+Demitir
+Exposição
+A exibição depende de (JS)
+Divisor
+Não criar novo usuário 
+Não crie um novo usuário se o usuário com e-mail não existir no sistema
+Não edite cabeçalhos predefinidos no modelo
+Você ainda quer prosseguir?
+Deseja cancelar todos os documentos vinculados?
+Evento Doc
+Eventos Doc
+Doc Status
+Campo de Documentos
+DocPerm
+DocShare
+DocStatus dos seguintes estados foram alterados:<br><strong>{0}</strong><br>|||				Deseja atualizar o status do documento de documentos existentes nesses estados?<br>|||				Isso não desfaz nenhum efeito comprado pelo docstatus existente do documento.|||				
+DocType
+DocType <b>{0}</b> fornecido para o campo <b>{1}</b> deve ter pelo menos um campo Link
+Ação DocType
+Evento DocType
+DocType Layout
+Campo de layout DocType
+DocType Link
+Estado DocType
+Visualização DocType
+DocType não pode ser mesclado
+DocType só pode ser renomeado pelo Administrador
+DocType é uma Tabela / Formulário no aplicativo.
+DocType deve ser Submittable para o Doc Event selecionado
+DocType deve ser uma cadeia de caracteres
+DocType deve ter pelo menos um campo
+DocType não suportado pelas Configurações de Log.
+DocType no qual este Workflow é aplicável.
+DocType necessário
+DocType {0} não existe.
+DocType {} não encontrado
+O nome do DocType não deve começar ou terminar com espaço em branco
+DocTypes não podem ser modificados
+Tipo de documento
+Doctype (en-US)
+Doctype (pt-BR)
+O nome do tipo de documento é limitado a {0} caracteres ({1})
+Doctype necessário
+Documento Seguir
+Notificação de acompanhamento de documentos
+Vinculação de documentos
+Linha de links de documentos #{0}: não foi possível encontrar o campo {1} no DocType {2}
+Linha de links de documentos #{0}: doctype ou nome de campo inválido.
+Linha #{0}: DocType pai é obrigatório para links internos
+Linha #{0}: O nome do campo da tabela é obrigatório para links internos
+O Nome do Documento deve ser uma cadeia de caracteres
+Regra de nomenclatura de documentos
+Condição da regra de nomenclatura de documentos
+Configurações de nomenclatura de documentos
+Documento em fila
+Resumo da restauração de documentos
+Documento restaurado
+Documento salvo
+Chave de compartilhamento de documentos
+Expiração da chave de compartilhamento de documentos (em dias)
+Relatório de compartilhamento de documentos
+Status do documento
+Tipo de documento
+O Tipo de Documento e a Função são necessários para criar um cartão numérico
+O tipo de documento não é importável
+O tipo de documento não pode ser enviado
+Tipo de documento a ser rastreado
+Tipo de documento {0} foi repetido.
+Tipos de documentos
+Tipos de Documento (Somente Permissões Selecionadas)
+Tipos e permissões de documentos
+Documento desbloqueado
+O acompanhamento de documentos não está habilitado para este usuário.
+O documento foi cancelado
+Documento foi submetido
+O documento está no estado de rascunho
+O documento só pode ser editado por usuários com função
+Documento não revinculado
+Documento renomeado de {0} para {1}
+A renomeação de documentos de {0} para {1} foi enfileirada
+O tipo de documento é necessário para criar um gráfico de painel
+Documento {0} já restaurado
+O {0} do documento foi definido para indicar {1} por {2}
+O documento {0} {1} não existe
+Documentação
+Documentos
+Documentos restaurados com sucesso
+Documentos que não foram restaurados
+Documentos que já foram restaurados
+Dom Hora
+Domínio
+Nome de domínio
+Configurações de domínio
+Domínios
+Não codifique HTML tags HTML como &lt;script&gt; ou apenas caracteres como &lt; ou &gt;
+Não importar
+Não substituir o status
+Não envie e-mails
+Não codifique tags HTML como &lt;script&gt; ou apenas caracteres como &lt; ou &gt;
+Não tem uma conta?
+Clique duas vezes para editar o rótulo
+Baixar backups
+Baixar dados
+Baixar backup de arquivos
+Download Link
+Baixar PDF
+Baixar relatório
+Baixe seus dados
+Baixar como CSV
+Baixar vCard
+Baixar vCards
+Dr
+Arrastar
+Arraste e solte uma seção aqui de outra guia
+Arraste e solte arquivos aqui ou faça upload de
+Arraste as colunas para definir a ordem. A largura da coluna é definida em porcentagem. A largura total não deve ser superior a 100. As colunas marcadas em vermelho serão removidas.
+Arraste os elementos da barra lateral para adicionar. Arraste-os de volta para a lixeira.
+Arraste para adicionar estado
+Solte os arquivos aqui
+Menus suspensos
+Entrada duplicada
+Nome do filtro duplicado
+Nome duplicado
+Duplicar linha
+Duplicar linha atual
+Campo duplicado
+Dinâmico
+Link dinâmico
+ESC
+Editar endereço no formulário
+Editar configurações de relatório de email automático
+Editar gráfico
+Editar bloco personalizado
+Editar HTML personalizado
+Editar DocType
+Editar existente
+Editar filtro
+Editar filtros
+Editar rodapé
+Formato de edição
+Editar formulário completo
+Editar HTML
+Editar cabeçalho
+Editar título
+Editar cabeçalho de carta
+Editar rodapé da cabeça da letra
+Editar links
+Editar cartão numérico
+Editar integração
+Editar formato de impressão
+Editar perfil
+Editar propriedades
+Editar lista rápida
+Editar atalho
+Editar valores
+Modo de edição
+Editar o tipo de documento {0}
+Editar para adicionar conteúdo
+Edite sua resposta
+Edite seu fluxo de trabalho visualmente usando o Construtor de fluxo de trabalho.
+Editar {0}
+Grade editável
+Editando linha
+Editando {0}
+Eg. smsgateway.com/api/send_sms.cgi
+É necessário um sinalizador de chave ou IP.
+Seletor de elementos
+Elemento PEP
+Email
+Conta de e-mail
+Conta de e-mail desativada.
+Nome da conta de e-mail
+Conta de e-mail adicionada várias vezes
+A conta de e-mail não está configurada. Crie uma nova conta de e-mail em Configurações > Conta de e-mail
+Conta de e-mail {0} desativada
+Endereço eletrônico
+Endereço de e-mail cujos contatos do Google devem ser sincronizados.
+Endereços de e-mail
+Domínio de e-mail
+Fila de sinalizadores de e-mail
+Endereço do rodapé do e-mail
+Grupo de e-mail
+Membro do grupo de e-mail
+Cabeçalho do e-mail
+ID de e-mail
+IDs de e-mail
+ID de e-mail
+Fila de e-mail
+Destinatário da fila de e-mail
+A liberação da fila de e-mail foi anulada devido a muitas falhas.
+Registros de fila de e-mail.
+Ajuda de resposta por e-mail
+Limite de novas tentativas de e-mail
+Regra de e-mail
+E-mail enviado
+Configurações de e-mail
+Assinatura de e-mail
+Status do e-mail
+Opção de sincronização de e-mail
+Modelo de e-mail
+Tópicos de e-mail no documento atribuído
+Enviar por e-mail para
+Cancelar inscrição por e-mail
+O e-mail foi marcado como spam
+O e-mail foi movido para a lixeira
+O e-mail é obrigatório para criar o e-mail do usuário
+E-mail não enviado para {0} (assinatura cancelada / desativada)
+E-mail não verificado com {0}
+A fila de e-mail está suspensa no momento. Retomar para enviar automaticamente outros e-mails.
+E-mails
+E-mails puxados
+Os e-mails já estão sendo retirados desta conta.
+Os e-mails são silenciados
+Os e-mails serão enviados com as próximas ações possíveis do fluxo de trabalho
+Código incorporado copiado
+Alias vazio não é permitido
+Coluna vazia
+Argumentos de cadeia de caracteres vazios não são permitidos
+Habilitar preenchimento automático de endereço
+Habilitar Permitir Repetição Automática para o {0} doctype em Personalizar Formulário
+Ativar registro de cliente dinâmico
+Ativar notificação por e-mail
+Ativar notificações por e-mail
+Ative a API do Google nas configurações do Google.
+Ativar a indexação do Google
+Ativar entrada
+Ativar integração
+Ativar saída
+Ativar relatório preparado
+Ativar retransmissão de notificação por push
+Ativar limite de taxa
+Ativar relatório
+Ativar o Agendador
+Ativar visualizações de página de rastreamento
+Ativar autenticação de dois fatores
+Ative o modo de desenvolvedor para criar um modelo de impressão padrão
+Ativar o modo de desenvolvedor para criar um modelo da Web padrão
+Ative a notificação por e-mail para qualquer comentário ou curtida recebida em sua postagem no blog.
+Ativar se ao clicar|||abre o modal.
+Ativar o rastreamento de sites no aplicativo
+Habilitado
+Agendador ativado
+Caixa de entrada de e-mail ativada para {0} do usuário
+Habilita os modos de exibição Calendário e Gantt.
+Ativar a resposta automática em uma conta de e-mail de entrada enviará respostas automáticas para todos os e-mails sincronizados. Deseja continuar?
+Ativar isso registrará seu site em um servidor de retransmissão central para enviar notificações push para todos os aplicativos instalados por meio do Firebase Cloud Messaging. Este servidor armazena apenas tokens de usuário e logs de erros
+Ativar isso registrará seu site em um servidor de retransmissão central para enviar notificações push para todos os aplicativos instalados por meio do Firebase Cloud Messaging. Este servidor armazena apenas tokens de usuário e logs de erros
+Habilitar isso enviará documentos em segundo plano
+Criptografar backups
+A chave de criptografia está em formato inválido!
+"A chave de criptografia é inválida! Por favor, verifique site_config.json"
+Fim
+A Data de Término não pode ser anterior à Data de Início!
+Terminou em
+Endereço
+Extremidade
+Enfileirado por
+Criação enfileirada de índices
+Verifique se os caminhos de pesquisa de usuário e grupo estão corretos.
+Insira o ID do cliente e o segredo do cliente nas configurações do Google.
+Insira o código exibido no aplicativo OTP.
+Insira o(s) destinatário(s) do e-mail
+Insira o tipo de formulário
+Insira o valor
+Digite um nome para este {0}
+Insira campos de valor padrão (chaves) e valores. Se você adicionar vários valores para um campo
+Digite o nome da pasta
+"Insira os parâmetros de url estáticos aqui (por exemplo, remetente = ERPNext"
+Insira o parâmetro url para a mensagem
+Insira o parâmetro url para os números do receptor
+Digite sua senha
+Nome da entidade
+Tipo de entidade
+Equals
+Equipe
+Equipes
+Log de erros
+Mensagem de erro
+Erro ao conectar ao aplicativo de bandeja QZ...<br><br> Você precisa ter o aplicativo QZ Tray instalado e em execução
+Erro ao conectar via IMAP/POP3: {e}
+Erro ao conectar via SMTP: {e}
+Ocorreu um erro em {0}
+Erro no script do cliente
+Erro no script do cliente.
+Erro no script de cabeçalho/rodapé
+Erro na notificação
+Erro no formato de impressão na linha {0}: {1}
+Erro no {0}.get_list: {1}
+Erro ao analisar filtros aninhados: {0}
+Erro ao conectar-se à conta de e-mail {0}
+"Erro ao avaliar o {0} de notificação. Por favor, corrija seu modelo."
+Erro: Dados ausentes na tabela {0}
+Erro: Valor ausente para {0}: {1}
+Erro: {0} Linha #{1}: Valor ausente para: {2}
+Erros
+Estrutura de Itens
+Acontecimento
+Frequência de eventos
+Participantes do Evento
+Lembretes de eventos
+Evento sincronizado com o Google Agenda.
+Tipo de evento
+Eventos
+Eventos no calendário de hoje
+Todos
+"Ex: ""cores"": [""#d1d8dd"""
+Cópias exatas
+"Exemplo: ""/desk"""
+Exemplo: Definir isso como 24:00 desconectará um usuário se ele não estiver ativo por 24:00 horas.
+Exemplo: {{ subject }}
+Distinguir-se
+Excelente
+Executar
+Executar script do console
+Executando código
+Execução...
+Tempo de execução: {0} seg
+Executivo
+Função existente
+Expandir
+Operador 'e' ou 'ou' esperado
+Experimental
+Notificação de expiração ativada
+Exportação
+Exportar 1 registro
+Exportar permissões personalizadas
+Exportar personalizações
+Exportar dados
+Exportar linhas com erro
+Exportar Log de Importação
+Relatório de Exportação: {0}
+Tipo de exportação
+Exportar todas as linhas correspondentes?
+Exportar todas as {0} linhas?
+Exportar como zip
+Exportação não permitida. Você precisa {0} função para exportar.
+Exporte os dados sem notas de cabeçalho e descrições de coluna
+Exportar sem cabeçalho principal
+Exportar registros {0}
+"As permissões exportadas serão sincronizadas à força em cada migração, substituindo qualquer outra personalização."
+Expressão
+Expressão (estilo antigo)
+Link externo
+Parâmetros extras
+Linkedin
+Falhar
+E-mails com falha
+Contagem de trabalhos com falha
+Trabalhos com falha
+Logins com falha (últimos 30 dias)
+Transações com falha
+Falha ao adquirir o bloqueio: {}. O bloqueio pode ser mantido por outro processo.
+Falha ao alterar a senha.
+Falha ao concluir a instalação
+Falha ao calcular o corpo da solicitação: {}
+Falha ao conectar ao servidor
+Falha ao decodificar o token
+Falha ao descriptografar a chave {0}
+Falha ao excluir {0} documentos: {1}
+Falha ao ativar o agendador: {0}
+Falha ao avaliar as condições: {}
+Falha ao exportar dicas de tipo python
+Falha ao gerar nomes da série
+Falha ao gerar a visualização da série
+Falha ao obter o método para {0} de comando com {1}
+Falha ao obter o método {0} com {1}
+Falha ao obter informações do site
+Falha ao importar o doctype virtual {}
+Falha ao otimizar a imagem: {0}
+Falha ao renderizar a mensagem: {}
+Falha ao renderizar o assunto: {}
+Falha ao solicitar login no Frappe Cloud
+Falha ao enviar e-mail com o assunto:
+Falha ao enviar e-mail de notificação
+Falha ao atualizar as configurações globais
+Falha ao chamar {0} de API
+Trabalhos agendados com falha (últimos 7 dias)
+Fracasso
+Taxa de falha
+Faixa
+Fator de pagamento %
+Fator de plantio
+Faturamento Direto
+Faturamento direto (FTD) acumulado
+Faturamento direto (FTD) acumulado anterior
+Faturamento direto (FTD) na fase atual
+FavIcon
+Fax
+Destaque
+Fechamento mensal
+Feriado
+Buscar imagens
+Buscar imagens anexadas do documento
+Buscar ao salvar se estiver vazio
+Buscando documentos padrão da Pesquisa Global.
+Campo
+"O campo ""route"" é obrigatório para Modos de Exibição da Web"
+"O campo ""título"" é obrigatório se ""Campo de pesquisa do site"" estiver definido."
+"O campo ""valor"" é obrigatório. Especifique o valor a ser atualizado"
+Campo ausente
+Nome do campo
+Orientação do campo (esquerda-direita)
+Orientação do campo (de cima para baixo)
+Modelo de campo
+Tipo de campo
+Campo não permitido na consulta
+Campo que representa o Estado do Fluxo de Trabalho da transação (se o campo não estiver presente
+O tipo de campo não pode ser alterado para {0}
+O campo {0} não existe no {1}
+O campo {0} está se referindo a {1} de doctype inexistentes.
+O campo não {0} encontrado.
+O campo {0} no documento {1} não é um campo de número de celular nem um link de cliente ou usuário
+Nome do campo
+Nome do campo '{0}' em conflito com um {1} do nome {2} em {3}
+O nome do campo chamado {0} deve existir para habilitar a nomeação automática
+O nome do campo é limitado a 64 caracteres ({0})
+Rótulo de nome de campo
+Nome do campo não definido para campo personalizado
+Fieldname que será o DocType para este campo de link.
+O nome do campo {0} aparece várias vezes
+O nome do campo {0} não pode ter caracteres especiais como {1}
+O nome do campo {0} conflitante com o metaobjeto
+O nome do campo {0} é restrito
+Campos
+Verificação múltipla de campos
+Os campos 'file_name' ou 'file_url' devem ser definidos para Arquivo
+Os campos devem ser uma lista ou tupla quando as_list estiver habilitado
+Os campos devem ser uma cadeia de caracteres
+Os campos separados por vírgula (
+Tipo de campo
+O tipo de campo não pode ser alterado de {0} para {1}
+O tipo de campo não pode ser alterado de {0} para {1} na linha {2}
+Arquivo
+"O arquivo ""{0}"" foi ignorado devido ao tipo de arquivo inválido"
+"O arquivo ""{0}"" foi ignorado porque apenas {1} uploads são permitidos"
+"O arquivo ""{0}"" foi ignorado porque apenas {1} uploads são permitidos para o DocType ""{2}"""
+"O arquivo ""{0}"" foi ignorado porque o tamanho excede {1} MB"
+Arquivo '{0}' não encontrado
+Gerenciador de arquivos
+Armazenamento de arquivos
+Tipo de arquivo
+O backup de arquivos está pronto
+O nome do arquivo não pode ter {0}
+Arquivo não anexado
+O tamanho do arquivo excedeu o tamanho máximo permitido de {0} MB
+Arquivo muito grande
+O tipo de arquivo de {0} não é permitido
+O {0} de arquivo não existe
+Limas
+Filtro
+Filtrar por
+Lista de filtros
+Nome do filtro
+Condição do filtro ausente após o operador: {0}
+Os campos de filtro não podem conter acentos graves (').
+Filtro...
+Filtrado por
+Registros filtrados
+"Filtrado por ""{0}"""
+Filtros aplicados para {0}
+Filtros salvos
+Os filtros estarão acessíveis via <code>Filtros</code>. <br><br>Enviar saída como <code>resultado = [resultado]</code>
+Filtros {0}
+Filtros:
+Encontre '{0}' em ...
+Encontre {0} em {1}
+Concluído em
+Primeiro
+Primeiro dia da semana
+Nome próprio
+Primeira transação
+A primeira coluna de dados deve estar em branco.
+Primeiro defina o nome e salve o registro.
+Encaixar
+Flutuar
+A dobra não pode estar no final do formulário
+A desistência deve vir antes de uma quebra de seção
+Nome da pasta
+O nome da pasta não deve incluir '/' (barra)
+A pasta {0} não está vazia
+Fólio
+Seguir
+Seguido por
+Os seguintes filtros de relatório têm valores ausentes:
+Seguinte documento {0}
+Os seguintes campos estão ausentes:
+Os campos a seguir têm valores inválidos:
+Os campos a seguir têm valores ausentes
+Os campos a seguir têm valores ausentes:
+Fonte
+"Rodapé ""Powered By"""
+Rodapé baseado em
+Conteúdo do rodapé
+Detalhes do rodapé
+Rodapé HTML definido a partir do anexo {0}
+Imagem de rodapé
+Script de rodapé
+"O rodapé pode não estar visível, pois {0} opção está desativada</div>"
+Para DocType
+Para Link DocType / Ação DocType
+Para documento
+Para Tipo de documento
+Por exemplo: {} Abrir
+Para links
+Para o usuário
+Para comparação
+"Por exemplo, se você cancelar e modificar INV004, ele se tornará um novo documento INV004-1. Isso ajuda você a acompanhar cada alteração."
+Por exemplo:
+Por exemplo: Se você deseja incluir a ID do documento
+"Para obter ajuda, consulte <a href=""https://frappeframework.com/docs/user/en/guides/portal-development/web-forms"" target=""_blank"">API de script de cliente e exemplos</a>"
+Para mais informações
+Para mais informações
+Para vários endereços
+Para atualização
+Para {0} no nível {1} em {2} na linha {3}
+Forçar redirecionamento para a visualização padrão
+Forçar trabalho de parada
+Forçar o modo de captura da Web para uploads
+Esqueceu a senha?
+Forma
+Construtor de Formulários
+Formulário Dict
+Tour do formulário
+Etapa do Tour do Formulário
+Formato
+Fórmula
+Campos de fórmula
+Grupo de Fórmulas
+Campo Grupo de Fórmulas
+Modelo de Fórmula
+Fornecedor
+Encaminhar
+Encaminhar para o endereço de e-mail
+Frappe
+Estrutura Frappe
+Luz de Frappe
+Correio Frappe
+Erro de OAuth do Frappe Mail
+Site de e-mail Frappe
+Suporte Frappe
+Construtor de páginas Frappe usando componentes
+Livre
+Frequência
+Sexta-feira
+Do tipo de documento
+Do usuário
+Da versão
+Nome completo
+Página inteira
+Função
+Função baseada em
+A função {0} não está na lista de permissões.
+"A função {0} requer argumentos, mas nenhum foi fornecido"
+Função
+Funções
+Outros nós só podem ser criados em nós do tipo 'Grupo'
+Fw: {0}
+Fórmula
+Fórmulas
+OBTER
+Licença Pública Geral GNU Affero
+Licença Pública Geral GNU
+Gantt
+Visualização de Gantt
+Gênero
+Genderqueer
+Geral
+Gerar novo relatório
+Gerar senha aleatória
+Gerar URL de rastreamento
+Geo
+Geoapify
+Configurações de geolocalização
+Receba alertas para hoje
+Obter chave de criptografia de backup
+Obter campos
+Obter variáveis de cabeçalho e rodapé wkhtmltopdf
+Obter configuração do OpenID
+Obter PDF
+Obtenha uma visualização dos nomes gerados com uma série.
+Obtenha mais insights com
+Seja notificado quando um e-mail for recebido em qualquer um dos documentos atribuídos a você.
+Ramificação do Git
+GitHub
+Sintaxe de markdown com sabor do Github
+Administrador Global
+DocType de pesquisa global
+Tipos de documentos de pesquisa global redefinidos.
+Configurações de pesquisa global
+Atalhos globais
+Ir
+Voltar
+Vá para o campo Login obrigatório
+Vá para a lista de configurações de notificação
+Ir para Fluxo de trabalho
+Ir para o espaço de trabalho
+Ir para o próximo registro
+Ir para o registro anterior
+Ir para o documento
+Acesse este URL depois de preencher o formulário
+Ir para {0}
+Ir para {0} lista
+Ir para {0} página
+Objetivo
+Pesquise no Google
+Google Analytics anonimizar IP
+Google Agenda
+Google Agenda - Contato / e-mail não encontrado. Não adicionou participante para -<br>{0}
+Google Agenda - Não foi possível criar o Agenda para {0}
+Google Agenda - Não foi possível excluir {0} de eventos do Google Agenda
+Google Agenda - Não foi possível buscar o evento do Google Agenda
+Google Agenda - Não foi possível encontrar o Agenda para {0}
+Google Agenda - Não foi possível inserir contato no Google Contacts {0}
+Google Agenda - Não foi possível inserir o evento no Google Agenda {0}
+Google Agenda - Não foi possível atualizar o {0} de eventos no Google Agenda
+O Google Agenda foi configurado.
+Contatos do Google
+Contatos do Google - Não foi possível sincronizar contatos do Google Contacts {0}
+Contatos do Google - Não foi possível atualizar o contato no Google Contacts {0}
+ID de contatos do Google
+Google Drive
+Seletor do Google Drive
+Seletor do Google Drive ativado
+Fonte do Google
+Google Meet Link
+Configurações do Google
+O URL do Planilhas Google é inválido ou não está acessível publicamente.
+"O URL do Planilhas Google deve terminar com ""gid={number}"". Copie e cole o URL da barra de endereço do navegador e tente novamente."
+Visualização do Google Snippet
+Tipo de concessão
+Gráfico
+Cinza
+Maior que
+Maior ou igual a
+Estado vazio da grade
+Comprimento da página da grade
+Atalhos de grade
+O campo Agrupar por é obrigatório para criar um gráfico de painel
+Group By deve ser uma cadeia de caracteres
+Classe de objeto de grupo
+Agrupado por <span style='font-weight:600;'>{0}</b>
+Grupo
+Grupo de fórmulas
+CABEÇA
+AQUI
+HH: mm: ss
+HTML
+HTML com suporte a jinja
+Meio dia
+Semestral
+Semestralmente
+E-mails tratados
+Tem anexo
+Tem anexos
+Tem domínio
+Tem a próxima condição
+Tem Papel
+Possui assistente de configuração
+Tem Web View
+Tem uma conta? Login
+Cabeçalho HTML definido a partir do anexo {0}
+Script de cabeçalho
+Cabeçalho e trilha de navegação
+Cabeçalho
+Os scripts de cabeçalho/rodapé podem ser usados para adicionar comportamentos dinâmicos.
+Os cabeçalhos devem ser um dicionário
+Rubrica
+Olá
+Artigo de ajuda
+Categoria de ajuda
+Lista suspensa de ajuda
+Ajuda na pesquisa
+Ajuda: Para vincular a outro registro no sistema
+Útil
+Helvetica
+Helvetica Neue
+Veja seu URL de rastreamento
+Olá {0}
+Escondido
+Campos ocultos
+Esconder
+Ocultar botões
+Ocultar DocTypes e relatórios personalizados
+Ocultar descendentes
+Ocultar campos somente leitura vazios
+Ocultar erro
+Ocultar rótulo
+Ocultar login
+Ocultar visualização
+Ocultar anterior
+Ocultar salvo
+Ocultar barra lateral
+Ocultar menu padrão
+Ocultar tags
+Ocultar fins de semana
+Ocultar registros descendentes de <b>Por valor</b>.
+Ocultar detalhes
+Ocultar rodapé
+Ocultar rodapé em relatórios automáticos de e-mail
+Ocultar inscrição no rodapé
+Ocultar barra de navegação
+Rodovia
+Cidade da Rodovia
+Rodovia Kartado
+Dica: Incluir símbolos
+Feriado
+Início/Pasta de teste 1
+Início/Pasta de teste 1/Pasta de teste 3
+Início/Pasta de teste 2
+Hora apresentada em formato numérico 
+Hora extra (Sáb. e dias úteis)
+Hora extra 100% (Dom. e feriados)
+Hora final
+Hora inicial
+Hora normal (Dias úteis) 
+Hora normal desc. e acrés.
+Manutenção por hora
+Horas
+Nome legível destinado à exibição para o usuário final.
+ID
+ID (nome)
+ID (nome) da entidade cuja propriedade deve ser definida
+Os IDs devem conter apenas caracteres alfanuméricos
+Detalhes do IMAP
+Pasta IMAP
+ISS
+Ícone
+Identificação da rodovia
+Não sei
+Se a opção Aplicar permissão estrita de usuário estiver marcada e a opção Permissão de usuário estiver definida para um DocType para um usuário
+Se o status do fluxo de trabalho verificado não substituir o status na exibição de lista
+Se o proprietário
+Se uma função não tiver acesso no nível 0
+Se marcado
+Se marcado
+Se habilitado
+Se habilitado
+Se habilitado
+Se habilitado
+Se habilitado
+Se deixado vazio
+"Se não for uma porta padrão (por exemplo, 587). Se estiver no Google Cloud"
+"Se a porta não padrão (por exemplo, POP3: 995/110"
+Se definido
+Se o usuário tiver alguma função marcada
+Se estas instruções não forem úteis
+Se desmarcada
+Se você estiver atualizando
+Se você estiver carregando novos registros
+Se você estiver carregando novos registros
+Se você restaurou recentemente o site
+Se você definir isso
+Se você acha que isso não é autorizado
+Se o CSV usar um delimitador diferente
+Se seus dados estiverem em HTML
+Ignorar permissões de usuário
+Status de documento ilegal para {0}
+Consulta SQL ilegal
+Modelo ilegal
+Altura da imagem
+Visualização de imagem
+Largura da imagem
+O campo de imagem deve ser um nome de campo válido
+Image field must be of type Attach Image
+O link da imagem '{0}' não é válido
+Imagem otimizada
+Imagem: Fluxo de dados corrompido
+Imagens
+Personificar
+Personificar como {0}
+Personificado por {0}
+Personificando {0}
+Implemente o método 'clear_old_logs' para habilitar a limpeza automática de erros.
+Import Email From
+Registro de importação
+Progresso da importação
+Importar assinantes
+Tipo de importação
+Importar Zip
+O modelo de importação deve ser do tipo .csv
+O modelo de importação deve conter um cabeçalho e pelo menos uma linha.
+Tempo limite de importação esgotado
+Não é permitido importar {0}.
+Importando {0} de {1}
+Importando {0} de {1}
+E-mail de e-mail
+Em
+Na visualização em grade
+No filtro de lista
+Na Exibição de lista
+Em minutos
+No modo somente leitura
+Inativo
+Caixa de entrada
+Usuário da caixa de entrada
+Visualização da caixa de entrada
+Incluir Desativado
+Incluir campo de nome
+Incluir tema de aplicativos
+Incluir link de exibição da Web no e-mail
+Incluir filtros
+Incluir recuo
+Incluir símbolos
+Configurações de entrada (POP/IMAP)
+E-mails recebidos (últimos 7 dias)
+Servidor de entrada
+Configurações de entrada
+A conta de e-mail recebida não está correta
+Implementação incompleta do tipo de documento virtual
+Detalhes de login incompletos
+Configuração incorreta
+URL incorreto
+Usuário ou senha incorretos
+Código de verificação incorreto
+Valor incorreto na linha {0}:
+Valor incorreto:
+Índice
+Indexar páginas da Web para pesquisa
+Índice criado com êxito na coluna {0} do doctype {1}
+Código de autorização de indexação
+Token de atualização de indexação
+Cor do indicador
+Cor do indicador
+Índice de reajuste
+Informação:
+Informações
+Informações sobre o tipo do item
+InnoDB
+Insira o nome da função existente se quiser estendê-lo com acesso a outra função.
+Inserir
+Inserir acima
+Inserir após
+Inserir depois não pode ser definido como {0}
+Inserir após o campo '{0}' mencionado no campo personalizado '{1}'
+Insira abaixo
+Inserir coluna antes {0}
+Inserir imagem no Markdown
+Instalar {0} do Marketplace
+Aplicativo instalado
+Aplicativos instalados
+Aplicativos instalados
+Instruções
+Instruções enviadas por e-mail
+Nível de permissão insuficiente para {0}
+Permissão insuficiente para {0}
+Permissões insuficientes para excluir o relatório
+Permissões insuficientes para editar o relatório
+Limite de anexo insuficiente
+Inconsistência de integração
+Registro de Integração
+Chaves de registro de integração
+Solicitação de integração
+Integrações
+As integrações podem usar esse campo para definir o status de entrega de e-mail
+Inter
+Interesses
+Intermediário
+Erro interno do servidor
+Registro interno de compartilhamentos de documentos
+URL do vídeo de introdução
+Introdução
+URI de introspecção
+Inválido
+"Expressão ""depends_on"" inválida"
+"Expressão ""depends_on"" inválida definida no filtro {0}"
+"Expressão ""mandatory_depends_on"" inválida"
+Ação inválida
+Formato CSV inválido
+"Código inválido. Por favor, tente novamente."
+Condição inválida: {}
+Data inválida
+DocType inválido
+DocType inválido: {0}
+Nome de campo inválido
+URL de arquivo inválido
+Filtro inválido
+Formato de filtro inválido para {0} de campo do tipo {1}. Tente usar o ícone de filtro no campo para configurá-lo corretamente
+Valor de filtro inválido
+Página inicial inválida
+Link inválido
+Token de login inválido
+Login inválido. Tentar novamente.
+"Servidor de e-mail inválido. Por favor, corrija e tente novamente."
+Série de nomenclatura inválida: {}
+Operação inválida
+Opção inválida
+Servidor ou porta de saída inválida: {0}
+Formato de saída inválido
+Substituição inválida
+Parâmetros inválidos.
+Senha inválida
+Número de telefone inválido
+Solicitação inválida
+Campo de pesquisa inválido {0}
+Nome de campo de tabela inválido
+Transição inválida
+"Nome de usuário ou senha de suporte inválidos. Por favor, corrija e tente novamente."
+Valores inválidos
+Segredo de webhook inválido
+Função agregada inválida
+Formato de alias inválido: {0}. O alias deve ser um identificador simples.
+Formato de argumento inválido: {0}. Somente literais de cadeia de caracteres entre aspas ou nomes de campo simples são permitidos.
+Tipo de argumento inválido: {0}. Somente strings
+Caracteres inválidos no nome do campo: {0}. Somente letras
+Caracteres inválidos no nome da tabela: {0}
+Coluna inválida
+Tipo de condição inválido em filtros aninhados: {0}
+Direção inválida em Ordem por: {0}. Deve ser 'ASC' ou 'DESC'.
+Docstatus inválido
+Expressão inválida definida no filtro {0}
+Expressão inválida definida no {0} de filtro ({1})
+Formato de campo inválido para SELECT: {0}. Os nomes dos campos devem ser simples
+Formato de campo inválido no {0}: {1}. Use 'campo'
+Nome de campo inválido na função: {0}. Somente nomes de campo simples são permitidos.
+Nome de campo inválido {0}
+Nome de campo inválido: {0}
+Tipo de campo inválido: {0}
+Nome de campo inválido '{0}' no nome automático
+Caminho de arquivo inválido: {0}
+Condição de filtro inválida: {0}. Esperava uma lista ou tupla.
+Formato de campo de filtro inválido: {0}. Use 'fieldname' ou 'link_fieldname.target_fieldname'.
+Filtro inválido: {0}
+Tipo de argumento de função inválido: {0}. Somente strings
+Formato de dicionário de função inválido
+JSON inválido adicionado nas opções personalizadas: {0}
+Tipo de nome inválido (inteiro) para a coluna de nome varchar
+Série de nomenclatura inválida {}: ponto (.) ausente
+Conteúdo inválido ou corrompido para importação
+Regex de redirecionamento inválido na linha #{}: {}
+Argumentos de solicitação inválidos
+Formato de filtro simples inválido: {0}
+Início inválido para condição de filtro: {0}. Esperava-se uma lista ou tupla.
+Formato literal de cadeia de caracteres inválido: {0}
+Arquivo de modelo inválido para importação
+Estado de token inválido! Verifique se o token foi criado pelo usuário OAuth.
+Nome de usuário ou senha inválidos
+Valor inválido especificado para UUID: {}
+Valores inválidos para campos:
+Versão wkhtmltopdf inválida
+Condição {0} inválida
+Investimento/Operação
+Convidar como usuário
+Início dos serviços conf. contrato
+Início real dos serviços
+É
+É calendário e Gantt
+é a tabela filho
+É personalizado
+É padrão
+É URL dinâmico?
+É global
+É Grupo
+Está oculto
+É a pasta pessoal
+O campo é publicado deve ser um nome de campo válido
+é relatório de consulta
+É solicitação remota?
+A configuração está concluída?
+É solteiro
+É spam
+É Submittable
+É gerado pelo sistema
+É o campo da tabela
+É virtual
+É padrão
+É arriscado excluir este arquivo: {0}. Entre em contato com o gerente do sistema.
+Item
+Configuração do item Kartado
+Grupo de itens
+Rótulo do item
+Subgrupo de itens
+Tipo de Item
+Item adicionado com sucesso
+O item não pode ser adicionado aos seus próprios descendentes
+Item do contrato
+Itens/Recursos
+Itens
+Itens do contrato
+JS
+Mensagem JS
+JSON
+Desconhecida
+JavaScript
+Formato JavaScript: frappe.query_reports['REPORTNAME'] = {}
+Javascript
+O Javascript está desativado no seu navegador
+Jinja
+ID do trabalho
+ID do trabalho
+Informações de trabalho
+Nome do trabalho
+Status do trabalho
+Trabalho interrompido com êxito
+O trabalho está em {0} estado e não pode ser cancelado
+O trabalho não está em execução.
+Participe de videoconferência com {0}
+Saltar para o campo
+K
+KM Final
+KM Inicial
+KM final
+KM inicial
+Kanban
+Coluna do quadro Kanban
+Nome do Quadro Kanban
+Configurações de Kanban
+Visualização Kanban
+Kartado
+Kartado Apontamento
+Kartado Outros
+Kartado RDO
+Acompanhe todos os feeds de atualização
+Acompanha todas as comunicações
+Atalhos de teclado
+Manto de chave
+Kh
+Km final
+Km inicial
+Base de conhecimento
+Colaborador da Base de Conhecimento
+Editor da Base de Conhecimento
+L
+Autenticação LDAP
+Configurações personalizadas do LDAP
+Campo de e-mail LDAP
+Mapeamento de grupo LDAP
+Atributo de membro do grupo LDAP
+LDAP não instalado
+A cadeia de caracteres de pesquisa LDAP deve ser colocada em '()' e precisa conter o espaço reservado do usuário {0}
+Pesquisa e caminhos LDAP
+Configurações do servidor LDAP
+URL do servidor LDAP
+Configurações LDAP
+O LDAP não está habilitado.
+Caminho de pesquisa LDAP para Grupos
+Caminho de pesquisa LDAP para usuários
+Configurações LDAP incorretas. A resposta de validação foi: {0}
+Etiqueta
+O rótulo é obrigatório
+Paisagem
+Idioma
+Último
+Últimos 10 usuários ativos
+Últimos 14 dias
+Últimos 30 dias
+Últimos 6 meses
+Últimos 7 dias
+Últimos 90 dias
+Último batimento cardíaco
+Data da última modificação
+Última modificação em
+Apelido
+Última chave de redefinição de senha gerada em
+Última execução
+Última sincronização em
+Última atualização por
+Última atualização em
+Última sincronização {0}
+Latitude
+Redefinição de layout
+O layout será redefinido para o layout padrão
+Tabela de classificação
+Saiba Mais
+Sair desta conversa
+Esquerda
+Parte inferior esquerda
+Centro esquerdo
+Saiu desta conversa
+Legal
+Comprimento
+O comprimento da matriz de dados passada é maior que o valor do máximo de pontos de rótulo permitidos!
+O comprimento do {0} deve estar entre 1 e 1000
+Menos
+Menos de
+Menor ou igual a
+Leste
+Vamos continuar com a integração
+Vamos começar
+Vamos evitar palavras e caracteres repetidos
+Vamos configurar sua conta
+Vamos levá-lo de volta ao onboarding
+Papel timbrado
+Scripts de cabeçalho de carta
+O cabeçalho da carta não pode ser desativado e padrão
+Nível
+O nível 0 é para permissões no nível do documento
+Biblioteca
+Licença
+Tipo de licença
+Luz
+Azul claro
+Tema claro
+Gostar
+Limite de curtidas
+Limite de curtidas por hora
+Como no {0}: {1}
+Gostava
+Gostou de
+Gostei de mim
+O limite deve ser um inteiro não negativo
+Linha SAP
+Linha de pedido SAP
+Linha do pedido
+Linha pedido
+Link
+Contagem de links
+Detalhes do link
+Link DocType
+Tipo de documento de link
+Link expirado
+Limite de resultados do campo de link
+Filtros de link
+Link para na linha
+Tipo de link
+Tipo de link na linha
+"O link para a página Sobre nós é ""/about""."
+Link que é a página inicial do site. Links padrão (página inicial
+Vinculado a
+Vinculado a {0}
+Links
+Configurações de lista / pesquisa
+Colunas de lista
+Filtro de lista
+Configurações da lista
+Visualização de lista
+Configurações de exibição de lista
+Listar um tipo de documento
+"Listar como [{""label"": _(""Jobs"")"
+Lista de endereços de e-mail
+Lista de patches executados
+Mensagem de configuração de lista
+Lista
+Listas
+Carregar mais
+Carregar mais comunicações
+Carregar mais
+Carregamento
+Carregando filtros...
+Carregando arquivo de importação...
+Carregando versões...
+Carregamento...
+Registrar solicitações de API
+Dados de log
+Registrar DocType
+Fazer login no {0}
+Índice de log
+Usuário de configuração de log
+Configurações de log
+Faça login para acessar esta página.
+Sair
+Desconectado
+Login
+Login Depois
+Faça login antes
+"Falha no login, tente novamente"
+O ID de login é necessário
+Métodos de login
+Página de login
+Login para {0}
+Código de verificação de login de {}
+Faça login e visualize no navegador
+O login é necessário para ver a exibição de lista de formulários da Web. Ative {0} para ver as configurações da lista
+Link de login enviado para seu e-mail
+Login não permitido no momento
+Login necessário
+Sessão de login expirada
+Login para comentar
+Faça login para iniciar uma nova discussão
+Login to {0}
+Token de login necessário
+Login com link de e-mail
+Faça login com Frappe Cloud
+Faça login com LDAP
+Login com link de e-mail
+Login com expiração do link de e-mail (em minutos)
+O login com nome de usuário e senha não é permitido.
+Login with {0}
+Logotipo URI
+Sair de todas as sessões
+Logs para limpar
+Logs a serem limpos
+Longitude
+Parece que você não alterou o valor
+Parece que você não recebeu nenhuma notificação.
+Parece que você não adicionou nenhum aplicativo de terceiros.
+Parece que você não recebeu nenhuma notificação.
+M
+Licença MIT
+Principal
+"Tornar o ""nome"" pesquisável na Pesquisa Global"
+Tornar o anexo público (por padrão)
+Tornar anexos públicos por padrão
+Certifique-se de configurar uma chave de login social antes de desativá-la para evitar o bloqueio
+Faça uso de padrões de teclado mais longos
+Faça {0}
+Torna a página pública
+Gerenciar aplicativos de terceiros
+Obrigatório depende de (JS)
+Informações obrigatórias ausentes:
+Campo obrigatório: definir função para
+Campo obrigatório: {0}
+Campos obrigatórios obrigatórios na tabela {0}
+Campos obrigatórios obrigatórios em {0}
+Campos obrigatórios obrigatórios:
+Obrigatório:
+Mapa
+Colunas do mapa
+Visualização do mapa
+Mapear colunas de {0} para campos em {1}
+Mapeando {0} de coluna para o campo {1}
+Maq.
+Maq.
+Maq.
+Máquina
+Máquinas
+Margem inferior
+Margem esquerda
+Margem direita
+Margem superior
+Variáveis do MariaDB
+Marcar tudo como lido
+Marcar como Lido
+Marcar como spam
+Marcar como não lido
+Redução de preço
+Marcado como spam
+Gerente de Marketing
+Materiais
+Material
+Material ou projeto
+Máximo de 500 registros por vez
+Tamanho máximo do arquivo (MB)
+Altura máxima
+Máximo de linhas de relatório
+Tamanho máximo do anexo
+Relatório máximo de e-mail automático por usuário
+A largura máxima para o tipo Moeda é de 100 px na linha {0}
+O limite máximo de anexo de {0} foi atingido para {1} {2}.
+O limite máximo de anexo de {0} foi atingido.
+Máximo de {0} linhas permitidas
+Me
+Significado de Enviar
+Medição acum. formiga (%)
+Medição acum. anterior
+Medição acum. atual
+Medição acum. atual (%)
+Medição acumulada anterior
+Medição acumulada atual
+Medição atual
+Medição atual (%)
+Medição atual (A)
+Medição atual com desconto de FTD (B)
+Medição equivalente líquida do REIDI [F] = [A]+(E)
+Medição líquida do REIDI (Vl. bruto NF) [D] = [B]+[C]
+Medição mês cheio
+Medição vigente
+Reunião
+Atende à condição?
+Uso de memória
+Uso de memória em MB
+Menu
+A mesclagem só é possível entre grupo a grupo ou nó folha a nó folha
+Mensagem
+Tipo de mensagem
+Mensagem recortada
+Mensagem do servidor: {0}
+Mensagem não configurada
+Mensagem a ser exibida após a conclusão bem-sucedida
+ID da mensagem
+Mensagens
+Meta
+Meta Descrição
+Meta imagem
+Meta Tags
+Meta Título
+Meta descrição
+Meta imagem
+Meta título
+Meta título para SEO
+Metadados
+Método não permitido
+O método é necessário para criar um cartão numérico
+Centro médio
+Marco miliário
+Rastreador de marcos
+Pontuação mínima de senha
+Menor
+Ata
+Minutos depois
+Minutos antes
+Deslocamento de minutos
+Configurado incorretamente
+DocType ausente
+Campo ausente
+Campos ausentes
+Filtros ausentes necessários
+Permissão ausente
+Valor ausente
+Gatilho modal
+Modificado por
+Módulo
+Módulo (para exportação)
+Definição do módulo
+Módulo HTML
+Integração do módulo
+Perfil do módulo
+Nome do perfil do módulo
+Redefinição do progresso da integração do módulo
+Módulo para Exportação
+Módulo {} não encontrado
+Módulos
+Segunda-feira
+Monospace
+Mais
+Mais informações
+Mais artigos sobre {0}
+Mais usados
+Muito provavelmente sua senha é muito longa.
+Mover para
+Mover para a lixeira
+Mover as seções atuais e todas as seções subsequentes para uma nova guia
+Mover o cursor para a linha acima
+Mover o cursor para a linha abaixo
+Mover o cursor para a próxima coluna
+Mover o cursor para a coluna anterior
+Mover seções para uma nova guia
+Mover o campo atual e os campos seguintes para uma nova coluna
+Mover para o número da linha
+Passe para a próxima etapa quando clicado dentro da área destacada.
+Mozilla não suporta :has() então você pode passar o seletor pai aqui como solução alternativa
+Sr
+Sra
+Ms
+Vários nós raiz não são permitidos.
+Município
+Município
+Municípios
+Deve ser colocado em '()' e incluir '{0}'
+"Deve ser do tipo ""Anexar imagem"""
+Deve ter permissão de relatório para acessar este relatório.
+Deve especificar uma consulta a ser executada
+Mx
+Minha Conta
+Meu Dispositivo
+Meu filtro
+Meus espaços de trabalho
+Meu ISAM
+Máquina
+Máquinas |
+Mão de obra
+Mão de obra (Funções)
+Mão de obra - Cfg. de horas e percentual de hora extra
+Mês
+Módulo
+NF Nº
+NOTA: Se você adicionar estados ou transições na tabela
+NOTA: Esta caixa é devida para depreciação. Reconfigure o LDAP para funcionar com as configurações mais recentes
+Nome (Nome do Documento)
+Nome já usado
+O nome não pode conter caracteres especiais como {0}
+"Nome do Tipo de Documento (DocType) ao qual você deseja que esse campo seja vinculado. por exemplo, Cliente"
+Nome do novo formato de impressão
+O nome do {0} não pode ser {1}
+Nomes e sobrenomes por si só são fáceis de adivinhar.
+"Opções de nomenclatura:|||<ol><li><b>campo:[nome do campo]</b> - Por campo</li><li><b>naming_series:</b> - Por série de nomenclatura (o campo chamado naming_series deve estar presente)</li><li><b>Rápido</b> - Solicitar um nome ao usuário</li><li><b>[série]</b> - Série por prefixo (separada por um ponto); por exemplo, PRE. #####</li>|||<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Substitua todas as palavras entre chaves (nomes de campo"
+Regra de nomenclatura
+Série de nomenclatura
+Série de nomenclatura obrigatória
+Barra de navegação
+Item da barra de navegação
+Configurações da barra de navegação
+Modelo da barra de navegação
+Valores do modelo da barra de navegação
+Navegar na lista para baixo
+Navegar na lista para cima
+Navegue até o conteúdo principal
+Configurações de navegação
+Precisa da função Gerente de Espaço de Trabalho para editar o espaço de trabalho privado de outros usuários
+Valor negativo
+Os filtros aninhados devem ser fornecidos como uma lista ou tupla.
+Erro de conjunto aninhado. Entre em contato com o Administrador.
+Configurações da impressora de rede
+Nova Atividade
+Novo endereço
+Novo gráfico
+Novo comentário sobre {0}: {1}
+Novo contato
+Novo bloco personalizado
+Novo formato de impressão personalizado
+Formulário de Novo Documento
+Novo documento compartilhado {0}
+Novo e-mail
+Nova conta de e-mail
+Novo Evento
+Nova pasta
+Novo Quadro Kanban
+Novos links
+Nova menção no {0}
+Nova mensagem da página de contato do site
+Novo nome
+Nova Newsletter
+Nova notificação
+Novo cartão numérico
+Nova integração
+Nova senha
+Novo nome do formato de impressão
+Nova lista rápida
+Novo nome do relatório
+Nova função
+Novo atalho
+Novos usuários (últimos 30 dias)
+Novo valor
+Novo nome do fluxo de trabalho
+Novo espaço de trabalho
+"Nova lista separada por linha de URLs de clientes públicos permitidos (por exemplo, <code>https://frappe.io</code>)"
+Nova lista separada por linha de valores de escopo.
+Novas linhas separaram lista de strings que representam formas de contato com os responsáveis por este cliente
+A nova senha não pode ser igual à senha antiga
+Novas atualizações estão disponíveis
+Novos usuários terão que ser registrados manualmente pelos gerentes do sistema.
+Novo {0}
+Novas {0} criadas
+Novas {0} {1} adicionadas ao Dashboard {2}
+Novas {0} {1} criadas
+Novo {0}: {1}
+Novas versões {} para os seguintes aplicativos estão disponíveis
+O usuário recém-criado {0} não tem funções habilitadas.
+Gerenciador de Newsletter
+Próximos 14 dias
+Próximos 30 dias
+Próximos 6 meses
+Próximos 7 dias
+Modelo de e-mail de próxima ação
+Próximas ações HTML
+Próxima Execução
+Próximo Tour de Formulário
+Próximo mês
+Próximo trimestre
+Próxima data agendada
+Próximo estado
+Condição da próxima etapa
+Próximo token de sincronização
+Na próxima semana
+Próximo ano
+Próximas ações
+Avançar ao clicar
+Sem sessões ativas
+Sem dados...
+Sem conta de e-mail
+Nenhuma conta de e-mail atribuída
+Sem e-mails
+Nenhuma entrada para o usuário {0} encontrada no LDAP!
+Sem filtros definidos
+Nenhum evento do Google Agenda para sincronizar.
+Sem imagens
+Nenhum usuário LDAP encontrado para e-mail: {0}
+Sem rótulo
+Sem papel timbrado
+Nenhum nome especificado para {0}
+Não Novas notificações
+Nenhuma permissão especificada
+Nenhuma permissão definida para esses critérios.
+Nenhum gráfico permitido
+Nenhum gráfico permitido neste painel
+Sem visualização
+Nenhuma visualização disponível
+Nenhuma impressora está disponível.
+Nenhum RQ Workers conectado. Tente reiniciar o banco.
+Sem resultados
+Nenhum resultado encontrado
+Nenhuma função especificada
+Nenhum campo selecionado encontrado
+Sem sugestões
+Sem tags
+Sem eventos futuros
+Nenhum endereço adicionado ainda.
+Sem alertas para hoje
+Não há sugestões de otimização automática disponíveis.
+Sem alterações no documento
+Nenhuma alteração feita
+Nenhuma alteração foi feita porque o nome antigo e o novo são os mesmos.
+Nenhuma alteração na sincronização
+Nenhuma alteração para atualizar
+Ainda não há comentários
+Ainda não há comentários. 
+Nenhum contato adicionado ainda.
+Nenhum contato vinculado ao documento
+Nenhum modelo de endereço padrão encontrado. Crie um novo a partir do modelo de endereço de > de impressão e identidade visual de > de configuração.
+Nenhum documento encontrado marcado com {0}
+Nenhuma conta de e-mail associada ao Usuário. Adicione uma conta em Caixa de entrada de e-mail > usuário.
+Sem logs com falha
+"Não foram encontrados campos que possam ser usados como uma Coluna Kanban. Use o Formulário Personalizado para adicionar um Campo Personalizado do tipo ""Selecionar""."
+Nenhum arquivo anexado
+Nenhum filtro encontrado
+Nenhum filtro selecionado
+Sem mais registros
+Nenhum id fornecido no URL
+Sem registros correspondentes. Pesquise algo novo
+Não há mais itens para exibir
+Não há necessidade de símbolos
+Nenhum novo Contato do Google sincronizado.
+Sem novas notificações
+Nº de colunas
+Nº de SMS solicitados
+Nº de linhas (máx. 500)
+Nº de SMS enviados
+Sem permissão para {0}
+Sem permissão para '{0}' {1}
+Sem permissão para ler {0}
+Sem permissão para {0} {1} {2}
+Nenhum registro excluído
+Nenhum registro presente em {0}
+Nenhum registro marcado.
+Nenhum registro será exportado
+Sem linhas
+Sem assunto
+Nenhum modelo encontrado no caminho: {0}
+Nenhum valor a ser mostrado
+Sem {0}
+Nenhuma {0} encontrada
+Nenhuma {0} encontrada
+Nenhuma {0} encontrada com filtros correspondentes. Limpe os filtros para ver todos os {0}.
+Sem {0} mail
+Não.
+Nomatim
+Nomo
+Nome do ativo
+Nenhum
+Nenhum: Fim do Fluxo de Trabalho
+Normal
+Cópias normalizadas
+Consulta normalizada
+Norte
+Não permitido: Usuário desabilitado
+Não ancestrais de
+Não descendentes de
+Não é igual
+Não encontrado
+Não é útil
+Não em
+Não gosto
+Não vinculado a nenhum registro
+Não anulável
+Não é permitido ler {0}
+Não publicado
+Não salvo
+Não visto
+Não enviado
+Não definido
+Não é um valor separado por vírgula válido (arquivo CSV)
+Não é uma imagem de usuário válida.
+Não é uma ação de fluxo de trabalho válida
+Não é um usuário válido
+Não permitido para {0}: {1}
+Não é permitido anexar {0} documento
+Não é permitido criar DocType Virtual personalizado.
+Não é permitido imprimir documentos cancelados
+Não é permitido imprimir documentos de rascunho
+Não permitido por meio da verificação de permissão do controlador
+Não encontrado
+Não está no modo de desenvolvedor
+Não no modo de desenvolvedor! Defina em site_config.json ou faça DocType 'Personalizado'.
+Não é permitido visualizar {0}
+Nota vista por
+Nota:
+Observação: alterar o nome da página interromperá o URL anterior para esta página.
+Nota: Os fusos horários etc. têm seus sinais invertidos.
+Observação: isso será compartilhado com o usuário.
+Observação: sua solicitação de exclusão de conta será atendida em {0} horas.
+Anotações:
+Nada de novo
+Nada mais para refazer
+Nada mais para desfazer
+Nada para mostrar
+Nada para atualizar
+Notificação
+Registro de notificação
+Destinatário da notificação
+Configurações de notificação
+Documento de Notificação Subscrito
+Notificação enviada para
+Notificação: o {0} do cliente não tem um número de celular definido
+Notificação: o documento {0} não tem número de {1} definido (campo: {2})
+Notificação: o usuário {0} não tem um número de celular definido
+Notificações
+Notificações desativadas
+Notificações e e-mails em massa serão enviados a partir deste servidor de saída.
+Notifique os usuários a cada login
+Notificar por e-mail
+Notificar por e-mail
+Notifique os usuários com um pop-up quando eles fizerem login
+Novo Item de Contrato
+Agora
+Cartão numérico
+Link do cartão numérico
+Nome do cartão numérico
+Cartões numéricos
+Número de consultas
+O número de campos de anexo é maior que {}
+O número de backups deve ser maior que zero.
+Número de colunas para um campo em uma planilha (o total de colunas em uma planilha deve ser menor que 11)
+Número de colunas para um campo em uma exibição de lista ou grade (o total de colunas deve ser menor que 11)
+Número de dias após os quais o link de exibição da Web do documento compartilhado no e-mail expirará
+Número de chaves
+Número de backups no local
+Nº do Contrato
+Nº do contrato
+Nº do pedido
+Nº do pedido SAP
+Nº do pedido SAP - Linha
+Nº pedido SAP
+Não
+O código é informado pelo usuário
+OAuth
+Código de autorização OAuth
+Token de portador OAuth
+Cliente OAuth
+ID do cliente OAuth
+Função de cliente OAuth
+Erro OAuth
+Configurações do provedor OAuth
+Escopo do OAuth
+Configurações do OAuth
+"O OAuth foi ativado, mas não autorizado. Use o botão ""Autorizar acesso à API"" para fazer o mesmo."
+OPÇÕES
+OU
+Redefinição secreta OTP - {0}
+O segredo da OTP foi redefinido. O novo registro será necessário no próximo login.
+A configuração do OTP usando o aplicativo OTP não foi concluída. Entre em contato com o administrador.
+Objeto
+Obra
+Observações
+Ocorrências
+Oeste
+Escritório 365
+Documentação oficial
+Deslocamento X
+Deslocamento Y
+O deslocamento deve ser um inteiro não negativo
+Pai Velho
+Senha antiga
+Os nomes de campo antigos e novos são iguais.
+Os backups mais antigos serão excluídos automaticamente
+Trabalho não agendado mais antigo
+Sobre a autorização de pagamento
+Cobrança de pagamento processada
+Em caso de falha no pagamento
+Aquisição de mandato de pagamento processada
+Cobrança de Mandato de Pagamento Processada
+No pagamento pago
+Ao marcar esta opção
+Em ou depois
+Em ou antes
+Em {0}
+Bordo
+Nome de integração
+Permissão de integração
+Status de integração
+Etapa de integração
+Mapa de etapas de integração
+Integração concluída
+Uma vez submetido
+Depois de definir isso
+Um último passo
+Código de registro de senha de uso único (OTP) de {}
+Um dos
+Apenas 200 inserções permitidas em uma solicitação
+Somente o administrador pode excluir a fila de e-mail
+Somente o administrador pode editar
+"Somente o administrador pode salvar um relatório padrão. Por favor, renomeie e salve."
+Somente o administrador tem permissão para usar o gravador
+As únicas opções permitidas para o campo Dados são:
+Somente o Workspace Manager pode editar espaços de trabalho públicos
+Só é permitido exportar personalizações no modo de desenvolvedor
+Somente documentos de rascunho podem ser descartados
+Apenas para
+"Somente campos obrigatórios são necessários para novos registros. Você pode excluir colunas não obrigatórias, se desejar."
+Apenas um {0} pode ser definido como primário.
+Somente relatórios do tipo Construtor de Relatórios podem ser excluídos
+Somente relatórios do tipo Construtor de Relatórios podem ser editados
+Somente DocTypes padrão podem ser personalizados em Personalizar formulário.
+Somente o Administrador pode excluir um DocType padrão.
+Somente o destinatário pode concluir essa tarefa.
+Somente {0} relatórios enviados por e-mail são permitidos por usuário.
+Oops! Algo deu errado.
+Abra o Awesomebar
+Comunicação aberta
+Abrir documento
+Abrir Ajuda
+Abrir link
+Abra Configurações
+Aplicativos de código aberto para a Web
+Abrir tradução
+Abra uma caixa de diálogo com campos obrigatórios para criar um novo registro rapidamente. Deve haver pelo menos um campo obrigatório para mostrar na caixa de diálogo.
+Abrir um módulo ou ferramenta
+Abrir console
+Abrir em uma nova guia
+Abrir item da lista
+Abrir documento de referência
+Abra seu aplicativo de autenticação em seu celular.
+Abra {0}
+Configuração do OpenID
+OpenLDAP
+O operador deve ser um dos {0}
+Operação
+Otimizar
+Otimizando imagem...
+Opção 1
+Opção 2
+Opção 3
+Opção {0} para o campo {1} não é uma tabela filho
+Opcional: sempre envie para esses ids. Cada endereço de e-mail em uma nova linha
+Opções
+Opções O tipo de campo 'Dynamic Link' deve apontar para outro campo de link com opções como 'DocType'
+As opções para o campo de classificação podem variar de 3 a 10
+Opções para selecionar. Cada opção em uma nova linha.
+As opções para {0} devem ser definidas antes de definir o valor padrão.
+Opções é necessário para {0} de campo do tipo {1}
+Opções não definidas para o campo de link {0}
+Laranja
+Order By deve ser uma cadeia de caracteres
+Orientação
+Origem
+Valor original
+Osíris
+Configurações de saída (SMTP)
+E-mails enviados (últimos 7 dias)
+Servidor de saída
+Configurações de saída
+A conta de e-mail de saída não está correta
+Outlook.com
+Visão geral
+REMENDO
+PDF
+Geração de PDF em andamento
+Gerador de PDF
+Altura da página do PDF (em mm)
+Largura da página do PDF (em mm)
+Falha na geração de PDF
+Falha na geração de PDF devido a links de imagem quebrados
+A geração de PDF pode não funcionar conforme o esperado.
+"A impressão de PDF via ""Raw Print"" não é suportada."
+PID
+POSTAR
+PÔR
+Pacote
+Importação de pacotes
+Nome do pacote
+Liberação de pacote
+Pagamento por hora
+Página
+Quebra de página
+Construtor de páginas
+Altura da página (em mm)
+Margens da página
+Número da página
+Rota da página
+Atalhos de página
+Tamanho da página
+Título da página
+Largura da página (em mm)
+A página expirou!
+A altura e a largura da página não podem ser zero
+Página não encontrada
+Página para mostrar no site|||
+Parâmetro
+Pai
+Item de contrato pai
+DocType pai
+Tipo de documento pai
+O Tipo de Documento Pai é necessário para criar um cartão numérico
+Seletor de elemento pai
+Campo pai
+Campo pai (árvore)
+O campo pai deve ser um nome de campo válido
+Pai ausente
+Página pai
+Tabela pai
+O tipo de documento pai é necessário para criar um gráfico de painel
+Pai é o nome do documento ao qual os dados serão adicionados.
+O agrupamento de pais para filhos ou filhos diferentes não é permitido.
+Parentnão especificado em {0}: {1}
+Tipo de pai
+Parcial
+Sucesso parcial
+Parcialmente enviado
+Participantes
+Participação %
+Passar
+Senha
+E-mail de senha enviado
+Redefinição de senha
+A senha não pode ser filtrada
+A senha foi alterada com sucesso.
+A senha é necessária ou selecione Aguardando senha
+Senha ausente na conta de e-mail
+Senha não encontrada para {0} {1} {2}
+Instruções de redefinição de senha foram enviadas para o e-mail de {}
+Conjunto de senha
+O tamanho da senha excedeu o tamanho máximo permitido
+O tamanho da senha excedeu o tamanho máximo permitido.
+As senhas não correspondem
+As senhas não correspondem!
+Colar
+Registro de patches
+Tipo de patch {} não encontrado em patches.txt
+Caminho
+Caminho para o arquivo de certificados CA
+Caminho {0} não é um caminho válido
+Contagem de carga útil
+Pico de uso de memória
+Pedido SAP
+Pedidos SAP
+E-mails pendentes
+Trabalhos pendentes
+Verificação pendente
+Por cento
+Percentual caução
+Percentual de consumo
+Percentual padrão para hora extra
+Percentual para hora extra (Sáb. e dias úteis)
+Cancelar {0} permanentemente?
+Descartar permanentemente {0}?
+Enviar {0} permanentemente?
+Excluir permanentemente {0}?
+Erro de permissão
+Inspetor de permissões
+Nível de permissão
+Níveis de permissão
+Permission Log
+Consulta de permissão
+Tipo de permissão
+Permissões
+Erro de permissões
+As permissões são aplicadas automaticamente aos relatórios e pesquisas padrão.
+Permissions are set on Roles and Document Types (called DocTypes) by setting rights like Read
+As permissões em níveis mais altos são permissões de nível de campo. Todos os campos têm um nível de permissão definido para eles e as regras definidas nessas permissões se aplicam ao campo. Isso é útil caso você queira ocultar ou tornar determinado campo somente leitura para determinadas funções.
+As permissões no nível 0 são permissões no nível do documento
+As permissões são aplicadas aos usuários com base nas funções atribuídas a eles.
+Permitted Documents For User
+Funções permitidas
+Pessoa
+Personal Data Deletion Request
+Etapa de exclusão de dados pessoais
+Solicitação de download de dados pessoais
+Período Medição
+Períodos
+Peso
+Telefone nº
+Número de telefone {0} definido no campo {1} não é válido.
+Selecionar colunas
+Código PIN
+Rosa
+Espaço reservado
+Lugares
+Texto simples
+Autorize o OAuth para {0} de conta de e-mail
+Autorize o OAuth para a conta de e-mail {}
+Duplique este tema do site para personalizar.
+Instale a biblioteca ldap3 via pip para usar a funcionalidade ldap.
+"Por favor, defina o gráfico"
+Atualize as configurações de SMS
+"Por favor, adicione um assunto ao seu e-mail"
+"Por favor, adicione um comentário válido."
+Peça ao seu administrador para verificar sua inscrição
+Anexe um arquivo primeiro.
+Anexe um arquivo de imagem para definir HTML para rodapé.
+Anexe um arquivo de imagem para definir HTML para Letter Head.
+"Por favor, anexe o pacote"
+Verifique o URL de configuração do OpenID
+Verifique os valores de filtro definidos para o gráfico do painel: {}
+"Verifique o valor de ""Buscar de"" definido para o campo {0}"
+"Por favor, verifique seu e-mail para verificação"
+Verifique suas credenciais de login de e-mail.
+"Verifique seu endereço de e-mail registrado para obter instruções sobre como proceder. Não feche esta janela, pois você terá que retornar a ela."
+Clique em Editar no espaço de trabalho para obter melhores resultados
+Clique em 'Exportar linhas com erro'
+Clique no link a seguir e siga as instruções na página. {0}
+Clique no link a seguir para definir sua nova senha
+Confirme sua ação para {0} este documento.
+Entre em contato com o gerente do sistema para instalar a versão correta.
+Crie o cartão primeiro
+"Por favor, crie o gráfico primeiro"
+Exclua o campo do {0} ou adicione o doctype necessário.
+"Por favor, não altere os títulos do modelo."
+Duplique isso para fazer alterações
+Ative pelo menos uma chave de login social ou LDAP ou login com link de e-mail antes de desativar o login baseado em nome de usuário/senha.
+"Por favor, ative pop-ups"
+"Por favor, ative pop-ups em seu navegador"
+Ative {} antes de continuar.
+Certifique-se de que seu perfil tenha um endereço de e-mail
+Insira o URL do token de acesso
+Insira o URL de autorização
+Insira o URL base
+Insira o ID do cliente antes que o login social seja ativado
+Insira o segredo do cliente antes que o login social seja ativado
+Insira o URL de configuração do OpenID
+Insira o URL de redirecionamento
+Insira um endereço de e-mail válido.
+"Por favor, digite seu e-mail e mensagem para que possamos entrar em contato com você. Obrigado!"
+"Por favor, digite a senha"
+Digite a senha para: <b>{0}</b>
+Insira números de celular válidos
+Digite sua nova senha.
+Digite sua senha antiga.
+"Por favor, encontre em anexo {0}: {1}"
+"Por favor, faça o login para postar um comentário."
+Certifique-se de que os documentos de comunicação de referência não estejam vinculados circularmente.
+Atualize para obter o documento mais recente.
+Remova o mapeamento da impressora nas Configurações da impressora e tente novamente.
+"Por favor, salve antes de anexar."
+"Por favor, salve o documento antes da atribuição"
+Salve o documento antes de remover a atribuição
+"Por favor, salve o relatório primeiro"
+Salve para editar o modelo.
+Selecione DocType primeiro
+Selecione primeiro o Tipo de Entidade
+Selecione Pontuação mínima de senha
+Selecione os campos X e Y
+Selecione um código de país para o campo {1}.
+Selecione um arquivo primeiro.
+Selecione um arquivo ou url
+Selecione um arquivo csv válido com dados
+Selecione um filtro de data válido
+Selecione os tipos de documentos aplicáveis
+Selecione pelo menos 1 coluna de {0} para classificar/agrupar
+Selecione o prefixo primeiro
+Selecione o Tipo de documento.
+Selecione o diretório LDAP que está sendo usado
+Selecione {0}
+"Por favor, defina o endereço de e-mail"
+Defina um mapeamento de impressora para este formato de impressão nas Configurações da impressora
+"Por favor, defina filtros"
+Defina o valor dos filtros na tabela Filtro de Relatório.
+Defina o nome do documento
+Defina os seguintes documentos neste painel como padrão primeiro.
+Defina a série a ser usada.
+Configure o SMS antes de configurá-lo como um método de autenticação
+"Por favor, configure uma mensagem primeiro"
+Configure a conta de e-mail de saída padrão em Configurações > conta de e-mail
+Configure a conta de e-mail de saída padrão em Ferramentas > Conta de e-mail
+"Por favor, especifique"
+Especifique um DocType pai válido para {0}
+Especifique pelo menos 10 minutos devido à cadência de disparo do agendador
+Especifique o deslocamento de minutos
+Especifique qual campo de data deve ser verificado
+Especifique qual campo de data e hora deve ser verificado
+Especifique qual campo de valor deve ser verificado
+"Por favor, tente novamente"
+Atualize {} antes de continuar.
+Use um filtro de pesquisa LDAP válido
+Use os links a seguir para baixar o backup do arquivo.
+Visite https://frappecloud.com/docs/sites/migrate-an-existing-site#encryption-key para obter mais informações.
+URI da política
+Votação
+Elemento Popover
+Descrição do popover ou modal
+Por favor
+Portal Menu
+Portal Menu Item
+Configurações do portal
+Retrato
+Postar
+Poste aqui
+Postal
+Código postal
+Carimbo de data/hora de lançamento
+Postagens de {0}
+Postagens arquivadas em {0}
+Conteúdo potencialmente perigoso no literal de cadeia de caracteres: {0}
+A precisão deve estar entre 1 e 6
+Substituições previsíveis como '@' em vez de 'a' não ajudam muito.
+Relatório Preparado
+Análise de relatório preparada
+Usuário de relatório preparado
+Falha na renderização do relatório preparado
+Preparando o relatório
+Anexe o modelo à mensagem de email
+Pressione a tecla Alt para acionar atalhos adicionais no Menu e na barra lateral
+Pressione Enter para salvar
+Visualizar imagem
+Modo de visualização
+Visualização de nomes gerados
+Visualizar no {0}
+Tipo de visualização
+Visualizar:
+Anterior
+Hash anterior
+Submissão Anterior
+Endereço principal
+Contato primário
+E-mail principal
+Celular Primário
+Telefone principal
+"A chave primária do doctype {0} não pode ser alterada, pois existem valores existentes."
+Imprimir documentos
+Formato de impressão
+Construtor de Formato de Impressão
+Construtor de Formato de Impressão Beta
+Erro de formato de impressão
+Modelo de campo de formato de impressão
+Formato de impressão para
+Formato de impressão não encontrado
+Formato de impressão {0} está desativado
+Idioma de impressão
+Impressão Enviada para a impressora!
+Configurações de impressão
+Estilo de impressão
+Imprimir documento
+Impressora
+Mapeamento de impressora
+Configurações da impressora
+Mapeamento de impressora não definido.
+Impressão
+Falha na impressão
+Privado
+Arquivos Privados (MB)
+Backup de arquivos privados:
+Dica profissional: adicionar <code>Referência: {{ reference_doctype }} {{ reference_name }}</code> Para enviar referência de documento
+Proceder
+Prossiga mesmo assim
+Processamento
+Processamento...
+Prof
+Progresso
+Propriedade
+Configurador de propriedades
+O Setter de Propriedades substitui uma propriedade DocType ou Field padrão
+Tipo de Propriedade
+Proteger arquivos anexados
+Arquivo protegido
+Forneça uma lista de extensões de arquivo permitidas para uploads de arquivos. Cada linha deve conter um tipo de arquivo permitido. Se não definido
+Público
+Arquivos Públicos (MB)
+Backup de arquivos públicos:
+Publicar
+Publicado
+Publicado em
+Datas de publicação
+Puxar e-mails
+Extrair dos Contatos do Google
+Puxando e-mails...
+Roxo
+Configurações de notificação por push
+Colocar em espera
+Pitão
+Página Personalizada
+Código QR
+Código QR para verificação de login
+Conexão de bandeja QZ ativa!
+Falha na bandeja QZ: 
+Qua Hora
+Quantidade
+Quantidade acumulada
+Quantidade acumulada anterior
+Quantidade medida
+Quantidade total vigente
+Quarto de dia
+Consulta / Script
+Parâmetros de consulta
+Relatório de consulta
+Análise de consulta concluída. Verifique os índices sugeridos.
+A consulta deve ser do tipo SELECT ou somente leitura WITH.
+Fila
+Fila sobrecarregada
+Status da fila
+Tipo(s) de fila
+Fila em segundo plano (BETA)
+A fila deve ser uma das {0}
+Fila(s)
+Enfileirado
+Enfileirado em
+Enfileirado por
+Na fila para envio. Você pode acompanhar o progresso ao longo de {0}.
+Enfileirado para backup. Você receberá um e-mail com o link para download
+Filas
+Enfileiramento {0} para envio
+Qui Hora
+Ajuda rápida para definir permissões
+Filtro de lista rápida
+Listas rápidas
+A cotação deve estar entre 0 e 3
+REIDI %
+Trabalho RQ
+Trabalhador RQ
+Aleatório
+Limitação de taxa
+Limites de taxa
+Limite de taxa para login de link de e-mail
+Classificação
+Comandos brutos
+E-mail bruto
+Impressão bruta
+Configuração de impressão bruta
+Configurações de impressão bruta
+Razão Social
+Executar novamente no console
+Re:
+Re: {0}
+Ler
+Somente leitura
+Somente leitura depende de (JS)
+Modo somente leitura
+Modo de leitura
+Leia a documentação para saber mais
+Leia-me
+Reajustes
+Tempo real (SocketIO)
+Reconstruir
+Reconstruir árvore
+A reconstrução da árvore não é suportada para {}
+Recebeu um tipo de token inválido.
+Os últimos anos são fáceis de adivinhar.
+Recentes
+Gravador
+Consulta do gravador
+Índice sugerido do gravador
+Os registros dos seguintes doctypes serão filtrados
+Busca recursiva de
+Recursos
+Redirecionar status HTTP
+URI de redirecionamento
+URI de redirecionamento associado ao código de autenticação
+URIs de redirecionamento
+Redirecionar para o aplicativo selecionado após o login
+Redirecione para este URL após a confirmação bem-sucedida.
+Redireciona
+O servidor de cache Redis não está em execução. Entre em contato com o Administrador / Suporte técnico
+Refazer
+Refazer última ação
+Ref DocType
+O Doctype de referência e o Nome do painel não podem ser usados ao mesmo tempo.
+Data e hora de referência
+DocType de referência
+DocType de referência e Nome de referência são obrigatórios
+Doctype de referência
+Documento de referência
+Nome do documento de referência
+Tipo de documento de referência
+Tipo de referência
+Referência: {0} {1}
+Referrer
+Atualizar tudo
+Atualizar lista
+Token de atualização
+Refrescante
+Refrescante...
+"Registrado, mas desativado"
+Registro de horas
+Indeferido
+Relatório
+Relatórios
+URL do servidor de retransmissão ausente
+Configurações do relé
+Notas de versão
+Revinculação
+Revincular comunicação
+Recarregar
+Recarregar arquivo
+Lista de recarga
+Relatório de recarga
+Lembrar em
+Lembre-me
+Lembre-me de entrar
+Lembrete
+O lembrete não pode ser criado no passado.
+Lembrete definido em {0}
+Retirar
+Remover trabalhos com falha
+Remover campo
+Remover filtro
+Remover seção
+Remover todas as personalizações?
+Remover todos os campos da coluna
+Remover coluna
+Remover campo
+Remover a última coluna
+Remover quebra de página
+Remover seção
+Remover guia
+Removido
+Renomear nome do campo
+Renomear {0}
+Arquivos renomeados e código substituído em controladores
+Renderize rótulos à esquerda e valores à direita nesta seção
+Repetir
+Repetir cabeçalho e rodapé
+Repetir em dias
+"Repetições como ""aaa"" são fáceis de adivinhar"
+"Repetições como ""abcabcabc"" são apenas um pouco mais difíceis de adivinhar do que ""abc"""
+Repete {0}
+Replicar
+Replicar...
+Replicação concluída.
+Resposta
+Responder a todos
+Construtor de Relatórios
+Coluna de relatório
+Relatar erro de documento
+Filtro de relatório
+Gerenciador de relatórios
+Nome do relatório
+Nome do relatório
+Reportar Ref DocType
+Doctype de referência de relatório
+Tipo de relatório
+Visualização do relatório
+Reportar bug
+O relatório não pode ser definido para tipos únicos
+O relatório não tem dados
+O relatório não tem campos numéricos
+Relatório iniciado
+Limite de relatório atingido
+O relatório expirou.
+Relatório atualizado com sucesso
+O relatório não foi salvo (houve erros)
+O relatório com mais de 10 colunas fica melhor no modo Paisagem.
+Relatório {0}
+Denunciar {0} excluído
+Relatar {0} está desabilitado
+Relatório {0} salvo
+Relatório:
+Relatórios e Mestrados
+Relatórios já na fila
+Representa um usuário no sistema.
+Representa os estados permitidos em um documento e a função atribuída para alterar o estado.
+Corpo da solicitação
+Solicitar descrição
+Cabeçalhos de solicitação
+ID da solicitação
+Limite de solicitações
+Método de solicitação
+Solicitação expirou
+Tempo limite da solicitação
+Números solicitados
+"Requer qualquer caminho fdn válido. ou seja, ou = grupos"
+"Requer qualquer caminho fdn válido. ou seja, ou = usuários"
+Res: {0}
+Redefinir todas as personalizações
+Redefinir alterações
+Redefinir gráfico
+Redefinir personalizações do painel
+Redefinir campos
+Redefinir senha LDAP
+Redefinir layout
+Redefinir segredo OTP
+Redefinir senha
+Redefinir duração da expiração do link de senha
+Redefinir modelo de senha
+Redefinir permissões para {0}?
+Redefinir para o padrão
+Redefinir classificação
+Redefinir para o padrão
+Redefinir para os padrões
+Redefina sua senha
+Recurso
+Documentação do recurso
+Nome do recurso
+URI da política de recursos
+URI de TOS do recurso
+Responsavel
+Resposta 
+Tipo de resposta
+Responsável
+Resto do dia
+Restaurar
+Restaurar permissões originais
+Restaurar as configurações padrão?
+Restaurando documento excluído
+Restringir o usuário apenas a este endereço IP. Vários endereços IP podem ser adicionados separando-se com vírgulas. Também aceita endereços IP parciais como (111.111.111)
+Restrições
+Resultado
+Envio de currículos
+Tipo de retenção
+Repetir
+Repetir o envio
+Retorne à tela Verificação e insira o código exibido pelo seu aplicativo de autenticação
+Revertendo o comprimento para {0} para '{1}' em '{2}'. Definir o comprimento como {3} causará truncamento de dados.
+URI de revogação
+Revogar
+Rich Text
+Certo
+Parte inferior direita
+Centro Direito
+Robots.txt
+Rodovia
+Rodovia (Para identificação de cidade e ISS)
+Rodovias (Delimitação do serviço)
+Papel
+A função 'Todos' será dada a todos os usuários do sistema + site.
+A função 'Usuário de mesa' será dada a todos os usuários do sistema.
+Permissão de função para página e relatório
+Permissões de função
+Gerenciador de permissões de função
+Perfil da função
+Perfis de função
+Replicação de função
+A função foi definida de acordo com o tipo de usuário {0}
+Papéis
+Funções e permissões
+Funções Html
+As funções podem ser definidas para os usuários na página Usuário.
+O {0} raiz não pode ser excluído
+Método de arredondamento
+Rota
+Histórico de rotas
+"Rota: Exemplo ""/app"""
+Remar
+Remar #
+Linha # {0}: o usuário não administrador não pode definir o {1} de função para o doctype personalizado
+Linha #{0}:
+Linha #{}: O nome do campo é obrigatório
+Formato da linha
+Índices de linha
+Número da linha
+Valores de linha alterados
+Linha {0}
+Linha {0}: Não é permitido desabilitar Obrigatório para campos padrão
+Linha {0}: Não tem permissão para habilitar Permitir ao enviar para campos padrão
+Linhas adicionadas
+Linhas removidas
+Limite de linhas para pesquisa em grade
+Regra para este doctype
+Regras que definem a transição de estado no fluxo de trabalho.
+Regras de como os estados são transições
+Tempo de execução em minutos
+Tempo de execução em segundos
+Ordem SAP
+Rodovia de pedidos SAP
+Período do pedido SAP
+SMS
+SMS Gateway URL
+Registro de SMS
+Parâmetro SMS
+Configurações de SMS
+SMS enviado com sucesso
+O SMS não foi enviado. Entre em contato com o administrador.
+O servidor SMTP é necessário
+SQL
+"Condições SQL. Exemplo: status=""Open"""
+Explicação do SQL
+Saída SQL
+Consultas SQL
+SWATCHES
+Sab Hora
+Saldo
+Saldo Contratual (%)
+Saldo Contratual (R$)
+Saldo anterior
+Saldo atual
+Saldo do item do contrato
+Forças Armadas
+Saudação
+O mesmo campo é inserido mais de uma vez
+Sábado
+Salvar segredo da API: {0}
+Salve mesmo assim
+Salvar como
+Salvar personalizações
+Salvar relatório
+Salvar filtros
+Salvar na conclusão
+Salve o documento.
+Salvou
+Filtros salvos
+Poupança
+Salvando personalização...
+"Salvar isso exportará este documento, bem como as etapas vinculadas aqui como json."
+Poupança...
+Varredura
+Verificar QRCode
+Digitalize o QR Code e insira o código resultante exibido.
+Horário
+Agendar Enviar em
+Marcado
+Agendado contra
+Log de trabalho agendado
+Tipo de trabalho agendado
+A execução agendada para {0} de script foi atualizada
+Agendado para envio
+Agendador
+Evento do Agendador
+Status do Agendador
+O Agendador não pode ser reativado quando o modo de manutenção está ativo.
+Agendador: Ativo
+Agendador: Inativo
+Âmbito
+Escopos
+Escopos suportados
+Roteiro
+Gerenciador de scripts
+Relatório de script
+Tipo de script
+Script para anexar a todas as páginas da web.
+Script
+Script / Estilo
+Scripts
+Barra de pesquisa
+Ajuda do Search
+Resultados da pesquisa
+Pesquisar por nome de arquivo ou extensão
+O campo de pesquisa {0} não é válido
+Campos de pesquisa
+Pesquisar tipos de campo...
+Pesquisar qualquer coisa
+Pesquisar por países...
+Pesquisar ícones...
+Pesquisar {0}
+Pesquisar em um tipo de documento
+Pesquise ou digite um comando ({0})
+Pesquisar propriedades...
+Resultados da pesquisa para
+Pesquise os documentos (Pressione / para focar)
+Procurar...
+Procurando...
+Segundos
+Título da seção
+ID da seção
+Título da Seção
+A seção deve ter pelo menos uma coluna
+Visualizar todas as atividades
+Veja todos os relatórios anteriores.
+Veja no site
+Ver respostas anteriores
+Veja o documento em {0}
+Óbvio
+Seg Hora
+Selecionar tudo
+Selecionar anexos
+Selecionar tabela filho
+Selecionar coluna
+Selecionar colunas
+Selecione o país
+Selecione a moeda
+Selecione Painel
+Selecione DocType
+Selecionar Doctype
+Selecione o tipo de documento
+Selecione Tipo de documento ou Função para iniciar.
+Selecione Tipos de Documento para definir quais Permissões de Usuário são usadas para limitar o acesso.
+Selecione o campo
+Selecione o campo...
+Selecione os campos
+Selecione os campos a serem inseridos
+Selecione os campos a serem atualizados
+Selecione Filtros
+Selecione o Google Agenda com o qual o evento deve ser sincronizado.
+Selecione Contatos do Google com o qual o contato deve ser sincronizado.
+Selecione Agrupar por...
+Selecione Kanban
+Selecionar idioma
+Selecione a exibição de lista
+Selecione Obrigatório
+Selecione o módulo
+Selecione Impressora de rede
+Escolha uma Página
+Selecione o formato de impressão
+Selecione o formato de impressão para editar
+Selecione Relatório
+Selecionar colunas da tabela para {0}
+Selecione o fuso horário
+Selecione o fluxo de trabalho
+Selecione Área de trabalho
+Selecione Espaços de trabalho
+Selecione uma imagem de marca primeiro.
+Selecione um DocType para criar um novo formato
+Selecione um campo para editar suas propriedades.
+Selecione um nó de grupo primeiro.
+Selecione um campo de remetente válido para criar documentos a partir do e-mail
+Selecione um campo Assunto válido para criar documentos a partir de E-mail
+Selecione uma imagem
+Selecione um aplicativo para continuar
+Selecione um formato existente para editar ou iniciar um novo formato.
+Selecione uma imagem de aproximadamente 150px de largura com fundo transparente para obter melhores resultados.
+Selecione pelo menos 1 registro para impressão
+Selecione pelo menos 2 ações
+Selecionar item de lista
+Selecionar vários itens de lista
+Selecione ou arraste entre intervalos de tempo para criar um novo evento.
+Selecionar registros para atribuição
+Selecionar registros para remover a atribuição
+Selecione duas versões para visualizar a comparação.
+Selecione {0}
+A autoaprovação não é permitida
+Enviar <b>no mínimo</b> esse número de minutos antes ou depois da data e hora de referência. O envio real pode ser atrasado em até 5 minutos devido à cadência de acionamento do agendador.
+Enviar alerta por e-mail
+Enviar e-mail no estado
+Enviar anexos de impressão de e-mail como PDF (recomendado)
+Enviar e-mail para o criador
+Envie-me uma cópia dos e-mails enviados
+Enviar notificações para tópicos de e-mail
+Enviar recibo de leitura
+Enviar e-mail de boas-vindas
+Enviar alerta se a data e hora corresponder ao valor deste campo
+Envie um lembrete por e-mail pela manhã
+Envie e-mail quando o documento fizer a transição para o estado.
+Envie perguntas para este endereço de e-mail
+Enviar link de login
+Envie-me uma cópia
+Enviar mensagem de cancelamento de inscrição por e-mail
+Remetente
+E-mail do remetente
+Campo de e-mail do remetente
+O campo Remetente deve ter opções Email in
+Nome do remetente
+Campo Nome do remetente
+Sendgrid
+Enviado
+Nome da pasta enviada
+Enviado em
+Enviado para
+E-mail enviado/recebido
+Sentido
+Sentido (Norte/Sul/Leste/Oeste)
+ID da sequência
+Série atualizada para {}
+Contador de séries para {} atualizado para {} com êxito
+Série {0} já usada em {1}
+Erro do servidor
+Script do servidor
+Os scripts do servidor estão desativados. Ative os scripts do servidor na configuração do banco.
+O recurso Server Scripts não está disponível neste site.
+"O servidor falhou ao processar essa solicitação devido a uma solicitação conflitante simultânea. Por favor, tente novamente."
+"O servidor estava muito ocupado para processar essa solicitação. Por favor, tente novamente."
+"Será considerada a seguinte composição:<br>|||Osíris = {sigla}-{uf}-{via}-{sentido}-{faixa}. Ex: ""BR381-MG-Tronco-Decrescente-2""<br>Kartado = {sigla}-{uf}-{sentido}-{faixa}. Ex: ""SPA-348/334-0-22""|||"
+Padrão de sessão
+Configurações padrão da sessão
+Padrões de sessão
+Padrões de sessão salvos
+Sessão expirada
+Expiração da sessão (tempo limite ocioso)
+A expiração da sessão deve estar no formato {0}
+Pôr
+Definir banner da imagem
+Definir gráfico
+"Defina as opções padrão para todos os gráficos neste painel (por exemplo: ""colors"": [""#d1d8dd"""
+Definir filtros dinâmicos
+Definir filtros
+Definir filtros para {0}
+Definir nível
+Definir limite
+Defina as opções de Série de Nomenclatura em suas transações.
+Definir número de backups
+Definir senha
+Definir permissões
+Definir propriedades
+Definir quantidade
+Definir permissões de usuário
+Definir tudo privado
+Definir tudo público
+Definir como padrão
+Definir como tema padrão
+Definido por usuário
+Defina valores de filtro dinâmico em JavaScript para os campos obrigatórios aqui.
+Definir precisão não padrão para um campo Float ou Moeda
+Definir apenas uma vez
+Definir tamanho em MB
+"Defina os filtros aqui. Por exemplo:|||<pre class=""small text-muted""><code>|||[{|||	nome do campo: ""empresa"""
+"Defina o caminho para uma função na lista de permissões que retornará os dados do cartão numérico no formato:||||||<pre class=""small text-muted""><code>|||{|||	""valor"": valor"
+Ambiente
+"Definindo este modelo de endereço como padrão, pois não há outro padrão"
+Configurando documentos de Pesquisa Global.
+Configurando seu sistema
+Configurações para a página Fale Conosco
+Configurações para a página Sobre nós
+"Configurações para controlar categorias e interações do blog, como comentários e curtidas"
+Configuração
+Configurar > personalizar formulário
+Configurar > usuário
+Configuração > permissões de usuário
+Configurar e-mail automático
+Configuração concluída
+Série de configuração para transações
+Assistente de configuração
+Falha na instalação
+Sexo Hora
+Compartilhar
+Compartilhar com
+Compartilhe este documento com
+Compartilhe {0} com
+Compartilhado com os seguintes usuários com acesso de leitura:{0}
+Padrões de teclado curtos são fáceis de adivinhar
+Atalhos
+Programa
+"Mostrar ""Call to Action"" no Blog"
+Mostrar data e hora absoluta na linha do tempo
+Mostrar valores absolutos
+Mostrar tudo
+Mostrar metadados do servidor de autenticação
+Mostrar calendário
+Mostrar símbolo de moeda no lado direito
+Mostrar painel
+Mostrar Documento
+Mostrar erro
+Mostrar nome do campo (clique para copiar na área de transferência)
+Mostrar tour pelo primeiro documento
+Mostrar Tour de Formulário
+Mostrar número completo
+Mostrar atalhos de teclado
+Mostrar rótulos
+Mostrar seletor de idioma
+Mostrar links
+Mostrar apenas logs com falha
+Mostrar permissões
+Mostrar visualização
+Mostrar pop-up de visualização
+Mostrar lista de processos
+Mostrar metadados de recursos protegidos
+Mostrar erros relacionados
+Mostrar relatório
+Mostrar salvo
+Mostrar barra lateral
+Mostrar chave de login social como servidor de autorização
+Mostrar tags
+Mostrar título em campos de link
+Mostrar totais
+Passeio do show
+Mostrar rastreamento
+Mostrar avisos
+Fins de semana de show
+Mostrar link de exclusão de conta na página Minha conta
+Mostrar todas as versões
+Mostrar todas as atividades
+Mostrar todos os blogs
+Mostrar como cc
+Mostrar anexos
+Mostrar rodapé no login
+Mostrar em metadados de recursos
+Mostrar link para o documento
+Mostrar lista
+Mostrar mais detalhes
+Mostrar na linha do tempo
+Mostrar barra lateral
+"Mostrar título na janela do navegador como ""Prefixo - título"""
+Mostrar lista de {0}
+Mostrando apenas campos numéricos do relatório
+Mostrando apenas as primeiras {0} linhas de {1}
+Barra lateral
+Barra lateral e comentários
+Sigla
+Inscrição e Confirmação
+A inscrição está desativada
+Inscrição
+Inscrições
+Inscrição desativada
+As inscrições foram desativadas para este site.
+Sim
+Expressão Python Simples
+Expressão Python Simples
+Expressão Python Simples
+Simples Nacional
+DocTypes únicos não podem ser personalizados.
+"Os tipos únicos têm apenas um registro, sem tabelas associadas. Os valores são armazenados em tabSingles"
+O site está sendo executado no modo somente leitura para manutenção ou atualização do site
+Tamanho (MB)
+Saltitar
+Pular etapa
+Ignorada
+Ignorando a coluna duplicada {0}
+Pulando coluna sem título
+Ignorando {0} de coluna
+Ignorando a sincronização de fixtures para {0} doctype do arquivo {1}
+Ignorando {0} de {1}
+Skype
+Erro de webhook do Slack
+Slack Webhook URL
+Apresentação de slides
+Itens de apresentação de slides
+Nome da apresentação de slides
+Apresentação de slides como exibição para o site
+Lesma
+"Menor unidade de fração circulante (moeda). Por exemplo, 1 centavo para USD e deve ser inserido como 0,01"
+Snippet e mais variáveis: {0}
+Configurações de link social
+Tipo de Link Social
+Chave de login social
+Logins sociais
+Verificação de ping do SocketIO
+Modo de transporte SocketIO
+Soft-Bounced
+Software ID
+Versão do software
+Algumas colunas podem ser cortadas ao imprimir em PDF. Tente manter o número de colunas abaixo de 10.
+"Algumas caixas de correio exigem um nome de pasta de envio diferente, por exemplo, ""Caixa de entrada. Enviado"""
+Alguns dos recursos podem não funcionar no seu navegador. Atualize seu navegador para a versão mais recente.
+Algo deu errado
+Algo deu errado durante a geração do token. Clique em {0} para gerar um novo.
+Algo deu errado.
+Desculpa! Não consegui encontrar o que você estava procurando.
+Desculpa! Você não tem permissão para visualizar esta página.
+Ordenar Crescente
+Ordenar decrescente
+Opções de classificação
+O campo de classificação {0} deve ser um nome de campo válido
+Nome da fonte
+Texto de origem
+Espaçador
+Spam
+Posto de faísca
+Caracteres especiais não são permitidos
+"Caracteres especiais, exceto '-'"
+Especificar um tempo limite personalizado
+"Especifique os domínios ou origens que têm permissão para incorporar esse formulário. Insira um domínio por linha (por exemplo,"
+Imagem inicial
+Sr
+Sr Não.
+Rastreamento de pilha
+Padrão
+O DocType padrão não pode ser excluído.
+O DocType padrão não pode ter o formato de impressão padrão
+Padrão não definido
+Permissões padrão
+O formato de impressão padrão não pode ser atualizado
+"O Estilo de impressão padrão não pode ser alterado. Por favor, duplique para editar."
+Os relatórios padrão não podem ser excluídos
+Os relatórios padrão não podem ser editados
+Menu da barra lateral padrão
+Os formulários da Web padrão não podem ser modificados
+Editor de rich text padrão com controles
+As funções padrão não podem ser desativadas
+As funções padrão não podem ser renomeadas
+O tipo de usuário padrão {0} não pode ser excluído.
+Iniciar importação
+Comece a gravar
+Hora de início
+Iniciar uma nova discussão
+Comece a inserir dados abaixo desta linha
+Iniciar novo formato
+StartTLS
+Iniciado em
+Começando Frappe ...
+Propriedades de estado
+Estatística
+Estatísticas
+Estado
+Status atualizado
+Status atualizado. O e-mail será retirado na próxima execução programada.
+Status do laboratório
+Status: {0}
+Etapas para verificar seu login
+Pegajoso
+Uso de armazenamento (MB)
+Uso de armazenamento por tabela
+Armazenar documento PDF anexado
+Armazena a data e hora em que a última chave de senha de redefinição foi gerada.
+Linhas retas de teclas são fáceis de adivinhar
+Remova tags EXIF das imagens carregadas
+Forte
+O estilo representa a cor do botão: Sucesso - Verde
+"Submoeda. Por exemplo, ""Cent"""
+Sub-grupo
+Campo de assunto
+O tipo de campo de assunto deve ser Dados
+Fila de envio
+Enviar um problema
+Enviar outra resposta
+Rótulo do botão Enviar
+Enviar na criação
+Envie este documento para concluir esta etapa.
+Envie este documento para confirmar
+Enviar {0} documentos?
+O documento enviado não pode ser convertido novamente em rascunho. Linha de transição {0}
+O documento enviado não pode ser convertido novamente em rascunho durante a transição de <b>{0} Estado</b> Para <b>{1} Estado</b>
+Apresentação
+Enviando {0}
+Subsidiária
+Subsidiária 
+Ação de sucesso
+URI de sucesso
+Mensagem de sucesso
+Título de sucesso
+Êxito! Você está pronto para ir 👍
+Contagem de trabalhos bem-sucedidos
+Transações bem-sucedidas
+Bem-sucedido: {0} para {1}
+Atualizado com sucesso
+Importado com sucesso {0}
+Importou com êxito {0} de {1} registros.
+Redefina com êxito o status de integração para todos os usuários.
+Traduções atualizadas com sucesso
+Atualização bem-sucedida {0}
+Atualizado com êxito {0} de {1} registros.
+Sugerir otimizações
+Índices sugeridos
+Nome de usuário sugerido: {0}
+Sul
+Soma
+Soma dos {0}
+Resumo
+Domingo
+Suspender envio
+Trocar de câmera
+Mudar de tema
+Mudar para mesa
+Mude para o Frappe CRM para vendas mais inteligentes
+Câmera de comutação
+Sincronizar calendário
+Sincronizar contatos
+Sincronizar eventos do Google como públicos
+Sincronizar ao migrar
+O token de sincronização era inválido e foi redefinido
+Sincronizar {0} campos
+Campos sincronizados
+Sincronização
+Sincronizando {0} de {1}
+Erro de sintaxe
+Console do sistema
+Os campos gerados pelo sistema não podem ser renomeados
+Integridade do sistema
+Relatório de integridade do sistema
+Erros de relatório de integridade do sistema
+Trabalhos com falha no relatório de integridade do sistema
+Fila de relatórios de integridade do sistema
+Tabelas de relatório de integridade do sistema
+Trabalhadores do Relatório de Integridade do Sistema
+Privilégios de Gerente do Sistema necessários.
+Configurações do sistema
+T
+URI DOS
+Quebra de tabulação
+Rótulo da guia
+Tabela de preços
+Mesa
+Campo da tabela
+Nome do campo da tabela
+Nome do campo da tabela ausente
+Seleção múltipla de mesa
+Tabela aparada
+Tabela atualizada
+A tabela {0} não pode estar vazia
+Tabloide
+Etiqueta
+Tag Link
+Tags
+Tirar foto
+Alvo
+Membros da equipe
+Legenda dos membros da equipe
+Telefone/Celular
+Telemetria
+Erro de modelo
+Arquivo de modelo
+Template de item
+Modelos
+Temporariamente desativado
+Ter Hora
+Dados de teste
+ID do trabalho de teste
+Teste de espanhol
+Test_Folder
+Teste
+Teto percentual caução
+Conteúdo de texto
+Obrigado
+Obrigado por entrar em contato conosco. Entraremos em contato com você o mais rápido possível.|||||||||Sua consulta:||||||{0}
+Obrigado por gastar seu valioso tempo para preencher este formulário
+Obrigado pelo seu e-mail
+Obrigado pelo seu feedback!
+Obrigado pela sua mensagem
+Obrigado
+A Repetição automática para este documento foi desativada.
+O formato CSV diferencia maiúsculas de minúsculas
+"O ID do cliente obtido no Console do Google Cloud em <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs e Serviços"" &gt; ""Credenciais""|||</a>"
+A condição '{0}' é inválida
+O URL do arquivo que você inseriu está incorreto
+A Próxima Data Agendada não pode ser posterior à Data de Término.
+A chave de URL do servidor de retransmissão por push ('push_relay_server_url') está ausente na configuração do site
+O registro de usuário para esta solicitação foi excluído automaticamente devido à inatividade dos administradores do sistema.
+O aplicativo foi atualizado para uma nova versão
+O nome do aplicativo será usado na página de login.
+Os anexos não puderam ser vinculados corretamente ao novo documento
+"A chave de API do navegador obtida no Console do Google Cloud em <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs e Serviços"" &gt; ""Credenciais""|||</a>"
+As alterações foram revertidas.
+"A coluna {0} tem {1} formatos de data diferentes. Definir automaticamente {2} como o formato padrão, pois é o mais comum. Altere outros valores nesta coluna para este formato."
+O comentário não pode estar vazio
+"O conteúdo deste e-mail é estritamente confidencial. Por favor, não encaminhe este e-mail para ninguém."
+A contagem mostrada é uma contagem estimada. Clique aqui para ver a contagem precisa.
+O código ISO 3166 ALPHA-2 do país.
+O documento não pôde ser atribuído corretamente
+O documento foi atribuído a {0}
+O tipo de documento selecionado é uma tabela filho
+O campo {0} é obrigatório
+O nome do campo que você especificou em Anexado ao campo é inválido
+Os seguintes Dias de Atribuição foram repetidos: {0}
+O seguinte Script de Cabeçalho adicionará a data atual a um elemento em 'HTML de Cabeçalho' com a classe 'header-content'
+Os seguintes valores são inválidos: {0}. Os valores devem ser um dos {1}
+Os seguintes valores não existem para {0}: {1}
+O limite não foi definido para o tipo de usuário {0} no arquivo de configuração do site.
+O link expirará em {0} minutos
+O link que você está tentando fazer login é inválido ou expirou.
+"A meta descrição é um atributo HTML que fornece um breve resumo de uma página da web. Os mecanismos de pesquisa, como o Google, geralmente exibem a meta descrição nos resultados da pesquisa"
+A meta-imagem é uma imagem única que representa o conteúdo da página. As imagens para este cartão devem ter pelo menos 280px de largura
+O próximo tour começará de onde o usuário parou.
+O número de segundos até que a solicitação expire
+A senha da sua conta expirou.
+O processo de exclusão de dados {0} associados a {1} foi iniciado.
+"O número do projeto obtido no Console do Google Cloud em <a href=""https://console.cloud.google.com/iam-admin/settings"">|||""IAM e Admin"" &gt; ""Configurações""|||</a>"
+O link de redefinição de senha expirou
+O link de redefinição de senha já foi usado antes ou é inválido
+O recurso que você está procurando não está disponível
+A função {0} deve ser uma função personalizada.
+O documento selecionado {0} não é um {1}.
+O sistema está sendo atualizado. Atualize novamente após alguns instantes.
+O sistema fornece muitas funções predefinidas. Você pode adicionar novas funções para definir permissões mais finas.
+O limite do número total de tipos de documentos do usuário foi ultrapassado.
+O valor que você colou tinha {0} caracteres. O máximo de caracteres permitidos é {1}.
+O webhook será acionado se essa expressão for verdadeira
+O {0} já está em repetição automática {1}
+Tema alterado
+Há documentos que têm estados de fluxo de trabalho que não existem neste fluxo de trabalho. É recomendável adicionar esses estados ao Fluxo de Trabalho e alterar seus estados antes de removê-los.
+Não há eventos futuros para você.
+Não há {0} para este {1}
+Existem {0} com os mesmos filtros já na fila:
+Pode haver apenas 9 campos de quebra de página em um formulário da Web
+Só pode haver uma dobra em um formulário
+Há um erro no seu modelo de endereço {0}
+Não há dados a serem exportados
+Não há nada de novo para mostrar a você agora.
+Há algum problema com o url do arquivo: {0}
+Há {0} com os mesmos filtros já na fila:
+Deve haver pelo menos uma regra de permissão.
+Ocorreu um erro ao criar esta página
+Ocorreu um erro ao salvar filtros
+Houve erros
+"Houve erros ao criar o documento. Por favor, tente novamente."
+"Houve erros ao enviar e-mail. Por favor, tente novamente."
+Houve alguns erros ao definir o nome
+Esses anúncios aparecerão dentro de um alerta dispensável abaixo da barra de navegação.
+"Esses campos são usados para fornecer metadados do servidor de recursos aos clientes que consultam o ponto de extremidade do ""recurso protegido conhecido""."
+Essas configurações são necessárias se o diretório LDAP 'personalizado' for usado
+Aplicativos de terceiros
+Esta moeda está desativada. Habilitar para uso em transações
+Este Quadro Kanban será privado
+Este mês
+Este trimestre
+Esta semana
+Este ano
+Esta ação é irreversível. Deseja continuar?
+Esta ação só é permitida para {}
+Isso não pode ser desfeito
+Este doctype não tem campos órfãos para cortar
+Este doctype tem migrações pendentes
+"Este documento não pode ser excluído agora, pois está sendo modificado por outro usuário. Por favor, tente novamente depois de algum tempo."
+Este documento foi modificado após o envio do e-mail.
+Este documento contém alterações não salvas que podem não aparecer no PDF final. <br> Considere salvar o documento antes de imprimir.
+Este documento já foi alterado
+"Este documento está atualmente bloqueado e enfileirado para execução. Por favor, tente novamente depois de algum tempo."
+Este e-mail é gerado automaticamente
+"Esse recurso não pode ser usado, pois as dependências estão ausentes.|||				Entre em contato com o gerente do sistema para habilitar isso instalando o pycups!"
+Esse recurso é novo e ainda experimental
+Este campo aparecerá somente se o nome do campo definido aqui tiver valor OU se as regras forem verdadeiras (exemplos):|||meu campo|||eval:doc.myfield=='Meu valor'|||eval:doc.age&gt;18
+Esse arquivo é anexado a um documento protegido e não pode ser excluído.
+Este arquivo é público e pode ser acessado por qualquer pessoa
+Este arquivo é público. Ele pode ser acessado sem autenticação.
+Este formulário foi modificado depois de carregá-lo
+Este formulário não é editável devido a um fluxo de trabalho.
+Este provedor de geolocalização ainda não é suportado.
+Isso vai acima da apresentação de slides.
+Este é um relatório de fundo. Defina os filtros apropriados e gere um novo.
+Esta é uma das 10 principais senhas comuns.
+Esta é uma das 100 principais senhas comuns.
+Esta é uma senha muito comum.
+Este é um doctype virtual e os dados são limpos periodicamente.
+Esta é uma resposta gerada automaticamente
+Isso é semelhante a uma senha comumente usada.
+Este link já foi ativado para verificação.
+Este link é inválido ou expirou. Certifique-se de ter colado corretamente.
+Isso pode ser impresso em várias páginas
+Este mês
+Este relatório contém {0} linhas e é muito grande para ser exibido no navegador
+Este relatório foi gerado em {0}
+Este relatório foi gerado {0}.
+Esta solicitação ainda não foi aprovada pelo usuário.
+Este site está no modo somente leitura
+Este site está sendo executado no modo de desenvolvedor. Qualquer alteração feita aqui será atualizada no código.
+Este software é construído em cima de muitos pacotes de código aberto.
+"Este título será usado como o título da página da web, bem como em meta tags"
+Esse valor é obtido no campo {1} do {0}
+Esse valor especifica o número máximo de linhas que podem ser renderizadas no modo de exibição de relatório. 
+Isso será gerado automaticamente quando você publicar a página
+Isso fará logout {0} de todos os outros dispositivos
+Isso removerá permanentemente seus dados.
+Isso redefinirá este tour e o mostrará a todos os usuários. Tem certeza?
+Isso encerrará o trabalho imediatamente e pode ser perigoso
+Estrangulado
+URL da miniatura
+Quinta-feira
+Hora
+Intervalo de tempo
+Tempo gasto
+Janela de tempo (segundos)
+Fuso horário
+Tempo em consultas
+A série temporal baseada em é necessária para criar um gráfico de painel
+O {0} de horário deve estar no formato: {1}
+Tempo limite esgotado
+Noite atemporal
+Linha do tempo
+Linha do tempo DocType
+Campo Linha do tempo
+Nome da linha do tempo
+O campo Linha do tempo deve ser um Link ou Link Dinâmico
+O campo Linha do tempo deve ser um nome de campo válido
+Timeout
+Tempo limite (em segundos)
+Séries temporais
+Período de tempo
+Timestamp
+Dica: Experimente o novo console suspenso usando
+Tipo
+Tipo de regime
+Tipo do item
+O campo de título deve ser um nome de campo válido
+Título da página
+O que fazer
+Para adicionar assunto dinâmico
+Para adicionar assunto dinâmico
+Para adicionar valores dinâmicos do documento
+"Para permitir mais relatórios, atualize o limite nas Configurações do sistema."
+Para iniciar o intervalo de datas no início do período escolhido. Por exemplo
+Para configurar a Repetição automática
+"Para habilitá-lo, siga as instruções no link a seguir: {0}"
+Para habilitar scripts de servidor
+Para exportar esta etapa como JSON
+"Para gerar senha, clique em {0}"
+Para obter o relatório atualizado
+Para saber mais clique {0}
+"Para imprimir a saída, use <code>print(texto)</code>"
+Para definir a função {0} no {1} do usuário
+Para usar o Google Agenda
+Para usar os Contatos do Google
+Para usar a indexação do Google
+Para usar o canal do Slack
+Versão para
+Tarefas
+Hoje
+Alternar gráfico
+Alternar largura total
+Alternar visualização em grade
+Alternar barra lateral
+Alternar tema
+Token Cache
+Método de autenticação de ponto de extremidade de token
+Tipo de token
+Token URI
+O token está ausente
+Amanhã
+Muitos documentos
+Muitos pedidos
+Muitas alterações no banco de dados em uma única ação.
+"Muitos trabalhos em segundo plano enfileirados ({0}). Por favor, tente novamente depois de algum tempo."
+Muitos usuários se inscreveram recentemente
+10 melhores
+Item da barra superior
+Centro superior
+Principais erros
+Canto superior esquerdo
+Canto superior direito
+Total
+Total de trabalhadores em segundo plano
+Total de erros (último 1 dia)
+Total de imagens
+Total de e-mails enviados
+Total de usuários
+Tempo total de trabalho
+Total da medição
+Total da medição anterior
+Total de compensações
+Total de dias uteis realizados
+Total de horas extras (Sáb. e dias úteis)
+Total de horas normais (Dias úteis) 
+Total horas extras 100% (Dom. e feriados)
+Total de horas normais desc. e acrés.
+Número total de e-mails a serem sincronizados no processo de sincronização inicial 
+Total:
+Linha de Totais
+ID de rastreamento
+Rastreamento
+Acompanhe o status do e-mail
+Etapas de rastreamento
+Acompanhe se o seu e-mail foi aberto pelo destinatário.|||<br>|||Observação: se você estiver enviando para vários destinatários
+Acompanhe marcos para qualquer documento
+URL de rastreamento gerada e copiada para a área de transferência
+Hash de transação
+Log de transações
+Relatório de Log de Transações
+Propriedades de transição
+Traduzir dados
+Traduzir campos de link
+Traduzir valores
+Traduzir {0}
+Tradução
+Traduções
+Lixo
+Visualização em árvore
+O modo de exibição de árvore não está disponível para {0}
+Acionar ação primária
+Cache de gatilho
+"Gatilho em métodos válidos como ""before_insert"""
+Tabela de acabamento
+Tentar novamente
+Experimente uma série de nomenclatura
+Experimente o novo Designer de Impressão
+Tente evitar palavras e caracteres repetidos
+Tente usar um padrão de teclado mais longo com mais voltas
+Terça-feira
+Digite uma resposta / comentário
+Digite algo na caixa de pesquisa para pesquisar
+Digite o título
+Digite sua resposta aqui...
+Tipo:
+Término previsto dos serviços
+Término serviços conf. contrato
+UF
+Tour pela interface do usuário
+UID
+UIDNEXT
+UIDVALIDADE
+URIs para receber o código de autorização assim que o usuário permitir o acesso
+URL
+O URL deve começar com http:// ou https://
+URL de uma página legível com informações que os desenvolvedores podem precisar.
+URL de uma página da web que fornece informações sobre o cliente.
+URL da página legível por humanos com informações sobre os termos de serviço do recurso protegido.
+URL da página legível por humanos com informações sobre os requisitos sobre como o cliente pode usar os dados.
+URL da página
+URL que aponta para um documento de política legível para o cliente. Deve ser mostrado ao usuário final antes de autorizar.
+URL que aponta para um documento de termos de serviço legível para o cliente. Deve ser mostrado ao usuário final antes de autorizar.
+URL que faz referência a um logotipo para o cliente.
+URL para acessar ao clicar na imagem da apresentação de slides
+Campanha UTM
+UTM Médio
+Fonte UTM
+UUID
+Deixar de seguir o documento {0}
+Não é possível localizar o DocType {0}
+Não é possível carregar a câmera.
+Não é possível carregar: {0}
+Não é possível abrir o arquivo anexado. Você exportou como CSV?
+Não é possível ler o formato de arquivo para {0}
+Não é possível enviar e-mails devido a uma conta de e-mail ausente. Configure a conta de e-mail padrão em Configurações > conta de e-mail
+Não é possível atualizar o evento
+Não é possível gravar o formato de arquivo para {0}
+Exceção não detectada
+Inalterado
+Desfazer
+Desfazer a última ação
+Aspas sem escape no literal de cadeia de caracteres: {0}
+Deixar de seguir
+E-mail não tratado
+E-mails não tratados
+Unidade
+ID exclusivo atribuído pelo desenvolvedor do cliente usado para identificar o software cliente a ser registrado dinamicamente.|||<br>|||<b>Deve permanecer o mesmo</b> em várias versões ou atualizações do software.
+Unidade
+Coluna desconhecida: {0}
+Método de arredondamento desconhecido: {}
+Usuário desconhecido
+Codificação de arquivo desconhecida. Tentei usar: {0}
+Desbloquear documento de referência
+Cancelar publicação
+Consulta SQL não segura
+Desmarcar tudo
+Cancelar inscrição
+Cancelar assinatura Params
+Cancelamento da assinatura
+Função não suportada ou nome de campo inválido: {0}
+Coluna sem título
+Descompacte
+Arquivos {0} descompactados
+Descompactando arquivos...
+Próximos eventos de hoje
+Atualizar nomenclatura da emenda
+Atualizar ordem de resolução de ganchos
+Ordem de atualização
+Atualizar senha
+Contador de séries de atualização
+Atualizar traduções
+Atualização do Frappe Cloud
+Atualizar registros {0}
+Atualizado
+Atualizado com sucesso
+Atualizado para uma nova versão \u{1F389}
+Atualizado para uma nova versão 🎉
+Atualizado com sucesso
+Atualização
+Atualizando status da fila de e-mail. Os e-mails serão retirados na próxima execução programada.
+A atualização do contador pode levar a conflitos de nome de documento se não for feita corretamente
+Atualizando configurações globais
+Atualizando opções de série de nomenclatura
+Atualizando campos relacionados...
+Atualizando {0}
+Atualizando {0} de {1}
+Plano de atualização
+Atualize sua experiência de suporte com o Frappe Helpdesk
+Carregar
+Carregar imagem
+Carregar arquivo
+Carregar arquivos {0}
+Use % para qualquer valor não vazio.
+Usar o primeiro dia da menstruação
+Usar HTML
+Usar formato de número da moeda
+Usar POST
+Usar STARTTLS
+Use algumas palavras
+Usar ID de e-mail diferente
+Use se as configurações padrão não detectarem seus dados corretamente
+O uso da função {0} no campo é restrito
+O uso de subconsulta ou função é restrito
+Usar o novo Construtor de Formato de Impressão
+Use esta opção
+OAuth usado
+O usuário '{0}' já tem a função '{1}'
+Usuário alterado
+Detalhes do usuário
+Permissões do tipo de documento do usuário
+Tipo de documento do usuário
+Limite de tipos de documentos do usuário excedido
+E-mail do usuário
+E-mails do usuário
+Grupo de usuários
+Membro do Grupo de Usuários
+Membros do grupo de usuários
+ID de usuário de um blogueiro
+Identificação de usuário
+Campo de ID do usuário
+O campo de ID do usuário é obrigatório no tipo de usuário {0}
+Menu do usuário
+Permissão do usuário
+Permissões de usuário
+As permissões de usuário são usadas para limitar os usuários a registros específicos.
+Permissões de usuário criadas com sucesso
+Perfil do usuário
+Função de usuário
+Perfil de função do usuário
+Tipo de documento selecionado pelo usuário
+Configurações do usuário
+Login social do usuário
+Tipo de usuário
+Módulo de tipo de usuário
+O usuário pode fazer login usando ID de e-mail ou número de celular
+O usuário pode fazer login usando ID de e-mail ou nome de usuário
+O usuário não existe.
+O usuário não tem permissão para criar o novo {0}
+O usuário é obrigatório para o compartilhamento
+A permissão do usuário já existe
+Usuário com endereço de e-mail {0} não existe
+Usuário com e-mail: {0} não existe no sistema. Peça ao 'Administrador do Sistema' para criar o usuário para você.
+Os {0} do usuário não podem ser excluídos
+O {0} do usuário não pode ser desativado
+O {0} de usuário não pode ser renomeado
+Usuário {0} não tem acesso a este documento
+O usuário {0} não tem acesso ao doctype por meio da permissão de função para {1} de documentos
+O usuário {0} não tem permissão para criar um espaço de trabalho.
+Usuário {0} solicitou a exclusão de dados
+O usuário {0} representado como {1}
+O {0} do usuário está desabilitado. Entre em contato com o gerente do sistema.
+O usuário {0} não tem permissão para acessar este documento.
+URI de informações do usuário
+Nome de usuário
+Nome de usuário {0} já existe
+Usuários
+Os usuários só podem excluir arquivos anexados se o documento estiver em rascunho ou se o documento for cancelado e também podem excluir o documento.
+Usuários com {0} de função:
+Usa o tema do sistema para alternar entre o modo claro e escuro
+O uso desse console pode permitir que invasores se passem por você e roubem suas informações. Não insira ou cole código que você não entende.
+Utilização
+% de utilização
+Uuid
+É necessário um ID de login válido.
+E-mail e nome válidos necessários
+Validar configurações de e-mail do Frappe
+Validar certificado SSL
+Erro de validação
+Bravura
+Valor Total Vigente
+Valor calculado
+Valor do contrato
+Valor do fator de pagamento
+Valor do reajuste
+Valor medido
+Valor medição com REIDI
+Valor mensal
+Valor para o período
+Valor por hora
+Valor total
+Valor total acumulado
+Valor total acumulado anterior
+Valor total da nota fiscal
+Valor total do contrato
+Valor total do pedido
+Valor total medido
+Valor total mensal
+Valor total vigente
+Valor total vigente com desconto de FTD
+Valor unitário
+Valor unitário vigente*
+Mudança de valor
+O valor não pode ser alterado para {0}
+O valor não pode ser negativo para
+O valor não pode ser negativo para {0}: {1}
+O valor de um campo de verificação pode ser 0 ou 1
+O valor do campo {0} é muito longo em {1}. O comprimento deve ser menor que {2} caracteres
+O valor para {0} não pode ser uma lista
+O valor deste campo será definido como a data de vencimento no ToDo
+O valor deve ser um dos {0}
+"O valor de ""Nenhum"" implica um cliente público. Nesse caso, o segredo do cliente não é fornecido ao cliente e a troca de tokens usa o PKCE."
+Valor muito grande
+Valor {0} faltando para {1}
+O valor {0} deve estar no formato de duração válido: d h m s
+O valor {0} deve estar no formato {1}
+Verdana
+Verificação
+Código de verificação
+Link de verificação
+E-mail com código de verificação não enviado. Entre em contato com o administrador.
+O código de verificação foi enviado para o seu endereço de e-mail registrado.
+Verifique a codificação do Kartado
+Verificar
+Verificar senha
+Verificar...
+Versão
+Versão atualizada
+Vertical
+Via
+Ver tudo
+Exibir trilha de auditoria
+Ver postagem do blog
+Ver comentário
+Exibir permissões do Doctype
+Ver arquivo
+Ver Registro Completo
+Ver lista
+Exibir registro
+Ver documentos permitidos
+Switcher de visualização
+Ver site
+Ver documento
+Exibir relatório em seu navegador
+Veja isso no seu navegador
+Veja sua resposta
+Ver {0}
+Virtual
+O DocType virtual {} requer um método estático chamado {} found {}
+O Virtual DocType {} requer a substituição de um método de instância chamado {} found {}
+Visibilidade
+Visível para usuários do site/portal.
+Visite a página da web
+ID do visitante
+Volume final (Qtd.)
+Volume inicial (Qtd.)
+Quer discutir?
+Aviso: PERDA DE DADOS IMINENTE! O processo excluirá permanentemente as seguintes colunas de banco de dados do doctype {0}:
+Aviso: A nomenclatura não está definida
+Aviso: Não é possível encontrar {0} em nenhuma tabela relacionada ao {1}
+Aviso: A atualização do contador pode levar a conflitos de nome de documento se não for feita corretamente
+Esse artigo foi útil?
+Assista ao tutorial
+Assista ao vídeo
+Não permitimos a edição deste documento. Basta clicar no botão Editar na página do espaço de trabalho para tornar seu espaço de trabalho editável e personalizá-lo como desejar
+Recebemos uma solicitação de exclusão de {0} dados associados a: {1}
+Recebemos uma solicitação sua para baixar seus dados {0} associados a: {1}
+Gostaríamos de agradecer aos autores desses pacotes por sua contribuição.
+Recebemos sua consulta!
+Fraco
+Formulário Web
+Campo de formulário da Web
+Coluna Lista de Formulários da Web
+Página web
+Bloco de página da Web
+URL da página da Web
+Visualização de página da Web
+Modelo da Web
+Campo de modelo da Web
+Valores de modelo da Web
+O modelo da Web não é especificado
+Visualização da Web
+Gancho da Web
+Dados do webhook
+Cabeçalho do Webhook
+Cabeçalhos de webhook
+Solicitação de webhook
+Registro de solicitação de webhook
+Segredo do Webhook
+Segurança do webhook
+Gatilho de webhook
+Webhook URL
+Análise do site
+Meta tag do site
+Meta de rota do site
+Redirecionamento de rota do site
+Script do site
+Campo de pesquisa do site
+O campo de pesquisa do site deve ser um nome de campo válido
+Configurações do site
+Barra lateral do site
+Item da barra lateral do site
+Apresentação de slides do site
+Item de apresentação de slides do site
+Tema do site
+Tema do site Ignorar aplicativo
+Link da imagem do tema do site
+Soquete de teia
+Quarta-feira
+Semana
+Bem-vindo
+Modelo de e-mail de boas-vindas
+URL de boas-vindas
+E-mail de boas-vindas enviado
+Quais as novas
+"Quando ativado, isso permitirá que os convidados carreguem arquivos para seu aplicativo"
+Ao enviar documentos por e-mail
+Ao fazer upload de arquivos
+Quando você altera um documento após Cancelar e o salva
+Para qual visualização do DocType associado esse atalho deve levá-lo?
+Largura
+As larguras podem ser definidas em px ou %.
+Filtro curinga
+"Adicionará ""%"" antes e depois da consulta"
+Será usado em url (geralmente primeiro nome).
+Será o seu ID de login
+Só será mostrado se os títulos de seção estiverem ativados
+Executará trabalhos agendados apenas uma vez por dia para sites inativos. Defina-o como 0 para evitar a desativação automática do agendador.
+Com cabeça de carta
+Função de trabalho
+Configuração de função de trabalho kartado
+Informações do trabalhador
+Nome do trabalhador
+Fluxo de trabalho
+Ação de fluxo de trabalho
+Mestre de ações de fluxo de trabalho
+Função permitida de ação de fluxo de trabalho
+Construtor de fluxo de trabalho
+ID do Construtor de Fluxo de Trabalho
+"O Construtor de Fluxo de Trabalho permite que você crie fluxos de trabalho visualmente. Você pode arrastar e soltar estados e vinculá-los para criar transições. Além disso, você pode atualizar suas propriedades na barra lateral."
+Dados de fluxo de trabalho
+Detalhes do fluxo de trabalho
+Estado do documento de fluxo de trabalho
+Estado do fluxo de trabalho
+Campo de estado do fluxo de trabalho
+Estado do fluxo de trabalho não definido
+Transição de estado do fluxo de trabalho não permitida de {0} para {1}
+Os estados do fluxo de trabalho não existem
+Status do fluxo de trabalho
+Transição de fluxo de trabalho
+O estado do fluxo de trabalho representa o estado atual de um documento.
+Fluxo de trabalho atualizado com êxito
+Área de trabalho
+Área de trabalho <b>{0}</b> não existe
+Gráfico da área de trabalho
+Bloco personalizado do espaço de trabalho
+Link do espaço de trabalho
+Gerenciador de espaço de trabalho
+Cartão de Número do Espaço de Trabalho
+Lista rápida do espaço de trabalho
+Configurações do espaço de trabalho
+Configuração do espaço de trabalho concluída
+Atalho do espaço de trabalho
+Visibilidade do espaço de trabalho
+Área de trabalho {0} criada
+Espaços de trabalho
+Gostaria de publicar este comentário? Isso significa que ele se tornará visível para os usuários do site/portal.
+Gostaria de cancelar a publicação deste comentário? Isso significa que ele não estará mais visível para os usuários do site/portal.
+Valor Fetch From incorreto
+Campo do eixo X
+XLSX
+Campos do eixo Y
+Campo Y
+Yahoo Mail
+Yandex.Mail
+Amarelo
+Ontem
+Você
+Você gostou
+Você está conectado à internet.
+Você está se passando por outro usuário.
+Você não tem permissão para acessar este recurso
+Você não tem permissão para acessar esse registro {0} porque ele está vinculado a {1} '{2}' no campo {3}
+Você não tem permissão para acessar esse registro {0} porque ele está vinculado a {1} '{2}' na linha {3}
+Você não tem permissão para criar colunas
+Não é permitido eliminar o Relatório standard
+Você não tem permissão para excluir um Tema de Site padrão
+Você não tem permissão para editar o relatório.
+Você não tem permissão para exportar {} doctype
+Você não tem permissão para imprimir este relatório
+Você não tem permissão para enviar e-mails relacionados a este documento
+Você não tem permissão para atualizar este documento de formulário da Web
+Você não está conectado à Internet. Tente novamente depois de algum tempo.
+Você não tem permissão para acessar esta página sem fazer login.
+Você não tem permissão para acessar esta página.
+Você não tem permissão para acessar este recurso. Faça login para acessar
+Agora você está seguindo este documento. Você receberá atualizações diárias por e-mail. Você pode alterar isso em Configurações do usuário.
+Você só tem permissão para atualizar o pedido
+Você está selecionando Opção de sincronização como ALL
+Você anexou {0}
+Você pode adicionar propriedades dinâmicas do documento usando modelos Jinja.
+Você também pode acessar variáveis wkhtmltopdf (válidas apenas na impressão em PDF):
+Você também pode copiar e colar o link a seguir em seu navegador
+Você também pode copiar e colar isso 
+Você também pode copiar e colar este {0} no seu navegador
+"Você pode alterar os documentos enviados cancelando-os e, em seguida,"
+Você pode alterar a política de retenção de {0}.
+Você pode continuar com a integração depois de explorar esta página
+Você pode desativar esse {0} em vez de excluí-lo.
+Você pode aumentar o limite nas Configurações do sistema.
+Você pode remover manualmente o bloqueio se achar que é seguro: {}
+Você só pode inserir imagens em campos Markdown
+Você só pode imprimir até {0} documentos por vez
+Você só pode definir os 3 doctypes personalizados na tabela Tipos de Documento.
+Você só pode fazer upload de JPG
+Você só pode fazer upload de até 5000 registros de uma só vez. (pode ser menor em alguns casos)
+Você pode selecionar um dos seguintes
+Você pode definir um valor alto aqui se vários usuários fizerem login na mesma rede.
+Você pode tentar alterar os filtros do seu relatório.
+Você pode usar Personalizar formulário para definir níveis nos campos.
+Você pode usar % curinga
+Você não pode definir 'Opções' para o campo {0}
+"Não é possível definir ""Translatable"" para o campo {0}"
+Você cancelou este documento
+Você cancelou este documento {1}
+Não é possível criar um gráfico de painel a partir de DocTypes únicos
+"Não é possível desativar a opção ""Somente leitura"" para o campo {0}"
+Você alterou o valor de {0}
+Você alterou o valor de {0} {1}
+Você alterou os valores para {0}
+Você alterou os valores para {0} {1}
+Você mudou {0} para {1}
+Você criou este
+Você criou este documento {0}
+Você não tem permissões de leitura ou seleção para {}
+Você não tem permissões suficientes para acessar esse recurso. Entre em contato com seu gerente para obter acesso.
+Você não tem permissões suficientes para concluir a ação
+Você não tem permissão para acessar o campo: {0}
+Você não tem permissão para acessar {0}: {1}.
+Você não tem permissões para cancelar todos os documentos vinculados.
+Você não tem acesso a Denunciar: {0}
+Você não tem permissão para acessar o {0} DocType.
+Você não tem permissão para acessar este arquivo
+Você não tem permissão para receber um relatório sobre: {0}
+Você não tem permissões para acessar este documento
+Você tem uma nova mensagem de: 
+Você foi desconectado com sucesso
+Você atingiu o limite de tamanho de linha na tabela do banco de dados: {0}
+Você não inseriu um valor. O campo será definido como vazio.
+Você recebeu uma ❤️ curtida em sua postagem no blog
+Você deve habilitar a autenticação de dois fatores nas configurações do sistema.
+"Você tem alterações não salvas neste formulário. Por favor, salve antes de continuar."
+Você tem notificações não vistas
+Você não viu {0}
+Você ainda não adicionou gráficos de painel ou cartões numéricos.
+Você ainda não criou um {0}
+"Você atingiu o limite de taxa por causa de muitas solicitações. Por favor, tente depois de algum tempo."
+Você editou isso pela última vez
+Você deve adicionar pelo menos um link.
+Você deve estar logado para usar este formulário.
+Você deve fazer o login para enviar este formulário
+Você precisa da permissão '{0}' no {1} {2} para executar esta ação.
+Você precisa ser o Gerente do Espaço de Trabalho para excluir um espaço de trabalho público.
+Você precisa ser o Gerente do Espaço de Trabalho para editar este documento
+Você precisa ser um usuário do sistema para acessar esta página.
+Você precisa estar no modo de desenvolvedor para editar um formulário da Web padrão
+Você precisa estar conectado e ter a função de gerente do sistema para poder acessar os backups.
+Você precisa estar logado para acessar esta página
+Você precisa estar logado para acessar este {0}.
+Você precisa criar estes primeiro: 
+Você precisa habilitar o JavaScript para que seu aplicativo funcione.
+"Você precisa ter a permissão ""Compartilhar"""
+Você precisa instalar o pycups para usar esse recurso!
+Você precisa selecionar os índices que deseja adicionar primeiro.
+Você precisa definir uma pasta IMAP para {0}
+Você precisa de permissão de gravação no {0} {1} para mesclar
+Você precisa de permissão de gravação no {0} {1} para renomear
+Você precisa de {0} permissão para buscar valores de {1} {2}
+Você removeu o anexo {0}
+Você parece pronto para ir!
+Você parece ter escrito seu nome em vez de seu e-mail. Insira um endereço de e-mail válido para que possamos responder.
+Você selecionou Rascunho ou Documentos cancelados
+Você enviou este documento
+Você enviou este documento {0}
+Você deixou de seguir este documento
+Você viu isso
+Você fez login como outro usuário em outra guia. Atualize esta página para continuar usando o sistema.
+Seu arquivo CSV está sendo gerado e aparecerá na seção Anexos quando estiver pronto. Adicionalmente
+Seu país
+Seu idioma
+Seu nome
+Seu PDF está pronto para download
+Seus atalhos
+Sua conta foi excluída
+Sua conta foi bloqueada e será retomada após {0} segundos
+Sua tarefa no {0} {1} foi removida por {2}
+Seu navegador não suporta o elemento de áudio.
+Seu navegador não suporta o elemento de vídeo.
+Sua solicitação de conexão com o Google Agenda foi aceita com sucesso
+Seu endereço de e-mail
+Seu formulário foi atualizado com sucesso
+Seu ID de login é
+Sua nova senha foi definida com sucesso.
+Sua senha antiga está incorreta.
+O nome e o endereço da sua organização para o rodapé do email.
+Sua consulta foi recebida. Responderemos em breve. Se você tiver alguma informação adicional
+Sua sessão expirou
+Seu site está em manutenção ou sendo atualizado.
+Seu código de verificação é {0}
+Zero
+[Ação tomada por {0}]
+\u2190 Voltar para fazer upload de arquivos
+_doctype
+'as_iterator' só funciona com 'as_list=True' ou 'as_dict=True'
+O parâmetro 'job_id' é necessário para a desduplicação.
+Adicionado
+Adicionadas linhas para {0}
+ajustar
+after_insert
+alinhar centro
+alinhar-justificar
+alinhar à esquerda
+alinhar à direita
+emendar
+seta para baixo
+seta para a esquerda
+seta para a direita
+seta para cima
+ascendente
+asterisco
+para trás
+círculo de proibição
+código de barras
+sino
+ousado
+livro
+Indicador
+pasta
+megafone
+por função
+Saída cProfile
+calendário
+câmera
+Cancelar
+Cancelado
+certificado
+verificar
+chevron-down
+chevron-esquerda
+divisa à direita
+chevron-up
+círculo seta para baixo
+seta circular para a esquerda
+seta circular para a direita
+círculo seta para cima
+claro
+engrenagem
+comentário
+Comentou
+criar
+Teste de tipo de documento personalizado
+ciano
+d
+cinza escuro
+painel
+dados
+dia
+dd-mm-aaaa
+dd.mm.aaaa
+inadimplência
+diferido
+excluir
+descendente
+Descrição
+Tipo de documento...
+baixar
+baixar-alt
+"por exemplo, ""Suporte"""
+"por exemplo, (55 + 434) / 4 ou = Math.sin (Math.PI / 2) ..."
+"por exemplo, replies@yourcomany.com. Todas as respostas chegarão a esta caixa de entrada."
+por exemplo:
+editar
+ejetar
+Emacs
+Email
+Caixa de entrada de e-mail
+vazio
+Sistema de entidades
+envelope
+sinal de exclamação
+exportação
+olho fechado
+olhos abertos
+Linkedin
+facetime-vídeo
+Falhou
+fairlogin
+rápido para trás
+avanço rápido
+arquivo
+filme
+filtro
+terminado
+Fogo
+bandeira
+fechamento de pasta
+abertura de pasta
+fonte
+encaminhar
+em tela cheia
+presente
+vidro
+globo
+cinza
+cinza
+gzip não encontrado no PATH! Isso é necessário para fazer um backup.
+h
+mão para baixo
+mão-esquerda
+mão-direita
+mão para cima
+disco rígido
+auscultadores
+coração
+unidade de legenda do mapa de calor
+aqui
+Casa
+hub
+importação
+Caixa de entrada
+recuo-esquerda
+recuo-direito
+sinal informativo
+Invertido
+itálico
+item_name
+jane@example.com
+agora mesmo
+etiqueta
+folha
+comprimento
+azul claro
+link
+linkedin
+lista
+lista-alt
+fechadura
+Conectado
+login_required
+Longas
+m
+ímã
+marcador de mapa
+consertar
+mesclado {0} em {1}
+min de leitura
+menos
+sinal de menos
+mm-dd-aaaa
+Nome do módulo...
+mover
+mstart
+música
+Novo tipo de documento
+Nonce
+nenhum
+Notificado
+de
+desligado
+okey
+círculo ok
+sinal de ok
+old_parent
+on_cancel
+on_submit
+on_trash
+on_update
+on_update_after_submit
+pausa
+lápis
+imagem
+rosa
+planície
+avião
+brincar
+círculo de jogo
+mais
+sinal de mais
+construtor de formato de impressão beta
+lista de processos
+qrcode
+sinal de interrogação
+Enfileirado
+aleatório
+ler
+atualizar
+retirar
+remover círculo
+remover sinal
+Removido
+linhas removidas para {0}
+repetir
+relatório
+redimensionar completo
+redimensionar horizontal
+redimensionar pequeno
+redimensionar vertical
+restaurado {0} como {1}
+retuíte
+caminho
+s
+S256
+marcado
+captura de tela
+procurar
+selecionar
+compartilhamento-alt
+carrinho de compras
+curto
+sinal
+desde o mês passado
+desde a semana passada
+desde o ano passado
+derramar
+estrela
+Estrela-Vazio
+Começou
+Iniciando a configuração...
+retrocesso
+passo à frente
+parar
+String
+String
+String
+Enviar
+etiqueta
+nome da tag ...
+Tags
+Tarefas
+teste curva s
+texto no tipo de documento
+altura do texto
+largura do texto
+ésimo
+th-grande
+lista
+espessura
+Este formulário
+isso não deveria quebrar
+polegares para baixo
+polegares para cima
+Hora
+tonalidade
+lixo
+gorjeio
+Atualizado para {0}
+carregar
+Usar % como curinga
+utilizador
+version_table
+via Regra de Atribuição
+via repetição automática
+via Importação de Dados
+via Google Meet
+via Notificação
+via {0}
+vim
+diminuir o volume
+Desligar volume
+Aumentar o volume
+vscode
+deseja acessar os seguintes detalhes da sua conta
+sinal de aviso
+"Quando clicado no elemento, ele focará o popover, se presente."
+Largura
+wkhtmltopdf
+wkhtmltopdf 0.12.x (com qt corrigido).
+chave
+escrever
+Aumentar o zoom
+Diminuir o zoom
+{0}
+"{0} ${skip_list ? """" : tipo}"
+{0} ${tipo}
+{0} ({1})
+{0} ({1}) (1 linha obrigatória)
+{0} ({1}) - {2}%
+{0} = {1}
+{0} Gráfico
+{0} Painel
+{0} Eventos do Google Agenda sincronizados.
+{0} Contatos do Google sincronizados.
+{0} gostei
+Lista {0}
+{0} Mapa
+{0} Nome
+{0} Não é permitido alterar {1} após o envio de {2} para {3}
+Relatório {0}
+{0} Relatórios
+Configurações {0}
+{0} Árvore
+{0} exibições de página da Web
+{0} área de trabalho
+{0} adicionado
+{0} já existe. Selecione outro nome
+{0} já cancelou a assinatura
+{0} já cancelou a assinatura do {1} {2}
+{0} estão atualmente {1}
+{0} são necessários
+{0} atribuída uma nova tarefa {1} {2} a você
+{0} atribuído {1}: {2}
+{0} anexado {1}
+{0} não pode ser mais do que {1}
+{0} cancelou este documento
+{0} cancelou este documento {1}
+{0} não pode ser alterada porque não foi cancelada. Cancele o documento antes de criar uma alteração.
+{0} não pode ser ocultado e obrigatório sem nenhum valor padrão
+{0} alterou o valor de {1}
+{0} alterou o valor de {1} {2}
+{0} alterou os valores para {1}
+{0} alterou os valores para {1} {2}
+{0} mudou {1} para {2}
+{0} contém uma expressão Fetch From inválida
+{0} criou isso
+{0} criou este documento {1}
+{0} d
+{0} não existe na linha {1}
+{0} campo não pode ser definido como exclusivo em {1}
+{0} campos não podem conter acentos graves ('): {1}
+{0} formato não pôde ser determinado a partir dos valores nesta coluna. O padrão é {1}.
+{0} de {1} a {2}
+{0} de {1} a {2} na linha #{3}
+{0} h
+{0} já atribuiu valor padrão para {1}.
+{0} deixou a conversa em {1} {2}
+{0} se você não for redirecionado em {1} segundos
+{0} na linha {1} não pode ter URL e itens filho
+{0} não é um arquivo zip válido
+{0} é um campo de dados inválido.
+"{0} é um endereço de e-mail inválido em ""Destinatários"""
+{0} está entre {1} e {2}
+{0} está atualmente {1}
+{0} é igual a {1}
+{0} é maior ou igual a {1}
+{0} é maior que {1}
+{0} é menor ou igual a {1}
+{0} é menor que {1}
+{0} é como {1}
+{0} não é uma tabela filha de {1}
+{0} não é um campo de doctype {1}
+{0} não é um formato de impressão bruto.
+{0} não é um calendário válido. Redirecionando para o calendário padrão.
+{0} não é uma expressão Cron válida.
+{0} não é um DocType válido para o Dynamic Link
+{0} não é um endereço de e-mail válido
+{0} não é um código ISO 3166 ALPHA-2 válido.
+{0} não é um Nome válido
+{0} não é um DocType pai válido para {1}
+{0} não é um campo pai válido para {1}
+{0} não é um arquivo zip
+{0} não é igual a {1}
+{0} não é como {1}
+{0} não é um dos {1}
+{0} não está definido
+{0} agora é o formato de impressão padrão para {1} doctype
+{0} é um dos {1}
+{0} está definido
+{0} está dentro {1}
+{0} apenas personificado como você. Eles deram este motivo: {1}
+{0} editei isso pela última vez
+{0} conectado
+{0} desconectado: {1}
+{0} m
+{0} deve começar com '{1}'
+{0} deve ser igual a '{1}'
+{0} não deve ser nenhum de {1}
+{0} deve ser {1} {2}
+{0} deve começar e terminar com uma letra e só pode conter letras
+{0} de {1} ({2} fileiras com crianças)
+{0} apenas.
+{0} registros não são excluídos automaticamente.
+{0} registros são retidos por {1} dias.
+{0} removido o acessório {1}
+{0} removeram sua atribuição.
+{0} função não tem permissão em nenhum doctype
+{0} linha #{1}: 
+{0} auto-atribuído esta tarefa: {1}
+{0} compartilhou um documento {1} {2} com você
+{0} compartilhei este documento com todos
+{0} deve ser indexado porque é referenciado em conexões de painel
+{0} não deve ser o mesmo que {1}
+{0} enviou este documento
+{0} apresentou este documento {1}
+{0} assinantes adicionados
+{0} parar de receber e-mails desse tipo
+{0} para {1}
+{0} cancelou o compartilhamento deste documento com {1}
+{0} atualizado
+{0} valores selecionados
+{0} vi isso
+{0} w
+{0} você
+{0} {1} adicionado ao Dashboard {2}
+"{0} {1} não pode ser ""{2}"". Deve ser um dos ""{3}"""
+"{0} {1} não pode ser um nó folha, pois tem filhos"
+{0} {1} não existe
+{0} {1} está vinculada aos seguintes documentos enviados: {2}
+{0}
+"{0}/{1} completo | Por favor, deixe esta guia aberta até a conclusão."
+{0}: '{1}' ({3}) será truncado
+{0}: Não é possível definir Atribuir Alteração se não for Submetível
+{0}: Não é possível definir Atribuir envio se não for Submittable
+{0}: Não é possível definir Importar sem Criar
+{0}: Não é possível definir Enviar
+"{0}: Não é possível definir a importação, pois {1} não é importável"
+{0}: Falha ao anexar novo documento recorrente. Para habilitar a anexação de documento no e-mail de notificação de repetição automática
+{0}: O campo {1} na linha {2} não pode ser ocultado e obrigatório sem padrão
+{0}: O {1} de campo do tipo {2} não pode ser obrigatório
+{0}: O nome do campo {1} aparece várias vezes nas linhas {2}
+{0}: O tipo de campo {1} para {2} não pode ser exclusivo
+{0}: Nenhuma permissão básica definida
+{0}: Apenas uma regra permitida com a mesma função
+{0}: As opções devem ser um DocType válido para o campo {1} na linha {2}
+{0}: Opções necessárias para o {1} de campo do tipo Link ou Tabela na linha {2}
+{0}: As opções {1} devem ser iguais ao nome do doctype {2} para o campo {3}
+{0}: Outras regras de permissão também podem ser aplicadas
+{0}: A permissão no nível 0 deve ser definida antes que os níveis mais altos sejam definidos
+"{0}: Você pode aumentar o limite do campo, se necessário, por meio de {1}"
+{0}: fieldname não pode ser definido como palavra-chave reservada {1}
+{0}: {1}
+{0}: {1} está definido para indicar {2}
+{0}: {1} vs {2}
+{0}:O {1} de tipo de campo para {2} não pode ser indexado
+{1} salvo
+{count} célula copiada
+{count} células copiadas
+{count} linha selecionada
+{count} linhas selecionadas
+{{{0}}} não é um padrão de nome de campo válido. Deveria ser {{field_name}}.
+{} Código python inválido na linha {}
+{} Código python possivelmente inválido. <br>{}
+{} não suporta limpeza automatizada de logs.
+{} não pode estar vazio.
+{} foi desabilitado. Ele só pode ser ativado se {} estiver marcado.
+{} não é uma string de data válida.
+{} não encontrado em PATH! Isso é necessário para acessar o console.
+{} não encontrado em PATH! Isso é necessário para restaurar o banco de dados.
+{} não encontrado em PATH! Isso é necessário para fazer um backup.
+← Voltar para fazer upload de arquivos
+✏️ Editar fómula

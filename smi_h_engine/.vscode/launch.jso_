@@ -1,0 +1,50 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python: FastAPI Debug",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "uvicorn",
+			"args": [
+				"api_engine:app",
+				"--host",
+				"0.0.0.0",
+				"--port",
+				"8084",
+				"--reload"
+			],
+			"jinja": true,
+			"justMyCode": false,
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}"
+			},
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Python: Engine Exec",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${workspaceFolder}/engine_exec.py",
+			"console": "integratedTerminal",
+			"justMyCode": false,
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}"
+			},
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"name": "Python: Current File",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"justMyCode": false,
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}"
+			},
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Boletim de Medição</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            /* max-width: 90%; */
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .bulletin-info {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #ecf0f1;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .image-info {
+            padding: 20px;
+        }
+
+        .image-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .image-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #34495e;
+            min-width: 70px;
+        }
+
+        .detail-value {
+            color: #2c3e50;
+        }
+
+        .image-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.85em;
+            color: #95a5a6;
+        }
+
+        .coordinates {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+        }
+
+        .image-error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            background: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 15px;
+            }
+
+            .stat-card {
+                min-width: 120px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <img src="https://www.arteris.com.br/static/icons/arteris-logo.dc5c9168a8a3.svg" alt="Logo" class="logo">
+            </div>
+            <div id="bulletinInfo">
+                Carregando boletim...
+            </div>
+        </div>
+
+        <div id="loadingDiv" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando dados do boletim...</p>
+        </div>
+
+        <div id="errorDiv" class="error" style="display: none;"></div>
+
+        <div id="contentDiv" style="display: none;">
+            <div class="stats" id="statsDiv"></div>
+            <div class="image-grid" id="imageGrid"></div>
+        </div>
+
+        <div id="noDataDiv" class="no-data" style="display: none;">
+            <p>Não foram encontradas imagenas para este boletim de medição.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para extrair parâmetros da URL
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Função para formatar data
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Função para formatar coordenadas
+        function formatCoordinate(coord) {
+            return parseFloat(coord).toFixed(6);
+        }
+
+        // Função para mostrar erro
+        function showError(message) {
+            document.getElementById('loadingDiv').style.display = 'none';
+            document.getElementById('errorDiv').style.display = 'block';
+            document.getElementById('errorDiv').innerHTML = `
+                <h3>❌ Erro</h3>
+                <p>${message}</p>
+            `;
+        }
+
+        // Função para criar estatísticas - removida
+        // function createStats(data) { ... }
+
+        // Função para criar card de imagem
+        function createImageCard(item, index) {
+            const imageUrl = item['URL da imagem'];
+            const sentidoMap = {'0': 'Norte', '1': 'Sul', '2': 'Leste', '3': 'Oeste'};
+            const sentidoText = sentidoMap[item.Sentido] || `Sentido ${item.Sentido}`;
+            const altText = `Imagem ${index + 1}`.replace(/["']/g, '');
+
+            return `
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="${imageUrl}" alt="${altText}"/>
+                    </div>
+                    <div class="image-info">
+                        <div class="image-title">
+                            📍 ${item.Rodovia} - KM ${item['Km inicial']}
+                        </div>
+                        <div class="image-details">
+                            <div class="detail-item">
+                                <span class="detail-label">🛣️ Rodovia:</span>
+                                <span class="detail-value">${item.Rodovia}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">🧭 Sentido:</span>
+                                <span class="detail-value">${sentidoText}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">📏 KM Inicial:</span>
+                                <span class="detail-value">${item['Km inicial']}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">📏 KM Final:</span>
+                                <span class="detail-value">${item['Km final']}</span>
+                            </div>
+                        </div>
+                        <div class="image-meta">
+                            <div><strong>📅 Execução:</strong> ${formatDate(item['Data da execução'])}</div>
+                            <div><strong>🏷️ Código:</strong> ${item['Código do apontamento']}</div>
+                            <div class="coordinates">
+                                📍 ${formatCoordinate(item.Latitude)}, ${formatCoordinate(item.Longitude)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Função principal para carregar dados
+        async function loadData() {
+            try {
+                // Obter parâmetro do boletim da URL
+                const bulletinParam = getUrlParameter('measurement') || getUrlParameter('measurement') || 'default';
+                document.getElementById('bulletinInfo').innerHTML = `<h3>${bulletinParam}</h3>`;
+
+                // Carregar dados do método Frappe
+                const response = await fetch('/api/method/arteris_app.api.kartado.get_measurement_images_list?measurement=' + bulletinParam);
+                
+                // Se a API não existir, usar dados de exemplo
+                let data;
+                if (response.ok) {
+                    const result = await response.json();
+                    data = result.message || [];
+                }
+
+                // Esconder loading
+                document.getElementById('loadingDiv').style.display = 'none';
+
+                if (data && data.length > 0) {
+                    
+                    // Criar grid de imagens
+                    const imageGrid = document.getElementById('imageGrid');
+                    imageGrid.innerHTML = data.map((item, index) => createImageCard(item, index)).join('');
+                    
+                    // Mostrar conteúdo
+                    document.getElementById('contentDiv').style.display = 'block';
+                } else {
+                    document.getElementById('noDataDiv').style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                showError('Erro ao carregar os dados do boletim. Verifique a conexão e tente novamente.');
+            }
+        }
+
+        // Carregar dados quando a página carregar
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+    <div id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+        <span id="closeModal" style="position:absolute; top:30px; right:40px; color:white; font-size:2em; cursor:pointer;">&times;</span>
+        <img id="modalImg" src="" alt="Imagem ampliada" style="max-width:90vw; max-height:90vh; border-radius:20px; box-shadow:0 0 40px #000;">
+    </div>    
+</body>
+</html>

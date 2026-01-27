@@ -1,0 +1,9 @@
+http:
+  middlewares:
+    cookie-security:
+      plugin:
+        rewriteResponseHeaders:
+          rewrites:
+            - header: "Set-Cookie"
+              regex: "^(.*)$"
+              replacement: "$1; HttpOnly; Secure; SameSite=Strict"

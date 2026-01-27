@@ -1,0 +1,209 @@
+frappe.ui.form.on('Contract Measurement Item Remaining', {
+    refresh: function(frm) {
+        // Adicionar ícone ao botão
+        frm.add_custom_button(
+            '<i class="fa fa-money"></i> ' + __('Lançar pagamento'), 
+            function() {
+                // CORREÇÃO: Mudou de !frm.doc.saldo > 0 para frm.doc.saldo > 0
+                if (!frm.is_new() && frm.doc.saldo > 0) {
+                    // Usar Dialog para cálculos dinâmicos
+                    let updating = false;
+                    let dialog = new frappe.ui.Dialog({
+                        title: __('Lançar Pagamento'),
+                        fields: [
+                            {
+                                fieldtype: 'Currency',
+                                fieldname: 'valor_medido',
+                                label: __('Valor Medido'),
+                                default: frm.doc.valor,
+                                read_only: 1,
+                                reqd: 1
+                            },
+                            {
+                                fieldtype: 'Float',
+                                fieldname: 'porcentagem_pagamento',
+                                label: __('Saldo %'),
+                                default: ((frm.doc.saldo / frm.doc.valor)).toFixed(2),
+                                precision: 3,
+                                reqd: 1,
+                                onchange: function() {
+                                    if (updating) return; 
+                                    
+                                    updating = true;                                    
+                                    
+                                    // Quando percentual muda, recalcular valor
+                                    let percentual = dialog.get_value('porcentagem_pagamento') || 0;
+                                    let valor_base = dialog.get_value('valor_medido') || 0;
+                                    let saldo_disponivel = frm.doc.saldo || 0;
+
+                                    let novo_valor = parseFloat(((valor_base * percentual) / 100).toFixed(3));
+
+                                    let saldo_final = parseFloat((saldo_disponivel - novo_valor).toFixed(2));
+
+                                    dialog.set_value('saldo_final', saldo_final);
+                                    dialog.set_value('valor_pagamento', novo_valor);
+
+                                    setTimeout(() => {
+                                        updating = false;
+                                    }, 500);                                    
+                                }
+                            },
+                            {
+                                fieldtype: 'Currency',
+                                fieldname: 'valor_pagamento',
+                                label: __('Valor de Pagamento'),
+                                default: frm.doc.saldo,
+                                precision: 2,
+                                reqd: 1,
+                                onchange: function() {
+                                    if (updating) return; 
+                                    
+                                    updating = true;        
+
+                                    // Quando valor muda, recalcular percentual
+                                    let valor_pag = dialog.get_value('valor_pagamento') || 0;
+                                    let valor_base = dialog.get_value('valor_medido') || 0;
+                                    let saldo_disponivel = frm.doc.saldo || 0;
+                                    
+                                    if (valor_base > 0) {
+                                        let novo_percentual = parseFloat(((valor_pag / valor_base) * 100).toFixed(4));
+
+                                        let saldo_final = parseFloat((saldo_disponivel - valor_pag).toFixed(2));
+
+                                        dialog.set_value('saldo_final', saldo_final);
+                                        dialog.set_value('porcentagem_pagamento', novo_percentual);
+                                    }
+
+                                    setTimeout(() => {
+                                        updating = false;
+                                    }, 500);
+                                }
+                            },
+                            {
+                                fieldtype: 'Currency',
+                                fieldname: 'saldo_final',
+                                label: __('Saldo Final'),
+                                default: frm.doc.saldo,
+                                precision: 2,
+                                read_only: 1,
+                                reqd: 1
+                            },
+                            {
+                                fieldtype: 'Small Text',
+                                fieldname: 'observacoes',
+                                label: __('Observações'),
+                                reqd: 1
+                            }                                              
+                        ],
+                        // BOTÃO PRINCIPAL (Confirmar)
+                        primary_action_label: __('Confirmar'),
+                        primary_action: function(values) {
+                            // Validações iniciais
+                            if (values.valor_pagamento <= 0) {
+                                frappe.msgprint({
+                                    title: __('Aviso'),
+                                    indicator: 'orange',
+                                    message: __('Informe um valor maior que zero para continuar.')
+                                });
+                                return;
+                            }
+                            
+                            if (values.valor_pagamento > frm.doc.saldo) {
+                                frappe.msgprint({
+                                    title: __('Aviso'),
+                                    indicator: 'orange',
+                                    message: __('O valor do pagamento não pode ser maior que o saldo disponível.')
+                                });
+                                return;
+                            }
+
+                            if (!frm.call('check_has_measurement')) {
+                                frappe.msgprint({
+                                    title: __('Aviso'),
+                                    indicator: 'orange',
+                                    message: __('Não existe medição aberta para lançar o pagamento.')
+                                });
+                                return;
+                            }
+
+                            frappe.confirm(
+                                // Mensagem de confirmação com detalhes
+                                __('Confirmar pagamento de {0}?', [format_currency(values.valor_pagamento)]),
+                                
+                                // Função executada quando usuário confirma (clica "Sim")
+                                function() {
+                                    // Mostrar indicador de carregamento
+                                    frappe.show_progress(__('Processando...'), 70, 100, __('Lançando pagamento...'));
+                                    
+                                    // sinaliza popup de sucesso pendente
+                                    sessionStorage.setItem('cmr_dup_success', '1');
+
+                                    // chama o método Python passando os valores
+                                    frm.call('create_payment', {
+                                        percent: values.porcentagem_pagamento,
+                                        value: values.valor_pagamento,
+                                        balance: values.saldo_final,
+                                        observations: values.observacoes
+                                    })
+                                    .then(function(response) {
+                                        // Sucesso
+                                        frappe.hide_progress();
+                                        
+                                        frappe.show_alert({
+                                            message: __('Pagamento lançado com sucesso!'),
+                                            indicator: 'green'
+                                        }, 5);
+                                        
+                                        // Fechar dialog
+                                        dialog.hide();
+                                        
+                                        // Atualizar formulário
+                                        frm.reload_doc();
+                                    })
+                                    .catch(function(err) {
+                                        // Erro
+                                        frappe.hide_progress();
+                                        
+                                        frappe.msgprint({
+                                            title: __('Erro'),
+                                            indicator: 'red',
+                                            message: __('Erro ao lançar o pagamento: ') + (err.message || err)
+                                        });
+                                        
+                                        sessionStorage.removeItem('cmr_dup_success');
+                                    });
+                                },
+                                
+                                // Função executada quando usuário cancela (clica "Não") - opcional
+                                function() {
+                                    frappe.show_alert({
+                                        message: __('Operação cancelada pelo usuário'),
+                                        indicator: 'orange'
+                                    }, 3);
+                                },
+                                
+                                // Texto dos botões personalizados
+                                __('Sim, Confirmar'), // Botão de confirmação
+                                __('Não, Cancelar')   // Botão de cancelamento
+                            );
+
+                        },
+                        
+                        // BOTÃO SECUNDÁRIO (Cancelar)
+                        secondary_action_label: __('Cancelar'),
+                        secondary_action: function() {
+                            dialog.hide();
+                        }
+                    });
+
+                    dialog.show();
+                    
+                    // Focar no primeiro campo editável ao abrir
+                    setTimeout(function() {
+                        dialog.fields_dict.porcentagem_pagamento.set_focus();
+                    }, 500);
+                }
+            }
+        ).addClass('btn-primary');  
+    }
+});

@@ -1,0 +1,11 @@
+tls:
+  certificates:
+    - certFile: /ssl-config/{SSL_CERTIFICATE}
+      keyFile: /ssl-config/{SSL_KEY}
+      stores:
+        - default
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /ssl-config/{SSL_CERTIFICATE}
+        keyFile: /ssl-config/{SSL_KEY}

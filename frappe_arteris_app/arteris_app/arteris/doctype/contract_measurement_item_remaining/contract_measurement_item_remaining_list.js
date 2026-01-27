@@ -1,0 +1,1 @@
+frappe.listview_settings['Contract Measurement Item Remaining'] = { hide_name_column: true };

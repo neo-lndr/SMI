@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "creation": "2012-12-27 11:51:24",
+ "description": "Script to attach to all web pages.",
+ "doctype": "DocType",
+ "document_type": "Other",
+ "engine": "InnoDB",
+ "field_order": [
+  "javascript"
+ ],
+ "fields": [
+  {
+   "fieldname": "javascript",
+   "fieldtype": "Code",
+   "label": "Javascript",
+   "options": "Javascript"
+  }
+ ],
+ "icon": "fa fa-code",
+ "idx": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-09-04 15:48:39.486157",
+ "modified_by": "Administrator",
+ "module": "Website",
+ "name": "Website Script",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrador Global",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

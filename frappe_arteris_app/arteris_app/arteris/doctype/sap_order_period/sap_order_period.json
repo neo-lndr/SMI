@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{parentfield}-{linhapedido}",
+ "creation": "2025-04-29 11:31:58.302709",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "datainicial",
+  "datafinal",
+  "linhapedido",
+  "pep",
+  "centrodecusto",
+  "column_break_uuby",
+  "contrato",
+  "valor_para_o_periodo",
+  "reidi",
+  "percentual",
+  "medi\u00e7\u00f5es_section",
+  "column_break_emoa",
+  "saldosap",
+  "saldosapatualizacao",
+  "column_break_gbyp",
+  "valormedido",
+  "saldo"
+ ],
+ "fields": [
+  {
+   "fieldname": "datainicial",
+   "fieldtype": "Date",
+   "in_preview": 1,
+   "label": "Data incial",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "datafinal",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Data final",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "valor_para_o_periodo",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor para o per\u00edodo",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uuby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "valormedido",
+   "fieldtype": "Currency",
+   "in_standard_filter": 1,
+   "label": "Valor medido",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linhapedido",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Linha do pedido",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "centrodecusto",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Centro de custo",
+   "length": 30,
+   "read_only": 1
+  },
+  {
+   "fieldname": "reidi",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "REIDI %",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pep",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PEP",
+   "length": 30,
+   "read_only": 1
+  },
+  {
+   "fieldname": "medi\u00e7\u00f5es_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_emoa",
+   "fieldtype": "Column Break",
+   "label": "Dados SAP"
+  },
+  {
+   "fieldname": "column_break_gbyp",
+   "fieldtype": "Column Break",
+   "label": "Medi\u00e7\u00f5es"
+  },
+  {
+   "fieldname": "saldosap",
+   "fieldtype": "Currency",
+   "label": "Saldo",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saldosapatualizacao",
+   "fieldtype": "Datetime",
+   "label": "Ult. atualiza\u00e7\u00e3o",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "saldo",
+   "fieldtype": "Currency",
+   "in_standard_filter": 1,
+   "label": "Saldo",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contrato",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Contrato",
+   "options": "Contract",
+   "read_only": 1
+  },
+  {
+   "description": "Utilizado para IPCA, far\u00e1 o consumo do saldo desta linha com base no percentual informado, aplicado sobre o valor da medi\u00e7\u00e3o (Item)",
+   "fieldname": "percentual",
+   "fieldtype": "Percent",
+   "label": "Percentual",
+   "precision": "3",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-18 15:18:39.296591",
+ "modified_by": "Administrator",
+ "module": "Arteris",
+ "name": "SAP Order Period",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

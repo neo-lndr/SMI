@@ -1,0 +1,889 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Contract Value Comparison{% endblock %}
+
+{% block head_include %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<style>
+    .page-container, .container-fluid {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .page-content {
+        background-color: #f8f9fa !important;
+        padding: 20px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .custom-container {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        background: white !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+        padding: 30px !important;
+        border: none !important;
+    }
+    
+    .custom-header {
+        /* Remove border-bottom */
+        border-bottom: none !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .custom-header h1 {
+        color: #2c3e50 !important;
+        margin: 0 !important;
+        font-size: 28px !important;
+        font-weight: bold !important;
+    }
+    
+    .custom-header p {
+        color: #6c757d !important;
+        margin: 5px 0 0 0 !important;
+    }
+    
+    .custom-filters-section {
+        background-color: #f8f9fa !important;
+        border-radius: 6px !important;
+        padding: 20px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .custom-filters-row {
+        display: flex !important;
+        gap: 20px !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .custom-filter-group {
+        flex: 1 !important;
+        min-width: 200px !important;
+    }
+    
+    .custom-filter-group label {
+        display: block !important;
+        margin-bottom: 5px !important;
+        font-weight: 600 !important;
+        color: #495057 !important;
+    }
+    
+    .custom-filter-group select,
+    .custom-filter-group input {
+        width: 100% !important;
+        padding: 8px 12px !important;
+        border: 1px solid #ced4da !important;
+        border-radius: 4px !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .custom-btn {
+        background-color: #007bff !important;
+        color: white !important;
+        border: none !important;
+        padding: 10px 20px !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-size: 14px !important;
+        margin-top: 20px !important;
+    }
+    
+    .custom-btn:hover {
+        background-color: #0056b3 !important;
+    }
+    
+    .custom-chart-container {
+        position: relative !important;
+        height: 400px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .custom-stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 20px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .custom-stat-card {
+        background-color: #f8f9fa !important;
+        padding: 20px !important;
+        border-radius: 6px !important;
+        text-align: center !important;
+        border-left: 4px solid #007bff !important;
+    }
+    
+    .custom-stat-card h3 {
+        margin: 0 0 10px 0 !important;
+        color: #495057 !important;
+        font-size: 14px !important;
+        text-transform: uppercase !important;
+    }
+    
+    .custom-stat-card .value {
+        font-size: 24px !important;
+        font-weight: bold !important;
+        color: #2c3e50 !important;
+    }
+    
+    .custom-data-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .custom-data-table th,
+    .custom-data-table td {
+        padding: 12px !important;
+        text-align: left !important;
+        border-bottom: 1px solid #dee2e6 !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+    
+    .custom-data-table th {
+        background-color: #f8f9fa !important;
+        font-weight: 600 !important;
+        color: #495057 !important;
+        border: none !important;
+    }
+    
+    .custom-data-table tr {
+        border: none !important;
+    }
+    
+    .custom-data-table tr:hover {
+        background-color: #f8f9fa !important;
+        border: none !important;
+    }
+    
+    .currency {
+        font-weight: 600 !important;
+    }
+    
+    .positive {
+        color: #28a745 !important;
+    }
+    
+    .negative {
+        color: #dc3545 !important;
+    }
+    
+    .custom-loading {
+        text-align: center !important;
+        padding: 20px !important;
+        color: #6c757d !important;
+    }
+    
+    #contract-checkbox-list label, #item-checkbox-list label, #subsidiary-checkbox-list label {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px;
+        margin-bottom: 2px;
+    }
+
+    #contract-checkbox-list label input[type="checkbox"],
+    #item-checkbox-list label input[type="checkbox"],
+    #subsidiary-checkbox-list label input[type="checkbox"] {
+        width: 18px !important;
+        height: 18px !important;
+        flex: 0 0 18px;
+        margin: 0 4px 0 0;
+        accent-color: #007bff;
+    }
+
+    .checkbox-row {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .checkbox-list-with-selectall {
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .checkbox-list-with-selectall .select-all-btn {
+        position: static;
+        align-self: flex-start;
+        margin-bottom: 6px;
+        margin-top: 2px;
+        font-size: 12px;
+        padding: 2px 10px;
+        background: #f1f3f4;
+        color: #007bff;
+        border: 1px solid #ced4da;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: none;
+        z-index: 2;
+        transition: background 0.2s;
+    }
+    .checkbox-list-with-selectall .select-all-btn:hover {
+        background: #e2e6ea;
+        color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block page_content %}
+<div class="custom-container">
+    <div class="custom-header">
+        <h1>Comparativo de Valores Contratuais</h1>
+        <p>Acompanhe o planejado vs realizado dos itens de contrato ao longo do tempo</p>
+    </div>
+    
+    <div class="custom-filters-section">
+        <div class="custom-filters-row">
+            <div class="custom-filter-group">
+                <label for="subsidiary-select">Concessionarias</label>
+                <input type="text" id="subsidiary-search" placeholder="Buscar concessionarias..." style="margin-bottom: 6px; width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ced4da;">
+                <div id="subsidiary-checkbox-list" class="checkbox-list-with-selectall" style="max-height: 140px; overflow-y: auto; border: 1px solid #ced4da; border-radius: 4px; padding: 6px 8px 28px 8px; background: #fff; position: relative;"></div>
+            </div>
+            
+            <div class="custom-filter-group">
+                <label for="vertical-filter">Vertical</label>
+                <input type="text" id="vertical-filter" placeholder="Filtrar por vertical..." style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+            </div>
+
+            <div class="custom-filter-group">
+                <label for="categoria-filter">Categoria</label>
+                <input type="text" id="categoria-filter" placeholder="Filtrar por categoria..." style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+            </div>
+            
+            <div class="custom-filter-group">
+                <label for="contract-select">Contratos</label>
+                <input type="text" id="contract-search" placeholder="Buscar contrato..." style="margin-bottom: 6px; width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ced4da;">
+                <div id="contract-checkbox-list" class="checkbox-list-with-selectall" style="max-height: 140px; overflow-y: auto; border: 1px solid #ced4da; border-radius: 4px; padding: 6px 8px 28px 8px; background: #fff; position: relative;"></div>
+            </div>
+            
+            <div class="custom-filter-group">
+                <label for="item-select">Itens do Contrato</label>
+                <input type="text" id="item-search" placeholder="Buscar item..." style="margin-bottom: 6px; width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ced4da;">
+                <div id="item-checkbox-list" class="checkbox-list-with-selectall" style="max-height: 220px; overflow-y: auto; border: 1px solid #ced4da; border-radius: 4px; padding: 6px 8px 28px 8px; background: #fff; position: relative;"></div>
+            </div>
+            
+            <div class="custom-filter-group">
+                <label for="start-date">Data Inicial</label>
+                <input type="date" id="start-date" value="{{ frappe.utils.today() }}">
+            </div>
+            
+            <div class="custom-filter-group">
+                <label for="end-date">Data Final</label>
+                <input type="date" id="end-date" value="{{ frappe.utils.add_months(frappe.utils.today(), 12) }}">
+            </div>
+        </div>
+        
+        <button class="custom-btn" onclick="applyFilters()">Aplicar Filtros</button>
+    </div>
+    
+    <div class="custom-stats-grid">
+        <div class="custom-stat-card">
+            <h3>Total Planejado</h3>
+            <div class="value currency" id="total-planned">R$0</div>
+        </div>
+        <div class="custom-stat-card">
+            <h3>Total Realizado</h3>
+            <div class="value currency" id="total-actual">R$0</div>
+        </div>
+        <div class="custom-stat-card">
+            <h3>Variação</h3>
+            <div class="value currency" id="variance">R$0</div>
+        </div>
+        <div class="custom-stat-card">
+            <h3>% Concluído</h3>
+            <div class="value" id="completion">0%</div>
+        </div>
+    </div>
+    
+    <div class="custom-chart-container">
+        <canvas id="comparisonChart"></canvas>
+    </div>
+    
+    <div class="custom-loading" id="loading" style="display: none;">
+        Carregando dados...
+    </div>
+    
+    <table class="custom-data-table">
+        <thead>
+            <tr>
+                <th>Período</th>
+                <th>Valor Planejado</th>
+                <th>Valor Realizado</th>
+                <th>Acumulado Planejado</th>
+                <th>Acumulado Realizado</th>
+                <th>Variação</th>
+            </tr>
+        </thead>
+        <tbody id="data-table-body">
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    // Mock data for development/testing
+    const mockData = {
+        contractItems: [
+            {
+                contract: "CONTRACT-001",
+                item: "ITEM-001",
+                periods: [
+                    { period: "2024-01", date: "2024-01-31", planned_value: 15000, actual_value: 14500 },
+                    { period: "2024-02", date: "2024-02-29", planned_value: 12000, actual_value: 13200 },
+                    { period: "2024-03", date: "2024-03-31", planned_value: 18000, actual_value: 16800 },
+                    { period: "2024-04", date: "2024-04-30", planned_value: 20000, actual_value: 22100 },
+                    { period: "2024-05", date: "2024-05-31", planned_value: 16000, actual_value: 15400 },
+                    { period: "2024-06", date: "2024-06-30", planned_value: 22000, actual_value: 21000 },
+                    { period: "2024-07", date: "2024-07-31", planned_value: 19000, actual_value: 20500 },
+                    { period: "2024-08", date: "2024-08-31", planned_value: 25000, actual_value: 26300 },
+                    { period: "2024-09", date: "2024-09-30", planned_value: 21000, actual_value: 19800 },
+                    { period: "2024-10", date: "2024-10-31", planned_value: 17000, actual_value: 18200 },
+                    { period: "2024-11", date: "2024-11-30", planned_value: 23000, actual_value: 22400 },
+                    { period: "2024-12", date: "2024-12-31", planned_value: 28000, actual_value: 25900 }
+                ]
+            }
+        ]
+    };
+
+    let chart;
+    let currentData = null;
+    let allContracts = [];
+    let allItems = [];
+    let allSubsidiaries = [];
+
+    function initChart() {
+        const ctx = document.getElementById('comparisonChart').getContext('2d');
+        
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Acumulado Planejado',
+                        data: [],
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: false
+                    },
+                    {
+                        label: 'Acumulado Realizado',
+                        data: [],
+                        borderColor: '#28a745',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$' + value.toLocaleString('pt-BR');
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Período'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': R$' + context.parsed.y.toLocaleString('pt-BR');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function calculateCumulativeData(periods) {
+        let cumulativePlanned = 0;
+        let cumulativeActual = 0;
+        
+        return periods.map(period => {
+            cumulativePlanned += period.planned_value;
+            cumulativeActual += period.actual_value;
+            
+            return {
+                ...period,
+                cumulative_planned: cumulativePlanned,
+                cumulative_actual: cumulativeActual,
+                variance: cumulativeActual - cumulativePlanned
+            };
+        });
+    }
+
+    function updateChart() {
+        if (!currentData || !currentData.periods || !Array.isArray(currentData.periods) || currentData.periods.length === 0) {
+            console.log('Sem dados disponíveis');
+            // Clear chart and stats if needed
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
+            chart.update();
+            document.getElementById('total-planned').textContent = 'R$0';
+            document.getElementById('total-actual').textContent = 'R$0';
+            document.getElementById('variance').textContent = 'R$0';
+            document.getElementById('variance').className = 'value currency';
+            document.getElementById('completion').textContent = '0%';
+            updateTable([]);
+            return;
+        }
+
+        const cumulativeData = calculateCumulativeData(currentData.periods);
+        
+        // Update chart data
+        chart.data.labels = cumulativeData.map(d => d.period);
+        chart.data.datasets[0].data = cumulativeData.map(d => d.cumulative_planned);
+        chart.data.datasets[1].data = cumulativeData.map(d => d.cumulative_actual);
+        chart.update();
+        
+        // Update statistics
+        const totalPlanned = cumulativeData[cumulativeData.length - 1].cumulative_planned;
+        const totalActual = cumulativeData[cumulativeData.length - 1].cumulative_actual;
+        const variance = totalActual - totalPlanned;
+        const completion = ((totalActual / totalPlanned) * 100).toFixed(1);
+        
+        document.getElementById('total-planned').textContent = 'R$' + totalPlanned.toLocaleString('pt-BR');
+        document.getElementById('total-actual').textContent = 'R$' + totalActual.toLocaleString('pt-BR');
+        document.getElementById('variance').textContent = 'R$' + variance.toLocaleString('pt-BR');
+        document.getElementById('variance').className = 'value currency ' + (variance >= 0 ? 'positive' : 'negative');
+        document.getElementById('completion').textContent = completion + '%';
+        
+        updateTable(cumulativeData);
+    }
+
+    function updateTable(data) {
+        const tbody = document.getElementById('data-table-body');
+        tbody.innerHTML = '';
+        
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+            const variance = row.cumulative_actual - row.cumulative_planned;
+            
+            tr.innerHTML = `
+                <td>${row.period}</td>
+                <td class="currency">R$${row.planned_value.toLocaleString('pt-BR')}</td>
+                <td class="currency">R$${row.actual_value.toLocaleString('pt-BR')}</td>
+                <td class="currency">R$${row.cumulative_planned.toLocaleString('pt-BR')}</td>
+                <td class="currency">R$${row.cumulative_actual.toLocaleString('pt-BR')}</td>
+                <td class="currency ${variance >= 0 ? 'positive' : 'negative'}">R$${variance.toLocaleString('pt-BR')}</td>
+            `;
+            
+            tbody.appendChild(tr);
+        });
+    }
+
+    function loadSubsidiaries() {
+        frappe.call({
+            method: 'frappe.client.get_list',
+            args: {
+                doctype: 'Subsidiary',
+                fields: ['name', 'nome'],
+                order_by: 'creation asc',
+                limit_page_length: 100,
+            },
+            callback: function(response) {
+                allSubsidiaries = response.message || [];
+                renderSubsidiaryOptions();
+            },
+            error: function(error) {
+                console.error('Error loading subsidiaries:', error);
+                document.getElementById('subsidiary-checkbox-list').innerHTML = '';
+            }
+        });
+    }
+
+    function renderSubsidiaryOptions() {
+        const container = document.getElementById('subsidiary-checkbox-list');
+        const search = document.getElementById('subsidiary-search').value.toLowerCase();
+        const checked = new Set(Array.from(document.querySelectorAll('.subsidiary-checkbox:checked')).map(cb => cb.value));
+        container.innerHTML = '';
+        allSubsidiaries.filter(sub => (sub.nome || '').toLowerCase().includes(search)).forEach(sub => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'checkbox-row';
+            const label = document.createElement('label');
+            label.style.display = 'flex';
+            label.style.alignItems = 'center';
+            label.style.gap = '6px';
+            label.style.marginBottom = '2px';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = sub.name;
+            checkbox.className = 'subsidiary-checkbox';
+            if (checked.has(sub.name)) checkbox.checked = true;
+            checkbox.style.width = '18px';
+            checkbox.style.height = '18px';
+            checkbox.style.flex = '0 0 18px';
+            checkbox.style.margin = '0 4px 0 0';
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(' ' + sub.nome));
+            wrapper.appendChild(label);
+            container.appendChild(wrapper);
+        });
+        addSelectAllButton('subsidiary-checkbox-list', 'Selecionar Todas');
+    }
+
+    function getSelectedSubsidiaries() {
+        return Array.from(document.querySelectorAll('.subsidiary-checkbox:checked')).map(cb => cb.value);
+    }
+
+function loadContracts() {
+    const selectedSubsidiaries = getSelectedSubsidiaries();
+    const verticalFilter = document.getElementById('vertical-filter').value.trim();
+    const categoriaFilter = document.getElementById('categoria-filter').value.trim();
+
+    let filters = {};
+    if (selectedSubsidiaries.length) {
+        filters['subsidiaria'] = ['in', selectedSubsidiaries];
+    }
+    if (verticalFilter) {
+        filters['vertical'] = ['like', '%' + verticalFilter + '%'];
+    }
+    if (categoriaFilter) {
+        filters['categoria'] = ['like', '%' + categoriaFilter + '%'];
+    }
+
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract',
+            fields: ['name', 'contrato', 'subsidiaria', 'vertical', 'categoria'],
+            filters: filters,
+            order_by: 'creation asc',
+            limit_page_length: 100,
+        },
+        callback: function(response) {
+            allContracts = response.message || [];
+            renderContractOptions();
+        },
+        error: function(error) {
+            console.error('Error loading contracts:', error);
+            document.getElementById('contract-checkbox-list').innerHTML = '';
+        }
+    });
+}
+
+    function renderContractOptions() {
+        const container = document.getElementById('contract-checkbox-list');
+        const search = document.getElementById('contract-search').value.toLowerCase();
+        const checked = new Set(Array.from(document.querySelectorAll('.contract-checkbox:checked')).map(cb => cb.value));
+        container.innerHTML = '';
+        allContracts.filter(contract => contract.contrato.toLowerCase().includes(search)).forEach(contract => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'checkbox-row';
+            const label = document.createElement('label');
+            label.style.display = 'block';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = contract.name;
+            checkbox.className = 'contract-checkbox';
+            if (checked.has(contract.name)) checkbox.checked = true;
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(' ' + contract.contrato));
+            wrapper.appendChild(label);
+            container.appendChild(wrapper);
+        });
+        addSelectAllButton('contract-checkbox-list', 'Selecionar Todos');
+    }
+
+    function loadContractItems() {
+        const contractCheckboxes = document.querySelectorAll('.contract-checkbox:checked');
+        const selectedContracts = Array.from(contractCheckboxes).map(cb => cb.value);
+        const container = document.getElementById('item-checkbox-list');
+        container.innerHTML = '';
+        if (!selectedContracts.length) {
+            allItems = [];
+            renderItemOptions();
+            return;
+        }
+        frappe.call({
+            method: 'frappe.client.get_list',
+            args: {
+                doctype: 'Contract Item',
+                filters: { 'contrato': ["in", selectedContracts] },
+                fields: ['name', 'descricao','contrato'], 
+                order_by: 'creation asc',
+                limit_page_length: 100
+            },
+            callback: function(response) {
+                const itemsSet = new Set();
+                allItems = [];
+                if (response.message) {
+                    response.message.forEach(item => {
+                        if (!itemsSet.has(item.name)) {
+                            itemsSet.add(item.name);
+                            allItems.push(item);
+                        }
+                    });
+                }
+                renderItemOptions();
+            },
+            error: function(error) {
+                console.error('Error loading contract items:', error);
+                container.innerHTML = '';
+            }
+        });
+    }
+
+    function renderItemOptions() {
+        const container = document.getElementById('item-checkbox-list');
+        const search = document.getElementById('item-search').value.toLowerCase();
+        const checked = new Set(Array.from(document.querySelectorAll('.item-checkbox:checked')).map(cb => cb.value));
+        container.innerHTML = '';
+        allItems.filter(item => (item.descricao || '').toLowerCase().includes(search)).forEach(item => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'checkbox-row';
+            const label = document.createElement('label');
+            label.style.display = 'block';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = item.name;
+            checkbox.className = 'item-checkbox';
+            if (checked.has(item.name)) checkbox.checked = true;
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(item.descricao));
+            wrapper.appendChild(label);
+            container.appendChild(wrapper);
+        });
+        addSelectAllButton('item-checkbox-list', 'Selecionar Todos');
+    }
+
+    function applyFilters() {
+        const itemCheckboxes = document.querySelectorAll('.item-checkbox:checked');
+        const selectedItems = Array.from(itemCheckboxes).map(cb => cb.value);
+        const contractCheckboxes = document.querySelectorAll('.contract-checkbox:checked');
+        const selectedContracts = Array.from(contractCheckboxes).map(cb => cb.value);
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+        if (!selectedContracts.length) {
+            frappe.msgprint('Please select at least one contract.');
+            return;
+        }
+        document.getElementById('loading').style.display = 'block';
+
+        // Fetch planned and actuals in parallel, then merge and process
+        fetchPlannedWorkloadCfgByContracts(selectedContracts, (plannedRows) => {
+            fetchActualsByContracts(selectedContracts, (actualRows) => {
+
+                // Normalize plannedRows to {date, contract_item, value, type: 'planned'}
+                const planned = plannedRows.map(row => ({
+                    date: `${row.ano}-${String(row.mes).padStart(2, '0')}-01`, // Use first day of month
+                    contract_item: row.contract_item,
+                    value: row.value,
+                    type: 'planned'
+                }));
+                // Normalize actualRows to {date, contract_item, value, type: 'actual'}
+                const actual = actualRows.map(row => ({
+                    date: row.date,
+                    contract_item: row.contract_item,
+                    value: row.value,
+                    type: 'actual'
+                }));
+                // Merge arrays
+                let merged = [...planned, ...actual];
+                // Filter by contract item and date
+                if (selectedItems.length) {
+                    merged = merged.filter(r => selectedItems.includes(r.contract_item));
+                }
+
+                if (startDate) {
+                    const start = new Date(startDate);
+                    merged = merged.filter(r => new Date(r.date) >= start);
+                }
+
+                if (endDate) {
+                    const end = new Date(endDate);
+                    merged = merged.filter(r => new Date(r.date) <= end);
+                }
+
+                // Group by period (YYYY-MM) and sum planned/actual
+                const periodMap = {};
+                merged.forEach(row => {
+                    const period = row.date.slice(0, 7); // YYYY-MM
+                    if (!periodMap[period]) {
+                        periodMap[period] = { period, planned_value: 0, actual_value: 0 };
+                    }
+                    if (row.type === 'planned') {
+                        periodMap[period].planned_value += row.value || 0;
+                    } else {
+                        periodMap[period].actual_value += row.value || 0;
+                    }
+                });
+                const periods = Object.keys(periodMap).sort().map(period => ({
+                    period,
+                    planned_value: periodMap[period].planned_value,
+                    actual_value: periodMap[period].actual_value
+                }));
+                currentData = { periods };
+                updateChart();
+                document.getElementById('loading').style.display = 'none';
+            });
+        });
+    }
+function fetchPlannedWorkloadCfgByContracts(selectedContracts, callback) {
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract Item Workload Cfg',
+            filters: { 'contrato': ['in', selectedContracts] },
+            fields: [
+                'name', 'contrato', 'mes', 'ano',
+                'tabitens.item', 'tabitens.valor'
+            ],
+            limit_page_length: 1000
+        },
+        callback: function(cfgResponse) {
+            const cfgDocs = cfgResponse.message || [];
+
+            const allRows = cfgDocs.map(row => {
+                return {
+                    mes: row.mes,
+                    ano: row.ano,
+                    contract_item: row.item,
+                    value: row.valor,
+                };
+            });
+            callback(allRows);
+        }
+    });
+}
+
+function fetchActualsByContracts(selectedContracts, callback) {
+    frappe.call({
+        method: 'frappe.client.get_list',
+        args: {
+            doctype: 'Contract Measurement',
+            filters: { 'contrato': ['in', selectedContracts] },
+            fields: [
+                'name', 'datafinalmedicao',
+                'tabitenscontatrato.itemcontrato', 'tabitenscontatrato.valortotalvigente'
+            ],
+            limit_page_length: 1000
+        },
+        callback: function(measureResponse) {
+            const measureDocs = measureResponse.message || [];
+            // Flatten child table rows
+            const allRows = measureDocs.map(doc => {
+                return {
+                    date: doc.datafinalmedicao,
+                    contract_item: doc.itemcontrato,
+                    value: doc.valortotalvigente
+                };
+            })
+            callback(allRows);
+        }
+    });
+}
+    // Initialize the page when Frappe is ready
+    frappe.ready(function() {
+        initChart();
+        loadSubsidiaries();
+        loadContracts();
+        addFilterSearchListeners();
+        
+        // Add event listeners for filters
+        document.getElementById('contract-checkbox-list').addEventListener('change', function(e) {
+            if (e.target.classList.contains('contract-checkbox')) {
+                loadContractItems();
+            }
+        });
+        
+        document.getElementById('subsidiary-checkbox-list').addEventListener('change', function(e) {
+            if (e.target.classList.contains('subsidiary-checkbox')) {
+                loadContracts();
+                // Optionally clear contract and item selections here if needed
+            }
+        });                
+        
+        document.getElementById('item-checkbox-list').addEventListener('change', function(e) {
+            // You can handle item selection here if needed
+        });
+    });
+
+    // Add search filter logic for contract and item checkboxes
+    function addFilterSearchListeners() {
+        document.getElementById('subsidiary-search').addEventListener('input', renderSubsidiaryOptions);
+        document.getElementById('contract-search').addEventListener('input', renderContractOptions);
+        document.getElementById('item-search').addEventListener('input', renderItemOptions);
+        document.getElementById('vertical-filter').addEventListener('input', function(e) {
+            const value = e.target.value.trim();
+            if (value.length >= 3 || value.length === 0) {
+                loadContracts();
+            }
+        });
+        document.getElementById('categoria-filter').addEventListener('input', function(e) {
+        const value = e.target.value.trim();
+        if (value.length >= 3 || value.length === 0) {
+            loadContracts();
+        }
+    });
+    }
+
+    function selectAllCheckboxes(listId) {
+        const container = document.getElementById(listId);
+        if (!container) return;
+        const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => { cb.checked = true; });
+        // Trigger change event for downstream logic if needed
+        if (listId === 'contract-checkbox-list') {
+            loadContractItems();
+        }
+    }
+
+    function addSelectAllButton(listId, label) {
+        const container = document.getElementById(listId);
+        if (!container) return;
+        let btn = container.querySelector('.select-all-btn');
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'select-all-btn';
+            btn.textContent = label || 'Selecionar Todos';
+            btn.onclick = function(e) {
+                e.stopPropagation();
+                selectAllCheckboxes(listId);
+            };
+            container.insertBefore(btn, container.firstChild);
+        }
+        btn.style.position = 'static';
+        btn.style.marginBottom = '6px';
+        btn.style.marginTop = '2px';
+    }
+</script>
+{% endblock %}
