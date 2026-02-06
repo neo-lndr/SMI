@@ -1,5 +1,5 @@
 # Multi-stage build para otimizar tamanho da imagem
-FROM python:3.12.9-slim AS builder
+FROM python:3.14.3-slim AS builder
 
 # Definir diretório de trabalho
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Stage final - imagem mínima
-FROM python:3.12.9-slim
+FROM python:3.14.3-slim
 
 # Instalar cron e gosu
 RUN apt-get update && apt-get install -y --no-install-recommends \
